@@ -35,7 +35,7 @@ def create_grid_2d(dim1, dim2, isperioidic, m):
     #nx.draw(C)
     #plt.show()
 
-    #---computing shortest pahts in C---
+    #---computing shortest paths in C---
     print(list(C.nodes))
     P = []
     agents = {}
@@ -148,6 +148,7 @@ def create_grid_2d(dim1, dim2, isperioidic, m):
             else:
                 for j in range(dim2-1, -1, -1):
                     canonical_path.append((i, j))
+        print("canonical_path")
         print(canonical_path)
         print(len(canonical_path))
     #moving agent through canonical path

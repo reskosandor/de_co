@@ -21,7 +21,7 @@ def create_grid_2d(dim1, dim2, isperioidic, m):
     #---creating_C---
     print(list(Z.nodes))
     if (m == 1):
-        C = Z
+        C = Z.copy()
         for x in range(dim1):
             for y in range(dim2-1):
                 print(str(x) + " " + str(y))
@@ -39,7 +39,13 @@ def create_grid_2d(dim1, dim2, isperioidic, m):
     print(list(C.nodes))
     P = []
     agents = {}
-    #start with a set of |CW agents in v_(0,0)
+    previous_agents = {}
+    color = {}
+    for nodes in Z:
+        color[nodes] = "grey"
+    color_sync(Z, agents, previous_agents, color, m)
+    print(color)
+    #start with a set of |C| agents in v_(0,0)
     nr_of_agents = C.number_of_nodes()
 
     for i in list(C.nodes):
@@ -50,6 +56,8 @@ def create_grid_2d(dim1, dim2, isperioidic, m):
     for i in range(nr_of_agents):
         agents[i] = (0, 0)
     print(agents)
+    color_sync(Z, agents, previous_agents, color, m)
+    print(color)
 
     flipped_agents = {}
     print(len(agents.keys()))
@@ -109,9 +117,11 @@ def create_grid_2d(dim1, dim2, isperioidic, m):
             p.append(counter)
         print("p is:")
         print(p)
-        # move p_i agents to w_i
+        # for i = 1 to r
         for i in range(len(edges_of_v_in_P)):
             print(agents)
+            # move p_i agents to w_i
+            previous_agents = agents.copy()
             for j in range(p[i]):
                 list_of_agents_on_v = []
                 for key in agents:
@@ -121,7 +131,68 @@ def create_grid_2d(dim1, dim2, isperioidic, m):
                 print(v)
                 agents[j+1] = edges_of_v_in_P[i][1]
 
+            color_sync(Z, agents, previous_agents, color, m)
+            print(color)
         print(agents)
         print("iteration is over")
 
-create_grid_2d(5, 5, False, 1)
+    #algorithm MESH(2, m)
+    #constructing canonical path
+    if m == 2:
+        canonical_path = []
+        print(len(canonical_path))
+        for i in range(dim1):
+            if (i % 2) == 0:
+                for j in range(dim2):
+                    canonical_path.append((i, j))
+            else:
+                for j in range(dim2-1, -1, -1):
+                    canonical_path.append((i, j))
+        print(canonical_path)
+        print(len(canonical_path))
+    #moving agent through canonical path
+        for i in range(len(canonical_path)-1):
+            previous_agents = agents.copy()
+            agents[0] = canonical_path[i+1]
+            print(agents[0])
+            color_sync(Z, agents, previous_agents, color, m)
+            print(color)
+    if m < 2:
+        print(agents)
+        for i in range(dim2-1):
+            previous_agents = agents.copy()
+            for j in range(dim1):
+                (x, y) = agents[j]
+                agents[j] = (x, y+1)
+            print(agents)
+            color_sync(Z, agents, previous_agents, color, m)
+            print(color)
+    print(list(Z.nodes))
+    print(color)
+
+def color_sync(graph, agents, previous_agents, color, m):
+    for key in color:
+        for i in agents:
+            if key == agents[i]:
+                color[key] = "black"
+
+
+    for key in color:
+        if key in previous_agents.values() and key not in agents.values():
+            color[key] = "white"
+
+    if color[key] == "white":
+        neighbours = [j for j in graph[key]]
+        counter = 0
+        for k in range(len(neighbours)):
+            if color[(neighbours[k])] == "grey":
+                counter = counter + 1
+            if m <= counter:
+                color[key] = "grey"
+            elif counter < m:
+                color[key] = "white"
+
+
+
+
+create_grid_2d(3, 4, False, 2)

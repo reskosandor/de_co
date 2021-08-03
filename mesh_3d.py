@@ -27,6 +27,7 @@ def create_grid_3d(dimensions, isperioidic, m):
     #plt.show()
     #---initial_set_(2, m)_begins)---
     #---creating_C---
+    print("nodes of Z")
     print(list(Z.nodes))
     if (m == 1):
         C = Z.copy()
@@ -36,6 +37,7 @@ def create_grid_3d(dimensions, isperioidic, m):
                     print(str(x) + " " + str(y) + " " + str(z))
                     if z > 0:
                         C.remove_node((x, y, z))
+        print(list(C.nodes))
 
     if (m == 2):
         C = Z.copy()
@@ -91,6 +93,8 @@ def create_grid_3d(dimensions, isperioidic, m):
                 flipped_agents[value] = [key]
             else:
                 flipped_agents[value].append(key)
+        print("agents")
+        print(agents)
         print("flipped_agents")
         print(flipped_agents)
         v = (0, 0, 0)
@@ -98,6 +102,8 @@ def create_grid_3d(dimensions, isperioidic, m):
             value = flipped_agents[key]
             if len(value) > 1:
                 v = key
+                print("v is:")
+                print(v)
         # let (v,w_i),...,(v,w_r) be the edges from v included in a path in P
         edges_of_v_in_P = []
         for i in P:
@@ -124,8 +130,17 @@ def create_grid_3d(dimensions, isperioidic, m):
                         print(i[i.index(j)])
                         edge.append(i[i.index(j)+1])
                         edges_of_v_in_P.append(edge)
+        print("edges of v in P:")
         print(edges_of_v_in_P)
         print(len(edges_of_v_in_P))
+        #remove duplicate elements for edges_of_v_in_P
+        no_duplicates = []
+        for i in edges_of_v_in_P:
+            if i not in no_duplicates:
+                no_duplicates.append(i)
+        edges_of_v_in_P = no_duplicates
+
+        print(edges_of_v_in_P)
         # let p_i be the number of paths in P containing (v,w_i)
         p = []
         for i in range(len(edges_of_v_in_P)):
@@ -147,11 +162,20 @@ def create_grid_3d(dimensions, isperioidic, m):
                 for key in agents:
                     if agents[key] == v:
                         list_of_agents_on_v.append(key)
+                nr_of_agents_on_v = len(list_of_agents_on_v)
                 print(list_of_agents_on_v)
                 print(v)
-                agents[j + 1] = edges_of_v_in_P[i][1]
+
+                for k in list_of_agents_on_v:
+                    if k < nr_of_agents_on_v:
+                        list_of_agents_on_v[k + 1] = edges_of_v_in_P[i][1]
+                        for key in agents:
+                            if k == key:
+                                agents[key] = list_of_agents_on_v[k]
 
             mesh_2d.color_sync(Z, agents, previous_agents, color, m)
+            print("moved p_i agents to w_i, agents are right now at:")
+            print(agents)
             print(color)
         print(agents)
         print("iteration is over")

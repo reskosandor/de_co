@@ -88,6 +88,7 @@ def create_grid_3d(dimensions, isperioidic, m):
     while len(agents.keys()) != len(flipped_agents.keys()):
         # finding keys with duplicate values in dict
         # this is to choose a v, which has multiple agents on it
+        flipped_agents = {}
         for key, value in agents.items():
             if value not in flipped_agents:
                 flipped_agents[value] = [key]
@@ -162,14 +163,14 @@ def create_grid_3d(dimensions, isperioidic, m):
             print(p[i])
             # move p_i agents to w_i
 
-            for j in range(p[i]):
-                list_of_agents_on_v = []
-                for key in agents:
-                    if agents[key] == v and len(list_of_agents_on_v) < p[i]:
-                        list_of_agents_on_v.append(key)
-                nr_of_agents_on_v = len(list_of_agents_on_v)
-                print(list_of_agents_on_v)
-                print(v)
+
+            list_of_agents_on_v = []
+            for key in agents:
+                if agents[key] == v and len(list_of_agents_on_v) < p[i]:
+                    list_of_agents_on_v.append(key)
+            nr_of_agents_on_v = len(list_of_agents_on_v)
+            print(list_of_agents_on_v)
+            print(v)
 
             position_of_agents_on_v = []
             for k in range(nr_of_agents_on_v):
@@ -202,6 +203,7 @@ def create_grid_3d(dimensions, isperioidic, m):
         mesh_2d.color_sync(Z, agents, previous_agents, color, m)
         print(agents)
         print("iteration is over")
+        print(flipped_agents)
 
     # algorithm MESH(3, m)
     # constructing canonical path
@@ -291,6 +293,6 @@ def create_grid_3d(dimensions, isperioidic, m):
 # grid_graph takes a list of dimensions as its input
 # for some reason dimensions are in reverse order
 # so the first item of the list will be the nth dimension
-dimensions = [3, 2, 2]
+dimensions = [4, 3, 2]
 
 create_grid_3d(dimensions, False, 1)

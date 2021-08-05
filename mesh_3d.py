@@ -153,30 +153,53 @@ def create_grid_3d(dimensions, isperioidic, m):
         print("p is:")
         print(p)
         # for i = 1 to r
+        previous_agents = agents.copy()
         for i in range(len(edges_of_v_in_P)):
             print(agents)
+            print("i is:")
+            print(i)
+            print("p[i] is")
+            print(p[i])
             # move p_i agents to w_i
-            previous_agents = agents.copy()
+
             for j in range(p[i]):
                 list_of_agents_on_v = []
                 for key in agents:
-                    if agents[key] == v:
+                    if agents[key] == v and len(list_of_agents_on_v) < p[i]:
                         list_of_agents_on_v.append(key)
                 nr_of_agents_on_v = len(list_of_agents_on_v)
                 print(list_of_agents_on_v)
                 print(v)
 
-                for k in list_of_agents_on_v:
-                    if k < nr_of_agents_on_v:
-                        list_of_agents_on_v[k + 1] = edges_of_v_in_P[i][1]
-                        for key in agents:
-                            if k == key:
-                                agents[key] = list_of_agents_on_v[k]
+            position_of_agents_on_v = []
+            for k in range(nr_of_agents_on_v):
+                print("k is:")
+                print(type(k))
+                print(k)
+                print("nr_of_agents_on_v")
+                print(type(nr_of_agents_on_v))
+                print(nr_of_agents_on_v)
+                print("list_of_agents_on_v")
+                print(type(list_of_agents_on_v))
+                print(list_of_agents_on_v)
+                print("edges of v in P")
+                print(type(edges_of_v_in_P[i]))
+                print(edges_of_v_in_P[i])
+                position_of_agents_on_v.append(edges_of_v_in_P[i][1])
+                print("print(list_of_agents_on_v[k+1])")
+                print(list_of_agents_on_v[k])
+                print("position_of_agents_on_v[k]")
+                print("position_of_agents_on_v[k]")
+                for key in agents:
+                    if list_of_agents_on_v[k] == key:
+                        agents[key] = position_of_agents_on_v[k]
+                        print("agents")
+                        print(agents)
 
-            mesh_2d.color_sync(Z, agents, previous_agents, color, m)
             print("moved p_i agents to w_i, agents are right now at:")
             print(agents)
             print(color)
+        mesh_2d.color_sync(Z, agents, previous_agents, color, m)
         print(agents)
         print("iteration is over")
 
@@ -251,6 +274,10 @@ def create_grid_3d(dimensions, isperioidic, m):
         for i in range(dim3-1):
             previous_agents = agents.copy()
             for j in range(nr_of_agents):
+
+                print("agents: ")
+                print(type(agents))
+                print(agents)
                 (x, y, z) = agents[j]
                 agents[j] = (x, y, z+1)
             print(agents)

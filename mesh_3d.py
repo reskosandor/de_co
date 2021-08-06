@@ -10,16 +10,16 @@ def create_grid_3d(dimensions, isperioidic, m):
     #print(dim1)
     #print(dim2)
     #print(dim3)
-    if dim2 < dim1 or dim3 < dim2:
-        #print("dimensions must be in monotonic increasing sequence")
+    if dim2 < dim1 or dim3 < dim2 or dim3 < dim1:
+        print("dimensions must be in monotonic increasing sequence")
         exit()
 
     if m == 0:
-        #print("m must be a positive integer")
+        print("m must be a positive integer")
         exit()
 
     if m > 3:
-        #print("m must not be greater than the dimension of the mesh")
+        print("m must not be greater than the dimension of the mesh")
         exit()
     Z = nx.grid_graph(dimensions, periodic=isperioidic)
     ##print(nx.info(Z))
@@ -88,7 +88,10 @@ def create_grid_3d(dimensions, isperioidic, m):
     values = list(agents.values())
     iterations = 0
     # while exists v in C containing more than one agent
+
     while len(values) != len(set(values)):
+        sum_p = 0
+
         previous_values = values.copy()
         # finding keys with duplicate values in dict
         # this is to choose a v, which has multiple agents on it
@@ -114,6 +117,13 @@ def create_grid_3d(dimensions, isperioidic, m):
 
         print("v is:")
         print(v)
+        truest_list_of_agents_on_v = []
+        for key in agents:
+            if agents[key] == v:
+                truest_list_of_agents_on_v.append(key)
+        print("truest")
+        print(truest_list_of_agents_on_v)
+        print(len(truest_list_of_agents_on_v))
         # let (v,w_i),...,(v,w_r) be the edges from v included in a path in P
         edges_of_v_in_P = []
         for i in P:
@@ -162,8 +172,13 @@ def create_grid_3d(dimensions, isperioidic, m):
                     #print(str(edges_of_v_in_P[i]))
                     counter = counter + 1
             p.append(counter)
-        #print("p is:")
+        print("p is:")
         print(p)
+        #checking how many agents do we want to send overall
+
+        for i in range(len(p)):
+            sum_p = sum_p + p[i]
+
         # for i = 1 to r
         previous_agents = agents.copy()
         for i in range(len(edges_of_v_in_P)):
@@ -189,6 +204,7 @@ def create_grid_3d(dimensions, isperioidic, m):
             print("v is")
             print(v)
 
+
             position_of_agents_on_v = []
 
             # in this for loop, for each k, we only move one agent at a time, k in range(nr_of_agents_on_v total agents
@@ -211,8 +227,7 @@ def create_grid_3d(dimensions, isperioidic, m):
                 #print("position_of_agents_on_v[k]")
                 #print("position_of_agents_on_v[k]")
                 for key in agents:
-                    if list_of_agents_on_v[k] == key :
-                        #and len(true_list_of_agents_on_v) > 1
+                    if list_of_agents_on_v[k] == key and len(true_list_of_agents_on_v) > 1:
                         agents[key] = position_of_agents_on_v[k]
                         #print("agents")
                         #print(agents)
@@ -236,6 +251,13 @@ def create_grid_3d(dimensions, isperioidic, m):
         print(set(values))
         if previous_values == values:
             print("loop stuck")
+            exit()
+        print(agents)
+        # check for something wrong?
+        if sum_p + 1 != len(truest_list_of_agents_on_v):
+            print(sum_p)
+            print(len(true_list_of_agents_on_v))
+            print("something horrible happened")
             exit()
     # algorithm MESH(3, m)
     # constructing canonical path
@@ -343,6 +365,6 @@ def create_grid_3d(dimensions, isperioidic, m):
 # so the first item of the list will be the nth dimension
 
 
-dimensions = [10, 10, 10]
+dimensions = [11, 11, 11]
 
 create_grid_3d(dimensions, False, 1)

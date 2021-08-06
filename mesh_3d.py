@@ -84,8 +84,12 @@ def create_grid_3d(dimensions, isperioidic, m):
     flipped_agents = {}
     print(len(agents.keys()))
     print(len(flipped_agents.keys()))
+
+    values = list(agents.values())
+    iterations = 0
     # while exists v in C containing more than one agent
-    while len(agents.keys()) != len(flipped_agents.keys()):
+    while len(values) != len(set(values)):
+        previous_values = values.copy()
         # finding keys with duplicate values in dict
         # this is to choose a v, which has multiple agents on it
         flipped_agents = {}
@@ -203,8 +207,19 @@ def create_grid_3d(dimensions, isperioidic, m):
         mesh_2d.color_sync(Z, agents, previous_agents, color, m)
         print(agents)
         print("iteration is over")
-        print(flipped_agents)
+        iterations = iterations + 1
+        print("nr of iterations so far")
+        print(iterations)
 
+        print(flipped_agents)
+        values = list(agents.values())
+        print("values")
+        print(values)
+        print("set(values)")
+        print(set(values))
+        if previous_values == values:
+            print("loop stuck")
+            exit()
     # algorithm MESH(3, m)
     # constructing canonical path
     if m == 3:
@@ -289,10 +304,17 @@ def create_grid_3d(dimensions, isperioidic, m):
     print(color)
     print(list(Z.nodes))
     print(color)
-
+    nr_of_black_nodes = 0
+    for key in color:
+        if color[key] == "black":
+            print(key)
+            nr_of_black_nodes = nr_of_black_nodes + 1
+    print(nr_of_black_nodes)
+    print("nr of iterations")
+    print(iterations)
 # grid_graph takes a list of dimensions as its input
 # for some reason dimensions are in reverse order
 # so the first item of the list will be the nth dimension
-dimensions = [4, 3, 2]
+dimensions = [10, 5, 5]
 
 create_grid_3d(dimensions, False, 1)

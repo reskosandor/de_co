@@ -211,7 +211,8 @@ def create_grid_3d(dimensions, isperioidic, m):
                 #print("position_of_agents_on_v[k]")
                 #print("position_of_agents_on_v[k]")
                 for key in agents:
-                    if list_of_agents_on_v[k] == key and len(true_list_of_agents_on_v) > 1:
+                    if list_of_agents_on_v[k] == key :
+                        #and len(true_list_of_agents_on_v) > 1
                         agents[key] = position_of_agents_on_v[k]
                         #print("agents")
                         #print(agents)
@@ -340,6 +341,8 @@ def create_grid_3d(dimensions, isperioidic, m):
 # grid_graph takes a list of dimensions as its input
 # for some reason dimensions are in reverse order
 # so the first item of the list will be the nth dimension
-dimensions = [7, 7, 6]
+
+
+dimensions = [10, 10, 10]
 
 create_grid_3d(dimensions, False, 1)

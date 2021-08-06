@@ -3,48 +3,48 @@ import matplotlib.pyplot as plt
 import mesh_2d
 
 def create_grid_3d(dimensions, isperioidic, m):
-    print(dimensions)
+    #print(dimensions)
     dim1 = dimensions[2]
     dim2 = dimensions[1]
     dim3 = dimensions[0]
-    print(dim1)
-    print(dim2)
-    print(dim3)
+    #print(dim1)
+    #print(dim2)
+    #print(dim3)
     if dim2 < dim1 or dim3 < dim2:
-        print("dimensions must be in monotonic increasing sequence")
+        #print("dimensions must be in monotonic increasing sequence")
         exit()
 
     if m == 0:
-        print("m must be a positive integer")
+        #print("m must be a positive integer")
         exit()
 
     if m > 3:
-        print("m must not be greater than the dimension of the mesh")
+        #print("m must not be greater than the dimension of the mesh")
         exit()
     Z = nx.grid_graph(dimensions, periodic=isperioidic)
-    #print(nx.info(Z))
+    ##print(nx.info(Z))
     #nx.draw(Z)
     #plt.show()
     #---initial_set_(2, m)_begins)---
     #---creating_C---
-    print("nodes of Z")
-    print(list(Z.nodes))
+    #print("nodes of Z")
+    #print(list(Z.nodes))
     if (m == 1):
         C = Z.copy()
         for x in range(dim1):
             for y in range(dim2):
                 for z in range(dim3):
-                    print(str(x) + " " + str(y) + " " + str(z))
+                    #print(str(x) + " " + str(y) + " " + str(z))
                     if z > 0:
                         C.remove_node((x, y, z))
-        print(list(C.nodes))
+        #print(list(C.nodes))
 
     if (m == 2):
         C = Z.copy()
         for x in range(dim1):
             for y in range(dim2):
                 for z in range(dim3):
-                    print(str(x) + " " + str(y) + " " + str(z))
+                    #print(str(x) + " " + str(y) + " " + str(z))
                     if y > 0 or z > 0:
                         C.remove_node((x, y, z))
 
@@ -52,13 +52,13 @@ def create_grid_3d(dimensions, isperioidic, m):
         C = nx.Graph()
         C.add_node((0, 0, 0))
 
-    print(nx.info(C))
-    print(list(C.nodes))
+    #print(nx.info(C))
+    #print(list(C.nodes))
     #nx.draw(C)
     #plt.show()
 
     #---computing shortest paths in C---
-    print(list(C.nodes))
+    #print(list(C.nodes))
     P = []
     agents = {}
     previous_agents = {}
@@ -66,24 +66,24 @@ def create_grid_3d(dimensions, isperioidic, m):
     for nodes in Z:
         color[nodes] = "grey"
     mesh_2d.color_sync(Z, agents, previous_agents, color, m)
-    print(color)
+    #print(color)
     #start with a set of |C| agents in v_(0,0)
     nr_of_agents = C.number_of_nodes()
 
     for i in list(C.nodes):
-        print(nx.shortest_path(C, source = (0, 0, 0), target = i))
+        #print(nx.shortest_path(C, source = (0, 0, 0), target = i))
         P.append(nx.shortest_path(C, source = (0, 0, 0), target = i))
-    print("P is :")
-    print(P)
+    #print("P is :")
+    #print(P)
     for i in range(nr_of_agents):
         agents[i] = (0, 0, 0)
-    print(agents)
+    #print(agents)
     mesh_2d.color_sync(Z, agents, previous_agents, color, m)
-    print(color)
+    #print(color)
 
     flipped_agents = {}
-    print(len(agents.keys()))
-    print(len(flipped_agents.keys()))
+    #print(len(agents.keys()))
+    #print(len(flipped_agents.keys()))
 
     values = list(agents.values())
     iterations = 0
@@ -98,120 +98,140 @@ def create_grid_3d(dimensions, isperioidic, m):
                 flipped_agents[value] = [key]
             else:
                 flipped_agents[value].append(key)
-        print("agents")
-        print(agents)
-        print("flipped_agents")
-        print(flipped_agents)
+        #print("agents")
+        #print(agents)
+        #print("flipped_agents")
+        #print(flipped_agents)
         v = (0, 0, 0)
         for key in flipped_agents:
             value = flipped_agents[key]
             if len(value) > 1:
                 v = key
-                print("v is:")
-                print(v)
+                #print("v is:")
+                #print(v)
         # let (v,w_i),...,(v,w_r) be the edges from v included in a path in P
         edges_of_v_in_P = []
         for i in P:
-            print("i is:")
-            print(i)
-            print("len(i) is: ")
-            print(len(i))
+            #print("i is:")
+            #print(i)
+            #print("len(i) is: ")
+            #print(len(i))
             for j in i:
-                print("j is:")
-                print(j)
-                print("len(j) is:")
-                print(len(j))
+                #print("j is:")
+                #print(j)
+                #print("len(j) is:")
+                #print(len(j))
                 if j == v and j != i[-1]:
-                    print("(i.index(j) is")
-                    print((i.index(j)))
-                    print("i[i.index(j)] is")
-                    print(i[i.index(j)])
+                    #print("(i.index(j) is")
+                    #print((i.index(j)))
+                    #print("i[i.index(j)] is")
+                    #print(i[i.index(j)])
                     if len(i) > 1:
                         edge = []
                         edge.append(v)
-                        print("i indices")
-                        print(i)
-                        print(len(i))
-                        print(i[i.index(j)])
+                        #print("i indices")
+                        #print(i)
+                        #print(len(i))
+                        #print(i[i.index(j)])
                         edge.append(i[i.index(j)+1])
                         edges_of_v_in_P.append(edge)
-        print("edges of v in P:")
-        print(edges_of_v_in_P)
-        print(len(edges_of_v_in_P))
+        #print("edges of v in P:")
+        #print(edges_of_v_in_P)
+        #print(len(edges_of_v_in_P))
         #remove duplicate elements for edges_of_v_in_P
         no_duplicates = []
         for i in edges_of_v_in_P:
             if i not in no_duplicates:
                 no_duplicates.append(i)
+        print("edges_of_v_in_P")
         edges_of_v_in_P = no_duplicates
-
         print(edges_of_v_in_P)
+
+        #print(edges_of_v_in_P)
         # let p_i be the number of paths in P containing (v,w_i)
         p = []
         for i in range(len(edges_of_v_in_P)):
             counter = 0
             for j in range(len(P)):
                 if str(edges_of_v_in_P[i]).strip("[]") in str(P[j]):
-                    print(str(edges_of_v_in_P[i]))
+                    #print(str(edges_of_v_in_P[i]))
                     counter = counter + 1
             p.append(counter)
-        print("p is:")
+        #print("p is:")
         print(p)
         # for i = 1 to r
         previous_agents = agents.copy()
+
         for i in range(len(edges_of_v_in_P)):
-            print(agents)
+            #print(agents)
             print("i is:")
             print(i)
-            print("p[i] is")
-            print(p[i])
+            #print("p[i] is")
+            #print(p[i])
             # move p_i agents to w_i
-
-
+            #true_list_of_agents_on_v
+            true_list_of_agents_on_v = []
+            for key in agents:
+                if agents[key] ==  v:
+                    true_list_of_agents_on_v.append(key)
+            #list_of_agents_on_v is actually just the number we want to send to w_i
             list_of_agents_on_v = []
             for key in agents:
                 if agents[key] == v and len(list_of_agents_on_v) < p[i]:
                     list_of_agents_on_v.append(key)
             nr_of_agents_on_v = len(list_of_agents_on_v)
+            print("list of agents on v")
             print(list_of_agents_on_v)
+            print("v is")
             print(v)
 
             position_of_agents_on_v = []
-            for k in range(nr_of_agents_on_v):
-                print("k is:")
-                print(type(k))
-                print(k)
-                print("nr_of_agents_on_v")
-                print(type(nr_of_agents_on_v))
-                print(nr_of_agents_on_v)
-                print("list_of_agents_on_v")
-                print(type(list_of_agents_on_v))
-                print(list_of_agents_on_v)
-                print("edges of v in P")
-                print(type(edges_of_v_in_P[i]))
-                print(edges_of_v_in_P[i])
-                position_of_agents_on_v.append(edges_of_v_in_P[i][1])
-                print("print(list_of_agents_on_v[k+1])")
-                print(list_of_agents_on_v[k])
-                print("position_of_agents_on_v[k]")
-                print("position_of_agents_on_v[k]")
-                for key in agents:
-                    if list_of_agents_on_v[k] == key:
-                        agents[key] = position_of_agents_on_v[k]
-                        print("agents")
-                        print(agents)
+            #here we check if there are already agents on the neighbour, and if there are, we skip the moving there
+            move_agent = True
+            for key in agents:
+                if agents[key] == edges_of_v_in_P[i][1]:
+                    move_agent = False
 
-            print("moved p_i agents to w_i, agents are right now at:")
-            print(agents)
-            print(color)
+            # in this for loop, for each k, we only move one agent at a time, k in range(nr_of_agents_on_v total agents
+            if move_agent:
+                for k in range(nr_of_agents_on_v):
+                    print("k is:")
+                    #print(type(k))
+                    print(k)
+                    #print("nr_of_agents_on_v")
+                    #print(type(nr_of_agents_on_v))
+                    #print(nr_of_agents_on_v)
+                    #print("list_of_agents_on_v")
+                    #print(type(list_of_agents_on_v))
+                    #print(list_of_agents_on_v)
+                    #print("edges of v in P")
+                    #print(type(edges_of_v_in_P[i]))
+                    #print(edges_of_v_in_P[i])
+
+                    position_of_agents_on_v.append(edges_of_v_in_P[i][1])
+                    print("position of agents_on_v (this is where we move them to)")
+                    print(position_of_agents_on_v)
+                    #print("#print(list_of_agents_on_v[k+1])")
+                    #print(list_of_agents_on_v[k])
+                    #print("position_of_agents_on_v[k]")
+                    #print("position_of_agents_on_v[k]")
+                    for key in agents:
+                        if list_of_agents_on_v[k] == key:
+                            agents[key] = position_of_agents_on_v[k]
+                            #print("agents")
+                            #print(agents)
+
+            #print("moved p_i agents to w_i, agents are right now at:")
+            #print(agents)
+            #print(color)
         mesh_2d.color_sync(Z, agents, previous_agents, color, m)
-        print(agents)
+        #print(agents)
         print("iteration is over")
         iterations = iterations + 1
         print("nr of iterations so far")
         print(iterations)
 
-        print(flipped_agents)
+        #print(flipped_agents)
         values = list(agents.values())
         print("values")
         print(values)
@@ -227,7 +247,7 @@ def create_grid_3d(dimensions, isperioidic, m):
         forward_i = False
         forward_j = False
         canonical_path = []
-        print(len(canonical_path))
+        #print(len(canonical_path))
         for k in range(dim3):
             forward_i = not forward_i
             if forward_i:
@@ -248,18 +268,18 @@ def create_grid_3d(dimensions, isperioidic, m):
                     else:
                         for j in range(dim2 - 1, -1, -1):
                             canonical_path.append((i, j, k))
-        print("canonical_path")
-        print(canonical_path)
-        print(len(canonical_path))
+        #print("canonical_path")
+        #print(canonical_path)
+        #print(len(canonical_path))
         # moving agent through canonical path
         for i in range(len(canonical_path) - 1):
             previous_agents = agents.copy()
             agents[0] = canonical_path[i + 1]
-            print(agents[0])
+            #print(agents[0])
             mesh_2d.color_sync(Z, agents, previous_agents, color, m)
-            print(color)
+            #print(color)
     if m == 2:
-        print(agents)
+        #print(agents)
         forward_j = False
         for i in (range(dim3)):
             for j in range(dim2-1):
@@ -272,9 +292,9 @@ def create_grid_3d(dimensions, isperioidic, m):
                         agents[k] = (x, y + 1, z)
                     else:
                         agents[k] = (x, y - 1, z)
-                print(agents)
+                #print(agents)
                 mesh_2d.color_sync(Z, agents, previous_agents, color, m)
-                print(color)
+                #print(color)
             previous_agents = agents.copy()
             #now all agents moved one in the y coord
             # move one agent at a time, increasing z coord
@@ -283,35 +303,40 @@ def create_grid_3d(dimensions, isperioidic, m):
                 for k in range(dim1):
                     (x, y, z) = agents[k]
                     agents[k] = (x, y, z + 1)
-                print(agents)
+                #print(agents)
                 mesh_2d.color_sync(Z, agents, previous_agents, color, m)
-                print(color)
+                #print(color)
     if m == 1:
-        print(agents)
+        #print(agents)
         for i in range(dim3-1):
             previous_agents = agents.copy()
             for j in range(nr_of_agents):
 
-                print("agents: ")
-                print(type(agents))
-                print(agents)
+                #print("agents: ")
+                #print(type(agents))
+                #print(agents)
                 (x, y, z) = agents[j]
                 agents[j] = (x, y, z+1)
-            print(agents)
+            #print(agents)
             mesh_2d.color_sync(Z, agents, previous_agents, color, m)
-            print(color)
-    print(list(Z.nodes))
-    print(color)
-    print(list(Z.nodes))
-    print(color)
+            #print(color)
+    #print(list(Z.nodes))
+    #print(color)
+    #print(list(Z.nodes))
+    #print(color)
     nr_of_black_nodes = 0
     for key in color:
         if color[key] == "black":
-            print(key)
+            #print(key)
             nr_of_black_nodes = nr_of_black_nodes + 1
-    print(nr_of_black_nodes)
-    print("nr of iterations")
-    print(iterations)
+    #print(nr_of_black_nodes)
+    #print("nr of iterations")
+    #print(iterations)
+    for key in color:
+        if color[key] == "grey":
+            print("some nodes are grey, algorithm failed")
+            exit()
+    print("no grey nodes remain")
 # grid_graph takes a list of dimensions as its input
 # for some reason dimensions are in reverse order
 # so the first item of the list will be the nth dimension

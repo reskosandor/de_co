@@ -58,7 +58,7 @@ def create_grid_3d(dimensions, isperioidic, m):
     #plt.show()
 
     #---computing shortest paths in C---
-    #print(list(C.nodes))
+    print(list(C.nodes))
     P = []
     agents = {}
     previous_agents = {}
@@ -70,9 +70,31 @@ def create_grid_3d(dimensions, isperioidic, m):
     #start with a set of |C| agents in v_(0,0)
     nr_of_agents = C.number_of_nodes()
 
+    # constructing P in a new way
+    # v = (0, 0, 0) is in the bottom left corner
+    # shortest path: move "up" as long as we need to, then move "right" as long as we need to
     for i in list(C.nodes):
         #print(nx.shortest_path(C, source = (0, 0, 0), target = i))
-        P.append(nx.shortest_path(C, source = (0, 0, 0), target = i))
+        #P.append(nx.shortest_path(C, source = (0, 0, 0), target = i))
+        sublist = []
+        print("(x,y,z) is:")
+        (x, y, z) = i
+        print((x, y, z))
+
+        sublist.append((0, 0, 0))
+        k = 0
+        l = 0
+        for j in range(x):
+            k = k + 1
+            sublist.append((k, 0, z))
+
+        if y > 0:
+            for j in range(y):
+                l = l + 1
+                sublist.append((x, l, z))
+
+        print(sublist)
+        P.append(sublist)
     print("P is :")
     print(P)
     for i in range(nr_of_agents):
@@ -365,6 +387,6 @@ def create_grid_3d(dimensions, isperioidic, m):
 # so the first item of the list will be the nth dimension
 
 
-dimensions = [11, 11, 11]
+dimensions = [20, 17, 16]
 
-create_grid_3d(dimensions, False, 1)
+create_grid_3d(dimensions, False, 2)

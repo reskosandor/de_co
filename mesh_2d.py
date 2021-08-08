@@ -35,7 +35,7 @@ def create_grid_2d(dim1, dim2, isperioidic, m):
     #nx.draw(C)
     #plt.show()
 
-    #---computing shortest pahts in C---
+    #---computing shortest paths in C---
     print(list(C.nodes))
     P = []
     agents = {}
@@ -148,6 +148,7 @@ def create_grid_2d(dim1, dim2, isperioidic, m):
             else:
                 for j in range(dim2-1, -1, -1):
                     canonical_path.append((i, j))
+        print("canonical_path")
         print(canonical_path)
         print(len(canonical_path))
     #moving agent through canonical path
@@ -169,6 +170,19 @@ def create_grid_2d(dim1, dim2, isperioidic, m):
             print(color)
     print(list(Z.nodes))
     print(color)
+    nr_of_black_nodes = 0
+    for key in color:
+        if color[key] == "black":
+            # print(key)
+            nr_of_black_nodes = nr_of_black_nodes + 1
+    print(nr_of_black_nodes)
+    # print("nr of iterations")
+    # print(iterations)
+    for key in color:
+        if color[key] == "grey":
+            print("some nodes are grey, algorithm failed")
+            exit()
+    print("no grey nodes remain")
 
 def color_sync(graph, agents, previous_agents, color, m):
     for key in color:
@@ -195,4 +209,4 @@ def color_sync(graph, agents, previous_agents, color, m):
 
 
 
-create_grid_2d(3, 4, False, 2)
+create_grid_2d(2, 2, False, 1)

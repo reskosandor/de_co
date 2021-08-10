@@ -286,6 +286,9 @@ def create_grid_2d(dim1, dim2, isperioidic, m):
     if m > 1:
         itercube(2, y_global, dims, m, agents, Z, color)
 
+    if m == 1:
+        brick(2, 1, dims, agents, y, Z, color, m)
+
     nr_of_black_nodes = 0
     for key in color:
         if color[key] == "black":
@@ -350,7 +353,7 @@ def cube(t,y, dimensions, agents, Z, color, m):
     else:
         for h in range(dimensions[(t-1)]):
             cube(t-1, y, dimensions, agents)
-            if h < dimensions[(t-1)] -1:
+            if h < dimensions[(t-1)/2] -1:
                 previous_agents = agents.copy()
                 move([t, 0], t, -1, agents, dimensions)
                 print(agents)
@@ -369,8 +372,26 @@ def itercube(s,y, dimensions, m, agents, Z, color):
             move([1, 2], s, 1, agents)
             mesh_2d.color_sync(Z, agents, previous_agents, color, m)
 
+def brick(t, b, dimensions, agents, y, Z, color, m):
+    if t == b+1:
+        shift = 0
+        print("i in range is")
+        print(dimensions[b])
+        for i in range((dimensions[b]) - 2):
+            previous_agents = agents.copy()
+            move([b+1, shift + 1], b+1, y, agents, dimensions)
+            shift = shift + y
+            print("moved")
+            print(agents)
+            mesh_2d.color_sync(Z, agents, previous_agents, color, m)
+        y = 0 - y
+    else:
+        for o in range(int((dimensions[t-1] / 2)) - 1):
+            brick(t-1)
+            if o < (dimensions[t-1] / 2) - 1:
+                move([t, 0], t, -1, agents, dimensions)
+                move([t, 1], t, -1, agents, dimensions)
 
 
 
-
-create_grid_2d(4, 4, True, 2)
+create_grid_2d(22, 22, True, 1)

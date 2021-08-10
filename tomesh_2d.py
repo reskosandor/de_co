@@ -316,12 +316,12 @@ def cube(t,y, dimensions, agents, agents_snapshot):
     if t == 2:
         for o in range(int(dimensions[1] / 2)):
             for i in range(dimensions[0] - 2):
-                move([i+1, 1], 1, y, agents, dimensions, agents_snapshot)
+                move([1, 1], 1, y, agents, dimensions, agents_snapshot)
                 print(agents)
             y = 0 - y
             if o < (int(dimensions[1] / 2)) - 1:
-                move([2 - o, 0], 2, -1, agents, dimensions, agents_snapshot)
-                move([2 + o, 1], 2, 1, agents, dimensions, agents_snapshot)
+                move([2, 0], 2, -1, agents, dimensions, agents_snapshot)
+                move([2, 1], 2, 1, agents, dimensions, agents_snapshot)
                 print(agents)
     else:
         for h in range(dimensions[(t-1)]):
@@ -336,6 +336,7 @@ def itercube(s,y, dimensions, m, agents, agents_snapshot):
     if s == 4 - m:
         cube(s, y, dimensions, agents, agents_snapshot)
     else:
+        print("itercube else")
         for i in range(dimensions[s - 1]):
             itercube(s-1, y, dimensions, m, agents, agents_snapshot)
             move([1, 1], s, 1, agents, dimensions, agents_snapshot)

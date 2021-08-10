@@ -209,4 +209,4 @@ def color_sync(graph, agents, previous_agents, color, m):
 
 
 
-create_grid_2d(2, 2, False, 1)
+#create_grid_2d(2, 2, False, 1)

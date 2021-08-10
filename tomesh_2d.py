@@ -282,15 +282,15 @@ def create_grid_2d(dim1, dim2, isperioidic, m):
             exit()
     print(agents)
 
-
+    agents_snapshot = agents.copy()
     if m > 1:
-        itercube(2, y_global, dims, m, agents)
+        itercube(2, y_global, dims, m, agents, agents_snapshot)
 
     print( (1 + 2) % 3)
 
-def move(A, x, y, agents, dimensions):
-    for key in agents:
-        (a, b) = agents[key]
+def move(A, x, y, agents, dimensions, agents_snapshot):
+    for key in agents_snapshot:
+        (a, b) = agents_snapshot[key]
         #if first vertex
         if A[0] == 1:
             #if the first coord is right
@@ -312,34 +312,34 @@ def move(A, x, y, agents, dimensions):
                 if x == 2:
                     agents[key] = (a, (b+y) % dimensions[1])
 
-def cube(t,y, dimensions, agents):
+def cube(t,y, dimensions, agents, agents_snapshot):
     if t == 2:
         for o in range(int(dimensions[1] / 2)):
             for i in range(dimensions[0] - 2):
-                move([i+1, 1], 1, y, agents, dimensions)
+                move([i+1, 1], 1, y, agents, dimensions, agents_snapshot)
                 print(agents)
             y = 0 - y
             if o < (int(dimensions[1] / 2)) - 1:
-                move([2 - o, 0], 2, -1, agents, dimensions)
-                move([2 + o, 1], 2, 1, agents, dimensions)
+                move([2 - o, 0], 2, -1, agents, dimensions, agents_snapshot)
+                move([2 + o, 1], 2, 1, agents, dimensions, agents_snapshot)
                 print(agents)
     else:
         for h in range(dimensions[(t-1)]):
             cube(t-1, y, dimensions, agents)
             if h < dimensions[(t-1)] -1:
-                move([t, 0], t, -1, agents, dimensions)
+                move([t, 0], t, -1, agents, dimensions, agents_snapshot)
                 print(agents)
-                move([t, 1], t, 1, agents, dimensions)
+                move([t, 1], t, 1, agents, dimensions, agents_snapshot)
                 print(agents)
 
-def itercube(s,y, dimensions, m, agents):
+def itercube(s,y, dimensions, m, agents, agents_snapshot):
     if s == 4 - m:
-        cube(s, y, dimensions, agents)
+        cube(s, y, dimensions, agents, agents_snapshot)
     else:
         for i in range(dimensions[s - 1]):
-            itercube(s-1, y, dimensions, m, agents)
-            move([1, 1], s, 1, agents)
-            move([1, 2], s, 1, agents)
+            itercube(s-1, y, dimensions, m, agents, agents_snapshot)
+            move([1, 1], s, 1, agents, dimensions, agents_snapshot)
+            move([1, 2], s, 1, agents, dimensions, agents_snapshot)
 
 
 

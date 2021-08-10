@@ -284,9 +284,22 @@ def create_grid_2d(dim1, dim2, isperioidic, m):
 
 
     if m > 1:
-        itercube(2, y_global, dims, m, agents)
+        itercube(2, y_global, dims, m, agents, Z, color)
 
-    print( (1 + 2) % 3)
+    nr_of_black_nodes = 0
+    for key in color:
+        if color[key] == "black":
+            # print(key)
+            nr_of_black_nodes = nr_of_black_nodes + 1
+    print(nr_of_black_nodes)
+    # print("nr of iterations")
+    # print(iterations)
+    for key in color:
+        if color[key] == "grey":
+            print("some nodes are grey, algorithm failed")
+            exit()
+    print("no grey nodes remain")
+
 
 def move(A, x, y, agents, dimensions):
     for key in agents:
@@ -312,35 +325,47 @@ def move(A, x, y, agents, dimensions):
                 if x == 2:
                     agents[key] = (a, (b+y) % dimensions[1])
 
-def cube(t,y, dimensions, agents):
+def cube(t,y, dimensions, agents, Z, color, m):
     if t == 2:
+        shift = 0
+        print("cube is starting")
         for o in range(int(dimensions[1] / 2)):
             for i in range(dimensions[0] - 2):
-                move([i+1, 1], 1, y, agents, dimensions)
+                previous_agents = agents.copy()
+                move([1, (shift*y + 1) % dimensions[0]], 1, y, agents, dimensions)
+                #print("we just moved the agents on the vertices, where " + str(1) + "st coord is " +str((shift*y + 1) % dimensions[0]) + ", its first coord is changed by " + str(y))
+                shift = shift + y*y
+                mesh_2d.color_sync(Z, agents, previous_agents, color, m)
                 print(agents)
             y = 0 - y
             if o < (int(dimensions[1] / 2)) - 1:
-                move([2 - o, 0], 2, -1, agents, dimensions)
-                move([2 + o, 1], 2, 1, agents, dimensions)
+                previous_agents = agents.copy()
+                move([2, 0 - o], 2, -1, agents, dimensions)
+                move([2, 1 + o], 2, 1, agents, dimensions)
+                mesh_2d.color_sync(Z, agents, previous_agents, color, m)
+                print("if happened")
                 print(agents)
     else:
         for h in range(dimensions[(t-1)]):
             cube(t-1, y, dimensions, agents)
             if h < dimensions[(t-1)] -1:
+                previous_agents = agents.copy()
                 move([t, 0], t, -1, agents, dimensions)
                 print(agents)
                 move([t, 1], t, 1, agents, dimensions)
+                mesh_2d.color_sync(Z, agents, previous_agents, color, m)
                 print(agents)
 
-def itercube(s,y, dimensions, m, agents):
+def itercube(s,y, dimensions, m, agents, Z, color):
     if s == 4 - m:
-        cube(s, y, dimensions, agents)
+        cube(s, y, dimensions, agents, Z, color, m)
     else:
         for i in range(dimensions[s - 1]):
+            previous_agents = agents.copy()
             itercube(s-1, y, dimensions, m, agents)
             move([1, 1], s, 1, agents)
             move([1, 2], s, 1, agents)
-
+            mesh_2d.color_sync(Z, agents, previous_agents, color, m)
 
 
 

@@ -2,6 +2,8 @@ import networkx as nx
 import matplotlib.pyplot as plt
 import mesh_2d
 
+y_global = 1
+
 def create_grid_3d(dimensions_input, isperioidic, m):
 
 
@@ -9,7 +11,7 @@ def create_grid_3d(dimensions_input, isperioidic, m):
     dim1 = dims[0]
     dim2 = dims[1]
     dim3 = dims[2]
-    y_global = 1
+
 
     if dim2 < dim1 or dim3 < dim2 or dim3 < dim1:
         print("dimensions must be in monotonic increasing sequence")
@@ -311,7 +313,7 @@ def create_grid_3d(dimensions_input, isperioidic, m):
     s = 3
 
     if m >= 3:
-        itercube(s, y_global, dims, m, agents, Z, color, agents_snapshot)
+        itercube(s, dims, m, agents, Z, color, agents_snapshot)
 
     if m <= 2:
         brick(2, 1, dims, agents, y, Z, color, m)
@@ -376,22 +378,23 @@ def move(A, x, y, agents, dimensions, agents_snapshot):
                     agents[key] = (a, b, (c + y) % dimensions[2])
 
 
-def cube(t,y, dimensions, agents, Z, color, m, agents_snapshot):
+def cube(t, dimensions, agents, Z, color, m, agents_snapshot):
+    global y_global
     if t == 2:
         #shift = 0
         print("cube is starting")
         for o in range(int(dimensions[1] / 2)):
             for i in range(dimensions[0] - 2):
                 previous_agents = agents.copy()
-                move([1, 1 % dimensions[0]], 1, y, agents, dimensions, agents_snapshot)
-                print("we just moved the agents on the vertices, where 1st coord is " + str(1 % dimensions[0]) + ", its first coord is changed by " + str(y))
+                move([1, 1 % dimensions[0]], 1, y_global, agents, dimensions, agents_snapshot)
+                print("we just moved the agents on the vertices, where 1st coord is " + str(1 % dimensions[0]) + ", its first coord is changed by " + str(y_global))
                 #shift = shift + y
                 #print("shift became")
                 #print(shift)
                 mesh_2d.color_sync(Z, agents, previous_agents, color, m)
                 print(agents)
-            y = 0 - y
-            print("value of y is " + str(y))
+            y_global = 0 - y_global
+            print("value of y is " + str(y_global))
             if o < (int(dimensions[1] / 2)) - 1:
                 previous_agents = agents.copy()
                 move([2, 0 % dimensions[1]], 2, -1, agents, dimensions, agents_snapshot)
@@ -411,16 +414,16 @@ def cube(t,y, dimensions, agents, Z, color, m, agents_snapshot):
                 mesh_2d.color_sync(Z, agents, previous_agents, color, m)
                 print(agents)
 
-def itercube(s,y, dimensions, m, agents, Z, color, agents_snapshot):
+def itercube(s, dimensions, m, agents, Z, color, agents_snapshot):
     if s == 6 - m:
         print("ITERCUBE s == 6-m commencing")
-        cube(s, y, dimensions, agents, Z, color, m, agents_snapshot)
+        cube(s, dimensions, agents, Z, color, m, agents_snapshot)
     else:
         print("ITERCUBE else is commencing")
         for i in range(dimensions[s - 1]):
             previous_agents = agents.copy()
-            print("y is " + str(y))
-            itercube(s-1, y, dimensions, m, agents, Z, color, agents_snapshot)
+            #print("y is " + str(y_global))
+            itercube(s-1, dimensions, m, agents, Z, color, agents_snapshot)
             print("moving 1 in the " + str(s) + "th dimension")
             move([1, 1], s, 1, agents, dimensions, agents_snapshot)
             move([1, 0], s, 1, agents, dimensions, agents_snapshot)

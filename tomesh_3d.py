@@ -28,7 +28,7 @@ def create_grid_3d(dimensions_input, isperioidic, m):
     print(nx.info(Z))
     #nx.draw(Z)
     #plt.show()
-    # ---initial_set_(2, m)_begins)---
+    # ---initial_set_(3, m)_begins)---
     # ---creating_C---
     print(list(Z.nodes))
     C = Z.copy()
@@ -85,26 +85,32 @@ def create_grid_3d(dimensions_input, isperioidic, m):
 
     # constructing P in a new way
     # v = (0, 0, 0) is in the bottom left corner
-    # shortest path: move "up" as long as we need to, then move "right" as long as we need to
+    # shortest path: move forward in the first dimension as long as we need to, then second, then third dimension
     for i in list(C.nodes):
         #print(nx.shortest_path(C, source = (0, 0, 0), target = i))
         #P.append(nx.shortest_path(C, source = (0, 0, 0), target = i))
         sublist = []
-        print("(x,y) is:")
-        (x, y) = i
-        print((x, y))
+        print("(x,y, z) is:")
+        (x, y, z) = i
+        print((x, y, z))
 
-        sublist.append((0, 0))
+        sublist.append((0, 0, 0))
         k = 0
         l = 0
+        n = 0
         for j in range(x):
             k = k + 1
-            sublist.append((k, 0))
+            sublist.append((k, 0, 0))
 
         if y > 0:
             for j in range(y):
                 l = l + 1
-                sublist.append((x, l))
+                sublist.append((x, l, 0))
+
+        if z > 0:
+            for n in range(z):
+                n = n + 1
+                sublist.append((x, y, n))
 
         print(sublist)
         P.append(sublist)
@@ -410,4 +416,4 @@ def brick(t, b, dimensions, agents, y, Z, color, m):
 
 dimensions = [6, 4, 2]
 
-create_grid_3d(dimensions, True, 1)
+create_grid_3d(dimensions, True, 3)

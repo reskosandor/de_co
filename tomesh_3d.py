@@ -304,11 +304,14 @@ def create_grid_3d(dimensions_input, isperioidic, m):
     print("agents at the end of INITIAL SET")
     print(agents)
 
+    # variable declaration
+    t = 6 - m
+    s = 3
 
-    if m > 1:
-        itercube(2, y_global, dims, m, agents, Z, color)
+    if m >= 3:
+        itercube(s, y_global, dims, m, agents, Z, color)
 
-    if m == 1:
+    if m <= 2:
         brick(2, 1, dims, agents, y, Z, color, m)
 
     nr_of_black_nodes = 0
@@ -328,27 +331,47 @@ def create_grid_3d(dimensions_input, isperioidic, m):
 
 def move(A, x, y, agents, dimensions):
     for key in agents:
-        (a, b) = agents[key]
+        (a, b, c) = agents[key]
         #if first vertex
         if A[0] == 1:
             #if the first coord is right
             if a == A[1]:
                 # if we want to modify the 1st index
                 if x == 1:
-                    agents[key] = ((a+y) % dimensions[0], b)
+                    agents[key] = ((a+y) % dimensions[0], b, c)
                 # if we want to modify the 2nd index
                 if x == 2:
-                    agents[key] = (a, (b+y) % dimensions[1])
+                    agents[key] = (a, (b+y) % dimensions[1], c)
+                # if we want to modify the 3rd index
+                if x == 3:
+                    agents[key] = (a, b, (c+y) % dimensions[2])
         # if second vertex
         if A[0] == 2:
             #if the 2nd coord is right
             if b == A[1]:
                 #if we want to modify the 1st index
                 if x == 1:
-                    agents[key] = ((a+y) % dimensions[0], b)
+                    agents[key] = ((a+y) % dimensions[0], b, c)
                 # if we want to modify the 2nd index
                 if x == 2:
-                    agents[key] = (a, (b+y) % dimensions[1])
+                    agents[key] = (a, (b+y) % dimensions[1], c)
+                # if we want to modify the 3rd index
+                if x == 3:
+                    agents[key] = (a, b, (c+y) % dimensions[2])
+        # if third vertex
+        if A[0] == 3:
+            #if the 3rd coord is right
+            if c == A[2]:
+                # if we want to modify the 1st index
+                if x == 1:
+                    agents[key] = ((a + y) % dimensions[0], b, c)
+                # if we want to modify the 2nd index
+                if x == 2:
+                    agents[key] = (a, (b + y) % dimensions[1], c)
+                # if we want to modify the 3rd index
+                if x == 3:
+                    agents[key] = (a, b, (c + y) % dimensions[2])
+
 
 def cube(t,y, dimensions, agents, Z, color, m):
     if t == 2:
@@ -374,6 +397,7 @@ def cube(t,y, dimensions, agents, Z, color, m):
                 print(agents)
     else:
         for h in range(dimensions[(t-1)]):
+            print("calling CUBE recursively for t-1")
             cube(t-1, y, dimensions, agents)
             if h < dimensions[(t-1)/2] -1:
                 previous_agents = agents.copy()
@@ -384,14 +408,16 @@ def cube(t,y, dimensions, agents, Z, color, m):
                 print(agents)
 
 def itercube(s,y, dimensions, m, agents, Z, color):
-    if s == 4 - m:
+    if s == 6 - m:
+        print("ITERCUBE s == 6-m commencing")
         cube(s, y, dimensions, agents, Z, color, m)
     else:
+        print("ITERCUBE else is commencing")
         for i in range(dimensions[s - 1]):
             previous_agents = agents.copy()
-            itercube(s-1, y, dimensions, m, agents)
-            move([1, 1], s, 1, agents)
-            move([1, 2], s, 1, agents)
+            itercube(s-1, y, dimensions, m, agents, Z, color)
+            #move([1, 1], s, 1, agents, dimensions)
+            #move([1, 0], s, 1, agents, dimensions)
             mesh_2d.color_sync(Z, agents, previous_agents, color, m)
 
 def brick(t, b, dimensions, agents, y, Z, color, m):

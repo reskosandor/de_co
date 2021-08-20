@@ -333,11 +333,12 @@ def create_grid_3d(dimensions_input, isperioidic, m):
 
 def move(A, x, y, agents, dimensions, agents_snapshot):
     for key in agents_snapshot:
-        (a, b, c) = agents_snapshot[key]
+        (a, b, c) = agents[key]
+        (d, e ,f) = agents_snapshot[key]
         #if first vertex
         if A[0] == 1:
             #if the first coord is right
-            if a == A[1]:
+            if d == A[1]:
                 # if we want to modify the 1st index
                 if x == 1:
                     agents[key] = ((a+y) % dimensions[0], b, c)
@@ -350,7 +351,7 @@ def move(A, x, y, agents, dimensions, agents_snapshot):
         # if second vertex
         if A[0] == 2:
             #if the 2nd coord is right
-            if b == A[1]:
+            if e == A[1]:
                 #if we want to modify the 1st index
                 if x == 1:
                     agents[key] = ((a+y) % dimensions[0], b, c)
@@ -363,7 +364,7 @@ def move(A, x, y, agents, dimensions, agents_snapshot):
         # if third vertex
         if A[0] == 3:
             #if the 3rd coord is right
-            if c == A[2]:
+            if f == A[2]:
                 # if we want to modify the 1st index
                 if x == 1:
                     agents[key] = ((a + y) % dimensions[0], b, c)
@@ -390,12 +391,13 @@ def cube(t,y, dimensions, agents, Z, color, m, agents_snapshot):
                 mesh_2d.color_sync(Z, agents, previous_agents, color, m)
                 print(agents)
             y = 0 - y
+            print("value of y is " + str(y))
             if o < (int(dimensions[1] / 2)) - 1:
                 previous_agents = agents.copy()
                 move([2, 0 % dimensions[1]], 2, -1, agents, dimensions, agents_snapshot)
                 move([2, 1 % dimensions[1]], 2, 1, agents, dimensions, agents_snapshot)
                 mesh_2d.color_sync(Z, agents, previous_agents, color, m)
-                print("if happened")
+                print("if happened (moving along second dimension)")
                 print(agents)
     else:
         for h in range(dimensions[(t-1)]):
@@ -417,9 +419,12 @@ def itercube(s,y, dimensions, m, agents, Z, color, agents_snapshot):
         print("ITERCUBE else is commencing")
         for i in range(dimensions[s - 1]):
             previous_agents = agents.copy()
+            print("y is " + str(y))
             itercube(s-1, y, dimensions, m, agents, Z, color, agents_snapshot)
+            print("moving 1 in the " + str(s) + "th dimension")
             move([1, 1], s, 1, agents, dimensions, agents_snapshot)
             move([1, 0], s, 1, agents, dimensions, agents_snapshot)
+            print(agents)
             mesh_2d.color_sync(Z, agents, previous_agents, color, m)
 
 def brick(t, b, dimensions, agents, y, Z, color, m):
@@ -443,6 +448,6 @@ def brick(t, b, dimensions, agents, y, Z, color, m):
                 move([t, 1], t, -1, agents, dimensions)
 
 
-dimensions = [6, 4, 2]
+dimensions = [6, 6, 6]
 
 create_grid_3d(dimensions, True, 4)

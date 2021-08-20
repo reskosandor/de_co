@@ -116,9 +116,9 @@ def create_grid_3d(dimensions_input, isperioidic, m):
         P.append(sublist)
     print("P is :")
     print(P)
-
+    #starting with |C| agents in v_0
     for i in range(nr_of_agents):
-        agents[i] = (0, 0)
+        agents[i] = (0, 0, 0)
     #print(agents)
     mesh_2d.color_sync(Z, agents, previous_agents, color, m)
     #print(color)
@@ -301,6 +301,7 @@ def create_grid_3d(dimensions_input, isperioidic, m):
             print(len(true_list_of_agents_on_v))
             print("something horrible happened")
             exit()
+    print("agents at the end of INITIAL SET")
     print(agents)
 
 
@@ -416,4 +417,4 @@ def brick(t, b, dimensions, agents, y, Z, color, m):
 
 dimensions = [6, 4, 2]
 
-create_grid_3d(dimensions, True, 3)
+create_grid_3d(dimensions, True, 4)

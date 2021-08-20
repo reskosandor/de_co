@@ -303,13 +303,15 @@ def create_grid_3d(dimensions_input, isperioidic, m):
             exit()
     print("agents at the end of INITIAL SET")
     print(agents)
+    #try snapshotting agents
+    agents_snapshot = agents.copy()
 
     # variable declaration
     t = 6 - m
     s = 3
 
     if m >= 3:
-        itercube(s, y_global, dims, m, agents, Z, color)
+        itercube(s, y_global, dims, m, agents, Z, color, agents_snapshot)
 
     if m <= 2:
         brick(2, 1, dims, agents, y, Z, color, m)
@@ -329,9 +331,9 @@ def create_grid_3d(dimensions_input, isperioidic, m):
     print("no grey nodes remain")
 
 
-def move(A, x, y, agents, dimensions):
-    for key in agents:
-        (a, b, c) = agents[key]
+def move(A, x, y, agents, dimensions, agents_snapshot):
+    for key in agents_snapshot:
+        (a, b, c) = agents_snapshot[key]
         #if first vertex
         if A[0] == 1:
             #if the first coord is right
@@ -373,14 +375,14 @@ def move(A, x, y, agents, dimensions):
                     agents[key] = (a, b, (c + y) % dimensions[2])
 
 
-def cube(t,y, dimensions, agents, Z, color, m):
+def cube(t,y, dimensions, agents, Z, color, m, agents_snapshot):
     if t == 2:
         shift = 0
         print("cube is starting")
         for o in range(int(dimensions[1] / 2)):
             for i in range(dimensions[0] - 2):
                 previous_agents = agents.copy()
-                move([1, (shift + 1) % dimensions[0]], 1, y, agents, dimensions)
+                move([1, (shift + 1) % dimensions[0]], 1, y, agents, dimensions, agents_snapshot)
                 print("we just moved the agents on the vertices, where " + str(1) + "st coord is " +str((shift + 1) % dimensions[0]) + ", its first coord is changed by " + str(y))
                 shift = shift + y
                 print("shift became")
@@ -390,34 +392,34 @@ def cube(t,y, dimensions, agents, Z, color, m):
             y = 0 - y
             if o < (int(dimensions[1] / 2)) - 1:
                 previous_agents = agents.copy()
-                move([2, (0 - o) % dimensions[1]], 2, -1, agents, dimensions)
-                move([2, (1 + o) % dimensions[1]], 2, 1, agents, dimensions)
+                move([2, (0 - o) % dimensions[1]], 2, -1, agents, dimensions, agents_snapshot)
+                move([2, (1 + o) % dimensions[1]], 2, 1, agents, dimensions, agents_snapshot)
                 mesh_2d.color_sync(Z, agents, previous_agents, color, m)
                 print("if happened")
                 print(agents)
     else:
         for h in range(dimensions[(t-1)]):
             print("calling CUBE recursively for t-1")
-            cube(t-1, y, dimensions, agents)
+            cube(t-1, y, dimensions, agents, agents_snapshot)
             if h < dimensions[(t-1)/2] -1:
                 previous_agents = agents.copy()
-                move([t, 0], t, -1, agents, dimensions)
+                move([t, 0], t, -1, agents, dimensions, agents_snapshot)
                 print(agents)
-                move([t, 1], t, 1, agents, dimensions)
+                move([t, 1], t, 1, agents, dimensions, agents_snapshot)
                 mesh_2d.color_sync(Z, agents, previous_agents, color, m)
                 print(agents)
 
-def itercube(s,y, dimensions, m, agents, Z, color):
+def itercube(s,y, dimensions, m, agents, Z, color, agents_snapshot):
     if s == 6 - m:
         print("ITERCUBE s == 6-m commencing")
-        cube(s, y, dimensions, agents, Z, color, m)
+        cube(s, y, dimensions, agents, Z, color, m, agents_snapshot)
     else:
         print("ITERCUBE else is commencing")
         for i in range(dimensions[s - 1]):
             previous_agents = agents.copy()
-            itercube(s-1, y, dimensions, m, agents, Z, color)
-            #move([1, 1], s, 1, agents, dimensions)
-            #move([1, 0], s, 1, agents, dimensions)
+            itercube(s-1, y, dimensions, m, agents, Z, color, agents_snapshot)
+            move([1, 1], s, 1, agents, dimensions, agents_snapshot)
+            move([1, 0], s, 1, agents, dimensions, agents_snapshot)
             mesh_2d.color_sync(Z, agents, previous_agents, color, m)
 
 def brick(t, b, dimensions, agents, y, Z, color, m):

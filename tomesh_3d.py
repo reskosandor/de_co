@@ -377,23 +377,23 @@ def move(A, x, y, agents, dimensions, agents_snapshot):
 
 def cube(t,y, dimensions, agents, Z, color, m, agents_snapshot):
     if t == 2:
-        shift = 0
+        #shift = 0
         print("cube is starting")
         for o in range(int(dimensions[1] / 2)):
             for i in range(dimensions[0] - 2):
                 previous_agents = agents.copy()
-                move([1, (shift + 1) % dimensions[0]], 1, y, agents, dimensions, agents_snapshot)
-                print("we just moved the agents on the vertices, where " + str(1) + "st coord is " +str((shift + 1) % dimensions[0]) + ", its first coord is changed by " + str(y))
-                shift = shift + y
-                print("shift became")
-                print(shift)
+                move([1, 1 % dimensions[0]], 1, y, agents, dimensions, agents_snapshot)
+                print("we just moved the agents on the vertices, where 1st coord is " + str(1 % dimensions[0]) + ", its first coord is changed by " + str(y))
+                #shift = shift + y
+                #print("shift became")
+                #print(shift)
                 mesh_2d.color_sync(Z, agents, previous_agents, color, m)
                 print(agents)
             y = 0 - y
             if o < (int(dimensions[1] / 2)) - 1:
                 previous_agents = agents.copy()
-                move([2, (0 - o) % dimensions[1]], 2, -1, agents, dimensions, agents_snapshot)
-                move([2, (1 + o) % dimensions[1]], 2, 1, agents, dimensions, agents_snapshot)
+                move([2, 0 % dimensions[1]], 2, -1, agents, dimensions, agents_snapshot)
+                move([2, 1 % dimensions[1]], 2, 1, agents, dimensions, agents_snapshot)
                 mesh_2d.color_sync(Z, agents, previous_agents, color, m)
                 print("if happened")
                 print(agents)

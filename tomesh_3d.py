@@ -395,7 +395,7 @@ def cube(t, dimensions, agents, Z, color, m, agents_snapshot):
                 print(agents)
             y_global = 0 - y_global
             print("value of y is " + str(y_global))
-            if o < (int(dimensions[1] / 2)) - 1:
+            if o <= (int(dimensions[1] / 2)) - 1:
                 previous_agents = agents.copy()
                 move([2, 0 % dimensions[1]], 2, -1, agents, dimensions, agents_snapshot)
                 move([2, 1 % dimensions[1]], 2, 1, agents, dimensions, agents_snapshot)
@@ -451,6 +451,6 @@ def brick(t, b, dimensions, agents, y, Z, color, m):
                 move([t, 1], t, -1, agents, dimensions)
 
 
-dimensions = [6, 6, 6]
+dimensions = [8, 6, 4]
 
 create_grid_3d(dimensions, True, 4)

@@ -366,7 +366,7 @@ def move(A, x, y, agents, dimensions, agents_snapshot):
         # if third vertex
         if A[0] == 3:
             #if the 3rd coord is right
-            if f == A[2]:
+            if f == A[1]:
                 # if we want to modify the 1st index
                 if x == 1:
                     agents[key] = ((a + y) % dimensions[0], b, c)
@@ -405,8 +405,8 @@ def cube(t, dimensions, agents, Z, color, m, agents_snapshot):
     else:
         for h in range(dimensions[(t-1)]):
             print("calling CUBE recursively for t-1")
-            cube(t-1, dimensions, agents, agents_snapshot)
-            if h < dimensions[(t-1)/2] -1:
+            cube(t-1, dimensions, agents, Z, color, m, agents_snapshot)
+            if h < dimensions[int((t-1)/2)] -1:
                 previous_agents = agents.copy()
                 move([t, 0], t, -1, agents, dimensions, agents_snapshot)
                 print(agents)
@@ -451,6 +451,6 @@ def brick(t, b, dimensions, agents, y, Z, color, m):
                 move([t, 1], t, -1, agents, dimensions)
 
 
-dimensions = [8, 6, 4]
+dimensions = [10, 10, 10]
 
-create_grid_3d(dimensions, True, 4)
+create_grid_3d(dimensions, True, 3)

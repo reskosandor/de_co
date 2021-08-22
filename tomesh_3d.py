@@ -311,12 +311,13 @@ def create_grid_3d(dimensions_input, isperioidic, m):
     # variable declaration
     t = 6 - m
     s = 3
+    b = 3 - m
 
     if m >= 3:
         itercube(s, dims, m, agents, Z, color, agents_snapshot)
 
     if m <= 2:
-        brick(2, 1, dims, agents, y, Z, color, m)
+        brick(3, b, dims, agents, Z, color, m, agents_snapshot)
 
     nr_of_black_nodes = 0
     for key in color:
@@ -430,27 +431,31 @@ def itercube(s, dimensions, m, agents, Z, color, agents_snapshot):
             print(agents)
             mesh_2d.color_sync(Z, agents, previous_agents, color, m)
 
-def brick(t, b, dimensions, agents, y, Z, color, m):
+def brick(t, b, dimensions, agents, Z, color, m, agents_snapshot):
+    global y_global
+    print("are we getting at the start of the brick?")
     if t == b+1:
-        shift = 0
+        print("did we pass t == b+1?")
         print("i in range is")
         print(dimensions[b])
         for i in range((dimensions[b]) - 2):
             previous_agents = agents.copy()
-            move([b+1, shift + 1], b+1, y, agents, dimensions)
-            shift = shift + y
+            move([b+1, 1], b+1, y_global, agents, dimensions, agents_snapshot)
             print("moved")
             print(agents)
             mesh_2d.color_sync(Z, agents, previous_agents, color, m)
-        y = 0 - y
+        y_global = 0 - y_global
     else:
-        for o in range(int((dimensions[t-1] / 2)) - 1):
-            brick(t-1)
+        for o in range(int((dimensions[t-1] / 2))):
+            print("range of the o is " +str(int((dimensions[t-1] / 2)) - 1))
+            print("o currently is " +str(o))
+            brick(t-1, b, dimensions, agents, Z, color, m, agents_snapshot)
             if o < (dimensions[t-1] / 2) - 1:
-                move([t, 0], t, -1, agents, dimensions)
-                move([t, 1], t, -1, agents, dimensions)
-
+                previous_agents = agents.copy()
+                move([t, 0], t, -1, agents, dimensions, agents_snapshot)
+                move([t, 1], t, +1, agents, dimensions, agents_snapshot)
+                mesh_2d.color_sync(Z, agents, previous_agents, color, m)
 
 dimensions = [10, 10, 10]
 
-create_grid_3d(dimensions, True, 3)
+create_grid_3d(dimensions, True, 1)

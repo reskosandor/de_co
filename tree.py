@@ -1,0 +1,117 @@
+import networkx as nx
+import matplotlib.pyplot as plt
+import mesh_2d
+import random
+
+def tree(T, m):
+    print("asd")
+    T = nx.algorithms.tree.coding.from_prufer_sequence(lr)
+    print(nx.info(T))
+    #nx.draw(T)
+    #plt.show()
+
+
+    print(len([n for n in T.neighbors(0)]))
+    print(T.degree[0])
+    print(T.nodes)
+
+    def subtree(T, v_1, v):
+        T_v1_v = T.copy()
+        T_v1_v.remove_edge(v_1, v)
+        #print(list(T_v1_v))
+        for node in list(T_v1_v):
+            if node in nx.algorithms.dag.descendants(T_v1_v, v_1) or node == v_1:
+                #print(str(node) + " can remain")
+                pass
+            else:
+                T_v1_v.remove_node(node)
+                #print(str(node) + " booped")
+        return T_v1_v
+    print(T.edges())
+    print(list(T))
+    #print(list(subtree(T, 7, 1)))
+
+    def ordered_neighbors_of_v(T, v):
+        return [n for n in T.neighbors(v)]
+
+    def degree(T, v):
+        for x, y in T.edges():
+            if x == v:
+                return y
+            elif y == v:
+                return x
+
+    def alpha(v, T, m):
+        print("t.degree[v] is....")
+        print(v, flush=True)
+        print(type(v), flush=True)
+        print(T, flush=True)
+        print(type(T))
+        #print(type(T.degree[v]))
+        #print(T.degree[v], flush=True)
+        #if T.degree[v] == 0:
+        if degree(T, v) == 0:
+            print(T.degree[v], flush=True)
+            print("branch 1")
+            return 1
+        elif 0 < degree(T, v) <= m:
+            print("branch 2")
+            return alpha(ordered_neighbors_of_v(T, v)[0], subtree(T, ordered_neighbors_of_v(T, v)[0], v), m)
+        elif degree(T, v) > m and ordered_neighbors_of_v(T, v)[0] > ordered_neighbors_of_v(T, v)[m]:
+            print("branch 3")
+            return alpha(ordered_neighbors_of_v(T, v)[0], subtree(T, ordered_neighbors_of_v(T, v)[0], v), m)
+        elif degree(T, v) > m and ordered_neighbors_of_v(T, v)[0] == ordered_neighbors_of_v(T, v)[m]:
+            print("branch 4")
+            return alpha(ordered_neighbors_of_v(T, v)[0], subtree(T, ordered_neighbors_of_v(T, v)[0], v), m) + 1
+
+    a = []
+
+    print("calculating a...")
+    for node in list(T):
+        print(T.degree[node])
+    print("type", flush=True)
+    print(subtree(T, 0, 1))
+    print(subtree(T, 0, 1).degree[0], flush=True)
+    print("typends", flush=True)
+    print(subtree(T, ordered_neighbors_of_v(T, 1)[0], 1))
+
+
+    for node in list(T):
+        a[node] = alpha(node, T, m)
+        pass
+
+
+
+
+
+
+
+    #T.remove_edge(1, 7)
+    #nx.draw(T)
+
+    #print(nx.algorithms.descendants(T, 5))
+    #T.remove_node(4)
+    #print(nx.algorithms.descendants(T, 5))
+    #nx.draw(subtree(T, 7, 1))
+    #nx.draw(T)
+    #plt.show()
+
+
+
+
+
+
+
+
+
+#mylist = list(range(10))
+
+#print(mylist)
+#random.shuffle(mylist)
+#print(mylist)
+#lr = random.sample(mylist, len(mylist))
+#print(lr)
+#lr = [1, 7, 5, 7, 7, 1]
+lr = [1]
+
+tree(lr, 2)

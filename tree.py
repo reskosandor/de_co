@@ -31,7 +31,10 @@ def tree(T, m):
     print(list(T))
     #print(list(subtree(T, 7, 1)))
 
-    def ordered_neighbors_of_v(T, v):
+
+
+
+    def neighbors_of_v(T, v):
         return [n for n in T.neighbors(v)]
 
     def degree(T, v):
@@ -42,12 +45,14 @@ def tree(T, m):
                 return x
 
     def alpha(v, T, m):
-        print("t.degree[v] is....")
+        print("v is....")
         print(v, flush=True)
         print(type(v), flush=True)
         print(T, flush=True)
         print(type(T))
+        print("T consists of nodes:")
         print(list(T))
+        print("v degree is...")
         print(T.degree[v])
         #print(type(T.degree[v]))
         #print(T.degree[v], flush=True)
@@ -55,18 +60,25 @@ def tree(T, m):
         #if degree(T, v) == 0:
             print(T.degree[v], flush=True)
             print("branch 1")
+            print("returning 1")
             return 1
         elif 0 < T.degree[v] <= m:
             print("branch 2")
-            return alpha(ordered_neighbors_of_v(T, v)[0], subtree(T, ordered_neighbors_of_v(T, v)[0], v), m)
-        elif T.degree[v] > m and ordered_neighbors_of_v(T, v)[0] > ordered_neighbors_of_v(T, v)[m]:
+            value = alpha(neighbors_of_v(T, v)[0], subtree(T, neighbors_of_v(T, v)[0], v), m)
+            print("returning " + str(value), flush=True)
+            return value
+        elif T.degree[v] > m and alpha(neighbors_of_v(T, v)[0], subtree(T, neighbors_of_v(T, v)[0], v), m) > alpha(neighbors_of_v(T, v)[m], subtree(T, neighbors_of_v(T, v)[m], v), m):
             print("branch 3")
-            return alpha(ordered_neighbors_of_v(T, v)[0], subtree(T, ordered_neighbors_of_v(T, v)[0], v), m)
-        elif T.degree[v] > m and ordered_neighbors_of_v(T, v)[0] == ordered_neighbors_of_v(T, v)[m]:
+            value = alpha(neighbors_of_v(T, v)[0], subtree(T, neighbors_of_v(T, v)[0], v), m)
+            print("returning " + str(value), flush=True)
+            return value
+        elif T.degree[v] > m and alpha(neighbors_of_v(T, v)[0], subtree(T, neighbors_of_v(T, v)[0], v), m) == alpha(neighbors_of_v(T, v)[m], subtree(T, neighbors_of_v(T, v)[m], v), m):
             print("branch 4")
-            return alpha(ordered_neighbors_of_v(T, v)[0], subtree(T, ordered_neighbors_of_v(T, v)[0], v), m) + 1
+            value = alpha(neighbors_of_v(T, v)[0], subtree(T, neighbors_of_v(T, v)[0], v), m) + 1
+            print("returning " + str(value), flush=True)
+            return value
 
-    a = []
+    a = {}
 
     print("calculating a...")
     for node in list(T):
@@ -75,11 +87,12 @@ def tree(T, m):
     print(subtree(T, 0, 1))
     print(subtree(T, 0, 1).degree[0], flush=True)
     print("typends", flush=True)
-    print(subtree(T, ordered_neighbors_of_v(T, 1)[0], 1))
+    print(subtree(T, neighbors_of_v(T, 1)[0], 1))
 
-
+    print(T.edges())
     for node in list(T):
-        a.append(alpha(node, T, m))
+        a[node] = (alpha(node, T, m))
+        print("appended value for node " + str(node) + " is: " + str(a[node]))
     print(a)
 
 
@@ -89,7 +102,7 @@ def tree(T, m):
 
 
     #T.remove_edge(1, 7)
-    #nx.draw(T)
+    #nx.draw(T, with_labels=True)
 
     #print(nx.algorithms.descendants(T, 5))
     #T.remove_node(4)
@@ -113,7 +126,7 @@ def tree(T, m):
 #print(mylist)
 #lr = random.sample(mylist, len(mylist))
 #print(lr)
-#lr = [1, 7, 5, 7, 7, 1]
-lr = [1]
+lr = [1, 7, 5, 7, 7, 1]
+#lr = [1]
 
 tree(lr, 2)

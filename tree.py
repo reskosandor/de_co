@@ -77,8 +77,11 @@ def tree(T, m):
         if T.degree[v] > 0:
             v_1 = neighbors_of_v(T, v)[0]
             alpha_of_neighbors = {}
-            for node in neighbors_of_v(T, v):
+            neigh_list = neighbors_of_v(T, v)
+            for node in neigh_list:
                 alpha_of_neighbors[node] = alpha(node, subtree(T, node, v), m)
+            max_key = max(alpha_of_neighbors, key=alpha_of_neighbors.get)
+
         if T.degree[v] == 0:
         #if degree(T, v) == 0:
             print(T.degree[v], flush=True)
@@ -87,17 +90,17 @@ def tree(T, m):
             return 1
         elif 0 < T.degree[v] <= m:
             print("branch 2")
-            value = alpha(v_1, subtree(T, v_1, v), m)
+            value = alpha(max_key, subtree(T, max_key, v), m)
             print("returning " + str(value), flush=True)
             return value
-        elif T.degree[v] > m and branch3(v_1, alpha_of_neighbors):
+        elif T.degree[v] > m and branch3(max_key, alpha_of_neighbors):
             print("branch 3")
-            value = alpha(v_1, subtree(T, v_1, v), m)
+            value = alpha(max_key, subtree(T, max_key, v), m)
             print("returning " + str(value), flush=True)
             return value
-        elif T.degree[v] > m and branch4(v_1, alpha_of_neighbors):
+        elif T.degree[v] > m and branch4(max_key, alpha_of_neighbors):
             print("branch 4")
-            value = alpha(v_1, subtree(T, v_1, v), m) + 1
+            value = alpha(max_key, subtree(T, max_key, v), m) + 1
             print("returning " + str(value), flush=True)
             return value
 

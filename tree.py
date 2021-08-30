@@ -64,9 +64,9 @@ def tree(T, m):
     def alpha(v, T, m):
         print("v is....")
         print(v, flush=True)
-        print(type(v), flush=True)
-        print(T, flush=True)
-        print(type(T))
+        #print(type(v), flush=True)
+        #print(T, flush=True)
+        #print(type(T))
         print("T consists of nodes:")
         print(list(T))
         print("v degree is...")
@@ -81,12 +81,12 @@ def tree(T, m):
             for node in neigh_list:
                 alpha_of_neighbors[node] = alpha(node, subtree(T, node, v), m)
             max_key = max(alpha_of_neighbors, key=alpha_of_neighbors.get)
-
+        print("neighbors are ordered by alpha, now evaluation by degree commencing")
         if T.degree[v] == 0:
         #if degree(T, v) == 0:
             print(T.degree[v], flush=True)
             print("branch 1")
-            print("returning 1")
+            print("returning one")
             return 1
         elif 0 < T.degree[v] <= m:
             print("branch 2")
@@ -116,12 +116,72 @@ def tree(T, m):
     print(subtree(T, neighbors_of_v(T, 1)[0], 1))
 
     print(T.edges())
-    for node in list(T):
-        a[node] = (alpha(node, T, m))
-        print("appended value for node " + str(node) + " is: " + str(a[node]))
-    print(a)
+   # for node in list(T):
+        #a[node] = (alpha(node, T, m))
+        #print("appended value for node " + str(node) + " is: " + str(a[node]))
+    #print(a)
+
+    agents = {}
+    previous_agents = {}
+    color = {}
+    for nodes in T:
+        color[nodes] = "grey"
+    mesh_2d.color_sync(T, agents, previous_agents, color, m)
+    print(color)
+    T_original = T.copy()
+
+    def decontaminate(T, v, m, T_original):
+        print("decont v is " + str(v))
+        print("decont T is " + str(list(T)))
+        previous_agents = agents.copy()
+        nr_of_agents = alpha(v, T, m)
+        for i in range(nr_of_agents):
+            agents[i] = v
+        print("moving agents to " + str(v))
+        mesh_2d.color_sync(T_original, agents, previous_agents, color, m)
+        if T.degree(v) != 0:
+            v_neighbours = neighbors_of_v(T, v)
+            a = {}
+            print("v_neighbours is " + str(v_neighbours))
+            for node in v_neighbours:
+                a[node] = (alpha(node, T, m))
+            ordered_v_neighbours = []
+            print("state of a before the for loop is " + str(a))
+            for key in a:
+                print("current state of a is " + str(a))
+                max_key = max(a, key=a.get)
+                ordered_v_neighbours.append(max_key)
+                a[key] = -1
+                if len(ordered_v_neighbours) == len(a):
+                    break
+            print("len of ordered_v_neighbors is " + str(len(ordered_v_neighbours)) + "and its contents are " + str(ordered_v_neighbours))
+            for neighbor in reversed(ordered_v_neighbours):
+                decontaminate(subtree(T, neighbor, v), neighbor, m, T_original)
+                print("we were in a leaf, now we're moving back from" + str(neighbor) + " to " +str(v))
+                previous_agents = agents.copy()
+                for i in agents:
+                    if agents[i] == neighbor:
+                        agents[i] == v
+                mesh_2d.color_sync(T_original, agents, previous_agents, color, m)
+        else:
+            print("we have reached a leaf")
+
+    decontaminate(T, 0, m, T_original)
 
 
+    nr_of_black_nodes = 0
+    for key in color:
+        if color[key] == "black":
+            # print(key)
+            nr_of_black_nodes = nr_of_black_nodes + 1
+    print(nr_of_black_nodes)
+    # print("nr of iterations")
+    # print(iterations)
+    for key in color:
+        if color[key] == "grey":
+            print("some nodes are grey, algorithm failed")
+            exit()
+    print("no grey nodes remain")
 
 
 
@@ -155,4 +215,4 @@ def tree(T, m):
 lr = [1, 7, 5, 7, 7, 1]
 #lr = [1]
 
-tree(lr, 1)
+tree(lr, 3)

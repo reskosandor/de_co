@@ -398,6 +398,9 @@ def cube(t, dimensions, agents, Z, color, m, agents_snapshot):
             print("value of y is " + str(y_global))
             if o <= (int(dimensions[1] / 2)) - 1:
                 previous_agents = agents.copy()
+                #this is the move along the second dimension
+                #this needs to be working for odd dimensions
+                #also keep in mind the + 1 for the iteration (<= correction)
                 move([2, 0 % dimensions[1]], 2, -1, agents, dimensions, agents_snapshot)
                 move([2, 1 % dimensions[1]], 2, 1, agents, dimensions, agents_snapshot)
                 mesh_2d.color_sync(Z, agents, previous_agents, color, m)
@@ -440,6 +443,8 @@ def brick(t, b, dimensions, agents, Z, color, m, agents_snapshot):
         print(dimensions[b])
         for i in range((dimensions[b]) - 2):
             previous_agents = agents.copy()
+            #this is the move in the second dimension, i dont think there is a problem here
+            #need to check if cube problem is present here tho
             move([b+1, 1], b+1, y_global, agents, dimensions, agents_snapshot)
             print("moved")
             print(agents)
@@ -452,6 +457,8 @@ def brick(t, b, dimensions, agents, Z, color, m, agents_snapshot):
             brick(t-1, b, dimensions, agents, Z, color, m, agents_snapshot)
             if o < (dimensions[t-1] / 2) - 1:
                 previous_agents = agents.copy()
+                #moving in the 3rd dimension, this needs to be working for odd numbers
+                #just move one of them one more time
                 move([t, 0], t, -1, agents, dimensions, agents_snapshot)
                 move([t, 1], t, +1, agents, dimensions, agents_snapshot)
                 mesh_2d.color_sync(Z, agents, previous_agents, color, m)

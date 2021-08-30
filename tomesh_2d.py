@@ -394,4 +394,4 @@ def brick(t, b, dimensions, agents, y, Z, color, m):
 
 
 
-create_grid_2d(22, 22, True, 1)
+create_grid_2d(11, 11, True, 1)

@@ -149,6 +149,9 @@ def tree(T, m):
 
         print("moving " + str(nr_of_agents) + " agents to " + str(v))
         mesh_2d.color_sync(T_original, agents, previous_agents, color, m)
+        print("agents are " + str(agents))
+        print("color is " + str(color))
+        print("previous node is " + str(previous_node))
         if T.degree(v) != 0:
             v_neighbours = neighbors_of_v(T, v)
             a = {}
@@ -171,12 +174,17 @@ def tree(T, m):
 
                 previous_agents = agents.copy()
                 howmany = 0
+                print("before moving back, the current value of neighbor is " + str(neighbor))
                 for i in agents:
+                    print("the i and agent[i] we're moving is currently: " + str(i) + str(agents[i]))
                     if agents[i] == neighbor:
-                        agents[i] == v
+                        agents[i] = v
                         howmany = howmany+1
                 print("we were in a leaf, now we're moving back " + str(howmany) + " agents from" + str(neighbor) + " to " + str(v))
                 mesh_2d.color_sync(T_original, agents, previous_agents, color, m)
+                print("agents are " + str(agents))
+                print("color is " + str(color))
+                print("previous node is " + str(previous_node))
 
         else:
             print("we have reached a leaf")
@@ -230,4 +238,4 @@ def tree(T, m):
 lr = [1, 7, 5, 7, 7, 1]
 #lr = [1]
 
-tree(lr, 3)
+tree(lr, 1)

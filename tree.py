@@ -187,7 +187,7 @@ def tree(T, m):
                 howmany = 0
                 print("before moving back, the current value of neighbor is " + str(neighbor))
                 for i in agents:
-                    print("the i and agent[i] we're moving is currently: " + str(i) + str(agents[i]))
+                    print("the i and agent[i] we're moving is currently: " + str(i) + " " + str(agents[i]))
                     if agents[i] == neighbor:
                         agents[i] = v
                         howmany = howmany+1
@@ -234,7 +234,8 @@ def tree(T, m):
         starting_node = minimum_mu[0]
         decontaminate(T, starting_node, m, T_original)
 
-    optimaltreedecontamination(T, m, T_original)
+    #optimaltreedecontamination(T, m, T_original)
+    decontaminate(T, 7, m, T_original)
 
 
     nr_of_black_nodes = 0

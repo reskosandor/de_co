@@ -134,15 +134,15 @@ def tree(T, m):
     def mu(v, T, m):
 
         neigh_list = neighbors_of_v(T, v)
-        print("neigh list is of " +str(v) + " is " + str(neigh_list))
+        print("neigh list is of " + str(v) + " is " + str(neigh_list))
 
         if T.degree[v] == 0:
             return 0
         else:
-            value = 0
+            ret = 0
             for node in neigh_list:
-                value = value + mu(node, subtree(T, node, v), m) + 2 * alpha(node, subtree(T, node, v), m)
-            return value
+                ret = ret + mu(node, subtree(T, node, v), m) + 2 * alpha(node, subtree(T, node, v), m)
+            return ret
 
 
     def decontaminate(T, v, m, T_original):
@@ -167,6 +167,7 @@ def tree(T, m):
             v_neighbours = neighbors_of_v(T, v)
             a = {}
             print("v_neighbours is " + str(v_neighbours))
+            #calculating alpha for all neighbours
             for node in v_neighbours:
                 a[node] = (alpha(node, T, m))
             ordered_v_neighbours = []
@@ -174,12 +175,14 @@ def tree(T, m):
             for key in a:
                 print("current state of a is " + str(a))
                 max_key = max(a, key=a.get)
+                print("the max key is " + str(max_key))
                 ordered_v_neighbours.append(max_key)
-                a[key] = -1
+                a[max_key] = -1
                 if len(ordered_v_neighbours) == len(a):
                     break
             print("len of ordered_v_neighbors is " + str(len(ordered_v_neighbours)) + "and its contents are " + str(ordered_v_neighbours))
             for neighbor in reversed(ordered_v_neighbours):
+                print("ordered_v_neighbours is " + str(ordered_v_neighbours))
                 previous_node = v
                 decontaminate(subtree(T, neighbor, v), neighbor, m, T_original)
 
@@ -235,7 +238,7 @@ def tree(T, m):
         decontaminate(T, starting_node, m, T_original)
 
     #optimaltreedecontamination(T, m, T_original)
-    decontaminate(T, 7, m, T_original)
+    decontaminate(T, 0, m, T_original)
 
 
     nr_of_black_nodes = 0

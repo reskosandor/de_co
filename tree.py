@@ -3,6 +3,9 @@ import matplotlib.pyplot as plt
 import mesh_2d
 import random
 
+previous_node = -1
+
+
 def tree(T, m):
     print("asd")
     T = nx.algorithms.tree.coding.from_prufer_sequence(lr)
@@ -104,7 +107,7 @@ def tree(T, m):
             print("returning " + str(value), flush=True)
             return value
 
-    a = {}
+    a_try = {}
 
     print("calculating a...")
     for node in list(T):
@@ -116,14 +119,15 @@ def tree(T, m):
     print(subtree(T, neighbors_of_v(T, 1)[0], 1))
 
     print(T.edges())
-   # for node in list(T):
-        #a[node] = (alpha(node, T, m))
-        #print("appended value for node " + str(node) + " is: " + str(a[node]))
-    #print(a)
+    for node in list(T):
+        a_try[node] = (alpha(node, T, m))
+        print("appended value for node " + str(node) + " is: " + str(a_try[node]))
+    print("a_try is " + str(a_try))
 
     agents = {}
     previous_agents = {}
     color = {}
+
     for nodes in T:
         color[nodes] = "grey"
     mesh_2d.color_sync(T, agents, previous_agents, color, m)
@@ -131,13 +135,19 @@ def tree(T, m):
     T_original = T.copy()
 
     def decontaminate(T, v, m, T_original):
+        global previous_node
         print("decont v is " + str(v))
         print("decont T is " + str(list(T)))
         previous_agents = agents.copy()
         nr_of_agents = alpha(v, T, m)
         for i in range(nr_of_agents):
-            agents[i] = v
-        print("moving agents to " + str(v))
+            if previous_node == -1:
+                agents[i] = v
+            else:
+                if agents[i] == previous_node:
+                    agents[i] = v
+
+        print("moving " + str(nr_of_agents) + " agents to " + str(v))
         mesh_2d.color_sync(T_original, agents, previous_agents, color, m)
         if T.degree(v) != 0:
             v_neighbours = neighbors_of_v(T, v)
@@ -156,17 +166,22 @@ def tree(T, m):
                     break
             print("len of ordered_v_neighbors is " + str(len(ordered_v_neighbours)) + "and its contents are " + str(ordered_v_neighbours))
             for neighbor in reversed(ordered_v_neighbours):
+                previous_node = v
                 decontaminate(subtree(T, neighbor, v), neighbor, m, T_original)
-                print("we were in a leaf, now we're moving back from" + str(neighbor) + " to " +str(v))
+
                 previous_agents = agents.copy()
+                howmany = 0
                 for i in agents:
                     if agents[i] == neighbor:
                         agents[i] == v
+                        howmany = howmany+1
+                print("we were in a leaf, now we're moving back " + str(howmany) + " agents from" + str(neighbor) + " to " + str(v))
                 mesh_2d.color_sync(T_original, agents, previous_agents, color, m)
+
         else:
             print("we have reached a leaf")
 
-    decontaminate(T, 0, m, T_original)
+    decontaminate(T, 3, m, T_original)
 
 
     nr_of_black_nodes = 0

@@ -107,7 +107,7 @@ def tree(T, m):
             print("returning " + str(value), flush=True)
             return value
 
-    a_try = {}
+
 
     print("calculating a...")
     for node in list(T):
@@ -119,10 +119,7 @@ def tree(T, m):
     print(subtree(T, neighbors_of_v(T, 1)[0], 1))
 
     print(T.edges())
-    for node in list(T):
-        a_try[node] = (alpha(node, T, m))
-        print("appended value for node " + str(node) + " is: " + str(a_try[node]))
-    print("a_try is " + str(a_try))
+
 
     agents = {}
     previous_agents = {}
@@ -133,6 +130,20 @@ def tree(T, m):
     mesh_2d.color_sync(T, agents, previous_agents, color, m)
     print(color)
     T_original = T.copy()
+
+    def mu(v, T, m):
+
+        neigh_list = neighbors_of_v(T, v)
+        print("neigh list is of " +str(v) + " is " + str(neigh_list))
+
+        if T.degree[v] == 0:
+            return 0
+        else:
+            value = 0
+            for node in neigh_list:
+                value = value + mu(node, subtree(T, node, v), m) + 2 * alpha(node, subtree(T, node, v), m)
+            return value
+
 
     def decontaminate(T, v, m, T_original):
         global previous_node
@@ -188,8 +199,42 @@ def tree(T, m):
 
         else:
             print("we have reached a leaf")
+    print(mu(3, T, m))
+    #decontaminate(T, 3, m, T_original)
 
-    decontaminate(T, 3, m, T_original)
+    a_try = {}
+    for node in list(T):
+        a_try[node] = (alpha(node, T, m))
+        print("appended alpha value for node " + str(node) + " is: " + str(a_try[node]))
+    print("a_try is " + str(a_try))
+
+    mu_try = {}
+    for node in list(T):
+        mu_try[node] = (mu(node, T, m))
+        print("appended mu value for node " + str(node) + " is: " + str(mu_try[node]))
+    print("mu_try is " + str(mu_try))
+    #getting nodes with minimum alpha value
+    min_a = []
+    minval = min(a_try.values())
+    min_a = [k for k, v in a_try.items() if v==minval]
+    print("a_try is " + str(a_try))
+    print("min_a is " + str(min_a))
+    #getting nodes with minimum mu value, where they have the min alpha value
+    min_mu_temp = mu_try.copy()
+    min_mu = min_mu_temp.copy()
+    for i in min_mu_temp:
+        if i not in min_a:
+            del min_mu[i]
+    minimum_mu = []
+    minval = min(min_mu.values())
+    minimum_mu = [k for k, v in min_mu.items() if v==minval]
+    print("minimum_mu is " +str(minimum_mu))
+
+    def optimaltreedecontamination(T, m, T_original):
+        starting_node = minimum_mu[0]
+        decontaminate(T, starting_node, m, T_original)
+
+    optimaltreedecontamination(T, m, T_original)
 
 
     nr_of_black_nodes = 0
@@ -238,4 +283,4 @@ def tree(T, m):
 lr = [1, 7, 5, 7, 7, 1]
 #lr = [1]
 
-tree(lr, 1)
+tree(lr, 3)

@@ -386,7 +386,7 @@ def cube(t, dimensions, agents, Z, color, m, agents_snapshot):
     if t == 2:
         #shift = 0
         print("cube is starting")
-        for o in range(math.ceil(dimensions[1] / 2)):
+        for o in range(math.ceil(dimensions[1] / 2) - 1):
             for i in range(dimensions[0] - 2):
                 previous_agents = agents.copy()
                 move([1, 1 % dimensions[0]], 1, y_global, agents, dimensions, agents_snapshot)
@@ -408,12 +408,24 @@ def cube(t, dimensions, agents, Z, color, m, agents_snapshot):
                 mesh_2d.color_sync(Z, agents, previous_agents, color, m)
                 print("if happened (moving along second dimension)")
                 print(agents)
-            if dimensions[1] % 2 == 1 and o == (math.ceil(dimensions[1] / 2)) - 1:
+            if dimensions[1] % 2 == 1 and o == (math.floor(dimensions[1] / 2)) - 1:
                 print("this is where the fun begins")
                 previous_agents = agents.copy()
-                move([2, 0 % dimensions[1]], 2, w_global, agents, dimensions, agents_snapshot)
+                move([2, 0 % dimensions[1]], 2, -w_global, agents, dimensions, agents_snapshot)
                 mesh_2d.color_sync(Z, agents, previous_agents, color, m)
                 print("agents are " + str(agents))
+                for i in range(dimensions[0] - 2):
+                    previous_agents = agents.copy()
+                    move([1, 1 % dimensions[0]], 1, y_global, agents, dimensions, agents_snapshot)
+                    print("we just moved the agents on the vertices, where 1st coord is " + str(1 % dimensions[0]) + ", its first coord is changed by " + str(y_global))
+                    #shift = shift + y
+                    #print("shift became")
+                    #print(shift)
+                    mesh_2d.color_sync(Z, agents, previous_agents, color, m)
+                    print(agents)
+                y_global = 0 - y_global
+                print("we finished with the odd stuff")
+            print("we finshed")
 
         w_global = 0 - w_global
     else:
@@ -473,6 +485,6 @@ def brick(t, b, dimensions, agents, Z, color, m, agents_snapshot):
                 move([t, 1], t, +1, agents, dimensions, agents_snapshot)
                 mesh_2d.color_sync(Z, agents, previous_agents, color, m)
 
-dimensions = [5, 5, 5]
+dimensions = [7, 7, 7]
 
 create_grid_3d(dimensions, True, 4)

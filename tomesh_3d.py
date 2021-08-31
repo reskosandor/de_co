@@ -504,6 +504,6 @@ def brick(t, b, dimensions, agents, Z, color, m, agents_snapshot):
                 mesh_2d.color_sync(Z, agents, previous_agents, color, m)
                 print("funny business over")
 
-dimensions = [6, 6, 6]
+dimensions = [4, 4, 4]
 
-create_grid_3d(dimensions, True, 2)
+create_grid_3d(dimensions, True, 4)

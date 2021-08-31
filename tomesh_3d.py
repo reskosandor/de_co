@@ -1,9 +1,10 @@
 import networkx as nx
 import matplotlib.pyplot as plt
+import math
 import mesh_2d
 
 y_global = 1
-
+w_global = 1
 def create_grid_3d(dimensions_input, isperioidic, m):
 
 
@@ -381,10 +382,11 @@ def move(A, x, y, agents, dimensions, agents_snapshot):
 
 def cube(t, dimensions, agents, Z, color, m, agents_snapshot):
     global y_global
+    global w_global
     if t == 2:
         #shift = 0
         print("cube is starting")
-        for o in range(int(dimensions[1] / 2)):
+        for o in range(math.ceil(dimensions[1] / 2) - 1):
             for i in range(dimensions[0] - 2):
                 previous_agents = agents.copy()
                 move([1, 1 % dimensions[0]], 1, y_global, agents, dimensions, agents_snapshot)
@@ -396,13 +398,36 @@ def cube(t, dimensions, agents, Z, color, m, agents_snapshot):
                 print(agents)
             y_global = 0 - y_global
             print("value of y is " + str(y_global))
-            if o <= (int(dimensions[1] / 2)) - 1:
+            if o < (math.floor(dimensions[1] / 2)) - 1:
                 previous_agents = agents.copy()
-                move([2, 0 % dimensions[1]], 2, -1, agents, dimensions, agents_snapshot)
-                move([2, 1 % dimensions[1]], 2, 1, agents, dimensions, agents_snapshot)
+                #this is the move along the second dimension
+                #this needs to be working for odd dimensions
+                #also keep in mind the + 1 for the iteration (<= correction)
+                move([2, 0 % dimensions[1]], 2, -w_global, agents, dimensions, agents_snapshot)
+                move([2, 1 % dimensions[1]], 2, w_global, agents, dimensions, agents_snapshot)
                 mesh_2d.color_sync(Z, agents, previous_agents, color, m)
                 print("if happened (moving along second dimension)")
                 print(agents)
+            if dimensions[1] % 2 == 1 and o == (math.floor(dimensions[1] / 2)) - 1:
+                print("this is where the fun begins")
+                previous_agents = agents.copy()
+                move([2, 0 % dimensions[1]], 2, -w_global, agents, dimensions, agents_snapshot)
+                mesh_2d.color_sync(Z, agents, previous_agents, color, m)
+                print("agents are " + str(agents))
+                for i in range(dimensions[0] - 2):
+                    previous_agents = agents.copy()
+                    move([1, 1 % dimensions[0]], 1, y_global, agents, dimensions, agents_snapshot)
+                    print("we just moved the agents on the vertices, where 1st coord is " + str(1 % dimensions[0]) + ", its first coord is changed by " + str(y_global))
+                    #shift = shift + y
+                    #print("shift became")
+                    #print(shift)
+                    mesh_2d.color_sync(Z, agents, previous_agents, color, m)
+                    print(agents)
+                y_global = 0 - y_global
+                print("we finished with the odd stuff")
+            print("we finshed")
+
+        w_global = 0 - w_global
     else:
         for h in range(dimensions[(t-1)]):
             print("calling CUBE recursively for t-1")
@@ -440,22 +465,32 @@ def brick(t, b, dimensions, agents, Z, color, m, agents_snapshot):
         print(dimensions[b])
         for i in range((dimensions[b]) - 2):
             previous_agents = agents.copy()
+            #this is the move in the second dimension, i dont think there is a problem here
+            #need to check if cube problem is present here tho
             move([b+1, 1], b+1, y_global, agents, dimensions, agents_snapshot)
             print("moved")
             print(agents)
             mesh_2d.color_sync(Z, agents, previous_agents, color, m)
         y_global = 0 - y_global
     else:
-        for o in range(int((dimensions[t-1] / 2))):
+        for o in range(math.ceil((dimensions[t-1] / 2))):
             print("range of the o is " +str(int((dimensions[t-1] / 2)) - 1))
             print("o currently is " +str(o))
             brick(t-1, b, dimensions, agents, Z, color, m, agents_snapshot)
             if o < (dimensions[t-1] / 2) - 1:
                 previous_agents = agents.copy()
+                #moving in the 3rd dimension, this needs to be working for odd numbers
+                #just move one of them one more time
                 move([t, 0], t, -1, agents, dimensions, agents_snapshot)
                 move([t, 1], t, +1, agents, dimensions, agents_snapshot)
                 mesh_2d.color_sync(Z, agents, previous_agents, color, m)
+            if o == math.ceil((dimensions[t-1] / 2)) - 1:
+                print("this is where the fun begins")
+                previous_agents = agents.copy()
+                move([t, 0], t, -1, agents, dimensions, agents_snapshot)
+                mesh_2d.color_sync(Z, agents, previous_agents, color, m)
+                print("funny business over")
 
-dimensions = [10, 10, 10]
+dimensions = [6, 6, 6]
 
-create_grid_3d(dimensions, True, 1)
+create_grid_3d(dimensions, True, 2)

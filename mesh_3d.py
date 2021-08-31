@@ -387,6 +387,6 @@ def create_grid_3d(dimensions, isperioidic, m):
 # so the first item of the list will be the nth dimension
 
 
-dimensions = [20, 17, 16]
+dimensions = [11, 11, 11]
 
 create_grid_3d(dimensions, False, 2)

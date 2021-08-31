@@ -333,7 +333,7 @@ def cube(t,y, dimensions, agents, Z, color, m):
     if t == 2:
         shift = 0
         print("cube is starting")
-        for o in range(math.floor(dimensions[1] / 2)):
+        for o in range(math.ceil(dimensions[1] / 2)):
             for i in range(dimensions[0] - 2):
                 previous_agents = agents.copy()
                 move([1, (shift + 1) % dimensions[0]], 1, y, agents, dimensions)
@@ -351,13 +351,38 @@ def cube(t,y, dimensions, agents, Z, color, m):
                 mesh_2d.color_sync(Z, agents, previous_agents, color, m)
                 print("if happened")
                 print(agents)
-            if dimensions[1] % 2 == 1 and o == dimensions[1] -1 :
-                move([2, (0 - o) % dimensions[1]], 2, -1, agents, dimensions)
-
+            # last row when dim2 is odd number
+            # move one column once
+            if dimensions[1] % 2 == 1 and o == (math.ceil(dimensions[1] / 2)) - 1:
+                print("this is where the fun begins")
+                previous_agents = agents.copy()
+                move([2, (2 + o) % dimensions[1]], 2, -1, agents, dimensions)
+                mesh_2d.color_sync(Z, agents, previous_agents, color, m)
+                print(agents)
+                last_agent = -1
+                #dont forget to add move counters
+                # look for the agent that will do the last few movements
+                for key in agents:
+                    print(((shift + 1) % dimensions[0], (1 + o) % dimensions[1]))
+                    if agents[key] == ((shift + 1) % dimensions[0], (1 + o) % dimensions[1]):
+                        last_agent = key
+                print("last agent is " + str(last_agent))
+                #dont forget to add move counters
+                print("shift is " + str(shift))
+                print("o is " + str(o))
+                # move the last agent on the last row
+                for k in range(dimensions[0] - 2):
+                    previous_agents = agents.copy()
+                    if o % 2 == 0:
+                        agents[last_agent] = ((shift + k*y) % dimensions[0], (1 + o) % dimensions[1])
+                    else:
+                        agents[last_agent] = ((shift + k * y + 2) % dimensions[0], (1 + o) % dimensions[1])
+                    mesh_2d.color_sync(Z, agents, previous_agents, color, m)
+                    print(agents[last_agent])
     else:
         for h in range(dimensions[(t-1)]):
             cube(t-1, y, dimensions, agents)
-            if h < dimensions[(t-1)/2] -1:
+            if h < dimensions[(t-1)/2] - 1:
                 previous_agents = agents.copy()
                 move([t, 0], t, -1, agents, dimensions)
                 print(agents)
@@ -398,4 +423,4 @@ def brick(t, b, dimensions, agents, y, Z, color, m):
 
 
 
-create_grid_2d(11, 11, True, 1)
+create_grid_2d(17, 17, True, 1)

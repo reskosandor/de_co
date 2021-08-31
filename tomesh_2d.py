@@ -1,5 +1,6 @@
 import networkx as nx
 import matplotlib.pyplot as plt
+import math
 import mesh_2d
 
 def create_grid_2d(dim1, dim2, isperioidic, m):
@@ -332,7 +333,7 @@ def cube(t,y, dimensions, agents, Z, color, m):
     if t == 2:
         shift = 0
         print("cube is starting")
-        for o in range(int(dimensions[1] / 2)):
+        for o in range(math.floor(dimensions[1] / 2)):
             for i in range(dimensions[0] - 2):
                 previous_agents = agents.copy()
                 move([1, (shift + 1) % dimensions[0]], 1, y, agents, dimensions)
@@ -343,13 +344,16 @@ def cube(t,y, dimensions, agents, Z, color, m):
                 mesh_2d.color_sync(Z, agents, previous_agents, color, m)
                 print(agents)
             y = 0 - y
-            if o < (int(dimensions[1] / 2)) - 1:
+            if o < (math.floor(dimensions[1] / 2)) - 1:
                 previous_agents = agents.copy()
                 move([2, (0 - o) % dimensions[1]], 2, -1, agents, dimensions)
                 move([2, (1 + o) % dimensions[1]], 2, 1, agents, dimensions)
                 mesh_2d.color_sync(Z, agents, previous_agents, color, m)
                 print("if happened")
                 print(agents)
+            if dimensions[1] % 2 == 1 and o == dimensions[1] -1 :
+                move([2, (0 - o) % dimensions[1]], 2, -1, agents, dimensions)
+
     else:
         for h in range(dimensions[(t-1)]):
             cube(t-1, y, dimensions, agents)

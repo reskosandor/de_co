@@ -1,7 +1,10 @@
 import networkx as nx
 import matplotlib.pyplot as plt
 
+move_counter = 0
+
 def create_grid_2d(dim1, dim2, isperioidic, m):
+    global move_counter
     if dim2 < dim1:
         print("dimensions must be in monotonic increasing sequence")
         exit()
@@ -130,12 +133,14 @@ def create_grid_2d(dim1, dim2, isperioidic, m):
                 print(list_of_agents_on_v)
                 print(v)
                 agents[j+1] = edges_of_v_in_P[i][1]
+                move_counter = move_counter + 1
+
 
             color_sync(Z, agents, previous_agents, color, m)
             print(color)
         print(agents)
         print("iteration is over")
-
+        after_init = move_counter
     #algorithm MESH(2, m)
     #constructing canonical path
     if m == 2:
@@ -155,6 +160,7 @@ def create_grid_2d(dim1, dim2, isperioidic, m):
         for i in range(len(canonical_path)-1):
             previous_agents = agents.copy()
             agents[0] = canonical_path[i+1]
+            move_counter = move_counter + 1
             print(agents[0])
             color_sync(Z, agents, previous_agents, color, m)
             print(color)
@@ -165,6 +171,7 @@ def create_grid_2d(dim1, dim2, isperioidic, m):
             for j in range(dim1):
                 (x, y) = agents[j]
                 agents[j] = (x, y+1)
+                move_counter = move_counter + 1
             print(agents)
             color_sync(Z, agents, previous_agents, color, m)
             print(color)
@@ -183,7 +190,8 @@ def create_grid_2d(dim1, dim2, isperioidic, m):
             print("some nodes are grey, algorithm failed")
             exit()
     print("no grey nodes remain")
-
+    print("after_init is " + str(after_init))
+    print("move_counter is " + str(move_counter))
 def color_sync(graph, agents, previous_agents, color, m):
     for key in color:
         for i in agents:
@@ -209,4 +217,4 @@ def color_sync(graph, agents, previous_agents, color, m):
 
 
 
-create_grid_2d(7, 7, False, 1)
+create_grid_2d(10, 10, False, 1)

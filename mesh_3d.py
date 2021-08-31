@@ -2,7 +2,10 @@ import networkx as nx
 import matplotlib.pyplot as plt
 import mesh_2d
 
+move_counter = 0
+
 def create_grid_3d(dimensions, isperioidic, m):
+    global move_counter
     #print(dimensions)
     dim1 = dimensions[2]
     dim2 = dimensions[1]
@@ -251,6 +254,7 @@ def create_grid_3d(dimensions, isperioidic, m):
                 for key in agents:
                     if list_of_agents_on_v[k] == key and len(true_list_of_agents_on_v) > 1:
                         agents[key] = position_of_agents_on_v[k]
+                        move_counter = move_counter + 1
                         #print("agents")
                         #print(agents)
 
@@ -281,6 +285,7 @@ def create_grid_3d(dimensions, isperioidic, m):
             print(len(true_list_of_agents_on_v))
             print("something horrible happened")
             exit()
+    after_init = move_counter
     # algorithm MESH(3, m)
     # constructing canonical path
     if m == 3:
@@ -316,6 +321,7 @@ def create_grid_3d(dimensions, isperioidic, m):
         for i in range(len(canonical_path) - 1):
             previous_agents = agents.copy()
             agents[0] = canonical_path[i + 1]
+            move_counter = move_counter + 1
             #print(agents[0])
             mesh_2d.color_sync(Z, agents, previous_agents, color, m)
             #print(color)
@@ -335,8 +341,10 @@ def create_grid_3d(dimensions, isperioidic, m):
                     (x, y, z) = agents[k]
                     if forward_j:
                         agents[k] = (x, y + 1, z)
+                        move_counter = move_counter + 1
                     else:
                         agents[k] = (x, y - 1, z)
+                        move_counter = move_counter + 1
                 print(agents)
                 mesh_2d.color_sync(Z, agents, previous_agents, color, m)
                 print(color)
@@ -348,6 +356,7 @@ def create_grid_3d(dimensions, isperioidic, m):
                 for k in range(dim1):
                     (x, y, z) = agents[k]
                     agents[k] = (x, y, z + 1)
+                    move_counter = move_counter + 1
                 print(agents)
                 mesh_2d.color_sync(Z, agents, previous_agents, color, m)
                 print(color)
@@ -362,6 +371,7 @@ def create_grid_3d(dimensions, isperioidic, m):
                 #print(agents)
                 (x, y, z) = agents[j]
                 agents[j] = (x, y, z+1)
+                move_counter = move_counter + 1
             #print(agents)
             mesh_2d.color_sync(Z, agents, previous_agents, color, m)
             #print(color)
@@ -382,11 +392,13 @@ def create_grid_3d(dimensions, isperioidic, m):
             print("some nodes are grey, algorithm failed")
             exit()
     print("no grey nodes remain")
+    print("after_init is " + str(after_init))
+    print("move_counter is " + str(move_counter))
 # grid_graph takes a list of dimensions as its input
 # for some reason dimensions are in reverse order
 # so the first item of the list will be the nth dimension
 
 
-dimensions = [11, 11, 11]
+dimensions = [10, 10, 10]
 
-create_grid_3d(dimensions, False, 2)
+create_grid_3d(dimensions, False, 1)

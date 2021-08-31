@@ -5,8 +5,9 @@ import mesh_2d
 
 y_global = 1
 w_global = 1
+move_counter = 0
 def create_grid_3d(dimensions_input, isperioidic, m):
-
+    global move_counter
 
     dims = [dimensions_input[2], dimensions_input[1], dimensions_input[0]]
     dim1 = dims[0]
@@ -274,6 +275,7 @@ def create_grid_3d(dimensions_input, isperioidic, m):
                 for key in agents:
                     if list_of_agents_on_v[k] == key and len(true_list_of_agents_on_v) > 1:
                         agents[key] = position_of_agents_on_v[k]
+                        move_counter = move_counter + 1
                         #print("agents")
                         #print(agents)
 
@@ -308,7 +310,7 @@ def create_grid_3d(dimensions_input, isperioidic, m):
     print(agents)
     #try snapshotting agents
     agents_snapshot = agents.copy()
-
+    after_init = move_counter
     # variable declaration
     t = 6 - m
     s = 3
@@ -333,9 +335,11 @@ def create_grid_3d(dimensions_input, isperioidic, m):
             print("some nodes are grey, algorithm failed")
             exit()
     print("no grey nodes remain")
-
+    print("after init is " + str(after_init))
+    print("move counter is " + str(move_counter))
 
 def move(A, x, y, agents, dimensions, agents_snapshot):
+    global move_counter
     for key in agents_snapshot:
         (a, b, c) = agents[key]
         (d, e ,f) = agents_snapshot[key]
@@ -346,12 +350,15 @@ def move(A, x, y, agents, dimensions, agents_snapshot):
                 # if we want to modify the 1st index
                 if x == 1:
                     agents[key] = ((a+y) % dimensions[0], b, c)
+                    move_counter = move_counter + 1
                 # if we want to modify the 2nd index
                 if x == 2:
                     agents[key] = (a, (b+y) % dimensions[1], c)
+                    move_counter = move_counter + 1
                 # if we want to modify the 3rd index
                 if x == 3:
                     agents[key] = (a, b, (c+y) % dimensions[2])
+                    move_counter = move_counter + 1
         # if second vertex
         if A[0] == 2:
             #if the 2nd coord is right
@@ -359,12 +366,15 @@ def move(A, x, y, agents, dimensions, agents_snapshot):
                 #if we want to modify the 1st index
                 if x == 1:
                     agents[key] = ((a+y) % dimensions[0], b, c)
+                    move_counter = move_counter + 1
                 # if we want to modify the 2nd index
                 if x == 2:
                     agents[key] = (a, (b+y) % dimensions[1], c)
+                    move_counter = move_counter + 1
                 # if we want to modify the 3rd index
                 if x == 3:
                     agents[key] = (a, b, (c+y) % dimensions[2])
+                    move_counter = move_counter + 1
         # if third vertex
         if A[0] == 3:
             #if the 3rd coord is right
@@ -372,12 +382,15 @@ def move(A, x, y, agents, dimensions, agents_snapshot):
                 # if we want to modify the 1st index
                 if x == 1:
                     agents[key] = ((a + y) % dimensions[0], b, c)
+                    move_counter = move_counter + 1
                 # if we want to modify the 2nd index
                 if x == 2:
                     agents[key] = (a, (b + y) % dimensions[1], c)
+                    move_counter = move_counter + 1
                 # if we want to modify the 3rd index
                 if x == 3:
                     agents[key] = (a, b, (c + y) % dimensions[2])
+                    move_counter = move_counter + 1
 
 
 def cube(t, dimensions, agents, Z, color, m, agents_snapshot):

@@ -473,7 +473,7 @@ def brick(t, b, dimensions, agents, Z, color, m, agents_snapshot):
             mesh_2d.color_sync(Z, agents, previous_agents, color, m)
         y_global = 0 - y_global
     else:
-        for o in range(int((dimensions[t-1] / 2))):
+        for o in range(math.ceil((dimensions[t-1] / 2))):
             print("range of the o is " +str(int((dimensions[t-1] / 2)) - 1))
             print("o currently is " +str(o))
             brick(t-1, b, dimensions, agents, Z, color, m, agents_snapshot)
@@ -484,7 +484,13 @@ def brick(t, b, dimensions, agents, Z, color, m, agents_snapshot):
                 move([t, 0], t, -1, agents, dimensions, agents_snapshot)
                 move([t, 1], t, +1, agents, dimensions, agents_snapshot)
                 mesh_2d.color_sync(Z, agents, previous_agents, color, m)
+            if o == math.ceil((dimensions[t-1] / 2)) - 1:
+                print("this is where the fun begins")
+                previous_agents = agents.copy()
+                move([t, 0], t, -1, agents, dimensions, agents_snapshot)
+                mesh_2d.color_sync(Z, agents, previous_agents, color, m)
+                print("funny business over")
 
-dimensions = [7, 7, 7]
+dimensions = [6, 6, 6]
 
-create_grid_3d(dimensions, True, 4)
+create_grid_3d(dimensions, True, 2)

@@ -3,7 +3,9 @@ import matplotlib.pyplot as plt
 import math
 import mesh_2d
 
+move_counter = 0
 def create_grid_2d(dim1, dim2, isperioidic, m):
+    global move_counter
 
     dims = [dim1, dim2]
     y_global = 1
@@ -251,6 +253,7 @@ def create_grid_2d(dim1, dim2, isperioidic, m):
                 for key in agents:
                     if list_of_agents_on_v[k] == key and len(true_list_of_agents_on_v) > 1:
                         agents[key] = position_of_agents_on_v[k]
+                        move_counter = move_counter + 1
                         #print("agents")
                         #print(agents)
 
@@ -282,7 +285,7 @@ def create_grid_2d(dim1, dim2, isperioidic, m):
             print("something horrible happened")
             exit()
     print(agents)
-
+    after_init = move_counter
 
     if m > 1:
         itercube(2, y_global, dims, m, agents, Z, color)
@@ -303,9 +306,12 @@ def create_grid_2d(dim1, dim2, isperioidic, m):
             print("some nodes are grey, algorithm failed")
             exit()
     print("no grey nodes remain")
+    print("after_init is " + str(after_init))
+    print("move_counter is " + str(move_counter))
 
 
 def move(A, x, y, agents, dimensions):
+    global move_counter
     for key in agents:
         (a, b) = agents[key]
         #if first vertex
@@ -315,9 +321,11 @@ def move(A, x, y, agents, dimensions):
                 # if we want to modify the 1st index
                 if x == 1:
                     agents[key] = ((a+y) % dimensions[0], b)
+                    move_counter = move_counter + 1
                 # if we want to modify the 2nd index
                 if x == 2:
                     agents[key] = (a, (b+y) % dimensions[1])
+                    move_counter = move_counter + 1
         # if second vertex
         if A[0] == 2:
             #if the 2nd coord is right
@@ -325,11 +333,14 @@ def move(A, x, y, agents, dimensions):
                 #if we want to modify the 1st index
                 if x == 1:
                     agents[key] = ((a+y) % dimensions[0], b)
+                    move_counter = move_counter + 1
                 # if we want to modify the 2nd index
                 if x == 2:
                     agents[key] = (a, (b+y) % dimensions[1])
+                    move_counter = move_counter + 1
 
 def cube(t,y, dimensions, agents, Z, color, m):
+    global move_counter
     if t == 2:
         shift = 0
         print("cube is starting")
@@ -375,8 +386,10 @@ def cube(t,y, dimensions, agents, Z, color, m):
                     previous_agents = agents.copy()
                     if o % 2 == 0:
                         agents[last_agent] = ((shift + k*y) % dimensions[0], (1 + o) % dimensions[1])
+                        move_counter = move_counter + 1
                     else:
                         agents[last_agent] = ((shift + k * y + 2) % dimensions[0], (1 + o) % dimensions[1])
+                        move_counter = move_counter + 1
                     mesh_2d.color_sync(Z, agents, previous_agents, color, m)
                     print(agents[last_agent])
     else:
@@ -423,4 +436,4 @@ def brick(t, b, dimensions, agents, y, Z, color, m):
 
 
 
-create_grid_2d(17, 17, True, 1)
+create_grid_2d(17, 17, True, 3)

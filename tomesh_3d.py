@@ -399,7 +399,7 @@ def cube(t, dimensions, agents, Z, color, m, agents_snapshot):
     if t == 2:
         #shift = 0
         print("cube is starting")
-        for o in range(math.ceil(dimensions[1] / 2) - 1):
+        for o in range(math.floor(dimensions[1] / 2)):
             for i in range(dimensions[0] - 2):
                 previous_agents = agents.copy()
                 move([1, 1 % dimensions[0]], 1, y_global, agents, dimensions, agents_snapshot)
@@ -504,6 +504,6 @@ def brick(t, b, dimensions, agents, Z, color, m, agents_snapshot):
                 mesh_2d.color_sync(Z, agents, previous_agents, color, m)
                 print("funny business over")
 
-dimensions = [4, 4, 4]
+dimensions = [6, 6, 6]
 
-create_grid_3d(dimensions, True, 4)
+create_grid_3d(dimensions, True, 2)

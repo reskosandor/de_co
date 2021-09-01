@@ -1,6 +1,6 @@
 import networkx as nx
 import matplotlib.pyplot as plt
-import mesh_2d
+import functions
 import random
 
 previous_node = -1
@@ -127,7 +127,7 @@ def tree(T, m):
 
     for nodes in T:
         color[nodes] = "grey"
-    mesh_2d.color_sync(T, agents, previous_agents, color, m)
+    functions.color_sync(T, agents, previous_agents, color, m)
     print(color)
     T_original = T.copy()
 
@@ -159,7 +159,7 @@ def tree(T, m):
                     agents[i] = v
 
         print("moving " + str(nr_of_agents) + " agents to " + str(v))
-        mesh_2d.color_sync(T_original, agents, previous_agents, color, m)
+        functions.color_sync(T_original, agents, previous_agents, color, m)
         print("agents are " + str(agents))
         print("color is " + str(color))
         print("previous node is " + str(previous_node))
@@ -195,7 +195,7 @@ def tree(T, m):
                         agents[i] = v
                         howmany = howmany+1
                 print("we were in a leaf, now we're moving back " + str(howmany) + " agents from" + str(neighbor) + " to " + str(v))
-                mesh_2d.color_sync(T_original, agents, previous_agents, color, m)
+                functions.color_sync(T_original, agents, previous_agents, color, m)
                 print("agents are " + str(agents))
                 print("color is " + str(color))
                 print("previous node is " + str(previous_node))

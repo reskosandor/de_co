@@ -1,7 +1,7 @@
 import networkx as nx
 import matplotlib.pyplot as plt
 import math
-import mesh_2d
+import functions
 
 move_counter = 0
 def create_grid_2d(dim1, dim2, isperioidic, m):
@@ -9,6 +9,7 @@ def create_grid_2d(dim1, dim2, isperioidic, m):
 
     dims = [dim1, dim2]
     y_global = 1
+    print(dims)
 
     if dim2 < dim1:
         print("dimensions must be in monotonic increasing sequence")
@@ -66,7 +67,7 @@ def create_grid_2d(dim1, dim2, isperioidic, m):
     color = {}
     for nodes in Z:
         color[nodes] = "grey"
-    mesh_2d.color_sync(Z, agents, previous_agents, color, m)
+    functions.color_sync(Z, agents, previous_agents, color, m)
     print(color)
     #start with a set of |C| agents in v_(0,0)
     nr_of_agents = C.number_of_nodes()
@@ -102,7 +103,7 @@ def create_grid_2d(dim1, dim2, isperioidic, m):
     for i in range(nr_of_agents):
         agents[i] = (0, 0)
     #print(agents)
-    mesh_2d.color_sync(Z, agents, previous_agents, color, m)
+    functions.color_sync(Z, agents, previous_agents, color, m)
     #print(color)
 
     flipped_agents = {}
@@ -260,7 +261,7 @@ def create_grid_2d(dim1, dim2, isperioidic, m):
             #print("moved p_i agents to w_i, agents are right now at:")
             #print(agents)
             #print(color)
-        mesh_2d.color_sync(Z, agents, previous_agents, color, m)
+        functions.color_sync(Z, agents, previous_agents, color, m)
         print(agents)
         print(color)
         print("iteration is over")
@@ -308,7 +309,9 @@ def create_grid_2d(dim1, dim2, isperioidic, m):
     print("no grey nodes remain")
     print("after_init is " + str(after_init))
     print("move_counter is " + str(move_counter))
-
+    move_counted = move_counter
+    move_counter = 0
+    return [nr_of_agents, after_init, move_counted]
 
 def move(A, x, y, agents, dimensions):
     global move_counter
@@ -352,14 +355,14 @@ def cube(t,y, dimensions, agents, Z, color, m):
                 shift = shift + y
                 print("shift became")
                 print(shift)
-                mesh_2d.color_sync(Z, agents, previous_agents, color, m)
+                functions.color_sync(Z, agents, previous_agents, color, m)
                 print(agents)
             y = 0 - y
             if o < (math.floor(dimensions[1] / 2)) - 1:
                 previous_agents = agents.copy()
                 move([2, (0 - o) % dimensions[1]], 2, -1, agents, dimensions)
                 move([2, (1 + o) % dimensions[1]], 2, 1, agents, dimensions)
-                mesh_2d.color_sync(Z, agents, previous_agents, color, m)
+                functions.color_sync(Z, agents, previous_agents, color, m)
                 print("if happened")
                 print(agents)
             # last row when dim2 is odd number
@@ -368,7 +371,7 @@ def cube(t,y, dimensions, agents, Z, color, m):
                 print("this is where the fun begins")
                 previous_agents = agents.copy()
                 move([2, (2 + o) % dimensions[1]], 2, -1, agents, dimensions)
-                mesh_2d.color_sync(Z, agents, previous_agents, color, m)
+                functions.color_sync(Z, agents, previous_agents, color, m)
                 print(agents)
                 last_agent = -1
                 #dont forget to add move counters
@@ -390,7 +393,7 @@ def cube(t,y, dimensions, agents, Z, color, m):
                     else:
                         agents[last_agent] = ((shift + k * y + 2) % dimensions[0], (1 + o) % dimensions[1])
                         move_counter = move_counter + 1
-                    mesh_2d.color_sync(Z, agents, previous_agents, color, m)
+                    functions.color_sync(Z, agents, previous_agents, color, m)
                     print(agents[last_agent])
     else:
         for h in range(dimensions[(t-1)]):
@@ -400,7 +403,7 @@ def cube(t,y, dimensions, agents, Z, color, m):
                 move([t, 0], t, -1, agents, dimensions)
                 print(agents)
                 move([t, 1], t, 1, agents, dimensions)
-                mesh_2d.color_sync(Z, agents, previous_agents, color, m)
+                functions.color_sync(Z, agents, previous_agents, color, m)
                 print(agents)
 
 def itercube(s,y, dimensions, m, agents, Z, color):
@@ -412,7 +415,7 @@ def itercube(s,y, dimensions, m, agents, Z, color):
             itercube(s-1, y, dimensions, m, agents)
             move([1, 1], s, 1, agents)
             move([1, 2], s, 1, agents)
-            mesh_2d.color_sync(Z, agents, previous_agents, color, m)
+            functions.color_sync(Z, agents, previous_agents, color, m)
 
 def brick(t, b, dimensions, agents, y, Z, color, m):
     if t == b+1:
@@ -425,7 +428,7 @@ def brick(t, b, dimensions, agents, y, Z, color, m):
             shift = shift + y
             print("moved")
             print(agents)
-            mesh_2d.color_sync(Z, agents, previous_agents, color, m)
+            functions.color_sync(Z, agents, previous_agents, color, m)
         y = 0 - y
     else:
         for o in range(int((dimensions[t-1] / 2)) - 1):
@@ -436,4 +439,4 @@ def brick(t, b, dimensions, agents, y, Z, color, m):
 
 
 
-create_grid_2d(17, 17, True, 3)
+#create_grid_2d(17, 17, True, 3)

@@ -1,7 +1,7 @@
 import networkx as nx
 import matplotlib.pyplot as plt
 import math
-import mesh_2d
+import functions
 
 y_global = 1
 w_global = 1
@@ -82,7 +82,7 @@ def create_grid_3d(dimensions_input, isperioidic, m):
     color = {}
     for nodes in Z:
         color[nodes] = "grey"
-    mesh_2d.color_sync(Z, agents, previous_agents, color, m)
+    functions.color_sync(Z, agents, previous_agents, color, m)
     print(color)
     #start with a set of |C| agents in v_(0,0)
     nr_of_agents = C.number_of_nodes()
@@ -124,7 +124,7 @@ def create_grid_3d(dimensions_input, isperioidic, m):
     for i in range(nr_of_agents):
         agents[i] = (0, 0, 0)
     #print(agents)
-    mesh_2d.color_sync(Z, agents, previous_agents, color, m)
+    functions.color_sync(Z, agents, previous_agents, color, m)
     #print(color)
 
     flipped_agents = {}
@@ -282,7 +282,7 @@ def create_grid_3d(dimensions_input, isperioidic, m):
             #print("moved p_i agents to w_i, agents are right now at:")
             #print(agents)
             #print(color)
-        mesh_2d.color_sync(Z, agents, previous_agents, color, m)
+        functions.color_sync(Z, agents, previous_agents, color, m)
         print(agents)
         print(color)
         print("iteration is over")
@@ -337,6 +337,9 @@ def create_grid_3d(dimensions_input, isperioidic, m):
     print("no grey nodes remain")
     print("after init is " + str(after_init))
     print("move counter is " + str(move_counter))
+    move_counted = move_counter
+    move_counter = 0
+    return [nr_of_agents, after_init, move_counted]
 
 def move(A, x, y, agents, dimensions, agents_snapshot):
     global move_counter
@@ -407,7 +410,7 @@ def cube(t, dimensions, agents, Z, color, m, agents_snapshot):
                 #shift = shift + y
                 #print("shift became")
                 #print(shift)
-                mesh_2d.color_sync(Z, agents, previous_agents, color, m)
+                functions.color_sync(Z, agents, previous_agents, color, m)
                 print(agents)
             y_global = 0 - y_global
             print("value of y is " + str(y_global))
@@ -418,14 +421,14 @@ def cube(t, dimensions, agents, Z, color, m, agents_snapshot):
                 #also keep in mind the + 1 for the iteration (<= correction)
                 move([2, 0 % dimensions[1]], 2, -w_global, agents, dimensions, agents_snapshot)
                 move([2, 1 % dimensions[1]], 2, w_global, agents, dimensions, agents_snapshot)
-                mesh_2d.color_sync(Z, agents, previous_agents, color, m)
+                functions.color_sync(Z, agents, previous_agents, color, m)
                 print("if happened (moving along second dimension)")
                 print(agents)
             if dimensions[1] % 2 == 1 and o == (math.floor(dimensions[1] / 2)) - 1:
                 print("this is where the fun begins")
                 previous_agents = agents.copy()
                 move([2, 0 % dimensions[1]], 2, -w_global, agents, dimensions, agents_snapshot)
-                mesh_2d.color_sync(Z, agents, previous_agents, color, m)
+                functions.color_sync(Z, agents, previous_agents, color, m)
                 print("agents are " + str(agents))
                 for i in range(dimensions[0] - 2):
                     previous_agents = agents.copy()
@@ -434,7 +437,7 @@ def cube(t, dimensions, agents, Z, color, m, agents_snapshot):
                     #shift = shift + y
                     #print("shift became")
                     #print(shift)
-                    mesh_2d.color_sync(Z, agents, previous_agents, color, m)
+                    functions.color_sync(Z, agents, previous_agents, color, m)
                     print(agents)
                 y_global = 0 - y_global
                 print("we finished with the odd stuff")
@@ -450,7 +453,7 @@ def cube(t, dimensions, agents, Z, color, m, agents_snapshot):
                 move([t, 0], t, -1, agents, dimensions, agents_snapshot)
                 print(agents)
                 move([t, 1], t, 1, agents, dimensions, agents_snapshot)
-                mesh_2d.color_sync(Z, agents, previous_agents, color, m)
+                functions.color_sync(Z, agents, previous_agents, color, m)
                 print(agents)
 
 def itercube(s, dimensions, m, agents, Z, color, agents_snapshot):
@@ -467,7 +470,7 @@ def itercube(s, dimensions, m, agents, Z, color, agents_snapshot):
             move([1, 1], s, 1, agents, dimensions, agents_snapshot)
             move([1, 0], s, 1, agents, dimensions, agents_snapshot)
             print(agents)
-            mesh_2d.color_sync(Z, agents, previous_agents, color, m)
+            functions.color_sync(Z, agents, previous_agents, color, m)
 
 def brick(t, b, dimensions, agents, Z, color, m, agents_snapshot):
     global y_global
@@ -483,7 +486,7 @@ def brick(t, b, dimensions, agents, Z, color, m, agents_snapshot):
             move([b+1, 1], b+1, y_global, agents, dimensions, agents_snapshot)
             print("moved")
             print(agents)
-            mesh_2d.color_sync(Z, agents, previous_agents, color, m)
+            functions.color_sync(Z, agents, previous_agents, color, m)
         y_global = 0 - y_global
     else:
         for o in range(math.ceil((dimensions[t-1] / 2))):
@@ -496,14 +499,14 @@ def brick(t, b, dimensions, agents, Z, color, m, agents_snapshot):
                 #just move one of them one more time
                 move([t, 0], t, -1, agents, dimensions, agents_snapshot)
                 move([t, 1], t, +1, agents, dimensions, agents_snapshot)
-                mesh_2d.color_sync(Z, agents, previous_agents, color, m)
+                functions.color_sync(Z, agents, previous_agents, color, m)
             if o == math.ceil((dimensions[t-1] / 2)) - 1:
                 print("this is where the fun begins")
                 previous_agents = agents.copy()
                 move([t, 0], t, -1, agents, dimensions, agents_snapshot)
-                mesh_2d.color_sync(Z, agents, previous_agents, color, m)
+                functions.color_sync(Z, agents, previous_agents, color, m)
                 print("funny business over")
 
-dimensions = [6, 6, 6]
+dimensions = [10, 10, 10]
 
 create_grid_3d(dimensions, True, 2)

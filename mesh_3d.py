@@ -1,10 +1,12 @@
 import networkx as nx
 import matplotlib.pyplot as plt
 import functions
+import time
 
 move_counter = 0
 
 def create_grid_3d(dimensions, isperioidic, m):
+    start_time = time.time()
     global move_counter
     move_counter = 0
     #print(dimensions)
@@ -397,7 +399,8 @@ def create_grid_3d(dimensions, isperioidic, m):
     print("move_counter is " + str(move_counter))
     move_counted = move_counter
     move_counter = 0
-    return [nr_of_agents, after_init, move_counted]
+    end_time = time.time() - start_time
+    return [nr_of_agents, after_init, move_counted, end_time]
 # grid_graph takes a list of dimensions as its input
 # for some reason dimensions are in reverse order
 # so the first item of the list will be the nth dimension

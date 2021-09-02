@@ -2,11 +2,13 @@ import networkx as nx
 import matplotlib.pyplot as plt
 import math
 import functions
+import time
 
 y_global = 1
 w_global = 1
 move_counter = 0
 def create_grid_3d(dimensions, isperioidic, m):
+    start_time = time.time()
     global y_global
     global w_global
     global move_counter
@@ -349,7 +351,8 @@ def create_grid_3d(dimensions, isperioidic, m):
     move_counter = 0
     y_global = 1
     w_global = 1
-    return [nr_of_agents, after_init, move_counted]
+    end_time = time.time() - start_time
+    return [nr_of_agents, after_init, move_counted, end_time]
 
 def move(A, x, y, agents, dimensions, agents_snapshot):
     global move_counter

@@ -1,10 +1,12 @@
 import networkx as nx
 import matplotlib.pyplot as plt
 import functions
+import time
 
 move_counter = 0
 
 def create_grid_2d(dim1, dim2, isperioidic, m):
+    start_time = time.time()
     global move_counter
     move_counter = 0
     if dim2 < dim1:
@@ -196,7 +198,8 @@ def create_grid_2d(dim1, dim2, isperioidic, m):
     print("move_counter is " + str(move_counter))
     move_counted = move_counter
     move_counter = 0
-    return [nr_of_agents, after_init, move_counted]
+    end_time = time.time() - start_time
+    return [nr_of_agents, after_init, move_counted, end_time]
 
 
 #create_grid_2d(2, 2, False, 2)

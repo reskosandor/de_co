@@ -6,7 +6,7 @@ import functions
 move_counter = 0
 def create_grid_2d(dim1, dim2, isperioidic, m):
     global move_counter
-
+    move_counter = 0
     dims = [dim1, dim2]
     y_global = 1
     print(dims)

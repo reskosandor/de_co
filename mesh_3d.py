@@ -6,6 +6,7 @@ move_counter = 0
 
 def create_grid_3d(dimensions, isperioidic, m):
     global move_counter
+    move_counter = 0
     #print(dimensions)
     dim1 = dimensions[2]
     dim2 = dimensions[1]
@@ -404,4 +405,4 @@ def create_grid_3d(dimensions, isperioidic, m):
 
 dimensions = [2, 2, 2]
 
-create_grid_3d(dimensions, False, 1)
+#create_grid_3d(dimensions, False, 1)

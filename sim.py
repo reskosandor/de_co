@@ -54,9 +54,23 @@ with open('sim.csv', 'w', encoding='UTF8', newline='') as f:
     writer.writerow('tomesh2d m2')
     for i in range(20):
         writer.writerow(tomesh_2d.create_grid_2d(i+1, i+1, True, 2))
-    writer.writerow('tomesh3d')
-    print()
+    writer.writerow('tomesh3d m1')
+    for i in range(20):
+        dimensions = [i+1, i+1, i+1]
+        print("when writing to csv, i is " + str(i+1), flush=True)
+        writer.writerow(tomesh_3d.create_grid_3d(dimensions, True, 1))
+    writer.writerow('tomesh3d m2')
+    for i in range(20):
+        dimensions = [i+1, i+1, i+1]
+        print("when writing to csv, i is " + str(i+1), flush=True)
+        writer.writerow(tomesh_3d.create_grid_3d(dimensions, True, 2))
+    writer.writerow('tomesh3d m3')
     for i in range(20):
         dimensions = [i+1, i+1, i+1]
         print("when writing to csv, i is " + str(i+1), flush=True)
         writer.writerow(tomesh_3d.create_grid_3d(dimensions, True, 3))
+    writer.writerow('tomesh3d m4')
+    for i in range(20):
+        dimensions = [i+1, i+1, i+1]
+        print("when writing to csv, i is " + str(i+1), flush=True)
+        writer.writerow(tomesh_3d.create_grid_3d(dimensions, True, 4))

@@ -6,6 +6,7 @@ move_counter = 0
 
 def create_grid_2d(dim1, dim2, isperioidic, m):
     global move_counter
+    move_counter = 0
     if dim2 < dim1:
         print("dimensions must be in monotonic increasing sequence")
         exit()
@@ -198,4 +199,4 @@ def create_grid_2d(dim1, dim2, isperioidic, m):
     return [nr_of_agents, after_init, move_counted]
 
 
-create_grid_2d(2, 2, False, 2)
+#create_grid_2d(2, 2, False, 2)

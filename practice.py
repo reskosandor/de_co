@@ -1,34 +1,73 @@
-import networkx as nx
-import matplotlib.pyplot as plt
+import csv
 
-def create_grid_3d(dimensions, isperioidic, m):
-    print(dimensions)
+import mesh_2d
+import mesh_3d
+import tomesh_2d
+import tomesh_3d
 
-    #if dim2 < dim1 or dim3 < dim2:
-    #    print("dimensions must be in monotonic increasing sequence")
-    #    exit()
 
-    if m == 0:
-        print("m must be a positive integer")
-        exit()
+#asd = mesh_2d.create_grid_2d(10, 10, False, 2)
+#print("asd is " + str(asd))
+#print(type(asd))
 
-    if m > 3:
-        print("m must not be greater than the dimension of the mesh")
-        exit()
-    Z = nx.grid_graph(dimensions, periodic=isperioidic)
-    #print(nx.info(Z))
-    #nx.draw(Z)
-    #plt.show()
-    #---initial_set_(2, m)_begins)---
-    #---creating_C---
-    print(list(Z.nodes))
 
-    #nx.draw(C)
-    #plt.show()
+header = ["number of agents", "after_init", "move_count"]
 
-# grid_graph takes a list of dimensions as its input
-# for some reason dimensions are in reverse order
-# so the first item of the list will be the nth dimension
-dimensions = [3, 2, 1]
+example_header = ['name', 'area', 'country_code2', 'country_code3']
+example_data = [
+    ['Albania', 28748, 'AL', 'ALB'],
+    ['Algeria', 2381741, 'DZ', 'DZA'],
+    ['American Samoa', 199, 'AS', 'ASM'],
+    ['Andorra', 468, 'AD', 'AND'],
+    ['Angola', 1246700, 'AO', 'AGO']
+]
 
-create_grid_3d(dimensions, False, 2)
+with open('sim.csv', 'w', encoding='UTF8', newline='') as f:
+    writer = csv.writer(f)
+
+    # write the header
+    #writer.writerow(header)
+
+    #write multiple rows
+    #writer.writerows(example_data)
+    writer.writerow('tomesh2d m1')
+
+    for i in range(5):
+        dimensions = [i+1, i+1, i+1]
+        print("when writing to csv, i is " + str(i+1), flush=True)
+        writer.writerow(tomesh_3d.create_grid_3d(dimensions, True, 1))
+
+    writer.writerow('tomesh2d m2')
+
+    for i in range(5):
+        dimensions = [i+1, i+1, i+1]
+        print("when writing to csv, i is " + str(i+1), flush=True)
+        writer.writerow(tomesh_3d.create_grid_3d(dimensions, True, 2))
+
+    writer.writerow('tomesh2d m3')
+
+    for i in range(5):
+        dimensions = [i+1, i+1, i+1]
+        print("when writing to csv, i is " + str(i+1), flush=True)
+        writer.writerow(tomesh_3d.create_grid_3d(dimensions, True, 3))
+
+    writer.writerow('tomesh2d m4')
+
+    for i in range(5):
+        dimensions = [i+1, i+1, i+1]
+        print("when writing to csv, i is " + str(i+1), flush=True)
+        writer.writerow(tomesh_3d.create_grid_3d(dimensions, True, 4))
+
+a = 0
+
+def trie(c):
+    global a
+    a = -5
+    c = c+1
+    print(c)
+    a = 0
+    a = a + 10
+    print("a is " + str(a))
+
+trie(0)
+print("a after f is " + str(a))

@@ -6,10 +6,17 @@ import functions
 y_global = 1
 w_global = 1
 move_counter = 0
-def create_grid_3d(dimensions_input, isperioidic, m):
+def create_grid_3d(dimensions, isperioidic, m):
+    global y_global
+    global w_global
     global move_counter
+    y_global = 1
+    w_global = 1
+    print("move counter at starting position is " + str(move_counter))
 
-    dims = [dimensions_input[2], dimensions_input[1], dimensions_input[0]]
+
+    dims = [dimensions[2], dimensions[1], dimensions[0]]
+    print("dimensions are the following: " + str(dims), flush=True)
     dim1 = dims[0]
     dim2 = dims[1]
     dim3 = dims[2]
@@ -336,9 +343,12 @@ def create_grid_3d(dimensions_input, isperioidic, m):
             exit()
     print("no grey nodes remain")
     print("after init is " + str(after_init))
-    print("move counter is " + str(move_counter))
+
     move_counted = move_counter
+    print("move counted is " + str(move_counted))
     move_counter = 0
+    y_global = 1
+    w_global = 1
     return [nr_of_agents, after_init, move_counted]
 
 def move(A, x, y, agents, dimensions, agents_snapshot):
@@ -507,6 +517,4 @@ def brick(t, b, dimensions, agents, Z, color, m, agents_snapshot):
                 functions.color_sync(Z, agents, previous_agents, color, m)
                 print("funny business over")
 
-dimensions = [10, 10, 10]
 
-create_grid_3d(dimensions, True, 2)

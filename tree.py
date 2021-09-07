@@ -6,7 +6,7 @@ import random
 previous_node = -1
 
 
-def tree(T, m):
+def tree(lr, m):
     print("asd")
     T = nx.algorithms.tree.coding.from_prufer_sequence(lr)
     print(nx.info(T))
@@ -109,16 +109,7 @@ def tree(T, m):
 
 
 
-    print("calculating a...")
-    for node in list(T):
-        print(T.degree[node])
-    print("type", flush=True)
-    print(subtree(T, 0, 1))
-    print(subtree(T, 0, 1).degree[0], flush=True)
-    print("typends", flush=True)
-    print(subtree(T, neighbors_of_v(T, 1)[0], 1))
 
-    print(T.edges())
 
 
     agents = {}
@@ -258,33 +249,12 @@ def tree(T, m):
 
 
 
+#lr = [1, 7, 5, 7, 7, 1]
 
-    #T.remove_edge(1, 7)
-    #nx.draw(T, with_labels=True)
+rtree = nx.random_tree(n=20, seed=0)
+nx.draw(rtree)
+plt.show()
+lr = nx.to_prufer_sequence(rtree)
+print("lr is " + str(lr))
 
-    #print(nx.algorithms.descendants(T, 5))
-    #T.remove_node(4)
-    #print(nx.algorithms.descendants(T, 5))
-    #nx.draw(subtree(T, 7, 1))
-    #nx.draw(T)
-    #plt.show()
-
-
-
-
-
-
-
-
-
-#mylist = list(range(10))
-
-#print(mylist)
-#random.shuffle(mylist)
-#print(mylist)
-#lr = random.sample(mylist, len(mylist))
-#print(lr)
-lr = [1, 7, 5, 7, 7, 1]
-#lr = [1]
-
-tree(lr, 3)
+tree(lr, 1)

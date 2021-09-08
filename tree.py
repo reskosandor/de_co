@@ -2,13 +2,22 @@ import networkx as nx
 import matplotlib.pyplot as plt
 import functions
 import random
+import time
 
 previous_node = -1
 
+move_counter = 0
 
 def tree(lr, m):
+    start_time = time.time()
+    global move_counter
+    global number_of_agents
+    global previous_node
+    previous_node = -1
+    print("move counter at starting position is " + str(move_counter))
     print("asd")
     T = nx.algorithms.tree.coding.from_prufer_sequence(lr)
+    T_degree = T.degree()
     print(nx.info(T))
     #nx.draw(T)
     #plt.show()
@@ -138,16 +147,21 @@ def tree(lr, m):
 
     def decontaminate(T, v, m, T_original):
         global previous_node
+        global move_counter
+        global number_of_agents
         print("decont v is " + str(v))
         print("decont T is " + str(list(T)))
         previous_agents = agents.copy()
         nr_of_agents = alpha(v, T, m)
+
         for i in range(nr_of_agents):
             if previous_node == -1:
                 agents[i] = v
+                number_of_agents = nr_of_agents
             else:
                 if agents[i] == previous_node:
                     agents[i] = v
+                    move_counter = move_counter + 1
 
         print("moving " + str(nr_of_agents) + " agents to " + str(v))
         functions.color_sync(T_original, agents, previous_agents, color, m)
@@ -193,7 +207,7 @@ def tree(lr, m):
 
         else:
             print("we have reached a leaf")
-    print(mu(3, T, m))
+    #print(mu(3, T, m))
     #decontaminate(T, 3, m, T_original)
 
     a_try = {}
@@ -228,8 +242,8 @@ def tree(lr, m):
         starting_node = minimum_mu[0]
         decontaminate(T, starting_node, m, T_original)
 
-    #optimaltreedecontamination(T, m, T_original)
-    decontaminate(T, 0, m, T_original)
+    optimaltreedecontamination(T, m, T_original)
+    #decontaminate(T, 0, m, T_original)
 
 
     nr_of_black_nodes = 0
@@ -245,16 +259,19 @@ def tree(lr, m):
             print("some nodes are grey, algorithm failed")
             exit()
     print("no grey nodes remain")
-
-
+    move_counted = move_counter
+    print("move counted is " + str(move_counted))
+    move_counter = 0
+    end_time = time.time() - start_time
+    return(number_of_agents, move_counted, end_time)
 
 
 #lr = [1, 7, 5, 7, 7, 1]
-
+'''
 rtree = nx.random_tree(n=20, seed=0)
-nx.draw(rtree)
-plt.show()
-lr = nx.to_prufer_sequence(rtree)
+A = nx.balanced_tree(3, 3)
+lr = nx.to_prufer_sequence(A)
 print("lr is " + str(lr))
 
-tree(lr, 1)
+
+print(tree(lr, 1))'''

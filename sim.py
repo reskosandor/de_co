@@ -81,13 +81,47 @@ with open('sim.csv', 'w', encoding='UTF8', newline='') as f:
     lr = nx.to_prufer_sequence(A)
     writer.writerow(tree.tree(lr, 1))'''
     print("asd")
-    for r in range(5):
+    '''for r in range(5):
         for h in range(5):
             for m in range(r):
-                print("are we here?")
-                example_data = [r+1, h+1, m+1]
-                writer.writerow(example_data)
-
-                A = nx.balanced_tree(r+1, h+1)
-                lr = nx.to_prufer_sequence(A)
-                writer.writerow(tree.tree(lr, m+1))
+                print("are we here?")'''
+    example_data = [2, 3, 2]
+    writer.writerow(example_data)
+    A = nx.balanced_tree(2, 3)
+    lr = nx.to_prufer_sequence(A)
+    writer.writerow(tree.tree(lr, 2))
+    example_data = [2, 4, 2]
+    writer.writerow(example_data)
+    A = nx.balanced_tree(2, 4)
+    lr = nx.to_prufer_sequence(A)
+    writer.writerow(tree.tree(lr, 2))
+    example_data = [2, 5, 2]
+    writer.writerow(example_data)
+    A = nx.balanced_tree(2, 5)
+    lr = nx.to_prufer_sequence(A)
+    writer.writerow(tree.tree(lr, 2))
+    example_data = [3, 2, 3]
+    writer.writerow(example_data)
+    A = nx.balanced_tree(3, 2)
+    lr = nx.to_prufer_sequence(A)
+    writer.writerow(tree.tree(lr, 3))
+    example_data = [3, 3, 3]
+    writer.writerow(example_data)
+    A = nx.balanced_tree(3, 3)
+    lr = nx.to_prufer_sequence(A)
+    writer.writerow(tree.tree(lr, 3))
+    example_data = [4, 1, 4]
+    writer.writerow(example_data)
+    A = nx.balanced_tree(4, 1)
+    lr = nx.to_prufer_sequence(A)
+    writer.writerow(tree.tree(lr, 4))
+    example_data = [4, 2, 4]
+    writer.writerow(example_data)
+    A = nx.balanced_tree(4, 2)
+    lr = nx.to_prufer_sequence(A)
+    writer.writerow(tree.tree(lr, 4))
+    example_data = [4, 3, 4]
+    writer.writerow(example_data)
+    A = nx.balanced_tree(4, 3)
+    lr = nx.to_prufer_sequence(A)
+    writer.writerow(tree.tree(lr, 4))

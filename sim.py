@@ -84,7 +84,7 @@ with open('sim.csv', 'w', encoding='UTF8', newline='') as f:
     '''for r in range(5):
         for h in range(5):
             for m in range(r):
-                print("are we here?")'''
+                print("are we here?")
     example_data = [2, 3, 2]
     writer.writerow(example_data)
     A = nx.balanced_tree(2, 3)
@@ -124,4 +124,11 @@ with open('sim.csv', 'w', encoding='UTF8', newline='') as f:
     writer.writerow(example_data)
     A = nx.balanced_tree(4, 3)
     lr = nx.to_prufer_sequence(A)
-    writer.writerow(tree.tree(lr, 4))
+    writer.writerow(tree.tree(lr, 4))'''
+    for m in range(3):
+        for i in range(4, 22):
+            example_data = [3, i, m+1]
+            writer.writerow(example_data)
+            A = C = nx.full_rary_tree(3, i)
+            lr = nx.to_prufer_sequence(A)
+            writer.writerow(tree.tree(lr, m+1))

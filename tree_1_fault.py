@@ -143,11 +143,11 @@ def tree(lr, m):
         else:
             ret = 0
             for node in neigh_list:
-                ret = ret + mu(node, subtree(T, node, v), m) + alpha(node, subtree(T, node, v), m)
+                ret = ret + mu(node, subtree(T, node, v), m) + 2 * alpha(node, subtree(T, node, v), m)
             return ret
 
 
-    def decontaminate(T, v, m, T_original, number_of_moves):
+    def decontaminate(T, v, m, T_original, number_of_moves, original_root):
         global previous_node
         global move_counter
         global number_of_agents
@@ -156,8 +156,8 @@ def tree(lr, m):
         previous_agents = agents.copy()
         previous_backup_agents = backup_agents.copy()
         nr_of_agents = alpha(v, T, m)
-        error_point = random(1, number_of_moves)
-        print("error point is " + error_point)
+        error_point = random.randint(1, number_of_moves)
+        print("error point is " + str(error_point))
 
         for i in range(nr_of_agents):
             if previous_node == -1:
@@ -173,7 +173,7 @@ def tree(lr, m):
                 backup_agents[i] = v
             elif backup_agents[i] != -1:
                 backup_agents[i] = previous_agents[i]
-
+                move_counter = move_counter + 1
 
         print("moving " + str(nr_of_agents) + " agents to " + str(v))
         functions.color_sync_with_error(T_original, agents, previous_agents, color, m, backup_agents, previous_backup_agents)
@@ -183,12 +183,31 @@ def tree(lr, m):
 
         #doing the error check
         if move_counter >= error_point:
+            #updating previous agent positions
             previous_agents = agents.copy()
             previous_backup_agents = backup_agents.copy()
-            erroneous_agent = random.random(0, len(agents) - 1)
+            erroneous_agent = random.randint(0, len(agents) - 1)
+            #eliminating the error agent
             agents[erroneous_agent] = -1
+            #color sync
             functions.color_sync_with_error(T_original, agents, previous_agents, color, m, backup_agents,
                                             previous_backup_agents)
+            #moving the single backup agent
+            backup_agents[erroneous_agent] = previous_agents[erroneous_agent]
+            move_counter = move_counter + 1
+            #color sync
+            functions.color_sync_with_error(T_original, agents, previous_agents, color, m, backup_agents,
+                                            previous_backup_agents)
+            #updating the previous agent positions
+            previous_agents = agents.copy()
+            previous_backup_agents = backup_agents.copy()
+            #the single backup agent becomes an active agent
+            agents[erroneous_agent] = backup_agents[erroneous_agent]
+            backup_agents[erroneous_agent] = -1
+            #color sync
+            functions.color_sync_with_error(T_original, agents, previous_agents, color, m, backup_agents,
+                                            previous_backup_agents)
+
 
 
         if T.degree(v) != 0:
@@ -212,9 +231,10 @@ def tree(lr, m):
             for neighbor in reversed(ordered_v_neighbours):
                 print("ordered_v_neighbours is " + str(ordered_v_neighbours))
                 previous_node = v
-                decontaminate(subtree(T, neighbor, v), neighbor, m, T_original)
-
+                decontaminate(subtree(T, neighbor, v), neighbor, m, T_original, original_root)
+                #this is the moving back part
                 previous_agents = agents.copy()
+                previous_backup_agents = backup_agents.copy()
                 howmany = 0
                 print("before moving back, the current value of neighbor is " + str(neighbor))
                 for i in agents:
@@ -222,11 +242,40 @@ def tree(lr, m):
                     if agents[i] == neighbor:
                         agents[i] = v
                         howmany = howmany+1
+                        move_counter = move_counter + 1
                 print("we were in a leaf, now we're moving back " + str(howmany) + " agents from" + str(neighbor) + " to " + str(v))
+                #moving the backup agents one step back on the shortest route to the root
+                for i in backup_agents:
+                    if backup_agents[i] != -1 and backup_agents[i] != original_root:
+                        shortest_path_to_root = nx.shortest_path(T_original, backup_agents[i], original_root)
+                        backup_agents[i] = shortest_path_to_root[1]
+                        move_counter = move_counter + 1
+
+
+
                 functions.color_sync_with_error(T_original, agents, previous_agents, color, m, backup_agents, previous_backup_agents)
                 print("agents are " + str(agents))
                 print("color is " + str(color))
                 print("previous node is " + str(previous_node))
+
+                # doing the error check
+                if move_counter >= error_point:
+                    previous_agents = agents.copy()
+                    previous_backup_agents = backup_agents.copy()
+                    erroneous_agent = random.randint(0, len(agents) - 1)
+                    agents[erroneous_agent] = -1
+                    functions.color_sync_with_error(T_original, agents, previous_agents, color, m, backup_agents,
+                                                    previous_backup_agents)
+                    backup_agents[erroneous_agent] = previous_agents[erroneous_agent]
+                    move_counter = move_counter + 1
+                    functions.color_sync_with_error(T_original, agents, previous_agents, color, m, backup_agents,
+                                                    previous_backup_agents)
+                    previous_agents = agents.copy()
+                    previous_backup_agents = backup_agents.copy()
+                    agents[erroneous_agent] = backup_agents[erroneous_agent]
+                    backup_agents[erroneous_agent] = -1
+                    functions.color_sync_with_error(T_original, agents, previous_agents, color, m, backup_agents,
+                                                    previous_backup_agents)
 
         else:
             print("we have reached a leaf")
@@ -265,7 +314,7 @@ def tree(lr, m):
     def optimaltreedecontamination(T, m, T_original):
         starting_node = minimum_mu[0]
         number_of_moves = minval
-        decontaminate(T, starting_node, m, T_original, number_of_moves)
+        decontaminate(T, starting_node, m, T_original, number_of_moves, starting_node)
 
     optimaltreedecontamination(T, m, T_original)
     #decontaminate(T, 0, m, T_original)

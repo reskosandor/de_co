@@ -1,10 +1,14 @@
 import networkx as nx
 import matplotlib.pyplot as plt
+import functions
+import time
 
 move_counter = 0
 
 def create_grid_2d(dim1, dim2, isperioidic, m):
+    start_time = time.time()
     global move_counter
+    move_counter = 0
     if dim2 < dim1:
         print("dimensions must be in monotonic increasing sequence")
         exit()
@@ -46,7 +50,7 @@ def create_grid_2d(dim1, dim2, isperioidic, m):
     color = {}
     for nodes in Z:
         color[nodes] = "grey"
-    color_sync(Z, agents, previous_agents, color, m)
+    functions.color_sync(Z, agents, previous_agents, color, m)
     print(color)
     #start with a set of |C| agents in v_(0,0)
     nr_of_agents = C.number_of_nodes()
@@ -59,7 +63,7 @@ def create_grid_2d(dim1, dim2, isperioidic, m):
     for i in range(nr_of_agents):
         agents[i] = (0, 0)
     print(agents)
-    color_sync(Z, agents, previous_agents, color, m)
+    functions.color_sync(Z, agents, previous_agents, color, m)
     print(color)
 
     flipped_agents = {}
@@ -136,7 +140,7 @@ def create_grid_2d(dim1, dim2, isperioidic, m):
                 move_counter = move_counter + 1
 
 
-            color_sync(Z, agents, previous_agents, color, m)
+            functions.color_sync(Z, agents, previous_agents, color, m)
             print(color)
         print(agents)
         print("iteration is over")
@@ -162,7 +166,7 @@ def create_grid_2d(dim1, dim2, isperioidic, m):
             agents[0] = canonical_path[i+1]
             move_counter = move_counter + 1
             print(agents[0])
-            color_sync(Z, agents, previous_agents, color, m)
+            functions.color_sync(Z, agents, previous_agents, color, m)
             print(color)
     if m < 2:
         print(agents)
@@ -173,7 +177,7 @@ def create_grid_2d(dim1, dim2, isperioidic, m):
                 agents[j] = (x, y+1)
                 move_counter = move_counter + 1
             print(agents)
-            color_sync(Z, agents, previous_agents, color, m)
+            functions.color_sync(Z, agents, previous_agents, color, m)
             print(color)
     print(list(Z.nodes))
     print(color)
@@ -192,29 +196,10 @@ def create_grid_2d(dim1, dim2, isperioidic, m):
     print("no grey nodes remain")
     print("after_init is " + str(after_init))
     print("move_counter is " + str(move_counter))
-def color_sync(graph, agents, previous_agents, color, m):
-    for key in color:
-        for i in agents:
-            if key == agents[i]:
-                color[key] = "black"
+    move_counted = move_counter
+    move_counter = 0
+    end_time = time.time() - start_time
+    return [nr_of_agents, after_init, move_counted, end_time]
 
 
-    for key in color:
-        if key in previous_agents.values() and key not in agents.values():
-            color[key] = "white"
-
-    if color[key] == "white":
-        neighbours = [j for j in graph[key]]
-        counter = 0
-        for k in range(len(neighbours)):
-            if color[(neighbours[k])] == "grey":
-                counter = counter + 1
-            if m <= counter:
-                color[key] = "grey"
-            elif counter < m:
-                color[key] = "white"
-
-
-
-
-create_grid_2d(10, 10, False, 1)
+#create_grid_2d(2, 2, False, 2)

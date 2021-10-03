@@ -1,14 +1,23 @@
 import networkx as nx
 import matplotlib.pyplot as plt
-import mesh_2d
+import functions
 import random
+import time
 
 previous_node = -1
 
+move_counter = 0
 
-def tree(T, m):
+def tree(lr, m):
+    start_time = time.time()
+    global move_counter
+    global number_of_agents
+    global previous_node
+    previous_node = -1
+    print("move counter at starting position is " + str(move_counter))
     print("asd")
     T = nx.algorithms.tree.coding.from_prufer_sequence(lr)
+    T_degree = T.degree()
     print(nx.info(T))
     #nx.draw(T)
     #plt.show()
@@ -109,16 +118,7 @@ def tree(T, m):
 
 
 
-    print("calculating a...")
-    for node in list(T):
-        print(T.degree[node])
-    print("type", flush=True)
-    print(subtree(T, 0, 1))
-    print(subtree(T, 0, 1).degree[0], flush=True)
-    print("typends", flush=True)
-    print(subtree(T, neighbors_of_v(T, 1)[0], 1))
 
-    print(T.edges())
 
 
     agents = {}
@@ -127,7 +127,7 @@ def tree(T, m):
 
     for nodes in T:
         color[nodes] = "grey"
-    mesh_2d.color_sync(T, agents, previous_agents, color, m)
+    functions.color_sync(T, agents, previous_agents, color, m)
     print(color)
     T_original = T.copy()
 
@@ -147,19 +147,24 @@ def tree(T, m):
 
     def decontaminate(T, v, m, T_original):
         global previous_node
+        global move_counter
+        global number_of_agents
         print("decont v is " + str(v))
         print("decont T is " + str(list(T)))
         previous_agents = agents.copy()
         nr_of_agents = alpha(v, T, m)
+
         for i in range(nr_of_agents):
             if previous_node == -1:
                 agents[i] = v
+                number_of_agents = nr_of_agents
             else:
                 if agents[i] == previous_node:
                     agents[i] = v
+                    move_counter = move_counter + 1
 
         print("moving " + str(nr_of_agents) + " agents to " + str(v))
-        mesh_2d.color_sync(T_original, agents, previous_agents, color, m)
+        functions.color_sync(T_original, agents, previous_agents, color, m)
         print("agents are " + str(agents))
         print("color is " + str(color))
         print("previous node is " + str(previous_node))
@@ -195,14 +200,14 @@ def tree(T, m):
                         agents[i] = v
                         howmany = howmany+1
                 print("we were in a leaf, now we're moving back " + str(howmany) + " agents from" + str(neighbor) + " to " + str(v))
-                mesh_2d.color_sync(T_original, agents, previous_agents, color, m)
+                functions.color_sync(T_original, agents, previous_agents, color, m)
                 print("agents are " + str(agents))
                 print("color is " + str(color))
                 print("previous node is " + str(previous_node))
 
         else:
             print("we have reached a leaf")
-    print(mu(3, T, m))
+    #print(mu(3, T, m))
     #decontaminate(T, 3, m, T_original)
 
     a_try = {}
@@ -237,8 +242,8 @@ def tree(T, m):
         starting_node = minimum_mu[0]
         decontaminate(T, starting_node, m, T_original)
 
-    #optimaltreedecontamination(T, m, T_original)
-    decontaminate(T, 0, m, T_original)
+    optimaltreedecontamination(T, m, T_original)
+    #decontaminate(T, 0, m, T_original)
 
 
     nr_of_black_nodes = 0
@@ -254,37 +259,19 @@ def tree(T, m):
             print("some nodes are grey, algorithm failed")
             exit()
     print("no grey nodes remain")
+    move_counted = move_counter
+    print("move counted is " + str(move_counted))
+    move_counter = 0
+    end_time = time.time() - start_time
+    return(number_of_agents, move_counted, end_time)
 
 
+#lr = [1, 7, 5, 7, 7, 1]
+'''
+rtree = nx.random_tree(n=20, seed=0)
+A = nx.balanced_tree(3, 3)
+lr = nx.to_prufer_sequence(A)
+print("lr is " + str(lr))
 
 
-
-    #T.remove_edge(1, 7)
-    #nx.draw(T, with_labels=True)
-
-    #print(nx.algorithms.descendants(T, 5))
-    #T.remove_node(4)
-    #print(nx.algorithms.descendants(T, 5))
-    #nx.draw(subtree(T, 7, 1))
-    #nx.draw(T)
-    #plt.show()
-
-
-
-
-
-
-
-
-
-#mylist = list(range(10))
-
-#print(mylist)
-#random.shuffle(mylist)
-#print(mylist)
-#lr = random.sample(mylist, len(mylist))
-#print(lr)
-lr = [1, 7, 5, 7, 7, 1]
-#lr = [1]
-
-tree(lr, 3)
+print(tree(lr, 1))'''

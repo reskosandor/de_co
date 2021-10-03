@@ -99,4 +99,4 @@ with open('sim.csv', 'w', encoding='UTF8', newline='') as f:
     print(example_data)
     A = nx.balanced_tree(3, 2)
     lr = nx.to_prufer_sequence(A)
-    print(tree.tree(lr, 1))
+    print(tree.tree(lr, 3))

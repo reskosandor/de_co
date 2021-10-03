@@ -129,7 +129,7 @@ def tree(lr, m):
 
     for nodes in T:
         color[nodes] = "grey"
-    functions.color_sync(T, agents, previous_agents, color, m)
+    functions.color_sync_with_error(T, agents, previous_agents, color, m, backup_agents, previous_backup_agents)
     print(color)
     T_original = T.copy()
 
@@ -167,17 +167,29 @@ def tree(lr, m):
                 if agents[i] == previous_node:
                     agents[i] = v
                     move_counter = move_counter + 1
-
+        #creating backup agents and moving them. if they became active, their value in backup_agents will be -1
         for i in range(len(backup_agents)):
             if previous_node == -1:
                 backup_agents[i] = v
+            elif backup_agents[i] != -1:
+                backup_agents[i] = previous_agents[i]
 
 
         print("moving " + str(nr_of_agents) + " agents to " + str(v))
-        functions.color_sync(T_original, agents, previous_agents, color, m)
+        functions.color_sync_with_error(T_original, agents, previous_agents, color, m, backup_agents, previous_backup_agents)
         print("agents are " + str(agents))
         print("color is " + str(color))
         print("previous node is " + str(previous_node))
+
+        #doing the error check
+        if move_counter >= error_point:
+            previous_agents = agents.copy()
+            previous_backup_agents = backup_agents.copy()
+            erroneous_agent = random.random(0, len(agents) - 1)
+            agents[erroneous_agent] = -1
+            functions.color_sync_with_error(T_original, agents, previous_agents, color, m, backup_agents,
+                                            previous_backup_agents)
+
 
         if T.degree(v) != 0:
             v_neighbours = neighbors_of_v(T, v)
@@ -211,7 +223,7 @@ def tree(lr, m):
                         agents[i] = v
                         howmany = howmany+1
                 print("we were in a leaf, now we're moving back " + str(howmany) + " agents from" + str(neighbor) + " to " + str(v))
-                functions.color_sync(T_original, agents, previous_agents, color, m)
+                functions.color_sync_with_error(T_original, agents, previous_agents, color, m, backup_agents, previous_backup_agents)
                 print("agents are " + str(agents))
                 print("color is " + str(color))
                 print("previous node is " + str(previous_node))

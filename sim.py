@@ -80,6 +80,8 @@ with open('sim.csv', 'w', encoding='UTF8', newline='') as f:
     A = nx.balanced_tree(3, 3)
     lr = nx.to_prufer_sequence(A)
     writer.writerow(tree.tree(lr, 1))'''
+
+    '''
     print("asd")
     for r in range(5):
         for h in range(5):
@@ -91,3 +93,10 @@ with open('sim.csv', 'w', encoding='UTF8', newline='') as f:
                 A = nx.balanced_tree(r+1, h+1)
                 lr = nx.to_prufer_sequence(A)
                 writer.writerow(tree.tree(lr, m+1))
+    '''
+    print("start simming")
+    example_data = [3, 3, 3]
+    print(example_data)
+    A = nx.balanced_tree(3, 2)
+    lr = nx.to_prufer_sequence(A)
+    print(tree.tree(lr, 1))

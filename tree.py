@@ -141,7 +141,7 @@ def tree(lr, m):
         else:
             ret = 0
             for node in neigh_list:
-                ret = ret + mu(node, subtree(T, node, v), m) + 2 * alpha(node, subtree(T, node, v), m)
+                ret = ret + mu(node, subtree(T, node, v), m) + alpha(node, subtree(T, node, v), m)
             return ret
 
 
@@ -236,6 +236,7 @@ def tree(lr, m):
     minimum_mu = []
     minval = min(min_mu.values())
     minimum_mu = [k for k, v in min_mu.items() if v==minval]
+    print("minimum_mu value is: " + str(minval))
     print("minimum_mu is " +str(minimum_mu))
 
     def optimaltreedecontamination(T, m, T_original):

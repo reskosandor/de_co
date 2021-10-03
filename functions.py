@@ -34,7 +34,7 @@ def color_sync_with_error(graph, agents, previous_agents, color, m, backup_agent
 
     for key in color:
         if key in previous_agents.values() or key in previous_backup_agents:
-            if key not in agents.valies() and key not in backup_agents.values():
+            if key not in agents.values() and key not in backup_agents.values():
                 color[key] = "white"
 
     if color[key] == "white":

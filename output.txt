@@ -3,10 +3,10 @@ start simming
 move counter at starting position is 0
 asd
 Graph with 4 nodes and 3 edges
-1
-1
+3
+3
 [0, 1, 2, 3]
-[(0, 1), (1, 2), (2, 3)]
+[(0, 1), (0, 2), (0, 3)]
 [0, 1, 2, 3]
 {0: 'grey', 1: 'grey', 2: 'grey', 3: 'grey'}
 v is....
@@ -14,19 +14,27 @@ v is....
 T consists of nodes:
 [0, 1, 2, 3]
 v degree is...
-1
+3
 v is....
 1
 T consists of nodes:
-[1, 2, 3]
+[1]
 v degree is...
-1
+0
+neighbors are ordered by alpha, now evaluation by degree commencing
+0
+branch 1
+returning one
 v is....
 2
 T consists of nodes:
-[2, 3]
+[2]
 v degree is...
-1
+0
+neighbors are ordered by alpha, now evaluation by degree commencing
+0
+branch 1
+returning one
 v is....
 3
 T consists of nodes:
@@ -38,155 +46,41 @@ neighbors are ordered by alpha, now evaluation by degree commencing
 branch 1
 returning one
 neighbors are ordered by alpha, now evaluation by degree commencing
-branch 2
-v is....
-3
-T consists of nodes:
-[3]
-v degree is...
-0
-neighbors are ordered by alpha, now evaluation by degree commencing
-0
-branch 1
-returning one
-returning 1
-neighbors are ordered by alpha, now evaluation by degree commencing
-branch 2
-v is....
-2
-T consists of nodes:
-[2, 3]
-v degree is...
-1
-v is....
-3
-T consists of nodes:
-[3]
-v degree is...
-0
-neighbors are ordered by alpha, now evaluation by degree commencing
-0
-branch 1
-returning one
-neighbors are ordered by alpha, now evaluation by degree commencing
-branch 2
-v is....
-3
-T consists of nodes:
-[3]
-v degree is...
-0
-neighbors are ordered by alpha, now evaluation by degree commencing
-0
-branch 1
-returning one
-returning 1
-returning 1
-neighbors are ordered by alpha, now evaluation by degree commencing
-branch 2
+branch 4
 v is....
 1
 T consists of nodes:
-[1, 2, 3]
-v degree is...
-1
-v is....
-2
-T consists of nodes:
-[2, 3]
-v degree is...
-1
-v is....
-3
-T consists of nodes:
-[3]
+[1]
 v degree is...
 0
 neighbors are ordered by alpha, now evaluation by degree commencing
 0
 branch 1
 returning one
-neighbors are ordered by alpha, now evaluation by degree commencing
-branch 2
-v is....
-3
-T consists of nodes:
-[3]
-v degree is...
-0
-neighbors are ordered by alpha, now evaluation by degree commencing
-0
-branch 1
-returning one
-returning 1
-neighbors are ordered by alpha, now evaluation by degree commencing
-branch 2
-v is....
-2
-T consists of nodes:
-[2, 3]
-v degree is...
-1
-v is....
-3
-T consists of nodes:
-[3]
-v degree is...
-0
-neighbors are ordered by alpha, now evaluation by degree commencing
-0
-branch 1
-returning one
-neighbors are ordered by alpha, now evaluation by degree commencing
-branch 2
-v is....
-3
-T consists of nodes:
-[3]
-v degree is...
-0
-neighbors are ordered by alpha, now evaluation by degree commencing
-0
-branch 1
-returning one
-returning 1
-returning 1
-returning 1
-appended alpha value for node 0 is: 1
+returning 2
+appended alpha value for node 0 is: 2
 v is....
 1
 T consists of nodes:
 [0, 1, 2, 3]
 v degree is...
-2
-v is....
-0
-T consists of nodes:
-[0]
-v degree is...
-0
-neighbors are ordered by alpha, now evaluation by degree commencing
-0
-branch 1
-returning one
-v is....
-2
-T consists of nodes:
-[2, 3]
-v degree is...
 1
 v is....
-3
+0
 T consists of nodes:
-[3]
+[0, 2, 3]
+v degree is...
+2
+v is....
+2
+T consists of nodes:
+[2]
 v degree is...
 0
 neighbors are ordered by alpha, now evaluation by degree commencing
 0
 branch 1
 returning one
-neighbors are ordered by alpha, now evaluation by degree commencing
-branch 2
 v is....
 3
 T consists of nodes:
@@ -197,56 +91,84 @@ neighbors are ordered by alpha, now evaluation by degree commencing
 0
 branch 1
 returning one
-returning 1
 neighbors are ordered by alpha, now evaluation by degree commencing
-branch 2
+branch 4
 v is....
-0
+2
 T consists of nodes:
-[0]
+[2]
 v degree is...
 0
 neighbors are ordered by alpha, now evaluation by degree commencing
 0
 branch 1
 returning one
-returning 1
-appended alpha value for node 1 is: 1
+returning 2
+neighbors are ordered by alpha, now evaluation by degree commencing
+branch 2
+v is....
+0
+T consists of nodes:
+[0, 2, 3]
+v degree is...
+2
+v is....
+2
+T consists of nodes:
+[2]
+v degree is...
+0
+neighbors are ordered by alpha, now evaluation by degree commencing
+0
+branch 1
+returning one
+v is....
+3
+T consists of nodes:
+[3]
+v degree is...
+0
+neighbors are ordered by alpha, now evaluation by degree commencing
+0
+branch 1
+returning one
+neighbors are ordered by alpha, now evaluation by degree commencing
+branch 4
+v is....
+2
+T consists of nodes:
+[2]
+v degree is...
+0
+neighbors are ordered by alpha, now evaluation by degree commencing
+0
+branch 1
+returning one
+returning 2
+returning 2
+appended alpha value for node 1 is: 2
 v is....
 2
 T consists of nodes:
 [0, 1, 2, 3]
 v degree is...
+1
+v is....
+0
+T consists of nodes:
+[0, 1, 3]
+v degree is...
 2
 v is....
 1
 T consists of nodes:
-[0, 1]
-v degree is...
-1
-v is....
-0
-T consists of nodes:
-[0]
+[1]
 v degree is...
 0
 neighbors are ordered by alpha, now evaluation by degree commencing
 0
 branch 1
 returning one
-neighbors are ordered by alpha, now evaluation by degree commencing
-branch 2
-v is....
-0
-T consists of nodes:
-[0]
-v degree is...
-0
-neighbors are ordered by alpha, now evaluation by degree commencing
-0
-branch 1
-returning one
-returning 1
 v is....
 3
 T consists of nodes:
@@ -258,17 +180,40 @@ neighbors are ordered by alpha, now evaluation by degree commencing
 branch 1
 returning one
 neighbors are ordered by alpha, now evaluation by degree commencing
-branch 2
+branch 4
 v is....
 1
 T consists of nodes:
-[0, 1]
+[1]
 v degree is...
-1
+0
+neighbors are ordered by alpha, now evaluation by degree commencing
+0
+branch 1
+returning one
+returning 2
+neighbors are ordered by alpha, now evaluation by degree commencing
+branch 2
 v is....
 0
 T consists of nodes:
-[0]
+[0, 1, 3]
+v degree is...
+2
+v is....
+1
+T consists of nodes:
+[1]
+v degree is...
+0
+neighbors are ordered by alpha, now evaluation by degree commencing
+0
+branch 1
+returning one
+v is....
+3
+T consists of nodes:
+[3]
 v degree is...
 0
 neighbors are ordered by alpha, now evaluation by degree commencing
@@ -276,20 +221,20 @@ neighbors are ordered by alpha, now evaluation by degree commencing
 branch 1
 returning one
 neighbors are ordered by alpha, now evaluation by degree commencing
-branch 2
+branch 4
 v is....
-0
+1
 T consists of nodes:
-[0]
+[1]
 v degree is...
 0
 neighbors are ordered by alpha, now evaluation by degree commencing
 0
 branch 1
 returning one
-returning 1
-returning 1
-appended alpha value for node 2 is: 1
+returning 2
+returning 2
+appended alpha value for node 2 is: 2
 v is....
 3
 T consists of nodes:
@@ -297,90 +242,66 @@ T consists of nodes:
 v degree is...
 1
 v is....
-2
+0
 T consists of nodes:
 [0, 1, 2]
 v degree is...
-1
+2
 v is....
 1
 T consists of nodes:
-[0, 1]
-v degree is...
-1
-v is....
-0
-T consists of nodes:
-[0]
+[1]
 v degree is...
 0
 neighbors are ordered by alpha, now evaluation by degree commencing
 0
 branch 1
 returning one
-neighbors are ordered by alpha, now evaluation by degree commencing
-branch 2
-v is....
-0
-T consists of nodes:
-[0]
-v degree is...
-0
-neighbors are ordered by alpha, now evaluation by degree commencing
-0
-branch 1
-returning one
-returning 1
-neighbors are ordered by alpha, now evaluation by degree commencing
-branch 2
-v is....
-1
-T consists of nodes:
-[0, 1]
-v degree is...
-1
-v is....
-0
-T consists of nodes:
-[0]
-v degree is...
-0
-neighbors are ordered by alpha, now evaluation by degree commencing
-0
-branch 1
-returning one
-neighbors are ordered by alpha, now evaluation by degree commencing
-branch 2
-v is....
-0
-T consists of nodes:
-[0]
-v degree is...
-0
-neighbors are ordered by alpha, now evaluation by degree commencing
-0
-branch 1
-returning one
-returning 1
-returning 1
-neighbors are ordered by alpha, now evaluation by degree commencing
-branch 2
 v is....
 2
 T consists of nodes:
+[2]
+v degree is...
+0
+neighbors are ordered by alpha, now evaluation by degree commencing
+0
+branch 1
+returning one
+neighbors are ordered by alpha, now evaluation by degree commencing
+branch 4
+v is....
+1
+T consists of nodes:
+[1]
+v degree is...
+0
+neighbors are ordered by alpha, now evaluation by degree commencing
+0
+branch 1
+returning one
+returning 2
+neighbors are ordered by alpha, now evaluation by degree commencing
+branch 2
+v is....
+0
+T consists of nodes:
 [0, 1, 2]
 v degree is...
-1
+2
 v is....
 1
 T consists of nodes:
-[0, 1]
+[1]
 v degree is...
-1
-v is....
 0
+neighbors are ordered by alpha, now evaluation by degree commencing
+0
+branch 1
+returning one
+v is....
+2
 T consists of nodes:
-[0]
+[2]
 v degree is...
 0
 neighbors are ordered by alpha, now evaluation by degree commencing
@@ -388,56 +309,44 @@ neighbors are ordered by alpha, now evaluation by degree commencing
 branch 1
 returning one
 neighbors are ordered by alpha, now evaluation by degree commencing
-branch 2
-v is....
-0
-T consists of nodes:
-[0]
-v degree is...
-0
-neighbors are ordered by alpha, now evaluation by degree commencing
-0
-branch 1
-returning one
-returning 1
-neighbors are ordered by alpha, now evaluation by degree commencing
-branch 2
+branch 4
 v is....
 1
 T consists of nodes:
-[0, 1]
+[1]
 v degree is...
+0
+neighbors are ordered by alpha, now evaluation by degree commencing
+0
+branch 1
+returning one
+returning 2
+returning 2
+appended alpha value for node 3 is: 2
+a_try is {0: 2, 1: 2, 2: 2, 3: 2}
+neigh list is of 0 is [1, 2, 3]
+neigh list is of 1 is []
+v is....
 1
-v is....
-0
 T consists of nodes:
-[0]
+[1]
 v degree is...
 0
 neighbors are ordered by alpha, now evaluation by degree commencing
 0
 branch 1
 returning one
-neighbors are ordered by alpha, now evaluation by degree commencing
-branch 2
+neigh list is of 2 is []
 v is....
-0
+2
 T consists of nodes:
-[0]
+[2]
 v degree is...
 0
 neighbors are ordered by alpha, now evaluation by degree commencing
 0
 branch 1
 returning one
-returning 1
-returning 1
-returning 1
-appended alpha value for node 3 is: 1
-a_try is {0: 1, 1: 1, 2: 1, 3: 1}
-neigh list is of 0 is [1]
-neigh list is of 1 is [2]
-neigh list is of 2 is [3]
 neigh list is of 3 is []
 v is....
 3
@@ -449,116 +358,20 @@ neighbors are ordered by alpha, now evaluation by degree commencing
 0
 branch 1
 returning one
-v is....
-2
-T consists of nodes:
-[2, 3]
-v degree is...
-1
-v is....
-3
-T consists of nodes:
-[3]
-v degree is...
-0
-neighbors are ordered by alpha, now evaluation by degree commencing
-0
-branch 1
-returning one
-neighbors are ordered by alpha, now evaluation by degree commencing
-branch 2
-v is....
-3
-T consists of nodes:
-[3]
-v degree is...
-0
-neighbors are ordered by alpha, now evaluation by degree commencing
-0
-branch 1
-returning one
-returning 1
-v is....
-1
-T consists of nodes:
-[1, 2, 3]
-v degree is...
-1
-v is....
-2
-T consists of nodes:
-[2, 3]
-v degree is...
-1
-v is....
-3
-T consists of nodes:
-[3]
-v degree is...
-0
-neighbors are ordered by alpha, now evaluation by degree commencing
-0
-branch 1
-returning one
-neighbors are ordered by alpha, now evaluation by degree commencing
-branch 2
-v is....
-3
-T consists of nodes:
-[3]
-v degree is...
-0
-neighbors are ordered by alpha, now evaluation by degree commencing
-0
-branch 1
-returning one
-returning 1
-neighbors are ordered by alpha, now evaluation by degree commencing
-branch 2
-v is....
-2
-T consists of nodes:
-[2, 3]
-v degree is...
-1
-v is....
-3
-T consists of nodes:
-[3]
-v degree is...
-0
-neighbors are ordered by alpha, now evaluation by degree commencing
-0
-branch 1
-returning one
-neighbors are ordered by alpha, now evaluation by degree commencing
-branch 2
-v is....
-3
-T consists of nodes:
-[3]
-v degree is...
-0
-neighbors are ordered by alpha, now evaluation by degree commencing
-0
-branch 1
-returning one
-returning 1
-returning 1
 appended mu value for node 0 is: 6
-neigh list is of 1 is [0, 2]
-neigh list is of 0 is []
+neigh list is of 1 is [0]
+neigh list is of 0 is [2, 3]
+neigh list is of 2 is []
 v is....
-0
+2
 T consists of nodes:
-[0]
+[2]
 v degree is...
 0
 neighbors are ordered by alpha, now evaluation by degree commencing
 0
 branch 1
 returning one
-neigh list is of 2 is [3]
 neigh list is of 3 is []
 v is....
 3
@@ -571,11 +384,21 @@ neighbors are ordered by alpha, now evaluation by degree commencing
 branch 1
 returning one
 v is....
+0
+T consists of nodes:
+[0, 2, 3]
+v degree is...
+2
+v is....
 2
 T consists of nodes:
-[2, 3]
+[2]
 v degree is...
-1
+0
+neighbors are ordered by alpha, now evaluation by degree commencing
+0
+branch 1
+returning one
 v is....
 3
 T consists of nodes:
@@ -587,61 +410,32 @@ neighbors are ordered by alpha, now evaluation by degree commencing
 branch 1
 returning one
 neighbors are ordered by alpha, now evaluation by degree commencing
-branch 2
+branch 4
 v is....
-3
+2
 T consists of nodes:
-[3]
+[2]
 v degree is...
 0
 neighbors are ordered by alpha, now evaluation by degree commencing
 0
 branch 1
 returning one
-returning 1
-appended mu value for node 1 is: 6
-neigh list is of 2 is [1, 3]
-neigh list is of 1 is [0]
-neigh list is of 0 is []
-v is....
-0
-T consists of nodes:
-[0]
-v degree is...
-0
-neighbors are ordered by alpha, now evaluation by degree commencing
-0
-branch 1
-returning one
+returning 2
+appended mu value for node 1 is: 8
+neigh list is of 2 is [0]
+neigh list is of 0 is [1, 3]
+neigh list is of 1 is []
 v is....
 1
 T consists of nodes:
-[0, 1]
-v degree is...
-1
-v is....
-0
-T consists of nodes:
-[0]
+[1]
 v degree is...
 0
 neighbors are ordered by alpha, now evaluation by degree commencing
 0
 branch 1
 returning one
-neighbors are ordered by alpha, now evaluation by degree commencing
-branch 2
-v is....
-0
-T consists of nodes:
-[0]
-v degree is...
-0
-neighbors are ordered by alpha, now evaluation by degree commencing
-0
-branch 1
-returning one
-returning 1
 neigh list is of 3 is []
 v is....
 3
@@ -653,66 +447,90 @@ neighbors are ordered by alpha, now evaluation by degree commencing
 0
 branch 1
 returning one
-appended mu value for node 2 is: 6
-neigh list is of 3 is [2]
-neigh list is of 2 is [1]
-neigh list is of 1 is [0]
-neigh list is of 0 is []
 v is....
 0
 T consists of nodes:
-[0]
+[0, 1, 3]
 v degree is...
-0
-neighbors are ordered by alpha, now evaluation by degree commencing
-0
-branch 1
-returning one
+2
 v is....
 1
 T consists of nodes:
-[0, 1]
+[1]
 v degree is...
+0
+neighbors are ordered by alpha, now evaluation by degree commencing
+0
+branch 1
+returning one
+v is....
+3
+T consists of nodes:
+[3]
+v degree is...
+0
+neighbors are ordered by alpha, now evaluation by degree commencing
+0
+branch 1
+returning one
+neighbors are ordered by alpha, now evaluation by degree commencing
+branch 4
+v is....
 1
-v is....
-0
 T consists of nodes:
-[0]
+[1]
 v degree is...
 0
 neighbors are ordered by alpha, now evaluation by degree commencing
 0
 branch 1
 returning one
-neighbors are ordered by alpha, now evaluation by degree commencing
-branch 2
+returning 2
+appended mu value for node 2 is: 8
+neigh list is of 3 is [0]
+neigh list is of 0 is [1, 2]
+neigh list is of 1 is []
 v is....
-0
+1
 T consists of nodes:
-[0]
+[1]
 v degree is...
 0
 neighbors are ordered by alpha, now evaluation by degree commencing
 0
 branch 1
 returning one
-returning 1
+neigh list is of 2 is []
 v is....
 2
+T consists of nodes:
+[2]
+v degree is...
+0
+neighbors are ordered by alpha, now evaluation by degree commencing
+0
+branch 1
+returning one
+v is....
+0
 T consists of nodes:
 [0, 1, 2]
 v degree is...
-1
+2
 v is....
 1
 T consists of nodes:
-[0, 1]
+[1]
 v degree is...
-1
-v is....
 0
+neighbors are ordered by alpha, now evaluation by degree commencing
+0
+branch 1
+returning one
+v is....
+2
 T consists of nodes:
-[0]
+[2]
 v degree is...
 0
 neighbors are ordered by alpha, now evaluation by degree commencing
@@ -720,56 +538,24 @@ neighbors are ordered by alpha, now evaluation by degree commencing
 branch 1
 returning one
 neighbors are ordered by alpha, now evaluation by degree commencing
-branch 2
-v is....
-0
-T consists of nodes:
-[0]
-v degree is...
-0
-neighbors are ordered by alpha, now evaluation by degree commencing
-0
-branch 1
-returning one
-returning 1
-neighbors are ordered by alpha, now evaluation by degree commencing
-branch 2
+branch 4
 v is....
 1
 T consists of nodes:
-[0, 1]
-v degree is...
-1
-v is....
-0
-T consists of nodes:
-[0]
+[1]
 v degree is...
 0
 neighbors are ordered by alpha, now evaluation by degree commencing
 0
 branch 1
 returning one
-neighbors are ordered by alpha, now evaluation by degree commencing
-branch 2
-v is....
-0
-T consists of nodes:
-[0]
-v degree is...
-0
-neighbors are ordered by alpha, now evaluation by degree commencing
-0
-branch 1
-returning one
-returning 1
-returning 1
-appended mu value for node 3 is: 6
-mu_try is {0: 6, 1: 6, 2: 6, 3: 6}
-a_try is {0: 1, 1: 1, 2: 1, 3: 1}
+returning 2
+appended mu value for node 3 is: 8
+mu_try is {0: 6, 1: 8, 2: 8, 3: 8}
+a_try is {0: 2, 1: 2, 2: 2, 3: 2}
 min_a is [0, 1, 2, 3]
 minimum_mu value is: 6
-minimum_mu is [0, 1, 2, 3]
+minimum_mu is [0]
 decont v is 0
 decont T is [0, 1, 2, 3]
 v is....
@@ -777,50 +563,77 @@ v is....
 T consists of nodes:
 [0, 1, 2, 3]
 v degree is...
-1
+3
 v is....
 1
 T consists of nodes:
-[1, 2, 3]
+[1]
 v degree is...
-1
+0
+neighbors are ordered by alpha, now evaluation by degree commencing
+0
+branch 1
+returning one
 v is....
 2
 T consists of nodes:
-[2, 3]
+[2]
+v degree is...
+0
+neighbors are ordered by alpha, now evaluation by degree commencing
+0
+branch 1
+returning one
+v is....
+3
+T consists of nodes:
+[3]
+v degree is...
+0
+neighbors are ordered by alpha, now evaluation by degree commencing
+0
+branch 1
+returning one
+neighbors are ordered by alpha, now evaluation by degree commencing
+branch 4
+v is....
+1
+T consists of nodes:
+[1]
+v degree is...
+0
+neighbors are ordered by alpha, now evaluation by degree commencing
+0
+branch 1
+returning one
+returning 2
+moving 2 agents to 0
+agents are {0: 0, 1: 0}
+color is {0: 'black', 1: 'grey', 2: 'grey', 3: 'grey'}
+previous node is -1
+v_neighbours is [1, 2, 3]
+v is....
+1
+T consists of nodes:
+[0, 1, 2, 3]
 v degree is...
 1
 v is....
-3
+0
 T consists of nodes:
-[3]
+[0, 2, 3]
 v degree is...
-0
-neighbors are ordered by alpha, now evaluation by degree commencing
-0
-branch 1
-returning one
-neighbors are ordered by alpha, now evaluation by degree commencing
-branch 2
-v is....
-3
-T consists of nodes:
-[3]
-v degree is...
-0
-neighbors are ordered by alpha, now evaluation by degree commencing
-0
-branch 1
-returning one
-returning 1
-neighbors are ordered by alpha, now evaluation by degree commencing
-branch 2
+2
 v is....
 2
 T consists of nodes:
-[2, 3]
+[2]
 v degree is...
-1
+0
+neighbors are ordered by alpha, now evaluation by degree commencing
+0
+branch 1
+returning one
 v is....
 3
 T consists of nodes:
@@ -832,76 +645,82 @@ neighbors are ordered by alpha, now evaluation by degree commencing
 branch 1
 returning one
 neighbors are ordered by alpha, now evaluation by degree commencing
-branch 2
-v is....
-3
-T consists of nodes:
-[3]
-v degree is...
-0
-neighbors are ordered by alpha, now evaluation by degree commencing
-0
-branch 1
-returning one
-returning 1
-returning 1
-neighbors are ordered by alpha, now evaluation by degree commencing
-branch 2
-v is....
-1
-T consists of nodes:
-[1, 2, 3]
-v degree is...
-1
+branch 4
 v is....
 2
 T consists of nodes:
-[2, 3]
-v degree is...
-1
-v is....
-3
-T consists of nodes:
-[3]
+[2]
 v degree is...
 0
 neighbors are ordered by alpha, now evaluation by degree commencing
 0
 branch 1
 returning one
+returning 2
 neighbors are ordered by alpha, now evaluation by degree commencing
 branch 2
 v is....
-3
+0
 T consists of nodes:
-[3]
+[0, 2, 3]
 v degree is...
-0
-neighbors are ordered by alpha, now evaluation by degree commencing
-0
-branch 1
-returning one
-returning 1
-neighbors are ordered by alpha, now evaluation by degree commencing
-branch 2
+2
 v is....
 2
 T consists of nodes:
-[2, 3]
+[2]
+v degree is...
+0
+neighbors are ordered by alpha, now evaluation by degree commencing
+0
+branch 1
+returning one
+v is....
+3
+T consists of nodes:
+[3]
+v degree is...
+0
+neighbors are ordered by alpha, now evaluation by degree commencing
+0
+branch 1
+returning one
+neighbors are ordered by alpha, now evaluation by degree commencing
+branch 4
+v is....
+2
+T consists of nodes:
+[2]
+v degree is...
+0
+neighbors are ordered by alpha, now evaluation by degree commencing
+0
+branch 1
+returning one
+returning 2
+returning 2
+v is....
+2
+T consists of nodes:
+[0, 1, 2, 3]
 v degree is...
 1
 v is....
-3
+0
 T consists of nodes:
-[3]
+[0, 1, 3]
+v degree is...
+2
+v is....
+1
+T consists of nodes:
+[1]
 v degree is...
 0
 neighbors are ordered by alpha, now evaluation by degree commencing
 0
 branch 1
 returning one
-neighbors are ordered by alpha, now evaluation by degree commencing
-branch 2
 v is....
 3
 T consists of nodes:
@@ -912,6 +731,232 @@ neighbors are ordered by alpha, now evaluation by degree commencing
 0
 branch 1
 returning one
-returning 1
-returning 1
-returning 1
+neighbors are ordered by alpha, now evaluation by degree commencing
+branch 4
+v is....
+1
+T consists of nodes:
+[1]
+v degree is...
+0
+neighbors are ordered by alpha, now evaluation by degree commencing
+0
+branch 1
+returning one
+returning 2
+neighbors are ordered by alpha, now evaluation by degree commencing
+branch 2
+v is....
+0
+T consists of nodes:
+[0, 1, 3]
+v degree is...
+2
+v is....
+1
+T consists of nodes:
+[1]
+v degree is...
+0
+neighbors are ordered by alpha, now evaluation by degree commencing
+0
+branch 1
+returning one
+v is....
+3
+T consists of nodes:
+[3]
+v degree is...
+0
+neighbors are ordered by alpha, now evaluation by degree commencing
+0
+branch 1
+returning one
+neighbors are ordered by alpha, now evaluation by degree commencing
+branch 4
+v is....
+1
+T consists of nodes:
+[1]
+v degree is...
+0
+neighbors are ordered by alpha, now evaluation by degree commencing
+0
+branch 1
+returning one
+returning 2
+returning 2
+v is....
+3
+T consists of nodes:
+[0, 1, 2, 3]
+v degree is...
+1
+v is....
+0
+T consists of nodes:
+[0, 1, 2]
+v degree is...
+2
+v is....
+1
+T consists of nodes:
+[1]
+v degree is...
+0
+neighbors are ordered by alpha, now evaluation by degree commencing
+0
+branch 1
+returning one
+v is....
+2
+T consists of nodes:
+[2]
+v degree is...
+0
+neighbors are ordered by alpha, now evaluation by degree commencing
+0
+branch 1
+returning one
+neighbors are ordered by alpha, now evaluation by degree commencing
+branch 4
+v is....
+1
+T consists of nodes:
+[1]
+v degree is...
+0
+neighbors are ordered by alpha, now evaluation by degree commencing
+0
+branch 1
+returning one
+returning 2
+neighbors are ordered by alpha, now evaluation by degree commencing
+branch 2
+v is....
+0
+T consists of nodes:
+[0, 1, 2]
+v degree is...
+2
+v is....
+1
+T consists of nodes:
+[1]
+v degree is...
+0
+neighbors are ordered by alpha, now evaluation by degree commencing
+0
+branch 1
+returning one
+v is....
+2
+T consists of nodes:
+[2]
+v degree is...
+0
+neighbors are ordered by alpha, now evaluation by degree commencing
+0
+branch 1
+returning one
+neighbors are ordered by alpha, now evaluation by degree commencing
+branch 4
+v is....
+1
+T consists of nodes:
+[1]
+v degree is...
+0
+neighbors are ordered by alpha, now evaluation by degree commencing
+0
+branch 1
+returning one
+returning 2
+returning 2
+state of a before the for loop is {1: 2, 2: 2, 3: 2}
+current state of a is {1: 2, 2: 2, 3: 2}
+the max key is 1
+current state of a is {1: -1, 2: 2, 3: 2}
+the max key is 2
+current state of a is {1: -1, 2: -1, 3: 2}
+the max key is 3
+len of ordered_v_neighbors is 3and its contents are [1, 2, 3]
+ordered_v_neighbours is [1, 2, 3]
+decont v is 3
+decont T is [3]
+v is....
+3
+T consists of nodes:
+[3]
+v degree is...
+0
+neighbors are ordered by alpha, now evaluation by degree commencing
+0
+branch 1
+returning one
+moving 1 agents to 3
+agents are {0: 3, 1: 0}
+color is {0: 'black', 1: 'grey', 2: 'grey', 3: 'black'}
+previous node is 0
+we have reached a leaf
+before moving back, the current value of neighbor is 3
+the i and agent[i] we're moving is currently: 0 3
+the i and agent[i] we're moving is currently: 1 0
+we were in a leaf, now we're moving back 1 agents from3 to 0
+agents are {0: 0, 1: 0}
+color is {0: 'black', 1: 'grey', 2: 'grey', 3: 'white'}
+previous node is 0
+ordered_v_neighbours is [1, 2, 3]
+decont v is 2
+decont T is [2]
+v is....
+2
+T consists of nodes:
+[2]
+v degree is...
+0
+neighbors are ordered by alpha, now evaluation by degree commencing
+0
+branch 1
+returning one
+moving 1 agents to 2
+agents are {0: 2, 1: 0}
+color is {0: 'black', 1: 'grey', 2: 'black', 3: 'white'}
+previous node is 0
+we have reached a leaf
+before moving back, the current value of neighbor is 2
+the i and agent[i] we're moving is currently: 0 2
+the i and agent[i] we're moving is currently: 1 0
+we were in a leaf, now we're moving back 1 agents from2 to 0
+agents are {0: 0, 1: 0}
+color is {0: 'black', 1: 'grey', 2: 'white', 3: 'white'}
+previous node is 0
+ordered_v_neighbours is [1, 2, 3]
+decont v is 1
+decont T is [1]
+v is....
+1
+T consists of nodes:
+[1]
+v degree is...
+0
+neighbors are ordered by alpha, now evaluation by degree commencing
+0
+branch 1
+returning one
+moving 1 agents to 1
+agents are {0: 1, 1: 0}
+color is {0: 'black', 1: 'black', 2: 'white', 3: 'white'}
+previous node is 0
+we have reached a leaf
+before moving back, the current value of neighbor is 1
+the i and agent[i] we're moving is currently: 0 1
+the i and agent[i] we're moving is currently: 1 0
+we were in a leaf, now we're moving back 1 agents from1 to 0
+agents are {0: 0, 1: 0}
+color is {0: 'black', 1: 'white', 2: 'white', 3: 'white'}
+previous node is 0
+1
+no grey nodes remain
+move counted is 3
+(2, 3, 0.016940832138061523)

@@ -141,7 +141,7 @@ def tree(lr, m):
         else:
             ret = 0
             for node in neigh_list:
-                ret = ret + mu(node, subtree(T, node, v), m) + alpha(node, subtree(T, node, v), m)
+                ret = ret + mu(node, subtree(T, node, v), m) + 2 * alpha(node, subtree(T, node, v), m)
             return ret
 
 
@@ -199,6 +199,7 @@ def tree(lr, m):
                     if agents[i] == neighbor:
                         agents[i] = v
                         howmany = howmany+1
+                        move_counter = move_counter + 1
                 print("we were in a leaf, now we're moving back " + str(howmany) + " agents from" + str(neighbor) + " to " + str(v))
                 functions.color_sync(T_original, agents, previous_agents, color, m)
                 print("agents are " + str(agents))

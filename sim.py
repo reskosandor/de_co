@@ -98,7 +98,7 @@ with open('sim.csv', 'w', encoding='UTF8', newline='') as f:
     print("start simming")
     example_data = [3, 3, 3]
     print(example_data)
-    #A = nx.balanced_tree(3, 2)
-    #lr = nx.to_prufer_sequence(A)
-    lr = [1, 2]
-    print(tree_1_fault.tree(lr, 3))
+    A = nx.balanced_tree(3, 1)
+    lr = nx.to_prufer_sequence(A)
+    #lr = [1]
+    print(tree_1_fault.tree(lr, 1))

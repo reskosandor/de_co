@@ -101,4 +101,4 @@ with open('sim.csv', 'w', encoding='UTF8', newline='') as f:
     A = nx.balanced_tree(3, 1)
     lr = nx.to_prufer_sequence(A)
     #lr = [1]
-    print(tree_1_fault.tree(lr, 1))
+    print(tree.tree(lr, 1))

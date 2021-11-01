@@ -103,17 +103,17 @@ def tree(lr, m):
             return 1
         elif 0 < T.degree[v] <= m:
             print("branch 2")
-            value = alpha(max_key, subtree(T, max_key, v), m)
+            value = alpha_of_neighbors[max_key]
             print("returning " + str(value), flush=True)
             return value
         elif T.degree[v] > m and branch3(max_key, alpha_of_neighbors):
             print("branch 3")
-            value = alpha(max_key, subtree(T, max_key, v), m)
+            value = alpha_of_neighbors[max_key]
             print("returning " + str(value), flush=True)
             return value
         elif T.degree[v] > m and branch4(max_key, alpha_of_neighbors):
             print("branch 4")
-            value = alpha(max_key, subtree(T, max_key, v), m) + 1
+            value = alpha_of_neighbors[max_key] + 1
             print("returning " + str(value), flush=True)
             return value
 

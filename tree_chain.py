@@ -5,14 +5,16 @@ import random
 import time
 
 previous_node = -1
-
 move_counter = 0
-
+starting_node = -1
+nr_of_agents = -1
 def tree(lr, m):
     start_time = time.time()
     global move_counter
     global number_of_agents
     global previous_node
+    global starting_node
+    global nr_of_agents
     previous_node = -1
     print("move counter at starting position is " + str(move_counter))
     print("asd")
@@ -153,15 +155,56 @@ def tree(lr, m):
                     T_height = node_distance
         return T_height
 
-    def starting_node(T):
+    def homebase_node(T):
         root = -1
+        root_height = -1
         min_of_max_dist = []
         for node in T:
             min_of_max_dist[node] = height((node, T))
         for i in len(min_of_max_dist):
-            if node[i] > root:
-                node[i] = root
-        return root
+            if min_of_max_dist[i] > root_height:
+                i = root
+                min_of_max_dist[i] = root_height
+        return root, root_height
+
+    def chain_agents_down(agents, root, target, move_counter):
+        agents_0 = agents.copy()
+        agents[0] = target
+        move_counter = move_counter + 1
+        for i in agents:
+            if i > 0:
+                agents[i] = agents_0[i-1]
+                if agents[i] != agents_0[i]:
+                    move_counter = move_counter + 1
+
+    def chain_agents_up(agents, root, target, move_counter):
+        agents_0 = agents.copy()
+        agents[0] = target
+        move_counter = move_counter + 1
+        for i in agents:
+            if i > 0:
+                agents[i] = agents_0[i+1]
+                if agents[i] != agents_0[i]:
+                    move_counter = move_counter + 1
+
+    def agent_replacement(agents, faulty_agent, move_counter):
+        agents_0 = agents.copy()
+        for i in agents:
+            if i > faulty_agent:
+                agents[i] = agents_0[i-1]
+                if agents[i] != agents_0[i]:
+                    move_counter = move_counter + 1
+
+        corrected_ids = agents.copy()
+        del corrected_ids[faulty_agent]
+        for i in corrected_ids:
+            if i >= faulty_agent:
+                corrected_ids[i] = agents[i+1]
+                del corrected_ids[i+1]
+        agents = corrected_ids.copy()
+        
+
+
 
 
 
@@ -171,10 +214,11 @@ def tree(lr, m):
         global previous_node
         global move_counter
         global number_of_agents
+        global starting_node
+        global nr_of_agents
         print("decont v is " + str(v))
         print("decont T is " + str(list(T)))
         previous_agents = agents.copy()
-        nr_of_agents = alpha(v, T, m)
 
         for i in range(nr_of_agents):
             if previous_node == -1:
@@ -265,8 +309,12 @@ def tree(lr, m):
     print("minimum_mu is " +str(minimum_mu))
 
     def optimaltreedecontamination(T, m, T_original):
-        starting_node = minimum_mu[0]
+        global starting_node
+        global nr_of_agents
         decontaminate(T, starting_node, m, T_original)
+    #calculating the starting_node (where the longest shortest paths for other nodes is the minima for the same value for all other nodes
+    # and the nr_of agents needed
+    starting_node, nr_of_agents = homebase_node(T)
 
     optimaltreedecontamination(T, m, T_original)
     #decontaminate(T, 0, m, T_original)

@@ -7,7 +7,8 @@ import tomesh_2d
 import tomesh_3d
 import tree
 import tree_1_fault
-import tree_1_error_tolerance
+import tree_chain
+
 
 #asd = mesh_2d.create_grid_2d(10, 10, False, 2)
 #print("asd is " + str(asd))
@@ -102,4 +103,4 @@ with open('sim.csv', 'w', encoding='UTF8', newline='') as f:
     A = nx.balanced_tree(3, 1)
     lr = nx.to_prufer_sequence(A)
     #lr = [1]
-    print(tree_1_error_tolerance.tree(lr, 1))
+    print(tree_chain.tree(lr, 1))

@@ -147,10 +147,23 @@ def tree(lr, m):
     def height(v, T):
         T_height = -1
         for node in T:
-            node_distance = len(nx.shortest_path(T, source = v, target= node))
-            if T_height < node_distance:
-                T_height = node_distance
+            if node != v:
+                node_distance = len(nx.shortest_path(T, source = v, target= node))
+                if T_height < node_distance:
+                    T_height = node_distance
         return T_height
+
+    def starting_node(T):
+        root = -1
+        min_of_max_dist = []
+        for node in T:
+            min_of_max_dist[node] = height((node, T))
+        for i in len(min_of_max_dist):
+            if node[i] > root:
+                node[i] = root
+        return root
+
+
 
 
 

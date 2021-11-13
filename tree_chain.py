@@ -1,23 +1,21 @@
 import networkx as nx
 import matplotlib.pyplot as plt
 import functions
-import random
+from random import uniform, randrange
 import time
 import sys
 
 previous_node = -1
-move_counter = 0
 starting_node = -1
 nr_of_agents = -1
+
 def tree(lr, m):
     start_time = time.time()
-    global move_counter
     global number_of_agents
     global previous_node
     global starting_node
     global nr_of_agents
     previous_node = -1
-    print("move counter at starting position is " + str(move_counter))
     print("asd")
     T = nx.algorithms.tree.coding.from_prufer_sequence(lr)
     T_degree = T.degree()
@@ -127,6 +125,7 @@ def tree(lr, m):
     agents = {}
     previous_agents = {}
     color = {}
+    move_counter = 0
 
     for nodes in T:
         color[nodes] = "grey"
@@ -185,6 +184,7 @@ def tree(lr, m):
                 if agents[i] != agents_0[i]:
                     move_counter = move_counter + 1
 
+
     def chain_agents_up(agents, root, move_counter):
         agents_0 = agents.copy()
         ###last of the chain
@@ -193,11 +193,14 @@ def tree(lr, m):
             agents[len(agents_0) - 1] = p_last[1]
             move_counter = move_counter + 1
 
+
         for i in agents:
             if i < len(agents) - 1:
                 agents[i] = agents_0[i+1]
                 if agents[i] != agents_0[i]:
                     move_counter = move_counter + 1
+
+
 
     def agent_replacement(agents, faulty_agent, move_counter):
         agents_0 = agents.copy()
@@ -222,9 +225,10 @@ def tree(lr, m):
 
 
 
+
+
     def decontaminate(T, v, m, T_original):
         global previous_node
-        global move_counter
         global number_of_agents
         global starting_node
         global nr_of_agents
@@ -238,8 +242,10 @@ def tree(lr, m):
                 agents[i] = v
             number_of_agents = nr_of_agents
         else:
-            chain_agents_down(agents, starting_node, v, move_counter)
 
+            print("movecounterb4 " + str(move_counter))
+            chain_agents_down(agents, starting_node, v, move_counter)
+            print("movecounterafter " + str(move_counter))
 
         print("moving the chain to " + str(v))
         functions.color_sync(T_original, agents, previous_agents, color, m)
@@ -316,17 +322,34 @@ def tree(lr, m):
     print("minimum_mu value is: " + str(minval))
     print("minimum_mu is " +str(minimum_mu))
 
-    def optimaltreedecontamination(T, m, T_original):
+    def optimaltreedecontamination(T, m, T_original, p):
         global starting_node
         global nr_of_agents
+        agents_if = {}
+        agents_when = {}
+
+        for i in range(nr_of_agents):
+            agents_if[i] = uniform(0, 1)
+
+        for i in range(nr_of_agents):
+            if agents_if[i] < p:
+                agents_when[i] = randrange(1, 2*len(T) - 1)
+
+
         decontaminate(T, starting_node, m, T_original)
     #calculating the starting_node (where the longest shortest paths for other nodes is the minima for the same value for all other nodes
     # and the nr_of agents needed
+    ###
+    ##
+    #
     print(T)
     starting_node, nr_of_agents = homebase_node(T)
     print("starting node is " + str(starting_node) + "and the nr_of_agents are " + str(nr_of_agents))
-
-    optimaltreedecontamination(T, m, T_original)
+    p = 0.2
+    optimaltreedecontamination(T, m, T_original, p)
+    #
+    ##
+    ###
     #decontaminate(T, 0, m, T_original)
 
 
@@ -344,8 +367,8 @@ def tree(lr, m):
             exit()
     print("no grey nodes remain")
     move_counted = move_counter
-    print("move counted is " + str(move_counted))
-    move_counter = 0
+    print("move counted is " + str(move_counter))
+
     end_time = time.time() - start_time
     return(number_of_agents, move_counted, end_time)
 

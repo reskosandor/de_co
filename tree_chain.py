@@ -8,13 +8,14 @@ import sys
 previous_node = -1
 starting_node = -1
 nr_of_agents = -1
-
+move_counter = 0
 def tree(lr, m):
     start_time = time.time()
     global number_of_agents
     global previous_node
     global starting_node
     global nr_of_agents
+    global move_counter
     previous_node = -1
     print("asd")
     T = nx.algorithms.tree.coding.from_prufer_sequence(lr)
@@ -125,7 +126,7 @@ def tree(lr, m):
     agents = {}
     previous_agents = {}
     color = {}
-    move_counter = 0
+
 
     for nodes in T:
         color[nodes] = "grey"
@@ -174,7 +175,8 @@ def tree(lr, m):
         return root, root_height
 
 
-    def chain_agents_down(agents, root, target, move_counter):
+    def chain_agents_down(agents, root, target):
+        global move_counter
         agents_0 = agents.copy()
         agents[0] = target
         move_counter = move_counter + 1
@@ -185,7 +187,8 @@ def tree(lr, m):
                     move_counter = move_counter + 1
 
 
-    def chain_agents_up(agents, root, move_counter):
+    def chain_agents_up(agents, root):
+        global move_counter
         agents_0 = agents.copy()
         ###last of the chain
         if agents_0[len(agents_0) - 1] != root:
@@ -202,7 +205,8 @@ def tree(lr, m):
 
 
 
-    def agent_replacement(agents, faulty_agent, move_counter):
+    def agent_replacement(agents, faulty_agent):
+        global move_counter
         agents_0 = agents.copy()
         for i in agents:
             if i > faulty_agent:
@@ -232,6 +236,7 @@ def tree(lr, m):
         global number_of_agents
         global starting_node
         global nr_of_agents
+        global move_counter
         print("decont v is " + str(v))
         print("decont T is " + str(list(T)))
         previous_agents = agents.copy()
@@ -244,7 +249,7 @@ def tree(lr, m):
         else:
 
             print("movecounterb4 " + str(move_counter))
-            chain_agents_down(agents, starting_node, v, move_counter)
+            chain_agents_down(agents, starting_node, v)
             print("movecounterafter " + str(move_counter))
 
         print("moving the chain to " + str(v))
@@ -281,7 +286,7 @@ def tree(lr, m):
                 previous_agents = agents.copy()
                 howmany = 0
                 print("before moving back, the current value of neighbor is " + str(neighbor))
-                chain_agents_up(agents, starting_node, move_counter)
+                chain_agents_up(agents, starting_node)
                 print("we were in a leaf, now we're moving back up the chain from" + str(neighbor) + " to " + str(v))
                 functions.color_sync(T_original, agents, previous_agents, color, m)
                 print("agents are " + str(agents))

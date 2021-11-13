@@ -231,6 +231,7 @@ def tree(lr, m):
 
 
 
+
     def decontaminate(T, v, m, T_original):
         global previous_node
         global number_of_agents
@@ -335,11 +336,12 @@ def tree(lr, m):
 
         for i in range(nr_of_agents):
             agents_if[i] = uniform(0, 1)
+        print("agents_if is " + str(agents_if))
 
         for i in range(nr_of_agents):
             if agents_if[i] < p:
                 agents_when[i] = randrange(1, 2*len(T) - 1)
-
+        print("agents_when is " + str(agents_when))
 
         decontaminate(T, starting_node, m, T_original)
     #calculating the starting_node (where the longest shortest paths for other nodes is the minima for the same value for all other nodes
@@ -351,6 +353,7 @@ def tree(lr, m):
     starting_node, nr_of_agents = homebase_node(T)
     print("starting node is " + str(starting_node) + "and the nr_of_agents are " + str(nr_of_agents))
     p = 0.2
+
     optimaltreedecontamination(T, m, T_original, p)
     #
     ##

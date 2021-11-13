@@ -3,6 +3,7 @@ import matplotlib.pyplot as plt
 import functions
 import random
 import time
+import sys
 
 previous_node = -1
 move_counter = 0
@@ -157,7 +158,7 @@ def tree(lr, m):
 
     def homebase_node(T):
         root = -3
-        root_height = -1
+        root_height = sys.maxsize
         min_of_max_dist = []
         #need to create a dummy list first
         for node in T:
@@ -168,10 +169,11 @@ def tree(lr, m):
             min_of_max_dist[node] = height(node, T)
         print("minofmaxdist after")
         for i in range(len(min_of_max_dist)):
-            if min_of_max_dist[i] > root_height:
+            if min_of_max_dist[i] < root_height:
                 root = i
                 root_height = min_of_max_dist[i]
         return root, root_height
+
 
     def chain_agents_down(agents, root, target, move_counter):
         agents_0 = agents.copy()

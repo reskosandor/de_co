@@ -156,7 +156,7 @@ def tree(lr, m):
         return T_height
 
     def homebase_node(T):
-        root = -1
+        root = -3
         root_height = -1
         min_of_max_dist = []
         #need to create a dummy list first
@@ -166,10 +166,11 @@ def tree(lr, m):
             print("this is T")
             print(T)
             min_of_max_dist[node] = height(node, T)
+        print("minofmaxdist after")
         for i in range(len(min_of_max_dist)):
             if min_of_max_dist[i] > root_height:
-                i = root
-                min_of_max_dist[i] = root_height
+                root = i
+                root_height = min_of_max_dist[i]
         return root, root_height
 
     def chain_agents_down(agents, root, target, move_counter):
@@ -243,7 +244,8 @@ def tree(lr, m):
         print("agents are " + str(agents))
         print("color is " + str(color))
         print("previous node is " + str(previous_node))
-        if T.degree(v) != 0:
+        ## if there are more than one node which is equivalent with being in a leaf
+        if len(list(T.nodes)) > 1:
             v_neighbours = neighbors_of_v(T, v)
             a = {}
             print("v_neighbours is " + str(v_neighbours))
@@ -320,6 +322,7 @@ def tree(lr, m):
     # and the nr_of agents needed
     print(T)
     starting_node, nr_of_agents = homebase_node(T)
+    print("starting node is " + str(starting_node) + "and the nr_of_agents are " + str(nr_of_agents))
 
     optimaltreedecontamination(T, m, T_original)
     #decontaminate(T, 0, m, T_original)

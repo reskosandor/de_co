@@ -159,9 +159,14 @@ def tree(lr, m):
         root = -1
         root_height = -1
         min_of_max_dist = []
+        #need to create a dummy list first
         for node in T:
-            min_of_max_dist[node] = height((node, T))
-        for i in len(min_of_max_dist):
+            min_of_max_dist.append(-1)
+        for node in T:
+            print("this is T")
+            print(T)
+            min_of_max_dist[node] = height(node, T)
+        for i in range(len(min_of_max_dist)):
             if min_of_max_dist[i] > root_height:
                 i = root
                 min_of_max_dist[i] = root_height
@@ -313,6 +318,7 @@ def tree(lr, m):
         decontaminate(T, starting_node, m, T_original)
     #calculating the starting_node (where the longest shortest paths for other nodes is the minima for the same value for all other nodes
     # and the nr_of agents needed
+    print(T)
     starting_node, nr_of_agents = homebase_node(T)
 
     optimaltreedecontamination(T, m, T_original)

@@ -177,12 +177,16 @@ def tree(lr, m):
                 if agents[i] != agents_0[i]:
                     move_counter = move_counter + 1
 
-    def chain_agents_up(agents, root, target, move_counter):
+    def chain_agents_up(agents, root, move_counter):
         agents_0 = agents.copy()
-        agents[0] = target
-        move_counter = move_counter + 1
+        ###last of the chain
+        if agents_0[len(agents_0) - 1] != root:
+            p_last = nx.shortest_path(T_original, agents_0[len(agents_0) - 1], root)
+            agents[len(agents_0) - 1] = p_last[1]
+            move_counter = move_counter + 1
+
         for i in agents:
-            if i > 0:
+            if i < len(agents) - 1:
                 agents[i] = agents_0[i+1]
                 if agents[i] != agents_0[i]:
                     move_counter = move_counter + 1
@@ -202,7 +206,7 @@ def tree(lr, m):
                 corrected_ids[i] = agents[i+1]
                 del corrected_ids[i+1]
         agents = corrected_ids.copy()
-        
+
 
 
 
@@ -220,16 +224,16 @@ def tree(lr, m):
         print("decont T is " + str(list(T)))
         previous_agents = agents.copy()
 
-        for i in range(nr_of_agents):
-            if previous_node == -1:
-                agents[i] = v
-                number_of_agents = nr_of_agents
-            else:
-                if agents[i] == previous_node:
-                    agents[i] = v
-                    move_counter = move_counter + 1
 
-        print("moving " + str(nr_of_agents) + " agents to " + str(v))
+        if previous_node == -1:
+            for i in range(nr_of_agents):
+                agents[i] = v
+            number_of_agents = nr_of_agents
+        else:
+            chain_agents_down(agents, starting_node, v, move_counter)
+
+
+        print("moving the chain to " + str(v))
         functions.color_sync(T_original, agents, previous_agents, color, m)
         print("agents are " + str(agents))
         print("color is " + str(color))
@@ -262,13 +266,8 @@ def tree(lr, m):
                 previous_agents = agents.copy()
                 howmany = 0
                 print("before moving back, the current value of neighbor is " + str(neighbor))
-                for i in agents:
-                    print("the i and agent[i] we're moving is currently: " + str(i) + " " + str(agents[i]))
-                    if agents[i] == neighbor:
-                        agents[i] = v
-                        howmany = howmany+1
-                        move_counter = move_counter + 1
-                print("we were in a leaf, now we're moving back " + str(howmany) + " agents from" + str(neighbor) + " to " + str(v))
+                chain_agents_up(agents, starting_node, move_counter)
+                print("we were in a leaf, now we're moving back up the chain from" + str(neighbor) + " to " + str(v))
                 functions.color_sync(T_original, agents, previous_agents, color, m)
                 print("agents are " + str(agents))
                 print("color is " + str(color))
@@ -293,7 +292,7 @@ def tree(lr, m):
     #getting nodes with minimum alpha value
     min_a = []
     minval = min(a_try.values())
-    min_a = [k for k, v in a_try.items() if v==minval]
+    min_a = [k for k, v in a_try.items() if v == minval]
     print("a_try is " + str(a_try))
     print("min_a is " + str(min_a))
     #getting nodes with minimum mu value, where they have the min alpha value
@@ -304,7 +303,7 @@ def tree(lr, m):
             del min_mu[i]
     minimum_mu = []
     minval = min(min_mu.values())
-    minimum_mu = [k for k, v in min_mu.items() if v==minval]
+    minimum_mu = [k for k, v in min_mu.items() if v == minval]
     print("minimum_mu value is: " + str(minval))
     print("minimum_mu is " +str(minimum_mu))
 

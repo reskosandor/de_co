@@ -9,7 +9,7 @@ previous_node = -1
 starting_node = -1
 nr_of_agents = -1
 move_counter = 0
-def tree(lr, m):
+def tree(lr, m, p):
     start_time = time.time()
     global number_of_agents
     global previous_node
@@ -287,10 +287,12 @@ def tree(lr, m):
             #now we eliminate the replaced agent and change the id-s
             corrected_ids = agents.copy()
             del corrected_ids[terminated_agents[0]] # we deleted the broken down
-            for i in corrected_ids:
+            correcting_ids = corrected_ids.copy()
+            for i in correcting_ids:
                 if corrected_ids[i] >= terminated_agents[0]:
                     corrected_ids[i] = agents[i+1] #replace the missing one with the next one?
                     del corrected_ids[i + 1] #delete teh next one
+            corrected_ids = correcting_ids.copy()
             agents = corrected_ids.copy() # ids and positions are correct
             terminated_agents.pop(0)  # delete the handled broken down agent
             for i in len(terminated_agents):
@@ -348,51 +350,7 @@ def tree(lr, m):
                 print("we were in a leaf, now we're moving back up the chain from" + str(neighbor) + " to " + str(v))
                 functions.color_sync(T_original, agents, previous_agents, color, m)
 
-                ##breakdown handling
-                ### agent replacement
-                previous_agents = agents.copy()
-                agents_0 = agents.copy()
-                terminated_agents = []
-                # breakdown happens, instead of removing broken down agent, their position is -1 (which is practically removing from the tree)
-                for i in agents_when:
-                    if agents_when[i] > move_counter:
-                        terminated_agents.append(i)
-                        agents[i] = -1
-                functions.color_sync(T_original, agents, previous_agents, color, m)
-                # until we have handled all breakdowns
-                while len(terminated_agents) > 0:
-                    previous_agents = agents.copy()
-                    # moving all agents in the chain above the furthest down breakdown by one
-                    for i in agents:
-                        if i > terminated_agents[0]:
-                            agents[i] = agents_0[i - 1]
-                            if agents[i] != agents_0[i]:
-                                move_counter = move_counter + 1
-                    # now we eliminate the replaced agent and change the id-s
-                    corrected_ids = agents.copy()
-                    del corrected_ids[terminated_agents[0]]  # we deleted the broken down
-                    for i in corrected_ids:
-                        if corrected_ids[i] >= terminated_agents[0]:
-                            corrected_ids[i] = agents[i + 1]  # replace the missing one with the next one?
-                            del corrected_ids[i + 1]  # delete teh next one
-                    agents = corrected_ids.copy()  # ids and positions are correct
-                    terminated_agents.pop(0)  # delete the handled broken down agent
-                    for i in len(terminated_agents):
-                        terminated_agents[i] = terminated_agents[i] - 1  # adjust the termination list id too
-                    functions.color_sync(T_original, agents, previous_agents, color, m)
-                    # adjust the agents_when too:
-                    for i in agents_when:
-                        agents_when[i - 1] = agents_when[i]
-                        del agents_when[i]
 
-                    previous_agents = agents.copy()
-                    agents_0 = agents.copy()
-                    # breakdown happens, instead of removing broken down agent, their position is -1 (which is practically removing from the tree)
-                    for i in agents_when:
-                        if agents_when[i] > move_counter and i not in terminated_agents:
-                            terminated_agents.append(i)
-                            agents[i] = -1
-                    functions.color_sync(T_original, agents, previous_agents, color, m)
 
                 print("agents are " + str(agents))
                 print("color is " + str(color))

@@ -182,6 +182,7 @@ def tree(lr, m, p):
         move_counter = move_counter + 1
         for i in agents:
             if i > 0:
+                print("i is " + str(i) + " and agents is " + str(agents) + " and agents_0 is " + str(agents_0))
                 agents[i] = agents_0[i-1]
                 if agents[i] != agents_0[i]:
                     move_counter = move_counter + 1
@@ -283,12 +284,14 @@ def tree(lr, m, p):
             #moving all agents in the chain above the furthest down breakdown by one
             for i in agents:
                 if i > terminated_agents[0] and i not in terminated_agents:
-                    print("i is " + str(i) + " the whole of terminated agents are " + str(terminated_agents) + " and the terminated agent[0] is " + str(terminated_agents[0]) +  " agents is " + str(agents) + " agents_0 is " + str(agents_0))
+                    print("soooo i is " + str(i) + " the whole of terminated agents are " + str(terminated_agents) + " and the terminated agent[0] is " + str(terminated_agents[0]) +  " agents is " + str(agents) + " agents_0 is " + str(agents_0))
                     agents[i] = agents_0[i-1]
                     if agents[i] != agents_0[i]:
                         move_counter = move_counter + 1
             #now we eliminate the replaced agent and change the id-s
             corrected_ids = agents.copy()
+            print("type of agents is " + str(type(agents)))
+            print("type of corrected_ids is " + str(type(corrected_ids)))
             print("corrid b4 del: " + str(corrected_ids))
             del corrected_ids[terminated_agents[0]] # we deleted the broken down
             print("corrid after del: " + str(corrected_ids))
@@ -296,10 +299,13 @@ def tree(lr, m, p):
             for i in correcting_ids.keys():
                 if i > terminated_agents[0] and i+1 in agents:
                     corrected_ids[i] = agents[i+1] #replace the missing one with the next one?
+                    corrected_ids = functions.sort_dict(corrected_ids)
+                    print("rewrite history " + str(corrected_ids))
                     if i + 1 in corrected_ids:
                         del corrected_ids[i + 1] #delete teh next one
+                        print("deleted old history " + str(corrected_ids))
                     print("deletion in corrected_ids")
-            corrected_ids = correcting_ids.copy()
+
             agents = corrected_ids.copy() # ids and positions are correct
             terminated_agents.pop(0)  # delete the handled broken down agent
             for i in range(len(terminated_agents)):
@@ -316,9 +322,12 @@ def tree(lr, m, p):
             # breakdown happens, instead of removing broken down agent, their position is -1 (which is practically removing from the tree)
             for i in agents_when:
                 if agents_when[i] > move_counter and i not in terminated_agents:
+                    print("termage b4 " + str(terminated_agents))
                     terminated_agents.append(i)
+                    print("termage a5 " + str(terminated_agents))
                     agents[i] = -1
             functions.color_sync(T_original, agents, previous_agents, color, m)
+            print("agents after breakdown handle is " + str(agents) + " terminated_agents iiiis " + str(terminated_agents))
 
 
 
@@ -410,7 +419,7 @@ def tree(lr, m, p):
 
         for i in range(nr_of_agents):
             if agents_if[i] < p:
-                agents_when[i] = randrange(1, 10*len(T) - 1)
+                agents_when[i] = randrange(9, 10)
         print("agents_when is " + str(agents_when))
 
         decontaminate(T, starting_node, m, T_original, agents, agents_if, agents_when)

@@ -5361,7 +5361,7 @@ this is T
 Graph with 11 nodes and 10 edges
 minofmaxdist after
 starting node is 5and the nr_of_agents are 6
-agents_if is {0: 0.18495152319900454, 1: 0.8619008980916508, 2: 0.6627728529331238, 3: 0.19491988553461692, 4: 0.7510410072469021, 5: 0.7408135345697339}
+agents_if is {0: 0.9409972309661309, 1: 0.583170702143821, 2: 0.9111012738118951, 3: 0.5320870710708194, 4: 0.9559379865090748, 5: 0.5532980906495434}
 agents_when is {}
 decont v is 5
 decont T is [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
@@ -5582,6 +5582,11 @@ ordered_v_neighbours is [4, 6]
 decont v is 6
 decont T is [6, 7, 8, 9, 10]
 movecounterb4 0
+i is 1 and agents is {0: 6, 1: 5, 2: 5, 3: 5, 4: 5, 5: 5} and agents_0 is {0: 5, 1: 5, 2: 5, 3: 5, 4: 5, 5: 5}
+i is 2 and agents is {0: 6, 1: 5, 2: 5, 3: 5, 4: 5, 5: 5} and agents_0 is {0: 5, 1: 5, 2: 5, 3: 5, 4: 5, 5: 5}
+i is 3 and agents is {0: 6, 1: 5, 2: 5, 3: 5, 4: 5, 5: 5} and agents_0 is {0: 5, 1: 5, 2: 5, 3: 5, 4: 5, 5: 5}
+i is 4 and agents is {0: 6, 1: 5, 2: 5, 3: 5, 4: 5, 5: 5} and agents_0 is {0: 5, 1: 5, 2: 5, 3: 5, 4: 5, 5: 5}
+i is 5 and agents is {0: 6, 1: 5, 2: 5, 3: 5, 4: 5, 5: 5} and agents_0 is {0: 5, 1: 5, 2: 5, 3: 5, 4: 5, 5: 5}
 movecounterafter 1
 moving the chain to 6
 agents are {0: 6, 1: 5, 2: 5, 3: 5, 4: 5, 5: 5}
@@ -5643,6 +5648,11 @@ ordered_v_neighbours is [7]
 decont v is 7
 decont T is [7, 8, 9, 10]
 movecounterb4 1
+i is 1 and agents is {0: 7, 1: 5, 2: 5, 3: 5, 4: 5, 5: 5} and agents_0 is {0: 6, 1: 5, 2: 5, 3: 5, 4: 5, 5: 5}
+i is 2 and agents is {0: 7, 1: 6, 2: 5, 3: 5, 4: 5, 5: 5} and agents_0 is {0: 6, 1: 5, 2: 5, 3: 5, 4: 5, 5: 5}
+i is 3 and agents is {0: 7, 1: 6, 2: 5, 3: 5, 4: 5, 5: 5} and agents_0 is {0: 6, 1: 5, 2: 5, 3: 5, 4: 5, 5: 5}
+i is 4 and agents is {0: 7, 1: 6, 2: 5, 3: 5, 4: 5, 5: 5} and agents_0 is {0: 6, 1: 5, 2: 5, 3: 5, 4: 5, 5: 5}
+i is 5 and agents is {0: 7, 1: 6, 2: 5, 3: 5, 4: 5, 5: 5} and agents_0 is {0: 6, 1: 5, 2: 5, 3: 5, 4: 5, 5: 5}
 movecounterafter 3
 moving the chain to 7
 agents are {0: 7, 1: 6, 2: 5, 3: 5, 4: 5, 5: 5}
@@ -5695,6 +5705,11 @@ ordered_v_neighbours is [8]
 decont v is 8
 decont T is [8, 9, 10]
 movecounterb4 3
+i is 1 and agents is {0: 8, 1: 6, 2: 5, 3: 5, 4: 5, 5: 5} and agents_0 is {0: 7, 1: 6, 2: 5, 3: 5, 4: 5, 5: 5}
+i is 2 and agents is {0: 8, 1: 7, 2: 5, 3: 5, 4: 5, 5: 5} and agents_0 is {0: 7, 1: 6, 2: 5, 3: 5, 4: 5, 5: 5}
+i is 3 and agents is {0: 8, 1: 7, 2: 6, 3: 5, 4: 5, 5: 5} and agents_0 is {0: 7, 1: 6, 2: 5, 3: 5, 4: 5, 5: 5}
+i is 4 and agents is {0: 8, 1: 7, 2: 6, 3: 5, 4: 5, 5: 5} and agents_0 is {0: 7, 1: 6, 2: 5, 3: 5, 4: 5, 5: 5}
+i is 5 and agents is {0: 8, 1: 7, 2: 6, 3: 5, 4: 5, 5: 5} and agents_0 is {0: 7, 1: 6, 2: 5, 3: 5, 4: 5, 5: 5}
 movecounterafter 6
 moving the chain to 8
 agents are {0: 8, 1: 7, 2: 6, 3: 5, 4: 5, 5: 5}
@@ -5738,6 +5753,11 @@ ordered_v_neighbours is [9]
 decont v is 9
 decont T is [9, 10]
 movecounterb4 6
+i is 1 and agents is {0: 9, 1: 7, 2: 6, 3: 5, 4: 5, 5: 5} and agents_0 is {0: 8, 1: 7, 2: 6, 3: 5, 4: 5, 5: 5}
+i is 2 and agents is {0: 9, 1: 8, 2: 6, 3: 5, 4: 5, 5: 5} and agents_0 is {0: 8, 1: 7, 2: 6, 3: 5, 4: 5, 5: 5}
+i is 3 and agents is {0: 9, 1: 8, 2: 7, 3: 5, 4: 5, 5: 5} and agents_0 is {0: 8, 1: 7, 2: 6, 3: 5, 4: 5, 5: 5}
+i is 4 and agents is {0: 9, 1: 8, 2: 7, 3: 6, 4: 5, 5: 5} and agents_0 is {0: 8, 1: 7, 2: 6, 3: 5, 4: 5, 5: 5}
+i is 5 and agents is {0: 9, 1: 8, 2: 7, 3: 6, 4: 5, 5: 5} and agents_0 is {0: 8, 1: 7, 2: 6, 3: 5, 4: 5, 5: 5}
 movecounterafter 10
 moving the chain to 9
 agents are {0: 9, 1: 8, 2: 7, 3: 6, 4: 5, 5: 5}
@@ -5771,6 +5791,11 @@ ordered_v_neighbours is [10]
 decont v is 10
 decont T is [10]
 movecounterb4 10
+i is 1 and agents is {0: 10, 1: 8, 2: 7, 3: 6, 4: 5, 5: 5} and agents_0 is {0: 9, 1: 8, 2: 7, 3: 6, 4: 5, 5: 5}
+i is 2 and agents is {0: 10, 1: 9, 2: 7, 3: 6, 4: 5, 5: 5} and agents_0 is {0: 9, 1: 8, 2: 7, 3: 6, 4: 5, 5: 5}
+i is 3 and agents is {0: 10, 1: 9, 2: 8, 3: 6, 4: 5, 5: 5} and agents_0 is {0: 9, 1: 8, 2: 7, 3: 6, 4: 5, 5: 5}
+i is 4 and agents is {0: 10, 1: 9, 2: 8, 3: 7, 4: 5, 5: 5} and agents_0 is {0: 9, 1: 8, 2: 7, 3: 6, 4: 5, 5: 5}
+i is 5 and agents is {0: 10, 1: 9, 2: 8, 3: 7, 4: 6, 5: 5} and agents_0 is {0: 9, 1: 8, 2: 7, 3: 6, 4: 5, 5: 5}
 movecounterafter 15
 moving the chain to 10
 agents are {0: 10, 1: 9, 2: 8, 3: 7, 4: 6, 5: 5}
@@ -5806,6 +5831,11 @@ ordered_v_neighbours is [4, 6]
 decont v is 4
 decont T is [0, 1, 2, 3, 4]
 movecounterb4 30
+i is 1 and agents is {0: 4, 1: 5, 2: 5, 3: 5, 4: 5, 5: 5} and agents_0 is {0: 5, 1: 5, 2: 5, 3: 5, 4: 5, 5: 5}
+i is 2 and agents is {0: 4, 1: 5, 2: 5, 3: 5, 4: 5, 5: 5} and agents_0 is {0: 5, 1: 5, 2: 5, 3: 5, 4: 5, 5: 5}
+i is 3 and agents is {0: 4, 1: 5, 2: 5, 3: 5, 4: 5, 5: 5} and agents_0 is {0: 5, 1: 5, 2: 5, 3: 5, 4: 5, 5: 5}
+i is 4 and agents is {0: 4, 1: 5, 2: 5, 3: 5, 4: 5, 5: 5} and agents_0 is {0: 5, 1: 5, 2: 5, 3: 5, 4: 5, 5: 5}
+i is 5 and agents is {0: 4, 1: 5, 2: 5, 3: 5, 4: 5, 5: 5} and agents_0 is {0: 5, 1: 5, 2: 5, 3: 5, 4: 5, 5: 5}
 movecounterafter 31
 moving the chain to 4
 agents are {0: 4, 1: 5, 2: 5, 3: 5, 4: 5, 5: 5}
@@ -5867,6 +5897,11 @@ ordered_v_neighbours is [3]
 decont v is 3
 decont T is [0, 1, 2, 3]
 movecounterb4 31
+i is 1 and agents is {0: 3, 1: 5, 2: 5, 3: 5, 4: 5, 5: 5} and agents_0 is {0: 4, 1: 5, 2: 5, 3: 5, 4: 5, 5: 5}
+i is 2 and agents is {0: 3, 1: 4, 2: 5, 3: 5, 4: 5, 5: 5} and agents_0 is {0: 4, 1: 5, 2: 5, 3: 5, 4: 5, 5: 5}
+i is 3 and agents is {0: 3, 1: 4, 2: 5, 3: 5, 4: 5, 5: 5} and agents_0 is {0: 4, 1: 5, 2: 5, 3: 5, 4: 5, 5: 5}
+i is 4 and agents is {0: 3, 1: 4, 2: 5, 3: 5, 4: 5, 5: 5} and agents_0 is {0: 4, 1: 5, 2: 5, 3: 5, 4: 5, 5: 5}
+i is 5 and agents is {0: 3, 1: 4, 2: 5, 3: 5, 4: 5, 5: 5} and agents_0 is {0: 4, 1: 5, 2: 5, 3: 5, 4: 5, 5: 5}
 movecounterafter 33
 moving the chain to 3
 agents are {0: 3, 1: 4, 2: 5, 3: 5, 4: 5, 5: 5}
@@ -5919,6 +5954,11 @@ ordered_v_neighbours is [2]
 decont v is 2
 decont T is [0, 1, 2]
 movecounterb4 33
+i is 1 and agents is {0: 2, 1: 4, 2: 5, 3: 5, 4: 5, 5: 5} and agents_0 is {0: 3, 1: 4, 2: 5, 3: 5, 4: 5, 5: 5}
+i is 2 and agents is {0: 2, 1: 3, 2: 5, 3: 5, 4: 5, 5: 5} and agents_0 is {0: 3, 1: 4, 2: 5, 3: 5, 4: 5, 5: 5}
+i is 3 and agents is {0: 2, 1: 3, 2: 4, 3: 5, 4: 5, 5: 5} and agents_0 is {0: 3, 1: 4, 2: 5, 3: 5, 4: 5, 5: 5}
+i is 4 and agents is {0: 2, 1: 3, 2: 4, 3: 5, 4: 5, 5: 5} and agents_0 is {0: 3, 1: 4, 2: 5, 3: 5, 4: 5, 5: 5}
+i is 5 and agents is {0: 2, 1: 3, 2: 4, 3: 5, 4: 5, 5: 5} and agents_0 is {0: 3, 1: 4, 2: 5, 3: 5, 4: 5, 5: 5}
 movecounterafter 36
 moving the chain to 2
 agents are {0: 2, 1: 3, 2: 4, 3: 5, 4: 5, 5: 5}
@@ -5962,6 +6002,11 @@ ordered_v_neighbours is [1]
 decont v is 1
 decont T is [0, 1]
 movecounterb4 36
+i is 1 and agents is {0: 1, 1: 3, 2: 4, 3: 5, 4: 5, 5: 5} and agents_0 is {0: 2, 1: 3, 2: 4, 3: 5, 4: 5, 5: 5}
+i is 2 and agents is {0: 1, 1: 2, 2: 4, 3: 5, 4: 5, 5: 5} and agents_0 is {0: 2, 1: 3, 2: 4, 3: 5, 4: 5, 5: 5}
+i is 3 and agents is {0: 1, 1: 2, 2: 3, 3: 5, 4: 5, 5: 5} and agents_0 is {0: 2, 1: 3, 2: 4, 3: 5, 4: 5, 5: 5}
+i is 4 and agents is {0: 1, 1: 2, 2: 3, 3: 4, 4: 5, 5: 5} and agents_0 is {0: 2, 1: 3, 2: 4, 3: 5, 4: 5, 5: 5}
+i is 5 and agents is {0: 1, 1: 2, 2: 3, 3: 4, 4: 5, 5: 5} and agents_0 is {0: 2, 1: 3, 2: 4, 3: 5, 4: 5, 5: 5}
 movecounterafter 40
 moving the chain to 1
 agents are {0: 1, 1: 2, 2: 3, 3: 4, 4: 5, 5: 5}
@@ -5995,6 +6040,11 @@ ordered_v_neighbours is [0]
 decont v is 0
 decont T is [0]
 movecounterb4 40
+i is 1 and agents is {0: 0, 1: 2, 2: 3, 3: 4, 4: 5, 5: 5} and agents_0 is {0: 1, 1: 2, 2: 3, 3: 4, 4: 5, 5: 5}
+i is 2 and agents is {0: 0, 1: 1, 2: 3, 3: 4, 4: 5, 5: 5} and agents_0 is {0: 1, 1: 2, 2: 3, 3: 4, 4: 5, 5: 5}
+i is 3 and agents is {0: 0, 1: 1, 2: 2, 3: 4, 4: 5, 5: 5} and agents_0 is {0: 1, 1: 2, 2: 3, 3: 4, 4: 5, 5: 5}
+i is 4 and agents is {0: 0, 1: 1, 2: 2, 3: 3, 4: 5, 5: 5} and agents_0 is {0: 1, 1: 2, 2: 3, 3: 4, 4: 5, 5: 5}
+i is 5 and agents is {0: 0, 1: 1, 2: 2, 3: 3, 4: 4, 5: 5} and agents_0 is {0: 1, 1: 2, 2: 3, 3: 4, 4: 5, 5: 5}
 movecounterafter 45
 moving the chain to 0
 agents are {0: 0, 1: 1, 2: 2, 3: 3, 4: 4, 5: 5}
@@ -6029,4 +6079,4 @@ previous node is 1
 1
 no grey nodes remain
 move counted is 60
-(6, 60, 0.15626001358032227)
+(6, 60, 0.14063405990600586)

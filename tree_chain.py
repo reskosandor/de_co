@@ -123,7 +123,7 @@ def tree(lr, m, p):
 
 
 
-    agents = {}
+    agents = dict{}
     previous_agents = {}
     color = {}
 
@@ -294,13 +294,16 @@ def tree(lr, m, p):
             print("type of corrected_ids is " + str(type(corrected_ids)))
             print("corrid b4 del: " + str(corrected_ids))
             del corrected_ids[terminated_agents[0]] # we deleted the broken down
+            print("type of corrected_ids after del is " + str(type(corrected_ids)))
             print("corrid after del: " + str(corrected_ids))
             correcting_ids = corrected_ids.copy()
             for i in correcting_ids.keys():
                 if i > terminated_agents[0] and i+1 in agents:
+                    print("b4crit" + str(corrected_ids), flush = True)
                     corrected_ids[i] = agents[i+1] #replace the missing one with the next one?
-                    corrected_ids = functions.sort_dict(corrected_ids)
-                    print("rewrite history " + str(corrected_ids))
+                    print("aftercrit" + str(corrected_ids), flush = True)
+                    #corrected_ids = functions.sort_dict(corrected_ids)
+                    print("rewrite history " + str(corrected_ids), flush = True)
                     if i + 1 in corrected_ids:
                         del corrected_ids[i + 1] #delete teh next one
                         print("deleted old history " + str(corrected_ids))

@@ -291,7 +291,10 @@ def tree(lr, m):
                     corrected_ids[i] = agents[i+1] #replace the missing one with the next one?
                     del corrected_ids[i + 1] #delete teh next one
             agents = corrected_ids.copy() # ids and positions are correct
-            terminated_agents.pop(0)  # delete the
+            terminated_agents.pop(0)  # delete the handled broken down agent
+            for i in len(terminated_agents):
+                terminated_agents[i] = terminated_agents[i] - 1 #adjust the termination list id too
+
 
 
 

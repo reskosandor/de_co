@@ -205,14 +205,20 @@ def tree(lr, m):
 
 
 
-    def agent_replacement(agents, faulty_agent):
+    def agent_replacement(agents, agents_when):
         global move_counter
         agents_0 = agents.copy()
-        for i in agents:
-            if i > faulty_agent:
-                agents[i] = agents_0[i-1]
-                if agents[i] != agents_0[i]:
-                    move_counter = move_counter + 1
+        terminated_agents = []
+        for i in agents_when:
+            if agents_when[i] > move_counter:
+                terminated_agents.append(i)
+                
+        for j in terminated_agents:
+            for i in agents:
+                if i > terminated_agents[j]:
+                    agents[i] = agents_0[i-1]
+                    if agents[i] != agents_0[i]:
+                        move_counter = move_counter + 1
 
         corrected_ids = agents.copy()
         del corrected_ids[faulty_agent]
@@ -232,7 +238,7 @@ def tree(lr, m):
 
 
 
-    def decontaminate(T, v, m, T_original):
+    def decontaminate(T, v, m, T_original, agents, agents_if, agents_when):
         global previous_node
         global number_of_agents
         global starting_node
@@ -258,6 +264,41 @@ def tree(lr, m):
         print("agents are " + str(agents))
         print("color is " + str(color))
         print("previous node is " + str(previous_node))
+        ##breakdown handling
+        ### agent replacement
+        previous_agents = agents.copy()
+        agents_0 = agents.copy()
+        terminated_agents = []
+        #breakdown happens, instead of removing broken down agent, their position is -1 (which is practically removing from the tree)
+        for i in agents_when:
+            if agents_when[i] > move_counter:
+                terminated_agents.append(i)
+                agents[i] = -1
+        functions.color_sync(T_original, agents, previous_agents, color, m)
+        # until we have handled all breakdowns
+        while len(terminated_agents) > 0:
+            #moving all agents in the chain above the furthest down breakdown by one
+            for i in agents:
+                if i > terminated_agents[0]:
+                    agents[i] = agents_0[i-1]
+                    if agents[i] != agents_0[i]:
+                        move_counter = move_counter + 1
+            #now we eliminate the replaced agent and change the id-s
+            corrected_ids = agents.copy()
+            del corrected_ids[terminated_agents[0]] # we deleted the broken down
+            for i in corrected_ids:
+                if corrected_ids[i] >= terminated_agents[0]:
+                    corrected_ids[i] = agents[i+1] #replace the missing one with the next one?
+                    del corrected_ids[i + 1] #delete teh next one
+            agents = corrected_ids.copy() # ids and positions are correct
+            terminated_agents.pop(0)  # delete the
+
+
+
+
+
+
+
         ## if there are more than one node which is equivalent with being in a leaf
         if len(list(T.nodes)) > 1:
             v_neighbours = neighbors_of_v(T, v)
@@ -281,7 +322,7 @@ def tree(lr, m):
                 print("ordered_v_neighbours is " + str(ordered_v_neighbours))
                 previous_node = v
                 #####################################halftime
-                decontaminate(subtree(T, neighbor, v), neighbor, m, T_original)
+                decontaminate(subtree(T, neighbor, v), neighbor, m, T_original, agents, agents_if, agents_when)
                 #####################################halftime
 
                 previous_agents = agents.copy()
@@ -343,7 +384,7 @@ def tree(lr, m):
                 agents_when[i] = randrange(1, 2*len(T) - 1)
         print("agents_when is " + str(agents_when))
 
-        decontaminate(T, starting_node, m, T_original)
+        decontaminate(T, starting_node, m, T_original, agents, agents_if, agents_when)
     #calculating the starting_node (where the longest shortest paths for other nodes is the minima for the same value for all other nodes
     # and the nr_of agents needed
     ###

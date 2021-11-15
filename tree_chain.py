@@ -212,7 +212,7 @@ def tree(lr, m):
         for i in agents_when:
             if agents_when[i] > move_counter:
                 terminated_agents.append(i)
-                
+
         for j in terminated_agents:
             for i in agents:
                 if i > terminated_agents[j]:
@@ -277,6 +277,7 @@ def tree(lr, m):
         functions.color_sync(T_original, agents, previous_agents, color, m)
         # until we have handled all breakdowns
         while len(terminated_agents) > 0:
+            previous_agents = agents.copy()
             #moving all agents in the chain above the furthest down breakdown by one
             for i in agents:
                 if i > terminated_agents[0]:
@@ -294,8 +295,20 @@ def tree(lr, m):
             terminated_agents.pop(0)  # delete the handled broken down agent
             for i in len(terminated_agents):
                 terminated_agents[i] = terminated_agents[i] - 1 #adjust the termination list id too
+            functions.color_sync(T_original, agents, previous_agents, color, m)
+            #adjust the agents_when too:
+            for i in agents_when:
+                agents_when[i-1] = agents_when[i]
+                del agents_when[i]
 
-
+            previous_agents = agents.copy()
+            agents_0 = agents.copy()
+            # breakdown happens, instead of removing broken down agent, their position is -1 (which is practically removing from the tree)
+            for i in agents_when:
+                if agents_when[i] > move_counter and i not in terminated_agents:
+                    terminated_agents.append(i)
+                    agents[i] = -1
+            functions.color_sync(T_original, agents, previous_agents, color, m)
 
 
 
@@ -334,6 +347,7 @@ def tree(lr, m):
                 chain_agents_up(agents, starting_node)
                 print("we were in a leaf, now we're moving back up the chain from" + str(neighbor) + " to " + str(v))
                 functions.color_sync(T_original, agents, previous_agents, color, m)
+
                 print("agents are " + str(agents))
                 print("color is " + str(color))
                 print("previous node is " + str(previous_node))

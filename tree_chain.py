@@ -179,15 +179,16 @@ def tree(lr, m, p):
         global move_counter
         agents_0 = agents.copy()
         agents[0] = target
-        functions.sorted_dict(agents)
+        agents = functions.sorted_dict(agents)
         move_counter = move_counter + 1
         for i in agents:
             if i > 0:
                 print("i is " + str(i) + " and agents is " + str(agents) + " and agents_0 is " + str(agents_0))
                 agents[i] = agents_0[i-1]
-                functions.sorted_dict(agents)
+                agents = functions.sorted_dict(agents)
                 if agents[i] != agents_0[i]:
                     move_counter = move_counter + 1
+        return agents
 
 
     def chain_agents_up(agents, root):
@@ -195,6 +196,7 @@ def tree(lr, m, p):
         agents_0 = agents.copy()
         ###last of the chain
         if agents_0[len(agents_0) - 1] != root:
+            print("agents0 is " + str(agents_0))
             p_last = nx.shortest_path(T_original, agents_0[len(agents_0) - 1], root)
             agents[len(agents_0) - 1] = p_last[1]
             move_counter = move_counter + 1
@@ -205,6 +207,7 @@ def tree(lr, m, p):
                 agents[i] = agents_0[i+1]
                 if agents[i] != agents_0[i]:
                     move_counter = move_counter + 1
+        return agents
 
 
 
@@ -259,7 +262,7 @@ def tree(lr, m, p):
         else:
 
             print("movecounterb4 " + str(move_counter))
-            chain_agents_down(agents, starting_node, v)
+            agents = chain_agents_down(agents, starting_node, v)
             print("movecounterafter " + str(move_counter))
 
         print("moving the chain to " + str(v))
@@ -285,7 +288,7 @@ def tree(lr, m, p):
             previous_agents = agents.copy()
             #moving all agents in the chain above the furthest down breakdown by one
             for i in agents:
-                if i > terminated_agents[0] and i not in terminated_agents and i-1 not in terminated_agents:
+                if i > terminated_agents[0] and i not in terminated_agents:
                     print("soooo i is " + str(i) + " the whole of terminated agents are " + str(terminated_agents) + " and the terminated agent[0] is " + str(terminated_agents[0]) +  " agents is " + str(agents) + " agents_0 is " + str(agents_0))
                     agents[i] = agents_0[i-1]
                     if agents[i] != agents_0[i]:
@@ -302,8 +305,10 @@ def tree(lr, m, p):
             for i in correcting_ids.keys():
                 if i > terminated_agents[0] and i+1 in agents:
                     print("b4crit" + str(corrected_ids), flush = True)
-                    corrected_ids[i] = agents[i+1] #replace the missing one with the next one?
-                    functions.sorted_dict(corrected_ids)
+                    value_of_change = corrected_ids[i]
+                    del corrected_ids[i]
+                    corrected_ids[i-1] = value_of_change #replace the missing one with the next one?
+                    corrected_ids = functions.sorted_dict(corrected_ids)
                     print("aftercrit" + str(corrected_ids), flush = True)
                     #corrected_ids = functions.sort_dict(corrected_ids)
                     print("rewrite history " + str(corrected_ids), flush = True)
@@ -320,7 +325,7 @@ def tree(lr, m, p):
             #adjust the agents_when too:
             agents_when_new = agents_when.copy()
             for i in agents_when.keys():
-                functions.sorted_dict(corrected_ids)
+                corrected_ids = functions.sorted_dict(corrected_ids)
                 agents_when_new[i-1] = agents_when[i]
                 del agents_when_new[i]
             agents_when = agents_when_new.copy()
@@ -370,7 +375,7 @@ def tree(lr, m, p):
                 previous_agents = agents.copy()
                 howmany = 0
                 print("before moving back, the current value of neighbor is " + str(neighbor))
-                chain_agents_up(agents, starting_node)
+                agents = chain_agents_up(agents, starting_node)
                 print("we were in a leaf, now we're moving back up the chain from" + str(neighbor) + " to " + str(v))
                 functions.color_sync(T_original, agents, previous_agents, color, m)
 
@@ -426,7 +431,7 @@ def tree(lr, m, p):
 
         for i in range(nr_of_agents):
             if agents_if[i] < p:
-                agents_when[i] = randrange(9, 10)
+                agents_when[i] = randrange(12, 13)
         print("agents_when is " + str(agents_when))
 
         decontaminate(T, starting_node, m, T_original, agents, agents_if, agents_when)

@@ -290,7 +290,11 @@ def tree(lr, m, p):
             for i in agents:
                 if i > terminated_agents[0] and i not in terminated_agents:
                     print("soooo i is " + str(i) + " the whole of terminated agents are " + str(terminated_agents) + " and the terminated agent[0] is " + str(terminated_agents[0]) +  " agents is " + str(agents) + " agents_0 is " + str(agents_0))
-                    agents[i] = agents_0[i-1]
+                    if agents_0[i-1] != -1:
+                        agents[i] = agents_0[i-1]
+                    else:
+                        path_to_v = nx.shortest_path(T_original, agents[i], v)
+                        agents[i] = path_to_v[1]
                     if agents[i] != agents_0[i]:
                         move_counter = move_counter + 1
             #now we eliminate the replaced agent and change the id-s

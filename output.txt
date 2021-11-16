@@ -5361,8 +5361,8 @@ this is T
 Graph with 11 nodes and 10 edges
 minofmaxdist after
 starting node is 5and the nr_of_agents are 6
-agents_if is {0: 0.8311484749352978, 1: 0.9363075454729894, 2: 0.9502614510583474, 3: 0.6834298398809312, 4: 0.9249719734391706, 5: 0.8724108872865942}
-agents_when is {}
+agents_if is {0: 0.8619802980287729, 1: 0.2890519582112958, 2: 0.006039437846045215, 3: 0.6427042143173575, 4: 0.342601503409495, 5: 0.8518795847668554}
+agents_when is {1: 12, 2: 12}
 decont v is 5
 decont T is [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
 moving the chain to 5
@@ -5801,6 +5801,50 @@ moving the chain to 10
 agents are {0: 10, 1: 9, 2: 8, 3: 7, 4: 6, 5: 5}
 color is {0: 'grey', 1: 'grey', 2: 'grey', 3: 'grey', 4: 'grey', 5: 'black', 6: 'black', 7: 'black', 8: 'black', 9: 'black', 10: 'black'}
 previous node is 9
+the move counter became 15so termination list is online, btw agents_when[i] is  12
+the move counter became 15so termination list is online, btw agents_when[i] is  12
+while loop started
+soooo i is 3 the whole of terminated agents are [1, 2] and the terminated agent[0] is 1 agents is {0: 10, 1: -1, 2: -1, 3: 7, 4: 6, 5: 5} agents_0 is {0: 10, 1: 9, 2: 8, 3: 7, 4: 6, 5: 5}
+soooo i is 4 the whole of terminated agents are [1, 2] and the terminated agent[0] is 1 agents is {0: 10, 1: -1, 2: -1, 3: 8, 4: 6, 5: 5} agents_0 is {0: 10, 1: 9, 2: 8, 3: 7, 4: 6, 5: 5}
+soooo i is 5 the whole of terminated agents are [1, 2] and the terminated agent[0] is 1 agents is {0: 10, 1: -1, 2: -1, 3: 8, 4: 7, 5: 5} agents_0 is {0: 10, 1: 9, 2: 8, 3: 7, 4: 6, 5: 5}
+type of agents is <class 'dict'>
+type of corrected_ids is <class 'dict'>
+corrid b4 del: {0: 10, 1: -1, 2: -1, 3: 8, 4: 7, 5: 6}
+type of corrected_ids after del is <class 'dict'>
+corrid after del: {0: 10, 2: -1, 3: 8, 4: 7, 5: 6}
+b4crit{0: 10, 2: -1, 3: 8, 4: 7, 5: 6}
+aftercrit{0: 10, 1: -1, 3: 8, 4: 7, 5: 6}
+b4crit{0: 10, 1: -1, 3: 8, 4: 7, 5: 6}
+aftercrit{0: 10, 1: -1, 2: 8, 4: 7, 5: 6}
+b4crit{0: 10, 1: -1, 2: 8, 4: 7, 5: 6}
+aftercrit{0: 10, 1: -1, 2: 8, 3: 7, 5: 6}
+b4crit{0: 10, 1: -1, 2: 8, 3: 7, 5: 6}
+aftercrit{0: 10, 1: -1, 2: 8, 3: 7, 4: 6}
+termb4 [1, 2]
+terma5 [1]
+agentswhenb4 adjust {2: 12}
+agents after breakdown handle is {0: 10, 1: -1, 2: 8, 3: 7, 4: 6} terminated_agents iiiis [1]
+agentswhenafter chaindown is {1: 12}
+while loop started
+soooo i is 2 the whole of terminated agents are [1] and the terminated agent[0] is 1 agents is {0: 10, 1: -1, 2: 8, 3: 7, 4: 6} agents_0 is {0: 10, 1: -1, 2: 8, 3: 7, 4: 6}
+soooo i is 3 the whole of terminated agents are [1] and the terminated agent[0] is 1 agents is {0: 10, 1: -1, 2: 9, 3: 7, 4: 6} agents_0 is {0: 10, 1: -1, 2: 8, 3: 7, 4: 6}
+soooo i is 4 the whole of terminated agents are [1] and the terminated agent[0] is 1 agents is {0: 10, 1: -1, 2: 9, 3: 8, 4: 6} agents_0 is {0: 10, 1: -1, 2: 8, 3: 7, 4: 6}
+type of agents is <class 'dict'>
+type of corrected_ids is <class 'dict'>
+corrid b4 del: {0: 10, 1: -1, 2: 9, 3: 8, 4: 7}
+type of corrected_ids after del is <class 'dict'>
+corrid after del: {0: 10, 2: 9, 3: 8, 4: 7}
+b4crit{0: 10, 2: 9, 3: 8, 4: 7}
+aftercrit{0: 10, 1: 9, 3: 8, 4: 7}
+b4crit{0: 10, 1: 9, 3: 8, 4: 7}
+aftercrit{0: 10, 1: 9, 2: 8, 4: 7}
+b4crit{0: 10, 1: 9, 2: 8, 4: 7}
+aftercrit{0: 10, 1: 9, 2: 8, 3: 7}
+termb4 [1]
+terma5 []
+agentswhenb4 adjust {}
+agents after breakdown handle is {0: 10, 1: 9, 2: 8, 3: 7} terminated_agents iiiis []
+agentswhenafter chaindown is {}
 we have reached a leaf
 before moving back, the current value of neighbor is 10
 we were in a leaf, now we're moving back up the chain from10 to 9
@@ -5830,17 +5874,38 @@ previous node is 9
 ordered_v_neighbours is [4, 6]
 decont v is 4
 decont T is [0, 1, 2, 3, 4]
-movecounterb4 26
+movecounterb4 32
 i is 1 and agents is {0: 4, 1: 5, 2: 5, 3: 5, 4: 5, 5: 5} and agents_0 is {0: 5, 1: 5, 2: 5, 3: 5, 4: 5, 5: 5}
 i is 2 and agents is {0: 4, 1: 5, 2: 5, 3: 5, 4: 5, 5: 5} and agents_0 is {0: 5, 1: 5, 2: 5, 3: 5, 4: 5, 5: 5}
 i is 3 and agents is {0: 4, 1: 5, 2: 5, 3: 5, 4: 5, 5: 5} and agents_0 is {0: 5, 1: 5, 2: 5, 3: 5, 4: 5, 5: 5}
 i is 4 and agents is {0: 4, 1: 5, 2: 5, 3: 5, 4: 5, 5: 5} and agents_0 is {0: 5, 1: 5, 2: 5, 3: 5, 4: 5, 5: 5}
 i is 5 and agents is {0: 4, 1: 5, 2: 5, 3: 5, 4: 5, 5: 5} and agents_0 is {0: 5, 1: 5, 2: 5, 3: 5, 4: 5, 5: 5}
-movecounterafter 27
+movecounterafter 33
 moving the chain to 4
 agents are {0: 4, 1: 5, 2: 5, 3: 5, 4: 5, 5: 5}
 color is {0: 'grey', 1: 'grey', 2: 'grey', 3: 'grey', 4: 'black', 5: 'black', 6: 'white', 7: 'white', 8: 'white', 9: 'white', 10: 'white'}
 previous node is 5
+the move counter became 33so termination list is online, btw agents_when[i] is  12
+while loop started
+soooo i is 3 the whole of terminated agents are [2] and the terminated agent[0] is 2 agents is {0: 4, 1: 5, 2: -1, 3: 5, 4: 5, 5: 5} agents_0 is {0: 4, 1: 5, 2: 5, 3: 5, 4: 5, 5: 5}
+soooo i is 4 the whole of terminated agents are [2] and the terminated agent[0] is 2 agents is {0: 4, 1: 5, 2: -1, 3: 5, 4: 5, 5: 5} agents_0 is {0: 4, 1: 5, 2: 5, 3: 5, 4: 5, 5: 5}
+soooo i is 5 the whole of terminated agents are [2] and the terminated agent[0] is 2 agents is {0: 4, 1: 5, 2: -1, 3: 5, 4: 5, 5: 5} agents_0 is {0: 4, 1: 5, 2: 5, 3: 5, 4: 5, 5: 5}
+type of agents is <class 'dict'>
+type of corrected_ids is <class 'dict'>
+corrid b4 del: {0: 4, 1: 5, 2: -1, 3: 5, 4: 5, 5: 5}
+type of corrected_ids after del is <class 'dict'>
+corrid after del: {0: 4, 1: 5, 3: 5, 4: 5, 5: 5}
+b4crit{0: 4, 1: 5, 3: 5, 4: 5, 5: 5}
+aftercrit{0: 4, 1: 5, 2: 5, 4: 5, 5: 5}
+b4crit{0: 4, 1: 5, 2: 5, 4: 5, 5: 5}
+aftercrit{0: 4, 1: 5, 2: 5, 3: 5, 5: 5}
+b4crit{0: 4, 1: 5, 2: 5, 3: 5, 5: 5}
+aftercrit{0: 4, 1: 5, 2: 5, 3: 5, 4: 5}
+termb4 [2]
+terma5 []
+agentswhenb4 adjust {}
+agents after breakdown handle is {0: 4, 1: 5, 2: 5, 3: 5, 4: 5} terminated_agents iiiis []
+agentswhenafter chaindown is {}
 v_neighbours is [3]
 v is....
 3
@@ -5896,15 +5961,14 @@ len of ordered_v_neighbors is 1and its contents are [3]
 ordered_v_neighbours is [3]
 decont v is 3
 decont T is [0, 1, 2, 3]
-movecounterb4 27
-i is 1 and agents is {0: 3, 1: 5, 2: 5, 3: 5, 4: 5, 5: 5} and agents_0 is {0: 4, 1: 5, 2: 5, 3: 5, 4: 5, 5: 5}
-i is 2 and agents is {0: 3, 1: 4, 2: 5, 3: 5, 4: 5, 5: 5} and agents_0 is {0: 4, 1: 5, 2: 5, 3: 5, 4: 5, 5: 5}
-i is 3 and agents is {0: 3, 1: 4, 2: 5, 3: 5, 4: 5, 5: 5} and agents_0 is {0: 4, 1: 5, 2: 5, 3: 5, 4: 5, 5: 5}
-i is 4 and agents is {0: 3, 1: 4, 2: 5, 3: 5, 4: 5, 5: 5} and agents_0 is {0: 4, 1: 5, 2: 5, 3: 5, 4: 5, 5: 5}
-i is 5 and agents is {0: 3, 1: 4, 2: 5, 3: 5, 4: 5, 5: 5} and agents_0 is {0: 4, 1: 5, 2: 5, 3: 5, 4: 5, 5: 5}
-movecounterafter 29
+movecounterb4 33
+i is 1 and agents is {0: 3, 1: 5, 2: 5, 3: 5, 4: 5} and agents_0 is {0: 4, 1: 5, 2: 5, 3: 5, 4: 5}
+i is 2 and agents is {0: 3, 1: 4, 2: 5, 3: 5, 4: 5} and agents_0 is {0: 4, 1: 5, 2: 5, 3: 5, 4: 5}
+i is 3 and agents is {0: 3, 1: 4, 2: 5, 3: 5, 4: 5} and agents_0 is {0: 4, 1: 5, 2: 5, 3: 5, 4: 5}
+i is 4 and agents is {0: 3, 1: 4, 2: 5, 3: 5, 4: 5} and agents_0 is {0: 4, 1: 5, 2: 5, 3: 5, 4: 5}
+movecounterafter 35
 moving the chain to 3
-agents are {0: 3, 1: 4, 2: 5, 3: 5, 4: 5, 5: 5}
+agents are {0: 3, 1: 4, 2: 5, 3: 5, 4: 5}
 color is {0: 'grey', 1: 'grey', 2: 'grey', 3: 'black', 4: 'black', 5: 'black', 6: 'white', 7: 'white', 8: 'white', 9: 'white', 10: 'white'}
 previous node is 4
 v_neighbours is [2]
@@ -5953,15 +6017,14 @@ len of ordered_v_neighbors is 1and its contents are [2]
 ordered_v_neighbours is [2]
 decont v is 2
 decont T is [0, 1, 2]
-movecounterb4 29
-i is 1 and agents is {0: 2, 1: 4, 2: 5, 3: 5, 4: 5, 5: 5} and agents_0 is {0: 3, 1: 4, 2: 5, 3: 5, 4: 5, 5: 5}
-i is 2 and agents is {0: 2, 1: 3, 2: 5, 3: 5, 4: 5, 5: 5} and agents_0 is {0: 3, 1: 4, 2: 5, 3: 5, 4: 5, 5: 5}
-i is 3 and agents is {0: 2, 1: 3, 2: 4, 3: 5, 4: 5, 5: 5} and agents_0 is {0: 3, 1: 4, 2: 5, 3: 5, 4: 5, 5: 5}
-i is 4 and agents is {0: 2, 1: 3, 2: 4, 3: 5, 4: 5, 5: 5} and agents_0 is {0: 3, 1: 4, 2: 5, 3: 5, 4: 5, 5: 5}
-i is 5 and agents is {0: 2, 1: 3, 2: 4, 3: 5, 4: 5, 5: 5} and agents_0 is {0: 3, 1: 4, 2: 5, 3: 5, 4: 5, 5: 5}
-movecounterafter 32
+movecounterb4 35
+i is 1 and agents is {0: 2, 1: 4, 2: 5, 3: 5, 4: 5} and agents_0 is {0: 3, 1: 4, 2: 5, 3: 5, 4: 5}
+i is 2 and agents is {0: 2, 1: 3, 2: 5, 3: 5, 4: 5} and agents_0 is {0: 3, 1: 4, 2: 5, 3: 5, 4: 5}
+i is 3 and agents is {0: 2, 1: 3, 2: 4, 3: 5, 4: 5} and agents_0 is {0: 3, 1: 4, 2: 5, 3: 5, 4: 5}
+i is 4 and agents is {0: 2, 1: 3, 2: 4, 3: 5, 4: 5} and agents_0 is {0: 3, 1: 4, 2: 5, 3: 5, 4: 5}
+movecounterafter 38
 moving the chain to 2
-agents are {0: 2, 1: 3, 2: 4, 3: 5, 4: 5, 5: 5}
+agents are {0: 2, 1: 3, 2: 4, 3: 5, 4: 5}
 color is {0: 'grey', 1: 'grey', 2: 'black', 3: 'black', 4: 'black', 5: 'black', 6: 'white', 7: 'white', 8: 'white', 9: 'white', 10: 'white'}
 previous node is 3
 v_neighbours is [1]
@@ -6001,15 +6064,14 @@ len of ordered_v_neighbors is 1and its contents are [1]
 ordered_v_neighbours is [1]
 decont v is 1
 decont T is [0, 1]
-movecounterb4 32
-i is 1 and agents is {0: 1, 1: 3, 2: 4, 3: 5, 4: 5, 5: 5} and agents_0 is {0: 2, 1: 3, 2: 4, 3: 5, 4: 5, 5: 5}
-i is 2 and agents is {0: 1, 1: 2, 2: 4, 3: 5, 4: 5, 5: 5} and agents_0 is {0: 2, 1: 3, 2: 4, 3: 5, 4: 5, 5: 5}
-i is 3 and agents is {0: 1, 1: 2, 2: 3, 3: 5, 4: 5, 5: 5} and agents_0 is {0: 2, 1: 3, 2: 4, 3: 5, 4: 5, 5: 5}
-i is 4 and agents is {0: 1, 1: 2, 2: 3, 3: 4, 4: 5, 5: 5} and agents_0 is {0: 2, 1: 3, 2: 4, 3: 5, 4: 5, 5: 5}
-i is 5 and agents is {0: 1, 1: 2, 2: 3, 3: 4, 4: 5, 5: 5} and agents_0 is {0: 2, 1: 3, 2: 4, 3: 5, 4: 5, 5: 5}
-movecounterafter 36
+movecounterb4 38
+i is 1 and agents is {0: 1, 1: 3, 2: 4, 3: 5, 4: 5} and agents_0 is {0: 2, 1: 3, 2: 4, 3: 5, 4: 5}
+i is 2 and agents is {0: 1, 1: 2, 2: 4, 3: 5, 4: 5} and agents_0 is {0: 2, 1: 3, 2: 4, 3: 5, 4: 5}
+i is 3 and agents is {0: 1, 1: 2, 2: 3, 3: 5, 4: 5} and agents_0 is {0: 2, 1: 3, 2: 4, 3: 5, 4: 5}
+i is 4 and agents is {0: 1, 1: 2, 2: 3, 3: 4, 4: 5} and agents_0 is {0: 2, 1: 3, 2: 4, 3: 5, 4: 5}
+movecounterafter 42
 moving the chain to 1
-agents are {0: 1, 1: 2, 2: 3, 3: 4, 4: 5, 5: 5}
+agents are {0: 1, 1: 2, 2: 3, 3: 4, 4: 5}
 color is {0: 'grey', 1: 'black', 2: 'black', 3: 'black', 4: 'black', 5: 'black', 6: 'white', 7: 'white', 8: 'white', 9: 'white', 10: 'white'}
 previous node is 2
 v_neighbours is [0]
@@ -6039,36 +6101,35 @@ len of ordered_v_neighbors is 1and its contents are [0]
 ordered_v_neighbours is [0]
 decont v is 0
 decont T is [0]
-movecounterb4 36
-i is 1 and agents is {0: 0, 1: 2, 2: 3, 3: 4, 4: 5, 5: 5} and agents_0 is {0: 1, 1: 2, 2: 3, 3: 4, 4: 5, 5: 5}
-i is 2 and agents is {0: 0, 1: 1, 2: 3, 3: 4, 4: 5, 5: 5} and agents_0 is {0: 1, 1: 2, 2: 3, 3: 4, 4: 5, 5: 5}
-i is 3 and agents is {0: 0, 1: 1, 2: 2, 3: 4, 4: 5, 5: 5} and agents_0 is {0: 1, 1: 2, 2: 3, 3: 4, 4: 5, 5: 5}
-i is 4 and agents is {0: 0, 1: 1, 2: 2, 3: 3, 4: 5, 5: 5} and agents_0 is {0: 1, 1: 2, 2: 3, 3: 4, 4: 5, 5: 5}
-i is 5 and agents is {0: 0, 1: 1, 2: 2, 3: 3, 4: 4, 5: 5} and agents_0 is {0: 1, 1: 2, 2: 3, 3: 4, 4: 5, 5: 5}
-movecounterafter 41
+movecounterb4 42
+i is 1 and agents is {0: 0, 1: 2, 2: 3, 3: 4, 4: 5} and agents_0 is {0: 1, 1: 2, 2: 3, 3: 4, 4: 5}
+i is 2 and agents is {0: 0, 1: 1, 2: 3, 3: 4, 4: 5} and agents_0 is {0: 1, 1: 2, 2: 3, 3: 4, 4: 5}
+i is 3 and agents is {0: 0, 1: 1, 2: 2, 3: 4, 4: 5} and agents_0 is {0: 1, 1: 2, 2: 3, 3: 4, 4: 5}
+i is 4 and agents is {0: 0, 1: 1, 2: 2, 3: 3, 4: 5} and agents_0 is {0: 1, 1: 2, 2: 3, 3: 4, 4: 5}
+movecounterafter 47
 moving the chain to 0
-agents are {0: 0, 1: 1, 2: 2, 3: 3, 4: 4, 5: 5}
-color is {0: 'black', 1: 'black', 2: 'black', 3: 'black', 4: 'black', 5: 'black', 6: 'white', 7: 'white', 8: 'white', 9: 'white', 10: 'white'}
+agents are {0: 0, 1: 1, 2: 2, 3: 3, 4: 4}
+color is {0: 'black', 1: 'black', 2: 'black', 3: 'black', 4: 'black', 5: 'white', 6: 'white', 7: 'white', 8: 'white', 9: 'white', 10: 'white'}
 previous node is 1
 we have reached a leaf
 before moving back, the current value of neighbor is 0
 we were in a leaf, now we're moving back up the chain from0 to 1
-agents are {0: 2, 1: 3, 2: 4, 3: 5, 4: 5, 5: 5}
+agents are {0: 2, 1: 3, 2: 4, 3: 5, 4: 5}
 color is {0: 'white', 1: 'black', 2: 'black', 3: 'black', 4: 'black', 5: 'black', 6: 'white', 7: 'white', 8: 'white', 9: 'white', 10: 'white'}
 previous node is 1
 before moving back, the current value of neighbor is 1
 we were in a leaf, now we're moving back up the chain from1 to 2
-agents are {0: 3, 1: 4, 2: 5, 3: 5, 4: 5, 5: 5}
+agents are {0: 3, 1: 4, 2: 5, 3: 5, 4: 5}
 color is {0: 'white', 1: 'white', 2: 'black', 3: 'black', 4: 'black', 5: 'black', 6: 'white', 7: 'white', 8: 'white', 9: 'white', 10: 'white'}
 previous node is 1
 before moving back, the current value of neighbor is 2
 we were in a leaf, now we're moving back up the chain from2 to 3
-agents are {0: 4, 1: 5, 2: 5, 3: 5, 4: 5, 5: 5}
+agents are {0: 4, 1: 5, 2: 5, 3: 5, 4: 5}
 color is {0: 'white', 1: 'white', 2: 'white', 3: 'black', 4: 'black', 5: 'black', 6: 'white', 7: 'white', 8: 'white', 9: 'white', 10: 'white'}
 previous node is 1
 before moving back, the current value of neighbor is 3
 we were in a leaf, now we're moving back up the chain from3 to 4
-agents are {0: 5, 1: 5, 2: 5, 3: 5, 4: 5, 5: 5}
+agents are {0: 5, 1: 5, 2: 5, 3: 5, 4: 5}
 color is {0: 'white', 1: 'white', 2: 'white', 3: 'white', 4: 'black', 5: 'black', 6: 'white', 7: 'white', 8: 'white', 9: 'white', 10: 'white'}
 previous node is 1
 before moving back, the current value of neighbor is 4
@@ -6078,5 +6139,5 @@ color is {0: 'white', 1: 'white', 2: 'white', 3: 'white', 4: 'white', 5: 'black'
 previous node is 1
 1
 no grey nodes remain
-move counted is 52
-(6, 52, 0.060013532638549805)
+move counted is 58
+(6, 58, 0.059012651443481445)

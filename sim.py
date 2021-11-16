@@ -103,4 +103,4 @@ with open('sim.csv', 'w', encoding='UTF8', newline='') as f:
     A = nx.balanced_tree(3, 3)
     #lr = nx.to_prufer_sequence(A)
     lr = [1, 2, 3, 4, 5, 6, 7, 8, 9]
-    print(tree_chain.tree(lr, 1, 0.1))
+    print(tree_chain.tree(lr, 1, 0.3))

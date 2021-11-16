@@ -123,7 +123,7 @@ def tree(lr, m, p):
 
 
 
-    agents = dict{}
+    agents = {}
     previous_agents = {}
     color = {}
 
@@ -301,6 +301,7 @@ def tree(lr, m, p):
                 if i > terminated_agents[0] and i+1 in agents:
                     print("b4crit" + str(corrected_ids), flush = True)
                     corrected_ids[i] = agents[i+1] #replace the missing one with the next one?
+                    functions.sorted_dict(corrected_ids)
                     print("aftercrit" + str(corrected_ids), flush = True)
                     #corrected_ids = functions.sort_dict(corrected_ids)
                     print("rewrite history " + str(corrected_ids), flush = True)
@@ -317,6 +318,7 @@ def tree(lr, m, p):
             #adjust the agents_when too:
             agents_when_new = agents_when.copy()
             for i in agents_when.keys():
+                functions.sorted_dict(corrected_ids)
                 agents_when_new[i-1] = agents_when[i]
                 del agents_when_new[i]
             agents_when = agents_when_new.copy()

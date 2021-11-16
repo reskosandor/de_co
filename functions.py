@@ -48,5 +48,7 @@ def color_sync_with_error(graph, agents, previous_agents, color, m, backup_agent
             elif counter < m:
                 color[key] = "white"
 
+def sorted_dict(d):
+    return dict(sorted(sorted(d.items())))
 
 

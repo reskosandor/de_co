@@ -179,11 +179,13 @@ def tree(lr, m, p):
         global move_counter
         agents_0 = agents.copy()
         agents[0] = target
+        functions.sorted_dict(agents)
         move_counter = move_counter + 1
         for i in agents:
             if i > 0:
                 print("i is " + str(i) + " and agents is " + str(agents) + " and agents_0 is " + str(agents_0))
                 agents[i] = agents_0[i-1]
+                functions.sorted_dict(agents)
                 if agents[i] != agents_0[i]:
                     move_counter = move_counter + 1
 
@@ -283,7 +285,7 @@ def tree(lr, m, p):
             previous_agents = agents.copy()
             #moving all agents in the chain above the furthest down breakdown by one
             for i in agents:
-                if i > terminated_agents[0] and i not in terminated_agents:
+                if i > terminated_agents[0] and i not in terminated_agents and i-1 not in terminated_agents:
                     print("soooo i is " + str(i) + " the whole of terminated agents are " + str(terminated_agents) + " and the terminated agent[0] is " + str(terminated_agents[0]) +  " agents is " + str(agents) + " agents_0 is " + str(agents_0))
                     agents[i] = agents_0[i-1]
                     if agents[i] != agents_0[i]:

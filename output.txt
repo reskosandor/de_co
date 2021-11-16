@@ -5361,8 +5361,8 @@ this is T
 Graph with 11 nodes and 10 edges
 minofmaxdist after
 starting node is 5and the nr_of_agents are 6
-agents_if is {0: 0.6835868904150276, 1: 0.36958315180566714, 2: 0.021089809060500397, 3: 0.28620234123434796, 4: 0.4853204234280707, 5: 0.23323209460760264}
-agents_when is {2: 12}
+agents_if is {0: 0.020726681671018654, 1: 0.39550869072212624, 2: 0.7537845953963115, 3: 0.34435911407699527, 4: 0.44285230819364985, 5: 0.7851718947082122}
+agents_when is {0: 12}
 decont v is 5
 decont T is [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
 moving the chain to 5
@@ -5803,17 +5803,155 @@ color is {0: 'grey', 1: 'grey', 2: 'grey', 3: 'grey', 4: 'grey', 5: 'black', 6: 
 previous node is 9
 the move counter became 15so termination list is online, btw agents_when[i] is  12
 while loop started
-soooo i is 3 the whole of terminated agents are [2] and the terminated agent[0] is 2 agents is {0: 10, 1: 9, 2: -1, 3: 7, 4: 6, 5: 5} agents_0 is {0: 10, 1: 9, 2: 8, 3: 7, 4: 6, 5: 5}
-soooo i is 4 the whole of terminated agents are [2] and the terminated agent[0] is 2 agents is {0: 10, 1: 9, 2: -1, 3: 8, 4: 6, 5: 5} agents_0 is {0: 10, 1: 9, 2: 8, 3: 7, 4: 6, 5: 5}
-soooo i is 5 the whole of terminated agents are [2] and the terminated agent[0] is 2 agents is {0: 10, 1: 9, 2: -1, 3: 8, 4: 7, 5: 5} agents_0 is {0: 10, 1: 9, 2: 8, 3: 7, 4: 6, 5: 5}
+soooo i is 1 the whole of terminated agents are [0] and the terminated agent[0] is 0 agents is {0: -1, 1: 9, 2: 8, 3: 7, 4: 6, 5: 5} agents_0 is {0: 10, 1: 9, 2: 8, 3: 7, 4: 6, 5: 5}
+soooo i is 2 the whole of terminated agents are [0] and the terminated agent[0] is 0 agents is {0: -1, 1: 10, 2: 8, 3: 7, 4: 6, 5: 5} agents_0 is {0: 10, 1: 9, 2: 8, 3: 7, 4: 6, 5: 5}
+soooo i is 3 the whole of terminated agents are [0] and the terminated agent[0] is 0 agents is {0: -1, 1: 10, 2: 9, 3: 7, 4: 6, 5: 5} agents_0 is {0: 10, 1: 9, 2: 8, 3: 7, 4: 6, 5: 5}
+soooo i is 4 the whole of terminated agents are [0] and the terminated agent[0] is 0 agents is {0: -1, 1: 10, 2: 9, 3: 8, 4: 6, 5: 5} agents_0 is {0: 10, 1: 9, 2: 8, 3: 7, 4: 6, 5: 5}
+soooo i is 5 the whole of terminated agents are [0] and the terminated agent[0] is 0 agents is {0: -1, 1: 10, 2: 9, 3: 8, 4: 7, 5: 5} agents_0 is {0: 10, 1: 9, 2: 8, 3: 7, 4: 6, 5: 5}
 type of agents is <class 'dict'>
 type of corrected_ids is <class 'dict'>
-corrid b4 del: {0: 10, 1: 9, 2: -1, 3: 8, 4: 7, 5: 6}
+corrid b4 del: {0: -1, 1: 10, 2: 9, 3: 8, 4: 7, 5: 6}
 type of corrected_ids after del is <class 'dict'>
-corrid after del: {0: 10, 1: 9, 3: 8, 4: 7, 5: 6}
+corrid after del: {1: 10, 2: 9, 3: 8, 4: 7, 5: 6}
+b4crit{1: 10, 2: 9, 3: 8, 4: 7, 5: 6}
+aftercrit{0: 10, 2: 9, 3: 8, 4: 7, 5: 6}
+b4crit{0: 10, 2: 9, 3: 8, 4: 7, 5: 6}
+aftercrit{0: 10, 1: 9, 3: 8, 4: 7, 5: 6}
 b4crit{0: 10, 1: 9, 3: 8, 4: 7, 5: 6}
 aftercrit{0: 10, 1: 9, 2: 8, 4: 7, 5: 6}
-rewrite history {0: 10, 1: 9, 2: 8, 4: 7, 5: 6}
-deleted old history {0: 10, 1: 9, 2: 8, 5: 6}
-deletion in corrected_ids
-b4crit{0: 10, 1: 9, 2: 8, 5: 6}
+b4crit{0: 10, 1: 9, 2: 8, 4: 7, 5: 6}
+aftercrit{0: 10, 1: 9, 2: 8, 3: 7, 5: 6}
+b4crit{0: 10, 1: 9, 2: 8, 3: 7, 5: 6}
+aftercrit{0: 10, 1: 9, 2: 8, 3: 7, 4: 6}
+agents after breakdown handle is {0: 10, 1: 9, 2: 8, 3: 7, 4: 6} terminated_agents iiiis []
+we have reached a leaf
+before moving back, the current value of neighbor is 10
+we were in a leaf, now we're moving back up the chain from10 to 9
+agents are {0: 8, 1: 7, 2: 6, 3: 5, 4: 5, 5: 5}
+color is {0: 'grey', 1: 'grey', 2: 'grey', 3: 'grey', 4: 'grey', 5: 'black', 6: 'black', 7: 'black', 8: 'black', 9: 'black', 10: 'white'}
+previous node is 9
+before moving back, the current value of neighbor is 9
+we were in a leaf, now we're moving back up the chain from9 to 8
+agents are {0: 7, 1: 6, 2: 5, 3: 5, 4: 5, 5: 5}
+color is {0: 'grey', 1: 'grey', 2: 'grey', 3: 'grey', 4: 'grey', 5: 'black', 6: 'black', 7: 'black', 8: 'black', 9: 'white', 10: 'white'}
+previous node is 9
+before moving back, the current value of neighbor is 8
+we were in a leaf, now we're moving back up the chain from8 to 7
+agents are {0: 6, 1: 5, 2: 5, 3: 5, 4: 5, 5: 5}
+color is {0: 'grey', 1: 'grey', 2: 'grey', 3: 'grey', 4: 'grey', 5: 'black', 6: 'black', 7: 'black', 8: 'white', 9: 'white', 10: 'white'}
+previous node is 9
+before moving back, the current value of neighbor is 7
+we were in a leaf, now we're moving back up the chain from7 to 6
+agents are {0: 5, 1: 5, 2: 5, 3: 5, 4: 5, 5: 5}
+color is {0: 'grey', 1: 'grey', 2: 'grey', 3: 'grey', 4: 'grey', 5: 'black', 6: 'black', 7: 'white', 8: 'white', 9: 'white', 10: 'white'}
+previous node is 9
+before moving back, the current value of neighbor is 6
+we were in a leaf, now we're moving back up the chain from6 to 5
+agents are {0: 5, 1: 5, 2: 5, 3: 5, 4: 5, 5: 5}
+color is {0: 'grey', 1: 'grey', 2: 'grey', 3: 'grey', 4: 'grey', 5: 'black', 6: 'white', 7: 'white', 8: 'white', 9: 'white', 10: 'white'}
+previous node is 9
+ordered_v_neighbours is [4, 6]
+decont v is 4
+decont T is [0, 1, 2, 3, 4]
+movecounterb4 31
+i is 1 and agents is {0: 4, 1: 5, 2: 5, 3: 5, 4: 5, 5: 5} and agents_0 is {0: 5, 1: 5, 2: 5, 3: 5, 4: 5, 5: 5}
+i is 2 and agents is {0: 4, 1: 5, 2: 5, 3: 5, 4: 5, 5: 5} and agents_0 is {0: 5, 1: 5, 2: 5, 3: 5, 4: 5, 5: 5}
+i is 3 and agents is {0: 4, 1: 5, 2: 5, 3: 5, 4: 5, 5: 5} and agents_0 is {0: 5, 1: 5, 2: 5, 3: 5, 4: 5, 5: 5}
+i is 4 and agents is {0: 4, 1: 5, 2: 5, 3: 5, 4: 5, 5: 5} and agents_0 is {0: 5, 1: 5, 2: 5, 3: 5, 4: 5, 5: 5}
+i is 5 and agents is {0: 4, 1: 5, 2: 5, 3: 5, 4: 5, 5: 5} and agents_0 is {0: 5, 1: 5, 2: 5, 3: 5, 4: 5, 5: 5}
+movecounterafter 32
+moving the chain to 4
+agents are {0: 4, 1: 5, 2: 5, 3: 5, 4: 5, 5: 5}
+color is {0: 'grey', 1: 'grey', 2: 'grey', 3: 'grey', 4: 'black', 5: 'black', 6: 'white', 7: 'white', 8: 'white', 9: 'white', 10: 'white'}
+previous node is 5
+the move counter became 32so termination list is online, btw agents_when[i] is  12
+while loop started
+soooo i is 1 the whole of terminated agents are [0] and the terminated agent[0] is 0 agents is {0: -1, 1: 5, 2: 5, 3: 5, 4: 5, 5: 5} agents_0 is {0: 4, 1: 5, 2: 5, 3: 5, 4: 5, 5: 5}
+soooo i is 2 the whole of terminated agents are [0] and the terminated agent[0] is 0 agents is {0: -1, 1: 4, 2: 5, 3: 5, 4: 5, 5: 5} agents_0 is {0: 4, 1: 5, 2: 5, 3: 5, 4: 5, 5: 5}
+soooo i is 3 the whole of terminated agents are [0] and the terminated agent[0] is 0 agents is {0: -1, 1: 4, 2: 5, 3: 5, 4: 5, 5: 5} agents_0 is {0: 4, 1: 5, 2: 5, 3: 5, 4: 5, 5: 5}
+soooo i is 4 the whole of terminated agents are [0] and the terminated agent[0] is 0 agents is {0: -1, 1: 4, 2: 5, 3: 5, 4: 5, 5: 5} agents_0 is {0: 4, 1: 5, 2: 5, 3: 5, 4: 5, 5: 5}
+soooo i is 5 the whole of terminated agents are [0] and the terminated agent[0] is 0 agents is {0: -1, 1: 4, 2: 5, 3: 5, 4: 5, 5: 5} agents_0 is {0: 4, 1: 5, 2: 5, 3: 5, 4: 5, 5: 5}
+type of agents is <class 'dict'>
+type of corrected_ids is <class 'dict'>
+corrid b4 del: {0: -1, 1: 4, 2: 5, 3: 5, 4: 5, 5: 5}
+type of corrected_ids after del is <class 'dict'>
+corrid after del: {1: 4, 2: 5, 3: 5, 4: 5, 5: 5}
+b4crit{1: 4, 2: 5, 3: 5, 4: 5, 5: 5}
+aftercrit{0: 4, 2: 5, 3: 5, 4: 5, 5: 5}
+b4crit{0: 4, 2: 5, 3: 5, 4: 5, 5: 5}
+aftercrit{0: 4, 1: 5, 3: 5, 4: 5, 5: 5}
+b4crit{0: 4, 1: 5, 3: 5, 4: 5, 5: 5}
+aftercrit{0: 4, 1: 5, 2: 5, 4: 5, 5: 5}
+b4crit{0: 4, 1: 5, 2: 5, 4: 5, 5: 5}
+aftercrit{0: 4, 1: 5, 2: 5, 3: 5, 5: 5}
+b4crit{0: 4, 1: 5, 2: 5, 3: 5, 5: 5}
+aftercrit{0: 4, 1: 5, 2: 5, 3: 5, 4: 5}
+agents after breakdown handle is {0: 4, 1: 5, 2: 5, 3: 5, 4: 5} terminated_agents iiiis []
+v_neighbours is [3]
+v is....
+3
+T consists of nodes:
+[0, 1, 2, 3, 4]
+v degree is...
+2
+v is....
+2
+T consists of nodes:
+[0, 1, 2]
+v degree is...
+1
+v is....
+1
+T consists of nodes:
+[0, 1]
+v degree is...
+1
+v is....
+0
+T consists of nodes:
+[0]
+v degree is...
+0
+neighbors are ordered by alpha, now evaluation by degree commencing
+0
+branch 1
+returning one
+neighbors are ordered by alpha, now evaluation by degree commencing
+branch 2
+returning 1
+neighbors are ordered by alpha, now evaluation by degree commencing
+branch 2
+returning 1
+v is....
+4
+T consists of nodes:
+[4]
+v degree is...
+0
+neighbors are ordered by alpha, now evaluation by degree commencing
+0
+branch 1
+returning one
+neighbors are ordered by alpha, now evaluation by degree commencing
+branch 4
+returning 2
+state of a before the for loop is {3: 2}
+current state of a is {3: 2}
+the max key is 3
+len of ordered_v_neighbors is 1and its contents are [3]
+ordered_v_neighbours is [3]
+decont v is 3
+decont T is [0, 1, 2, 3]
+movecounterb4 33
+i is 1 and agents is {0: 3, 1: 5, 2: 5, 3: 5, 4: 5} and agents_0 is {0: 4, 1: 5, 2: 5, 3: 5, 4: 5}
+i is 2 and agents is {0: 3, 1: 4, 2: 5, 3: 5, 4: 5} and agents_0 is {0: 4, 1: 5, 2: 5, 3: 5, 4: 5}
+i is 3 and agents is {0: 3, 1: 4, 2: 5, 3: 5, 4: 5} and agents_0 is {0: 4, 1: 5, 2: 5, 3: 5, 4: 5}
+i is 4 and agents is {0: 3, 1: 4, 2: 5, 3: 5, 4: 5} and agents_0 is {0: 4, 1: 5, 2: 5, 3: 5, 4: 5}
+movecounterafter 35
+moving the chain to 3
+agents are {0: 3, 1: 4, 2: 5, 3: 5, 4: 5}
+color is {0: 'grey', 1: 'grey', 2: 'grey', 3: 'black', 4: 'black', 5: 'black', 6: 'white', 7: 'white', 8: 'white', 9: 'white', 10: 'white'}
+previous node is 4
+the move counter became 35so termination list is online, btw agents_when[i] is  12
+while loop started
+soooo i is 0 the whole of terminated agents are [-1] and the terminated agent[0] is -1 agents is {0: 3, 1: 4, 2: 5, 3: 5, 4: 5, -1: -1} agents_0 is {0: 3, 1: 4, 2: 5, 3: 5, 4: 5}

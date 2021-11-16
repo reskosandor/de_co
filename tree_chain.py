@@ -303,7 +303,7 @@ def tree(lr, m, p):
             print("corrid after del: " + str(corrected_ids))
             correcting_ids = corrected_ids.copy()
             for i in correcting_ids.keys():
-                if i > terminated_agents[0] and i+1 in agents:
+                if i > terminated_agents[0]:
                     print("b4crit" + str(corrected_ids), flush = True)
                     value_of_change = corrected_ids[i]
                     del corrected_ids[i]
@@ -311,11 +311,7 @@ def tree(lr, m, p):
                     corrected_ids = functions.sorted_dict(corrected_ids)
                     print("aftercrit" + str(corrected_ids), flush = True)
                     #corrected_ids = functions.sort_dict(corrected_ids)
-                    print("rewrite history " + str(corrected_ids), flush = True)
-                    if i + 1 in corrected_ids:
-                        del corrected_ids[i + 1] #delete teh next one
-                        print("deleted old history " + str(corrected_ids))
-                    print("deletion in corrected_ids")
+
 
             agents = corrected_ids.copy() # ids and positions are correct
             terminated_agents.pop(0)  # delete the handled broken down agent

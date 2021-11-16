@@ -314,10 +314,15 @@ def tree(lr, m, p):
 
 
             agents = corrected_ids.copy() # ids and positions are correct
+            print("termb4 " + str(terminated_agents))
+            del agents_when[terminated_agents[0]] #delete the handled broken down from agents when
             terminated_agents.pop(0)  # delete the handled broken down agent
-            for i in range(len(terminated_agents)):
-                terminated_agents[i] = terminated_agents[i] - 1 #adjust the termination list id too
-            functions.color_sync(T_original, agents, previous_agents, color, m)
+            if len(terminated_agents) != 0:
+                for i in range(len(terminated_agents)):
+                    terminated_agents[i] = terminated_agents[i] - 1 #adjust the termination list id too
+                functions.color_sync(T_original, agents, previous_agents, color, m)
+            print("terma5 " + str(terminated_agents))
+            print("agentswhenb4 adjust " + str(agents_when))
             #adjust the agents_when too:
             agents_when_new = agents_when.copy()
             for i in agents_when.keys():
@@ -336,7 +341,7 @@ def tree(lr, m, p):
                     agents[i] = -1
             functions.color_sync(T_original, agents, previous_agents, color, m)
             print("agents after breakdown handle is " + str(agents) + " terminated_agents iiiis " + str(terminated_agents))
-
+            print("agentswhenafter chaindown is " + str(agents_when))
 
 
 

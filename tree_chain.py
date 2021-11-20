@@ -9,6 +9,7 @@ previous_node = -1
 starting_node = -1
 nr_of_agents = -1
 move_counter = 0
+agents = {}
 def tree(lr, m, p):
     start_time = time.time()
     global number_of_agents
@@ -16,6 +17,7 @@ def tree(lr, m, p):
     global starting_node
     global nr_of_agents
     global move_counter
+    global agents
     previous_node = -1
     print("asd")
     T = nx.algorithms.tree.coding.from_prufer_sequence(lr)
@@ -123,7 +125,7 @@ def tree(lr, m, p):
 
 
 
-    agents = {}
+
     previous_agents = {}
     color = {}
 
@@ -175,8 +177,9 @@ def tree(lr, m, p):
         return root, root_height
 
 
-    def chain_agents_down(agents, root, target):
+    def chain_agents_down(root, target):
         global move_counter
+        global agents
         agents_0 = agents.copy()
         agents[0] = target
         agents = functions.sorted_dict(agents)
@@ -191,8 +194,9 @@ def tree(lr, m, p):
         return agents
 
 
-    def chain_agents_up(agents, root):
+    def chain_agents_up(root):
         global move_counter
+        global agents
         agents_0 = agents.copy()
         ###last of the chain
         if agents_0[len(agents_0) - 1] != root:
@@ -250,6 +254,7 @@ def tree(lr, m, p):
         global starting_node
         global nr_of_agents
         global move_counter
+        global agents
         print("decont v is " + str(v))
         print("decont T is " + str(list(T)))
         previous_agents = agents.copy()
@@ -262,7 +267,7 @@ def tree(lr, m, p):
         else:
 
             print("movecounterb4 " + str(move_counter))
-            agents = chain_agents_down(agents, starting_node, v)
+            agents = chain_agents_down(starting_node, v)
             print("movecounterafter " + str(move_counter))
 
         print("moving the chain to " + str(v))
@@ -382,7 +387,7 @@ def tree(lr, m, p):
                 previous_agents = agents.copy()
                 howmany = 0
                 print("before moving back, the current value of neighbor is " + str(neighbor))
-                agents = chain_agents_up(agents, starting_node)
+                agents = chain_agents_up(starting_node)
                 print("we were in a leaf, now we're moving back up the chain from" + str(neighbor) + " to " + str(v))
                 functions.color_sync(T_original, agents, previous_agents, color, m)
                 print("agents 5 is " + str(agents))
@@ -429,6 +434,7 @@ def tree(lr, m, p):
     print("minimum_mu is " +str(minimum_mu))
 
     def optimaltreedecontamination(T, m, T_original, p):
+        global agents
         global starting_node
         global nr_of_agents
         agents_if = {}

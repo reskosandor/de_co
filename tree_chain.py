@@ -191,7 +191,7 @@ def tree(lr, m, p):
                 agents = functions.sorted_dict(agents)
                 if agents[i] != agents_0[i]:
                     move_counter = move_counter + 1
-        return agents
+
 
 
     def chain_agents_up(root):
@@ -211,7 +211,7 @@ def tree(lr, m, p):
                 agents[i] = agents_0[i+1]
                 if agents[i] != agents_0[i]:
                     move_counter = move_counter + 1
-        return agents
+
 
 
 
@@ -267,7 +267,7 @@ def tree(lr, m, p):
         else:
 
             print("movecounterb4 " + str(move_counter))
-            agents = chain_agents_down(starting_node, v)
+            chain_agents_down(starting_node, v)
             print("movecounterafter " + str(move_counter))
 
         print("moving the chain to " + str(v))
@@ -356,6 +356,7 @@ def tree(lr, m, p):
 
 
         print("agents 1 is " + str(agents))
+        print("len(list(T.nodes)) is " + (str(len(list(T.nodes)))))
         ## if there are more than one node which is equivalent with being in a leaf
         if len(list(T.nodes)) > 1:
             v_neighbours = neighbors_of_v(T, v)
@@ -381,13 +382,13 @@ def tree(lr, m, p):
                 previous_node = v
                 print("agents 3 is " + str(agents))
                 #####################################halftime
-                agents = decontaminate(subtree(T, neighbor, v), neighbor, m, T_original, agents_if, agents_when)
+                decontaminate(subtree(T, neighbor, v), neighbor, m, T_original, agents_if, agents_when)
                 #####################################halftime
                 print("agents 4 is " + str(agents))
                 previous_agents = agents.copy()
                 howmany = 0
                 print("before moving back, the current value of neighbor is " + str(neighbor))
-                agents = chain_agents_up(starting_node)
+                chain_agents_up(starting_node)
                 print("we were in a leaf, now we're moving back up the chain from" + str(neighbor) + " to " + str(v))
                 functions.color_sync(T_original, agents, previous_agents, color, m)
                 print("agents 5 is " + str(agents))

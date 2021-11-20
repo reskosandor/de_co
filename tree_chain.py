@@ -244,7 +244,7 @@ def tree(lr, m, p):
 
 
 
-    def decontaminate(T, v, m, T_original, agents, agents_if, agents_when):
+    def decontaminate(T, v, m, T_original, agents_if, agents_when):
         global previous_node
         global number_of_agents
         global starting_node
@@ -350,7 +350,7 @@ def tree(lr, m, p):
 
 
 
-
+        print("agents 1 is " + str(agents))
         ## if there are more than one node which is equivalent with being in a leaf
         if len(list(T.nodes)) > 1:
             v_neighbours = neighbors_of_v(T, v)
@@ -370,19 +370,22 @@ def tree(lr, m, p):
                 if len(ordered_v_neighbours) == len(a):
                     break
             print("len of ordered_v_neighbors is " + str(len(ordered_v_neighbours)) + "and its contents are " + str(ordered_v_neighbours))
+            print("agents 2 is " + str(agents))
             for neighbor in reversed(ordered_v_neighbours):
                 print("ordered_v_neighbours is " + str(ordered_v_neighbours))
                 previous_node = v
+                print("agents 3 is " + str(agents))
                 #####################################halftime
-                decontaminate(subtree(T, neighbor, v), neighbor, m, T_original, agents, agents_if, agents_when)
+                agents = decontaminate(subtree(T, neighbor, v), neighbor, m, T_original, agents_if, agents_when)
                 #####################################halftime
-
+                print("agents 4 is " + str(agents))
                 previous_agents = agents.copy()
                 howmany = 0
                 print("before moving back, the current value of neighbor is " + str(neighbor))
                 agents = chain_agents_up(agents, starting_node)
                 print("we were in a leaf, now we're moving back up the chain from" + str(neighbor) + " to " + str(v))
                 functions.color_sync(T_original, agents, previous_agents, color, m)
+                print("agents 5 is " + str(agents))
 
 
 
@@ -392,6 +395,7 @@ def tree(lr, m, p):
 
         else:
             print("we have reached a leaf")
+
     #print(mu(3, T, m))
     #decontaminate(T, 3, m, T_original)
 
@@ -439,7 +443,7 @@ def tree(lr, m, p):
                 agents_when[i] = randrange(12, 13)
         print("agents_when is " + str(agents_when))
 
-        decontaminate(T, starting_node, m, T_original, agents, agents_if, agents_when)
+        decontaminate(T, starting_node, m, T_original, agents_if, agents_when)
     #calculating the starting_node (where the longest shortest paths for other nodes is the minima for the same value for all other nodes
     # and the nr_of agents needed
     ###

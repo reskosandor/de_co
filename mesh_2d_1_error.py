@@ -254,6 +254,8 @@ def agent_replacement(Z, agent_which, agent_when, agents, spare_agent):
     global move_counter
     print("agent_which is " + str(agent_which))
     print("agents_b4_scorrection is " + str(agents))
+    old_agents = agents.copy()
+
     if error_happened(agent_when) == True:
         chain = nx.shortest_path(Z, agents[agent_which], agents[0])
         chain.append(spare_agent)
@@ -272,6 +274,26 @@ def agent_replacement(Z, agent_which, agent_when, agents, spare_agent):
         spare_agent = chain[len(chain) - 2]
         print(agents)
         print(spare_agent)
+        #id correction
+        iterator_agents = agents.copy()
+        print("iteragb4 " + str(iterator_agents))
+        for i in range(len(chain) - 2):
+            a = functions.key_by_value(chain[i], iterator_agents)
+            b = functions.key_by_value(chain[i], old_agents)
+            print("a and b is " + str(a) + " and " + str(b))
+            del iterator_agents[b]
+            iterator_agents[b] = chain[i]
+
+        iterator_agents[0] = spare_agent
+
+        print("iteragents is " + str(iterator_agents))
+
+
+
+
+
+
+
 
 
 

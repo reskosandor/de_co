@@ -6,6 +6,9 @@ import mesh_3d
 import tomesh_2d
 import tomesh_3d
 import tree
+import tree_1_fault
+import tree_chain
+
 
 #asd = mesh_2d.create_grid_2d(10, 10, False, 2)
 #print("asd is " + str(asd))
@@ -80,6 +83,8 @@ with open('sim.csv', 'w', encoding='UTF8', newline='') as f:
     A = nx.balanced_tree(3, 3)
     lr = nx.to_prufer_sequence(A)
     writer.writerow(tree.tree(lr, 1))'''
+
+    '''
     print("asd")
     for r in range(5):
         for h in range(5):
@@ -91,3 +96,11 @@ with open('sim.csv', 'w', encoding='UTF8', newline='') as f:
                 A = nx.balanced_tree(r+1, h+1)
                 lr = nx.to_prufer_sequence(A)
                 writer.writerow(tree.tree(lr, m+1))
+    '''
+    print("start simming")
+    example_data = [3, 3, 3]
+    print(example_data)
+    A = nx.balanced_tree(3, 3)
+    #lr = nx.to_prufer_sequence(A)
+    lr = [1, 2, 3, 4, 5, 6, 7, 8, 9]
+    print(tree_chain.tree(lr, 1, 0.3))

@@ -253,18 +253,27 @@ def error_happened(agent_when):
 def agent_replacement(Z, agent_which, agent_when, agents, spare_agent):
     global move_counter
     print("agent_which is " + str(agent_which))
+    print("agents_b4_scorrection is " + str(agents))
     if error_happened(agent_when) == True:
-        chain = nx.shortest_path(Z, agents[agent_which], spare_agent)
-        agents[agent_which] = -1
+        chain = nx.shortest_path(Z, agents[agent_which], agents[0])
+        chain.append(spare_agent)
+        agents[agent_which] = (-1, -1)
         print("chain is " + str(chain))
-        '''
+        print("type of chain is " + str(type(chain)))
+
         #position correction
-        for i in chain:
+        print("rangelenchain is " + str(len(chain)))
+        for i in range(len(chain)):
+            #print("i in chain is a " + str(type(i)))
             for j in agents:
-                if agents[j] == i:
-                    agents[j] = i-1
-        spare_agent = chain[len(chain)]
-        '''
+                #print("the agents[j] in the chain is a " + str(type(agents[j])))
+                if agents[j] == chain[i]:
+                    agents[j] = chain[i-1]
+        spare_agent = chain[len(chain) - 2]
+        print(agents)
+        print(spare_agent)
+
+
 
 
 

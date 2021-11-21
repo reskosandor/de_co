@@ -2,6 +2,8 @@ import networkx as nx
 import matplotlib.pyplot as plt
 import functions
 import time
+import random
+from random import uniform, randrange
 
 move_counter = 0
 
@@ -68,8 +70,13 @@ def create_grid_2d(dim1, dim2, isperioidic, m):
     print(color)
 
     spare_agent = (0, 0)
-    theoretical_c_moves = theoretical_nr_of_moves(C)
-    print("theo_c_moves is " + str(theoretical_c_moves))
+    theoretical_nr_moves = theoretical_nr_of_moves(Z, C, m, dim1)
+    print("theoretical_nr_moves is " + str(theoretical_nr_moves))
+    agent_which = random.randint(1, nr_of_agents)
+    print("agent_which is " + str(agent_which))
+    agent_when = random.randint(1, theoretical_nr_moves)
+    print("agent_when is " + str(agent_when))
+
 
 
     flipped_agents = {}
@@ -146,7 +153,7 @@ def create_grid_2d(dim1, dim2, isperioidic, m):
                     agents[j+1] = edges_of_v_in_P[i][1]
                     move_counter = move_counter + 1
 
-
+            spare_agent_follow(spare_agent, agents[nr_of_agents], previous_agents)
             functions.color_sync(Z, agents, previous_agents, color, m)
             print(color)
         print(agents)
@@ -173,6 +180,7 @@ def create_grid_2d(dim1, dim2, isperioidic, m):
             agents[0] = canonical_path[i+1]
             move_counter = move_counter + 1
             print(agents[0])
+            spare_agent_follow(spare_agent, agents[nr_of_agents], previous_agents)
             functions.color_sync(Z, agents, previous_agents, color, m)
             print(color)
     if m < 2:
@@ -184,6 +192,7 @@ def create_grid_2d(dim1, dim2, isperioidic, m):
                 agents[j] = (x, y+1)
                 move_counter = move_counter + 1
             print(agents)
+            spare_agent_follow(spare_agent, agents[nr_of_agents], previous_agents)
             functions.color_sync(Z, agents, previous_agents, color, m)
             print(color)
     print(list(Z.nodes))
@@ -204,13 +213,57 @@ def create_grid_2d(dim1, dim2, isperioidic, m):
     print("after_init is " + str(after_init))
     print("move_counter is " + str(move_counter))
     move_counted = move_counter
+    agent_replacement(Z, agent_which, agent_when, agents, spare_agent)
     move_counter = 0
     end_time = time.time() - start_time
+
     return [nr_of_agents, after_init, move_counted, end_time]
 
-def theoretical_nr_of_moves(C):
+def theoretical_nr_of_moves(Z, C, m, dim1):
     c_moves = 0
-    for (a, b) in list(C.nodes):
-        c_moves = c_moves + a + b
-    return c_moves
+    t_moves = 0
+    if m == 2:
+        t_moves = Z.number_of_nodes() - 1
+    if m == 1:
+        for (a, b) in list(C.nodes):
+            c_moves = c_moves + a + b
+        t_moves = c_moves + Z.number_of_nodes() - dim1
+        print(c_moves)
+        print(Z.number_of_nodes())
+        print(dim1)
+    return t_moves
+
+def spare_agent_follow(spare_agent, target_agent, previous_agents):
+    spare_agent = previous_agents[target_agent]
+
+
+def error_happened(move_counter, agent_when):
+    if move_counter >= agent_when:
+        return True
+    else:
+        return False
+
+def agent_replacement(Z, agent_which, agent_when, agents, spare_agent):
+    print("agent_which is " + str(agent_which))
+    if error_happened(move_counter, agent_when) == True:
+        chain = nx.shortest_path(Z, agents[agent_which], spare_agent)
+        agents[agent_which] = -1
+        print("chain is " + str(chain))
+        '''
+        #position correction
+        for i in chain:
+            for j in agents:
+                if agents[j] == i:
+                    agents[j] = i-1
+        spare_agent = chain[len(chain)]
+        '''
+
+
+
+
+
+
+
+
+
 #create_grid_2d(2, 2, False, 2)

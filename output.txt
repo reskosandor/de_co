@@ -109,8 +109,8 @@ P is :
 100
 10
 theoretical_nr_moves is 135
-agent_which is 9
-agent_when is 48
+agent_which is 3
+agent_when is 81
 10
 0
 flipped_agents
@@ -4135,8 +4135,8 @@ iteration is over
 10
 no grey nodes remain
 after_init is 45
-move_counter is 135
+move_counter is 143
 spare agent is(0, 8)
-agent_which is 9
-chain is [(1, 9), (1, 8), (0, 8)]
-[10, 45, 135, 0.01800370216369629]
+agent_which is 3
+chain is [(7, 9), (6, 9), (5, 9), (4, 9), (3, 9), (3, 8), (2, 8), (1, 8), (0, 8)]
+[10, 45, 143, 0.02200460433959961]

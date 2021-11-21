@@ -235,19 +235,25 @@ def theoretical_nr_of_moves(Z, C, m, dim1):
     return t_moves
 
 def spare_agent_follow(spare_agent, target_agent, previous_agents):
-    spare_agent = previous_agents[target_agent]
+    global move_counter
+    if spare_agent != previous_agents[target_agent]:
+        spare_agent = previous_agents[target_agent]
+        move_counter = move_counter + 1
+
     return spare_agent
 
 
-def error_happened(move_counter, agent_when):
+def error_happened(agent_when):
+    global move_counter
     if move_counter >= agent_when:
         return True
     else:
         return False
 
 def agent_replacement(Z, agent_which, agent_when, agents, spare_agent):
+    global move_counter
     print("agent_which is " + str(agent_which))
-    if error_happened(move_counter, agent_when) == True:
+    if error_happened(agent_when) == True:
         chain = nx.shortest_path(Z, agents[agent_which], spare_agent)
         agents[agent_which] = -1
         print("chain is " + str(chain))

@@ -153,7 +153,7 @@ def create_grid_2d(dim1, dim2, isperioidic, m):
                     agents[j+1] = edges_of_v_in_P[i][1]
                     move_counter = move_counter + 1
 
-            spare_agent_follow(spare_agent, agents[nr_of_agents], previous_agents)
+            spare_agent = spare_agent_follow(spare_agent, 0, previous_agents)
             functions.color_sync(Z, agents, previous_agents, color, m)
             print(color)
         print(agents)
@@ -180,7 +180,7 @@ def create_grid_2d(dim1, dim2, isperioidic, m):
             agents[0] = canonical_path[i+1]
             move_counter = move_counter + 1
             print(agents[0])
-            spare_agent_follow(spare_agent, agents[nr_of_agents], previous_agents)
+            spare_agent = spare_agent_follow(spare_agent, 0, previous_agents)
             functions.color_sync(Z, agents, previous_agents, color, m)
             print(color)
     if m < 2:
@@ -192,7 +192,7 @@ def create_grid_2d(dim1, dim2, isperioidic, m):
                 agents[j] = (x, y+1)
                 move_counter = move_counter + 1
             print(agents)
-            spare_agent_follow(spare_agent, agents[nr_of_agents], previous_agents)
+            spare_agent = spare_agent_follow(spare_agent, 0, previous_agents)
             functions.color_sync(Z, agents, previous_agents, color, m)
             print(color)
     print(list(Z.nodes))
@@ -212,6 +212,7 @@ def create_grid_2d(dim1, dim2, isperioidic, m):
     print("no grey nodes remain")
     print("after_init is " + str(after_init))
     print("move_counter is " + str(move_counter))
+    print("spare agent is" + str(spare_agent))
     move_counted = move_counter
     agent_replacement(Z, agent_which, agent_when, agents, spare_agent)
     move_counter = 0
@@ -235,6 +236,7 @@ def theoretical_nr_of_moves(Z, C, m, dim1):
 
 def spare_agent_follow(spare_agent, target_agent, previous_agents):
     spare_agent = previous_agents[target_agent]
+    return spare_agent
 
 
 def error_happened(move_counter, agent_when):

@@ -481,7 +481,7 @@ def agent_replacement(Z, agent_which, agent_when, agents, spare_agent):
         old_agents = agents.copy()
         chain = nx.shortest_path(Z, agents[agent_which], agents[0])
         chain.append(spare_agent)
-        agents[agent_which] = (-1, -1)
+        agents[agent_which] = (-1, -1, -1)
         print("agents is " + str(agents))
         print("chain is " + str(chain))
         print("type of chain is " + str(type(chain)))

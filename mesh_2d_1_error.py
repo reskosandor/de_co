@@ -213,8 +213,9 @@ def create_grid_2d(dim1, dim2, isperioidic, m):
     print("after_init is " + str(after_init))
     print("move_counter is " + str(move_counter))
     print("spare agent is" + str(spare_agent))
-    move_counted = move_counter
+
     agent_replacement(Z, agent_which, agent_when, agents, spare_agent)
+    move_counted = move_counter
     move_counter = 0
     end_time = time.time() - start_time
 
@@ -271,7 +272,9 @@ def agent_replacement(Z, agent_which, agent_when, agents, spare_agent):
                 #print("the agents[j] in the chain is a " + str(type(agents[j])))
                 if agents[j] == chain[i]:
                     agents[j] = chain[i-1]
+                    move_counter = move_counter+1
         spare_agent = chain[len(chain) - 2]
+        move_counter = move_counter + 1
         print(agents)
         print(spare_agent)
         #id correction

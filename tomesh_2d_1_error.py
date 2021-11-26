@@ -3,11 +3,15 @@ import matplotlib.pyplot as plt
 import math
 import functions
 import time
+import random
+from random import uniform, randrange
 
 move_counter = 0
+spare_alive = True
 def create_grid_2d(dim1, dim2, isperioidic, m):
     start_time = time.time()
     global move_counter
+    global spare_alive
     move_counter = 0
     dims = [dim1, dim2]
     y_global = 1
@@ -314,6 +318,7 @@ def create_grid_2d(dim1, dim2, isperioidic, m):
     move_counted = move_counter
     move_counter = 0
     end_time = time.time() - start_time
+    print("theo nr of moves is " + str(theoretical_nr_of_moves(Z, m, dim1)))
     return [nr_of_agents, after_init, move_counted, end_time]
 
 def move(A, x, y, agents, dimensions):
@@ -440,6 +445,14 @@ def brick(t, b, dimensions, agents, y, Z, color, m):
                 move([t, 0], t, -1, agents, dimensions)
                 move([t, 1], t, -1, agents, dimensions)
 
+def theoretical_nr_of_moves(Z, m, dim1):
+    t_moves = 0
+    if m == 2:
+        #this is just Z.number_of_nodes()
+        t_moves = Z.number_of_nodes() + 2 ** (4 - m - 1) * (4 - m - 2)
+    if m == 1:
+        t_moves = Z.number_of_nodes() + 2 ** (m - 1) * dim1 * (dim1 + 2 * m - 2 - 2)
+    return t_moves
 
 
 #create_grid_2d(17, 17, True, 3)

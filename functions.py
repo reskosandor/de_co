@@ -51,4 +51,9 @@ def color_sync_with_error(graph, agents, previous_agents, color, m, backup_agent
 def sorted_dict(d):
     return dict(sorted(sorted(d.items())))
 
+def key_by_value(what, dict):
+    for key, value in dict.items():
+        if value == what:
+            return key
+
 

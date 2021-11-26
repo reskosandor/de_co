@@ -33,3 +33,10 @@ print(type(di))
 
 print("b4 " + str(d))
 print("a5 " + str(functions.sorted_dict(d)))
+
+
+tryme = {'a': 1, 'b': 2, 'c': 3}
+
+answer = functions.key_by_value(2, tryme)
+print(answer)
+

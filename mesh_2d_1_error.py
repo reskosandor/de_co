@@ -6,10 +6,11 @@ import random
 from random import uniform, randrange
 
 move_counter = 0
-
+spare_alive = True
 def create_grid_2d(dim1, dim2, isperioidic, m):
     start_time = time.time()
     global move_counter
+    global spare_alive
     move_counter = 0
     if dim2 < dim1:
         print("dimensions must be in monotonic increasing sequence")
@@ -72,7 +73,7 @@ def create_grid_2d(dim1, dim2, isperioidic, m):
     spare_agent = (0, 0)
     theoretical_nr_moves = theoretical_nr_of_moves(Z, C, m, dim1)
     print("theoretical_nr_moves is " + str(theoretical_nr_moves))
-    agent_which = random.randint(1, nr_of_agents)
+    agent_which = random.randint(0, nr_of_agents - 1)
     print("agent_which is " + str(agent_which))
     agent_when = random.randint(1, theoretical_nr_moves)
     print("agent_when is " + str(agent_when))
@@ -155,6 +156,7 @@ def create_grid_2d(dim1, dim2, isperioidic, m):
 
             spare_agent = spare_agent_follow(spare_agent, 0, previous_agents)
             functions.color_sync(Z, agents, previous_agents, color, m)
+
             print(color)
         print(agents)
         print("iteration is over")
@@ -182,6 +184,9 @@ def create_grid_2d(dim1, dim2, isperioidic, m):
             print(agents[0])
             spare_agent = spare_agent_follow(spare_agent, 0, previous_agents)
             functions.color_sync(Z, agents, previous_agents, color, m)
+            previous_agents = agents.copy()
+            agents = agent_replacement(Z, agent_which, agent_when, agents, spare_agent)
+            functions.color_sync(Z, agents, previous_agents, color, m)
             print(color)
     if m < 2:
         print(agents)
@@ -193,6 +198,9 @@ def create_grid_2d(dim1, dim2, isperioidic, m):
                 move_counter = move_counter + 1
             print(agents)
             spare_agent = spare_agent_follow(spare_agent, 0, previous_agents)
+            functions.color_sync(Z, agents, previous_agents, color, m)
+            previous_agents = agents.copy()
+            agents = agent_replacement(Z, agent_which, agent_when, agents, spare_agent)
             functions.color_sync(Z, agents, previous_agents, color, m)
             print(color)
     print(list(Z.nodes))
@@ -213,8 +221,9 @@ def create_grid_2d(dim1, dim2, isperioidic, m):
     print("after_init is " + str(after_init))
     print("move_counter is " + str(move_counter))
     print("spare agent is" + str(spare_agent))
+
+
     move_counted = move_counter
-    agent_replacement(Z, agent_which, agent_when, agents, spare_agent)
     move_counter = 0
     end_time = time.time() - start_time
 
@@ -235,30 +244,83 @@ def theoretical_nr_of_moves(Z, C, m, dim1):
     return t_moves
 
 def spare_agent_follow(spare_agent, target_agent, previous_agents):
-    spare_agent = previous_agents[target_agent]
+    global move_counter
+    if spare_agent != previous_agents[target_agent] and spare_alive == True:
+        spare_agent = previous_agents[target_agent]
+        move_counter = move_counter + 1
+
     return spare_agent
 
 
-def error_happened(move_counter, agent_when):
+def error_happened(agent_when):
+    global move_counter
     if move_counter >= agent_when:
         return True
     else:
         return False
 
 def agent_replacement(Z, agent_which, agent_when, agents, spare_agent):
-    print("agent_which is " + str(agent_which))
-    if error_happened(move_counter, agent_when) == True:
-        chain = nx.shortest_path(Z, agents[agent_which], spare_agent)
-        agents[agent_which] = -1
+    global move_counter
+    global spare_alive
+
+
+    if error_happened(agent_when) == True and spare_alive == True:
+        print("agent_which is " + str(agent_which))
+        print("spare alive is " + str(spare_alive))
+        print("agents_b4_scorrection is " + str(agents))
+        old_agents = agents.copy()
+        chain = nx.shortest_path(Z, agents[agent_which], agents[0])
+        chain.append(spare_agent)
+        agents[agent_which] = (-1, -1)
+        print("agents is " + str(agents))
         print("chain is " + str(chain))
-        '''
+        print("type of chain is " + str(type(chain)))
+
         #position correction
-        for i in chain:
+        print("rangelenchain is " + str(len(chain)))
+        for i in range(len(chain)):
+            #print("i in chain is a " + str(type(i)))
             for j in agents:
-                if agents[j] == i:
-                    agents[j] = i-1
-        spare_agent = chain[len(chain)]
-        '''
+                #print("the agents[j] in the chain is a " + str(type(agents[j])))
+                if agents[j] == chain[i]:
+                    agents[j] = chain[i-1]
+                    move_counter = move_counter+1
+        spare_agent = chain[len(chain) - 2]
+        move_counter = move_counter + 1
+        print(agents)
+        print(spare_agent)
+        #id correction
+        iterator_agents = agents.copy()
+        print("iteragb4 " + str(iterator_agents))
+        for i in range(len(chain) - 2):
+            a = functions.key_by_value(chain[i], iterator_agents)
+            b = functions.key_by_value(chain[i], old_agents)
+            print("a and b is " + str(a) + " and " + str(b))
+            print("iteragents1 " + str(iterator_agents))
+            del iterator_agents[b]
+            print("iteragents2 " + str(iterator_agents))
+            print("chain[i] is " + str(chain[i]))
+            iterator_agents[b] = chain[i]
+            iterator_agents = functions.sorted_dict(iterator_agents)
+            print("iteragents3 " + str(iterator_agents))
+
+        iterator_agents[0] = spare_agent
+        agents = iterator_agents.copy()
+
+        print("iteragents is " + str(iterator_agents))
+        spare_alive = False
+        print("spare alive became " + str(spare_alive))
+        print("agents at the end is " + str(agents))
+    return agents
+
+
+
+
+
+
+
+
+
 
 
 

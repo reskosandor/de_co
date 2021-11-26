@@ -401,6 +401,9 @@ def cube(t,y, dimensions, agents, Z, color, m, spare_agents, target_agents, agen
                 print("agents are at " + str(agents))
                 spare_agents = spare_agents_follow(spare_agents, target_agents, previous_agents)
                 functions.color_sync(Z, agents, previous_agents, color, m)
+                previous_agents = agents.copy()
+                agents = cube_agent_replacement(agent_which, agent_when, agents, spare_agents)
+                functions.color_sync(Z, agents, previous_agents, color, m)
                 print("if happened")
                 print(agents)
             # last row when dim2 is odd number
@@ -411,6 +414,9 @@ def cube(t,y, dimensions, agents, Z, color, m, spare_agents, target_agents, agen
                 move([2, (2 + o) % dimensions[1]], 2, -1, agents, dimensions)
                 print("agents are at " + str(agents))
                 spare_agents = spare_agents_follow(spare_agents, target_agents, previous_agents)
+                functions.color_sync(Z, agents, previous_agents, color, m)
+                previous_agents = agents.copy()
+                agents = cube_agent_replacement(agent_which, agent_when, agents, spare_agents)
                 functions.color_sync(Z, agents, previous_agents, color, m)
                 print(agents)
                 last_agent = -1
@@ -436,6 +442,9 @@ def cube(t,y, dimensions, agents, Z, color, m, spare_agents, target_agents, agen
                     print("agents are at " + str(agents))
                     spare_agents = spare_agents_follow(spare_agents, target_agents, previous_agents)
                     functions.color_sync(Z, agents, previous_agents, color, m)
+                    previous_agents = agents.copy()
+                    agents = cube_agent_replacement(agent_which, agent_when, agents, spare_agents)
+                    functions.color_sync(Z, agents, previous_agents, color, m)
                     print(agents[last_agent])
     else:
         for h in range(dimensions[(t-1)]):
@@ -447,6 +456,9 @@ def cube(t,y, dimensions, agents, Z, color, m, spare_agents, target_agents, agen
                 move([t, 1], t, 1, agents, dimensions)
                 print("agents are at " + str(agents))
                 spare_agents = spare_agents_follow(spare_agents, target_agents, previous_agents)
+                functions.color_sync(Z, agents, previous_agents, color, m)
+                previous_agents = agents.copy()
+                agents = cube_agent_replacement(agent_which, agent_when, agents, spare_agents)
                 functions.color_sync(Z, agents, previous_agents, color, m)
                 print(agents)
 
@@ -461,6 +473,9 @@ def itercube(s,y, dimensions, m, agents, Z, color, spare_agents, target_agents, 
             move([1, 2], s, 1, agents)
             print("agents are at " + str(agents))
             spare_agents = spare_agents_follow(spare_agents, target_agents, previous_agents)
+            functions.color_sync(Z, agents, previous_agents, color, m)
+            previous_agents = agents.copy()
+            agents = cube_agent_replacement(agent_which, agent_when, agents, spare_agents)
             functions.color_sync(Z, agents, previous_agents, color, m)
 
 def brick(t, b, dimensions, agents, y, Z, color, m):

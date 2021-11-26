@@ -19,8 +19,8 @@ list of C nodes
 P is :
 [[(0, 0)], [(0, 0), (0, 1)], [(0, 0), (1, 0)], [(0, 0), (1, 0), (1, 1)]]
 theoretical_nr_moves is 36
-agent_which is 3
-agent_when is 30
+agent_which is 2
+agent_when is 25
 flipped_agents
 {(0, 0): [0, 1, 2, 3]}
 v is:
@@ -121,56 +121,64 @@ shift became
 3
 agents are at {0: (0, 2), 1: (4, 2), 2: (4, 5), 3: (0, 5)}
 spare agents are in the position at {0: (0, 2), 1: (5, 2), 2: (5, 5), 3: (0, 5)}
+agent_which is 2
+agent_when is 25
+spare alive is True
+agents_b4_correction is {0: (0, 2), 1: (4, 2), 2: (4, 5), 3: (0, 5)}
+agents is {0: (0, 2), 1: (4, 2), 2: (-1, -1), 3: (0, 5)}
+spare agents are {0: (0, 2), 1: (5, 2), 2: (5, 5), 3: (0, 5)}
+spare alive became False
+agents at the end is {0: (0, 2), 1: (4, 2), 2: (4, 5), 3: (0, 5)}
 {0: (0, 2), 1: (4, 2), 2: (4, 5), 3: (0, 5)}
 we just moved the agents on the vertices, where 1st coord is 4, its first coord is changed by -1
 shift became
 2
 agents are at {0: (0, 2), 1: (3, 2), 2: (3, 5), 3: (0, 5)}
-spare agents are in the position at {0: (0, 2), 1: (4, 2), 2: (4, 5), 3: (0, 5)}
+spare agents are in the position at {0: (0, 2), 1: (5, 2), 2: (4, 5), 3: (0, 5)}
 {0: (0, 2), 1: (3, 2), 2: (3, 5), 3: (0, 5)}
 we just moved the agents on the vertices, where 1st coord is 3, its first coord is changed by -1
 shift became
 1
 agents are at {0: (0, 2), 1: (2, 2), 2: (2, 5), 3: (0, 5)}
-spare agents are in the position at {0: (0, 2), 1: (3, 2), 2: (3, 5), 3: (0, 5)}
+spare agents are in the position at {0: (0, 2), 1: (5, 2), 2: (4, 5), 3: (0, 5)}
 {0: (0, 2), 1: (2, 2), 2: (2, 5), 3: (0, 5)}
 we just moved the agents on the vertices, where 1st coord is 2, its first coord is changed by -1
 shift became
 0
 agents are at {0: (0, 2), 1: (1, 2), 2: (1, 5), 3: (0, 5)}
-spare agents are in the position at {0: (0, 2), 1: (2, 2), 2: (2, 5), 3: (0, 5)}
+spare agents are in the position at {0: (0, 2), 1: (5, 2), 2: (4, 5), 3: (0, 5)}
 {0: (0, 2), 1: (1, 2), 2: (1, 5), 3: (0, 5)}
 agents are at {0: (0, 3), 1: (1, 3), 2: (1, 4), 3: (0, 4)}
-spare agents are in the position at {0: (0, 2), 1: (1, 2), 2: (1, 5), 3: (0, 5)}
+spare agents are in the position at {0: (0, 2), 1: (5, 2), 2: (4, 5), 3: (0, 5)}
 if happened
 {0: (0, 3), 1: (1, 3), 2: (1, 4), 3: (0, 4)}
 we just moved the agents on the vertices, where 1st coord is 1, its first coord is changed by 1
 shift became
 1
 agents are at {0: (0, 3), 1: (2, 3), 2: (2, 4), 3: (0, 4)}
-spare agents are in the position at {0: (0, 3), 1: (1, 3), 2: (1, 4), 3: (0, 4)}
+spare agents are in the position at {0: (0, 2), 1: (5, 2), 2: (4, 5), 3: (0, 5)}
 {0: (0, 3), 1: (2, 3), 2: (2, 4), 3: (0, 4)}
 we just moved the agents on the vertices, where 1st coord is 2, its first coord is changed by 1
 shift became
 2
 agents are at {0: (0, 3), 1: (3, 3), 2: (3, 4), 3: (0, 4)}
-spare agents are in the position at {0: (0, 3), 1: (2, 3), 2: (2, 4), 3: (0, 4)}
+spare agents are in the position at {0: (0, 2), 1: (5, 2), 2: (4, 5), 3: (0, 5)}
 {0: (0, 3), 1: (3, 3), 2: (3, 4), 3: (0, 4)}
 we just moved the agents on the vertices, where 1st coord is 3, its first coord is changed by 1
 shift became
 3
 agents are at {0: (0, 3), 1: (4, 3), 2: (4, 4), 3: (0, 4)}
-spare agents are in the position at {0: (0, 3), 1: (3, 3), 2: (3, 4), 3: (0, 4)}
+spare agents are in the position at {0: (0, 2), 1: (5, 2), 2: (4, 5), 3: (0, 5)}
 {0: (0, 3), 1: (4, 3), 2: (4, 4), 3: (0, 4)}
 we just moved the agents on the vertices, where 1st coord is 4, its first coord is changed by 1
 shift became
 4
 agents are at {0: (0, 3), 1: (5, 3), 2: (5, 4), 3: (0, 4)}
-spare agents are in the position at {0: (0, 3), 1: (4, 3), 2: (4, 4), 3: (0, 4)}
+spare agents are in the position at {0: (0, 2), 1: (5, 2), 2: (4, 5), 3: (0, 5)}
 {0: (0, 3), 1: (5, 3), 2: (5, 4), 3: (0, 4)}
 4
 no grey nodes remain
 after_init is 4
-move_counter is 70
+move_counter is 53
 theo nr of moves is 36
-[4, 4, 70, 0.001999378204345703]
+[4, 4, 53, 0.0020003318786621094]

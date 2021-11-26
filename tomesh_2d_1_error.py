@@ -318,11 +318,7 @@ def create_grid_2d(dim1, dim2, isperioidic, m):
                 move_counter = move_counter + 1
                 print("spare agent " + str(i) + " moved to " + str(spare_agents[i]))
 
-
-
-
-
-        itercube(2, y_global, dims, m, agents, Z, color, spare_agents, target_agents)
+        itercube(2, y_global, dims, m, agents, Z, color, spare_agents, target_agents, agent_which, agent_when)
 
     if m == 1:
         brick(2, 1, dims, agents, y, Z, color, m)
@@ -377,7 +373,7 @@ def move(A, x, y, agents, dimensions):
                     agents[key] = (a, (b+y) % dimensions[1])
                     move_counter = move_counter + 1
 
-def cube(t,y, dimensions, agents, Z, color, m, spare_agents, target_agents):
+def cube(t,y, dimensions, agents, Z, color, m, spare_agents, target_agents, agent_which, agent_when):
     global move_counter
     if t == 2:
         shift = 0
@@ -392,6 +388,9 @@ def cube(t,y, dimensions, agents, Z, color, m, spare_agents, target_agents):
                 print(shift)
                 print("agents are at " + str(agents))
                 spare_agents = spare_agents_follow(spare_agents, target_agents, previous_agents)
+                functions.color_sync(Z, agents, previous_agents, color, m)
+                previous_agents = agents.copy()
+                agents = cube_agent_replacement(agent_which, agent_when, agents, spare_agents)
                 functions.color_sync(Z, agents, previous_agents, color, m)
                 print(agents)
             y = 0 - y
@@ -440,7 +439,7 @@ def cube(t,y, dimensions, agents, Z, color, m, spare_agents, target_agents):
                     print(agents[last_agent])
     else:
         for h in range(dimensions[(t-1)]):
-            cube(t-1, y, dimensions, agents, spare_agents, target_agents)
+            cube(t-1, y, dimensions, agents, spare_agents, target_agents, agent_which, agent_when)
             if h < dimensions[(t-1)/2] - 1:
                 previous_agents = agents.copy()
                 move([t, 0], t, -1, agents, dimensions)
@@ -451,13 +450,13 @@ def cube(t,y, dimensions, agents, Z, color, m, spare_agents, target_agents):
                 functions.color_sync(Z, agents, previous_agents, color, m)
                 print(agents)
 
-def itercube(s,y, dimensions, m, agents, Z, color, spare_agents, target_agents):
+def itercube(s,y, dimensions, m, agents, Z, color, spare_agents, target_agents, agent_which, agent_when):
     if s == 4 - m:
-        cube(s, y, dimensions, agents, Z, color, m, spare_agents, target_agents)
+        cube(s, y, dimensions, agents, Z, color, m, spare_agents, target_agents, agent_which, agent_when)
     else:
         for i in range(dimensions[s - 1]):
             previous_agents = agents.copy()
-            itercube(s-1, y, dimensions, m, agents, spare_agents, target_agents)
+            itercube(s-1, y, dimensions, m, agents, spare_agents, target_agents, agent_which, agent_when)
             move([1, 1], s, 1, agents)
             move([1, 2], s, 1, agents)
             print("agents are at " + str(agents))
@@ -495,6 +494,7 @@ def theoretical_nr_of_moves(Z, m, dim1):
 
 def spare_agents_follow(spare_agents, target_agents, previous_agents):
     global move_counter
+    global spare_alive
     for i in spare_agents:
         if spare_agents[i] != previous_agents[target_agents[i]] and spare_alive == True:
             spare_agents[i] = previous_agents[target_agents[i]]
@@ -510,7 +510,33 @@ def error_happened(agent_when):
     else:
         return False
 
+def cube_agent_replacement(agent_which, agent_when, agents, spare_agents):
+    global move_counter
+    global spare_alive
 
+
+    if error_happened(agent_when) == True and spare_alive == True:
+        print("agent_which is " + str(agent_which))
+        print("agent_when is " + str(agent_when))
+        print("spare alive is " + str(spare_alive))
+        print("agents_b4_correction is " + str(agents))
+        old_agents = agents.copy()
+        agents[agent_which] = (-1, -1)
+        print("agents is " + str(agents))
+        print("spare agents are " + str(spare_agents))
+        #position correction
+        spare_agents[agent_which] = old_agents[agent_which]
+        move_counter = move_counter + 1
+
+        #id correction
+        del agents[agent_which]
+        agents[agent_which] = spare_agents[agent_which]
+        agents = functions.sorted_dict(agents)
+
+        spare_alive = False
+        print("spare alive became " + str(spare_alive))
+        print("agents at the end is " + str(agents))
+    return agents
 
 
 #create_grid_2d(17, 17, True, 3)

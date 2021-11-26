@@ -110,6 +110,14 @@ def create_grid_2d(dim1, dim2, isperioidic, m):
         agents[i] = (0, 0)
     #print(agents)
     functions.color_sync(Z, agents, previous_agents, color, m)
+    spare_agents = agents.copy()
+    target_agents = {}
+    theoretical_nr_moves = theoretical_nr_of_moves(Z, m, dim1)
+    agent_which = random.randint(0, nr_of_agents - 1)
+    print("theoretical_nr_moves is " + str(theoretical_nr_moves))
+    print("agent_which is " + str(agent_which))
+    agent_when = random.randint(1, theoretical_nr_moves)
+    print("agent_when is " + str(agent_when))
     #print(color)
 
     flipped_agents = {}
@@ -294,7 +302,23 @@ def create_grid_2d(dim1, dim2, isperioidic, m):
     print(agents)
     after_init = move_counter
 
+
+
+
     if m > 1:
+        for i in agents:
+            target_agents[i] = i
+            path = nx.shortest_path(Z, spare_agents[i], agents[i])
+            print("the path from spare to agent is " + str(path))
+            for j in range(len(path) - 2):
+                spare_agents[i] = path[j+1]
+                move_counter = move_counter + 1
+                print("spare agent " + str(i) + " moved to " + str(spare_agents[i]))
+
+
+
+
+
         itercube(2, y_global, dims, m, agents, Z, color)
 
     if m == 1:
@@ -453,6 +477,9 @@ def theoretical_nr_of_moves(Z, m, dim1):
     if m == 1:
         t_moves = Z.number_of_nodes() + 2 ** (m - 1) * dim1 * (dim1 + 2 * m - 2 - 2)
     return t_moves
+
+
+
 
 
 #create_grid_2d(17, 17, True, 3)

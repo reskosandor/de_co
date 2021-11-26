@@ -113,6 +113,7 @@ def create_grid_2d(dim1, dim2, isperioidic, m):
 
     spare_agents = {}
     target_agents = {}
+    target_groups = {}
     theoretical_nr_moves = theoretical_nr_of_moves(Z, m, dim1)
     agent_which = random.randint(0, nr_of_agents - 1)
     print("theoretical_nr_moves is " + str(theoretical_nr_moves))
@@ -321,6 +322,22 @@ def create_grid_2d(dim1, dim2, isperioidic, m):
         itercube(2, y_global, dims, m, agents, Z, color, spare_agents, target_agents, agent_which, agent_when)
 
     if m == 1:
+        spare_agents[0] = (0, 0)
+        spare_agents[1] = (0, 0)
+        for i in agents:
+            (a, b) = agents[i]
+            if a == 0 and b == 0:
+                target_agents[0] = i
+            if a == 0 and b == 1:
+                target_agents[1] = i
+        print("target_agents are " + str(target_agents))
+        target_groups = make_target_groups(agents, target_agents)
+
+
+
+        #constructing target groups
+
+
         brick(2, 1, dims, agents, y, Z, color, m)
 
     nr_of_black_nodes = 0
@@ -552,6 +569,24 @@ def cube_agent_replacement(agent_which, agent_when, agents, spare_agents):
         print("spare alive became " + str(spare_alive))
         print("agents at the end is " + str(agents))
     return agents
+
+def make_target_groups(agents, target_agents):
+    t_groups = {}
+    for i in target_agents:
+        (a, b) = agents[target_agents[i]]
+        print("this a b in target_agents is " + str((a, b)))
+        list_of_i = []
+        for j in agents:
+            (c, d) = agents[j]
+            print("this c d in agents are " + str((c, d)))
+            if b == d:
+                list_of_i.append(j)
+        print("this list_of_i is " + str(list_of_i))
+        t_groups[i] = list_of_i
+    print("t_groups will be " + str(t_groups))
+    return t_groups
+
+
 
 
 #create_grid_2d(17, 17, True, 3)

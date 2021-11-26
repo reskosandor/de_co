@@ -19,8 +19,8 @@ list of C nodes
 P is :
 [[(0, 0)], [(0, 0), (0, 1)], [(0, 0), (1, 0)], [(0, 0), (1, 0), (1, 1)]]
 theoretical_nr_moves is 36
-agent_which is 1
-agent_when is 4
+agent_which is 3
+agent_when is 30
 flipped_agents
 {(0, 0): [0, 1, 2, 3]}
 v is:
@@ -173,4 +173,4 @@ no grey nodes remain
 after_init is 4
 move_counter is 70
 theo nr of moves is 36
-[4, 4, 70, 0.0020008087158203125]
+[4, 4, 70, 0.001999378204345703]

@@ -110,7 +110,8 @@ def create_grid_2d(dim1, dim2, isperioidic, m):
         agents[i] = (0, 0)
     #print(agents)
     functions.color_sync(Z, agents, previous_agents, color, m)
-    spare_agents = agents.copy()
+
+    spare_agents = {}
     target_agents = {}
     theoretical_nr_moves = theoretical_nr_of_moves(Z, m, dim1)
     agent_which = random.randint(0, nr_of_agents - 1)
@@ -306,8 +307,10 @@ def create_grid_2d(dim1, dim2, isperioidic, m):
 
 
     if m > 1:
-        for i in agents:
+        for i in range(C.number_of_nodes()):
+            spare_agents[i] = (0, 0)
             target_agents[i] = i
+        for i in spare_agents:
             path = nx.shortest_path(Z, spare_agents[i], agents[i])
             print("the path from spare to agent is " + str(path))
             for j in range(len(path) - 2):

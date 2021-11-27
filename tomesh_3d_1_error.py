@@ -371,7 +371,7 @@ def create_grid_3d(dimensions, isperioidic, m):
             if x == 0 and y == 1 and z == 1:
                 target_agents[3] = i
         print("target_agents are " + str(target_agents))
-            #target_groups = make_target_groups(agents, target_agents)
+        target_groups = make_target_groups(agents, target_agents, m)
 
         brick(3, b, dims, agents, Z, color, m, agents_snapshot)
 
@@ -384,6 +384,8 @@ def create_grid_3d(dimensions, isperioidic, m):
                 target_agents[0] = i
             if x == 0 and y == 0 and z == 1:
                 target_agents[1] = i
+        print("target_agents are " + str(target_agents))
+        target_groups = make_target_groups(agents, target_agents, m)
 
         brick(3, b, dims, agents, Z, color, m, agents_snapshot)
 
@@ -683,20 +685,34 @@ def cube_agent_replacement(agent_which, agent_when, agents, spare_agents):
         print("agents at the end is " + str(agents))
     return agents
 
-def make_target_groups(agents, target_agents):
+def make_target_groups(agents, target_agents, m):
     t_groups = {}
-    for i in target_agents:
-        (a, b) = agents[target_agents[i]]
-        print("this a b in target_agents is " + str((a, b)))
-        list_of_i = []
-        for j in agents:
-            (c, d) = agents[j]
-            print("this c d in agents are " + str((c, d)))
-            if b == d:
-                list_of_i.append(j)
-        print("this list_of_i is " + str(list_of_i))
-        t_groups[i] = list_of_i
-    print("t_groups will be " + str(t_groups))
+    if m == 2:
+        for i in target_agents:
+            (x, y, z) = agents[target_agents[i]]
+            print("this x y z in target_agents is " + str((x, y, z)))
+            list_of_i = []
+            for j in agents:
+                (u, v, w) = agents[j]
+                print("this u v w in agents are " + str((u, v, w)))
+                if y == v and z == w:
+                    list_of_i.append(j)
+            print("this list_of_i is " + str(list_of_i))
+            t_groups[i] = list_of_i
+        print("t_groups will be " + str(t_groups))
+    if m == 1:
+        for i in target_agents:
+            (x, y, z) = agents[target_agents[i]]
+            print("this x y z in target_agents is " + str((x, y, z)))
+            list_of_i = []
+            for j in agents:
+                (u, v, w) = agents[j]
+                print("this u v w in agents are " + str((u, v, w)))
+                if z == w:
+                    list_of_i.append(j)
+            print("this list_of_i is " + str(list_of_i))
+            t_groups[i] = list_of_i
+        print("t_groups will be " + str(t_groups))
     return t_groups
 
 def brick_agent_replacement(Z, agent_which, agent_when, agents, spare_agents, target_agents, target_groups):

@@ -373,7 +373,7 @@ def create_grid_3d(dimensions, isperioidic, m):
         print("target_agents are " + str(target_agents))
         target_groups = make_target_groups(agents, target_agents, m)
 
-        brick(3, b, dims, agents, Z, color, m, agents_snapshot, spare_agents, target_agents, agent_which, agent_when, target_groups)
+        agents = brick(3, b, dims, agents, Z, color, m, agents_snapshot, spare_agents, target_agents, agent_which, agent_when, target_groups)
 
     if m == 1:
         spare_agents[0] = (0, 0, 0)
@@ -387,7 +387,7 @@ def create_grid_3d(dimensions, isperioidic, m):
         print("target_agents are " + str(target_agents))
         target_groups = make_target_groups(agents, target_agents, m)
 
-        brick(3, b, dims, agents, Z, color, m, agents_snapshot, spare_agents, target_agents, agent_which, agent_when, target_groups)
+        agents = brick(3, b, dims, agents, Z, color, m, agents_snapshot, spare_agents, target_agents, agent_which, agent_when, target_groups)
 
     nr_of_black_nodes = 0
     for key in color:
@@ -616,7 +616,7 @@ def brick(t, b, dimensions, agents, Z, color, m, agents_snapshot, spare_agents, 
         for o in range(math.ceil((dimensions[t-1] / 2))):
             print("range of the o is " +str(int((dimensions[t-1] / 2)) - 1))
             print("o currently is " +str(o))
-            brick(t-1, b, dimensions, agents, Z, color, m, agents_snapshot, spare_agents, target_agents, agent_which, agent_when, target_groups)
+            agents = brick(t-1, b, dimensions, agents, Z, color, m, agents_snapshot, spare_agents, target_agents, agent_which, agent_when, target_groups)
             if o < (dimensions[t-1] / 2) - 1:
                 previous_agents = agents.copy()
                 #moving in the 3rd dimension, this needs to be working for odd numbers
@@ -638,6 +638,7 @@ def brick(t, b, dimensions, agents, Z, color, m, agents_snapshot, spare_agents, 
                 agents = brick_agent_replacement(Z, agent_which, agent_when, agents, spare_agents, target_agents, target_groups)
                 functions.color_sync(Z, agents, previous_agents, color, m)
                 print("funny business over")
+    return agents
 
 def theoretical_nr_of_moves(Z, m, dim1, dim2):
     t_moves = 0

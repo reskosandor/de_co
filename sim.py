@@ -11,6 +11,7 @@ import tree_chain
 import mesh_2d_1_error
 import mesh_3d_1_error
 import tomesh_2d_1_error
+import tomesh_3d_1_error
 
 #asd = mesh_2d.create_grid_2d(10, 10, False, 2)
 #print("asd is " + str(asd))
@@ -109,5 +110,5 @@ with open('sim.csv', 'w', encoding='UTF8', newline='') as f:
     print(tree_chain.tree(lr, 1, 0.3))
     '''
     #print(mesh_2d_1_error.create_grid_2d(10, 10, False, 2))
-    dimensions = [6, 6, 6]
-    print(tomesh_2d_1_error.create_grid_2d(7, 7, True, 1))
+    dimensions = [4, 4, 4]
+    print(tomesh_3d_1_error.create_grid_3d(dimensions, True, 2))

@@ -361,16 +361,16 @@ def create_grid_3d(dimensions, isperioidic, m):
         spare_agents[2] = (0, 0, 0)
         spare_agents[3] = (0, 0, 0)
         for i in agents:
-            (a, b, c) = agents[i]
-            if a == 0 and b == 0 and c == 0:
+            (x, y, z) = agents[i]
+            if x == 0 and y == 0 and z == 0:
                 target_agents[0] = i
-            if a == 0 and b == 1 and c == 0:
+            if x == 0 and y == 1 and z == 0:
                 target_agents[1] = i
-            if a == 0 and b == 0 and c == 1:
+            if x == 0 and y == 0 and z == 1:
                 target_agents[2] = i
-            if a == 0 and b == 1 and c == 1:
+            if x == 0 and y == 1 and z == 1:
                 target_agents[3] = i
-            print("target_agents are " + str(target_agents))
+        print("target_agents are " + str(target_agents))
             #target_groups = make_target_groups(agents, target_agents)
 
         brick(3, b, dims, agents, Z, color, m, agents_snapshot)

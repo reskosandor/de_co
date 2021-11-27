@@ -520,7 +520,7 @@ def cube(t, dimensions, agents, Z, color, m, agents_snapshot, spare_agents, targ
         print("main else is happening")
         for h in range(math.ceil(dimensions[(t-1)]/2)):
             print("calling CUBE recursively for t-1")
-            cube(t-1, dimensions, agents, Z, color, m, agents_snapshot, spare_agents, target_agents, agent_which, agent_when)
+            agents = cube(t-1, dimensions, agents, Z, color, m, agents_snapshot, spare_agents, target_agents, agent_which, agent_when)
             if h < dimensions[int((t-1)/2)] -1:
                 previous_agents = agents.copy()
                 move([t, 0], t, -1, agents, dimensions, agents_snapshot)
@@ -537,11 +537,12 @@ def cube(t, dimensions, agents, Z, color, m, agents_snapshot, spare_agents, targ
                 agents = cube_agent_replacement(agent_which, agent_when, agents, spare_agents)
                 functions.color_sync(Z, agents, previous_agents, color, m)
                 print(agents)
+    return agents
 
 def itercube(s, dimensions, m, agents, Z, color, agents_snapshot, spare_agents, target_agents, agent_which, agent_when):
     if s == 6 - m:
         print("ITERCUBE s == 6-m commencing")
-        cube(s, dimensions, agents, Z, color, m, agents_snapshot, spare_agents, target_agents, agent_which, agent_when)
+        agents = cube(s, dimensions, agents, Z, color, m, agents_snapshot, spare_agents, target_agents, agent_which, agent_when)
     else:
         print("ITERCUBE else is commencing")
         for i in range(dimensions[s - 1]):

@@ -611,7 +611,7 @@ def brick_agent_replacement(Z, agent_which, agent_when, agents, spare_agents, ta
                 print("designated spare is " + str(designated_spare) + " and its position is " + str(spare_agents[i]))
 
         old_agents = agents.copy()
-        
+
         chain = nx.shortest_path(Z, agents[agent_which], agents[target_agents[designated_spare]])
         chain.append(spare_agents[designated_spare])
         agents[agent_which] = (-1, -1)
@@ -632,7 +632,7 @@ def brick_agent_replacement(Z, agent_which, agent_when, agents, spare_agents, ta
         move_counter = move_counter + 1
         print(agents)
         print(spare_agents)
-        '''
+
         #id correction
         iterator_agents = agents.copy()
         print("iteragb4 " + str(iterator_agents))
@@ -648,13 +648,13 @@ def brick_agent_replacement(Z, agent_which, agent_when, agents, spare_agents, ta
             iterator_agents = functions.sorted_dict(iterator_agents)
             print("iteragents3 " + str(iterator_agents))
 
-        iterator_agents[0] = spare_agent
+        iterator_agents[target_agents[designated_spare]] = spare_agents[designated_spare]
         agents = iterator_agents.copy()
 
         print("iteragents is " + str(iterator_agents))
         spare_alive = False
         print("spare alive became " + str(spare_alive))
-        print("agents at the end is " + str(agents))'''
+        print("agents at the end is " + str(agents))
     return agents
 
 

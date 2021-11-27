@@ -514,10 +514,16 @@ def brick(t, b, dimensions, agents, y, Z, color, m, spare_agents, target_agents,
         y = 0 - y
     else:
         for o in range(int((dimensions[t-1] / 2)) - 1):
-            brick(t-1)
+            brick(t-1, 1, dimensions, agents, y, Z, color, m, spare_agents, target_agents, agent_which, agent_when, target_groups)
             if o < (dimensions[t-1] / 2) - 1:
+                previous_agents = agents.copy()
                 move([t, 0], t, -1, agents, dimensions)
                 move([t, 1], t, -1, agents, dimensions)
+                spare_agents = spare_agents_follow(spare_agents, target_agents, previous_agents)
+                functions.color_sync(Z, agents, previous_agents, color, m)
+                previous_agents = agents.copy()
+                agents = brick_agent_replacement(Z, agent_which, agent_when, agents, spare_agents, target_agents, target_groups)
+                functions.color_sync(Z, agents, previous_agents, color, m)
 
 def theoretical_nr_of_moves(Z, m, dim1):
     t_moves = 0

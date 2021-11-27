@@ -458,7 +458,7 @@ def cube(t, dimensions, agents, Z, color, m, agents_snapshot):
 
         w_global = 0 - w_global
     else:
-        for h in range(dimensions[(t-1)]):
+        for h in range(math.ceil(dimensions[(t-1)]/2)):
             print("calling CUBE recursively for t-1")
             cube(t-1, dimensions, agents, Z, color, m, agents_snapshot)
             if h < dimensions[int((t-1)/2)] -1:

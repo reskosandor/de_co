@@ -424,6 +424,7 @@ def move(A, x, y, agents, dimensions, agents_snapshot):
 
 
 def cube(t, dimensions, agents, Z, color, m, agents_snapshot):
+    print("value of t is " + str(t))
     global y_global
     global w_global
     if t == 2:
@@ -433,6 +434,8 @@ def cube(t, dimensions, agents, Z, color, m, agents_snapshot):
             for i in range(dimensions[0] - 2):
                 previous_agents = agents.copy()
                 move([1, 1 % dimensions[0]], 1, y_global, agents, dimensions, agents_snapshot)
+                print("agents are " + str(agents))
+                print("move_counter is " + str(move_counter))
                 print("we just moved the agents on the vertices, where 1st coord is " + str(1 % dimensions[0]) + ", its first coord is changed by " + str(y_global))
                 #shift = shift + y
                 #print("shift became")
@@ -447,7 +450,11 @@ def cube(t, dimensions, agents, Z, color, m, agents_snapshot):
                 #this needs to be working for odd dimensions
                 #also keep in mind the + 1 for the iteration (<= correction)
                 move([2, 0 % dimensions[1]], 2, -w_global, agents, dimensions, agents_snapshot)
+                print("agents are " + str(agents))
+                print("move_counter is " + str(move_counter))
                 move([2, 1 % dimensions[1]], 2, w_global, agents, dimensions, agents_snapshot)
+                print("agents are " + str(agents))
+                print("move_counter is " + str(move_counter))
                 functions.color_sync(Z, agents, previous_agents, color, m)
                 print("if happened (moving along second dimension)")
                 print(agents)
@@ -455,11 +462,15 @@ def cube(t, dimensions, agents, Z, color, m, agents_snapshot):
                 print("this is where the fun begins")
                 previous_agents = agents.copy()
                 move([2, 0 % dimensions[1]], 2, -w_global, agents, dimensions, agents_snapshot)
+                print("agents are " + str(agents))
+                print("move_counter is " + str(move_counter))
                 functions.color_sync(Z, agents, previous_agents, color, m)
                 print("agents are " + str(agents))
                 for i in range(dimensions[0] - 2):
                     previous_agents = agents.copy()
                     move([1, 1 % dimensions[0]], 1, y_global, agents, dimensions, agents_snapshot)
+                    print("agents are " + str(agents))
+                    print("move_counter is " + str(move_counter))
                     print("we just moved the agents on the vertices, where 1st coord is " + str(1 % dimensions[0]) + ", its first coord is changed by " + str(y_global))
                     #shift = shift + y
                     #print("shift became")
@@ -472,14 +483,19 @@ def cube(t, dimensions, agents, Z, color, m, agents_snapshot):
 
         w_global = 0 - w_global
     else:
-        for h in range(dimensions[(t-1)]):
+        print("main else is happening")
+        for h in range(math.ceil(dimensions[(t-1)]/2)):
             print("calling CUBE recursively for t-1")
             cube(t-1, dimensions, agents, Z, color, m, agents_snapshot)
             if h < dimensions[int((t-1)/2)] -1:
                 previous_agents = agents.copy()
                 move([t, 0], t, -1, agents, dimensions, agents_snapshot)
+                print("agents are " + str(agents))
+                print("move_counter is " + str(move_counter))
                 print(agents)
                 move([t, 1], t, 1, agents, dimensions, agents_snapshot)
+                print("agents are " + str(agents))
+                print("move_counter is " + str(move_counter))
                 functions.color_sync(Z, agents, previous_agents, color, m)
                 print(agents)
 

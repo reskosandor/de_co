@@ -373,7 +373,7 @@ def create_grid_3d(dimensions, isperioidic, m):
         print("target_agents are " + str(target_agents))
         target_groups = make_target_groups(agents, target_agents, m)
 
-        brick(3, b, dims, agents, Z, color, m, agents_snapshot)
+        brick(3, b, dims, agents, Z, color, m, agents_snapshot, spare_agents, target_agents, agent_which, agent_when, target_groups)
 
     if m == 1:
         spare_agents[0] = (0, 0, 0)
@@ -387,7 +387,7 @@ def create_grid_3d(dimensions, isperioidic, m):
         print("target_agents are " + str(target_agents))
         target_groups = make_target_groups(agents, target_agents, m)
 
-        brick(3, b, dims, agents, Z, color, m, agents_snapshot)
+        brick(3, b, dims, agents, Z, color, m, agents_snapshot, spare_agents, target_agents, agent_which, agent_when, target_groups)
 
     nr_of_black_nodes = 0
     for key in color:
@@ -592,7 +592,7 @@ def itercube(s, dimensions, m, agents, Z, color, agents_snapshot, spare_agents, 
             functions.color_sync(Z, agents, previous_agents, color, m)
     return agents
 
-def brick(t, b, dimensions, agents, Z, color, m, agents_snapshot):
+def brick(t, b, dimensions, agents, Z, color, m, agents_snapshot, spare_agents, target_agents, agent_which, agent_when, target_groups):
     global y_global
     print("are we getting at the start of the brick?")
     if t == b+1:
@@ -606,24 +606,27 @@ def brick(t, b, dimensions, agents, Z, color, m, agents_snapshot):
             move([b+1, 1], b+1, y_global, agents, dimensions, agents_snapshot)
             print("moved")
             print(agents)
+            spare_agents = spare_agents_follow(spare_agents, target_agents, previous_agents)
             functions.color_sync(Z, agents, previous_agents, color, m)
         y_global = 0 - y_global
     else:
         for o in range(math.ceil((dimensions[t-1] / 2))):
             print("range of the o is " +str(int((dimensions[t-1] / 2)) - 1))
             print("o currently is " +str(o))
-            brick(t-1, b, dimensions, agents, Z, color, m, agents_snapshot)
+            brick(t-1, b, dimensions, agents, Z, color, m, agents_snapshot, spare_agents, target_agents, agent_which, agent_when, target_groups)
             if o < (dimensions[t-1] / 2) - 1:
                 previous_agents = agents.copy()
                 #moving in the 3rd dimension, this needs to be working for odd numbers
                 #just move one of them one more time
                 move([t, 0], t, -1, agents, dimensions, agents_snapshot)
                 move([t, 1], t, +1, agents, dimensions, agents_snapshot)
+                spare_agents = spare_agents_follow(spare_agents, target_agents, previous_agents)
                 functions.color_sync(Z, agents, previous_agents, color, m)
             if o == math.ceil((dimensions[t-1] / 2)) - 1:
                 print("this is where the fun begins")
                 previous_agents = agents.copy()
                 move([t, 0], t, -1, agents, dimensions, agents_snapshot)
+                spare_agents = spare_agents_follow(spare_agents, target_agents, previous_agents)
                 functions.color_sync(Z, agents, previous_agents, color, m)
                 print("funny business over")
 

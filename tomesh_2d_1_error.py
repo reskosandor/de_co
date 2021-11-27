@@ -338,7 +338,7 @@ def create_grid_2d(dim1, dim2, isperioidic, m):
         #constructing target groups
 
 
-        brick(2, 1, dims, agents, y, Z, color, m)
+        brick(2, 1, dims, agents, y, Z, color, m, spare_agents, target_agents, agent_which, agent_when, target_groups)
 
     nr_of_black_nodes = 0
     for key in color:
@@ -495,7 +495,7 @@ def itercube(s,y, dimensions, m, agents, Z, color, spare_agents, target_agents, 
             agents = cube_agent_replacement(agent_which, agent_when, agents, spare_agents)
             functions.color_sync(Z, agents, previous_agents, color, m)
 
-def brick(t, b, dimensions, agents, y, Z, color, m):
+def brick(t, b, dimensions, agents, y, Z, color, m, spare_agents, target_agents, agent_which, agent_when, target_groups):
     if t == b+1:
         shift = 0
         print("i in range is")
@@ -506,6 +506,10 @@ def brick(t, b, dimensions, agents, y, Z, color, m):
             shift = shift + y
             print("moved")
             print(agents)
+            spare_agents = spare_agents_follow(spare_agents, target_agents, previous_agents)
+            functions.color_sync(Z, agents, previous_agents, color, m)
+            previous_agents = agents.copy()
+            agents = brick_agent_replacement(Z, agent_which, agent_when, agents, spare_agents, target_agents, target_groups)
             functions.color_sync(Z, agents, previous_agents, color, m)
         y = 0 - y
     else:
@@ -586,7 +590,72 @@ def make_target_groups(agents, target_agents):
     print("t_groups will be " + str(t_groups))
     return t_groups
 
+def brick_agent_replacement(Z, agent_which, agent_when, agents, spare_agents, target_agents, target_groups):
+    global move_counter
+    global spare_alive
 
+
+    if error_happened(agent_when) == True and spare_alive == True:
+        print("agent_which is " + str(agent_which))
+        print("spare alive is " + str(spare_alive))
+        print("agents_b4_scorrection is " + str(agents))
+        error_target = []
+        for i in target_groups:
+            print("the i in target_groups is " + str(i) + " and its type is " + str(type(i)))
+            if agent_which in target_groups[i]:
+                error_target = target_groups[i]
+                print("error_target is " + str(error_target))
+        for i in target_agents:
+            if target_agents[i] in error_target:
+                designated_spare = i
+                print("designated spare is " + str(designated_spare) + " and its position is " + str(spare_agents[i]))
+
+        old_agents = agents.copy()
+        
+        chain = nx.shortest_path(Z, agents[agent_which], agents[target_agents[designated_spare]])
+        chain.append(spare_agents[designated_spare])
+        agents[agent_which] = (-1, -1)
+        print("agents is " + str(agents))
+        print("chain is " + str(chain))
+        print("type of chain is " + str(type(chain)))
+
+        #position correction
+        print("rangelenchain is " + str(len(chain)))
+        for i in range(len(chain)):
+            #print("i in chain is a " + str(type(i)))
+            for j in agents:
+                #print("the agents[j] in the chain is a " + str(type(agents[j])))
+                if agents[j] == chain[i]:
+                    agents[j] = chain[i-1]
+                    move_counter = move_counter+1
+        spare_agents[designated_spare] = chain[len(chain) - 2]
+        move_counter = move_counter + 1
+        print(agents)
+        print(spare_agents)
+        '''
+        #id correction
+        iterator_agents = agents.copy()
+        print("iteragb4 " + str(iterator_agents))
+        for i in range(len(chain) - 2):
+            a = functions.key_by_value(chain[i], iterator_agents)
+            b = functions.key_by_value(chain[i], old_agents)
+            print("a and b is " + str(a) + " and " + str(b))
+            print("iteragents1 " + str(iterator_agents))
+            del iterator_agents[b]
+            print("iteragents2 " + str(iterator_agents))
+            print("chain[i] is " + str(chain[i]))
+            iterator_agents[b] = chain[i]
+            iterator_agents = functions.sorted_dict(iterator_agents)
+            print("iteragents3 " + str(iterator_agents))
+
+        iterator_agents[0] = spare_agent
+        agents = iterator_agents.copy()
+
+        print("iteragents is " + str(iterator_agents))
+        spare_alive = False
+        print("spare alive became " + str(spare_alive))
+        print("agents at the end is " + str(agents))'''
+    return agents
 
 
 #create_grid_2d(17, 17, True, 3)

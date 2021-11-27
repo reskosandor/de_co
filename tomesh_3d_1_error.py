@@ -608,6 +608,9 @@ def brick(t, b, dimensions, agents, Z, color, m, agents_snapshot, spare_agents, 
             print(agents)
             spare_agents = spare_agents_follow(spare_agents, target_agents, previous_agents)
             functions.color_sync(Z, agents, previous_agents, color, m)
+            previous_agents = agents.copy()
+            agents = brick_agent_replacement(Z, agent_which, agent_when, agents, spare_agents, target_agents, target_groups)
+            functions.color_sync(Z, agents, previous_agents, color, m)
         y_global = 0 - y_global
     else:
         for o in range(math.ceil((dimensions[t-1] / 2))):
@@ -622,11 +625,17 @@ def brick(t, b, dimensions, agents, Z, color, m, agents_snapshot, spare_agents, 
                 move([t, 1], t, +1, agents, dimensions, agents_snapshot)
                 spare_agents = spare_agents_follow(spare_agents, target_agents, previous_agents)
                 functions.color_sync(Z, agents, previous_agents, color, m)
+                previous_agents = agents.copy()
+                agents = brick_agent_replacement(Z, agent_which, agent_when, agents, spare_agents, target_agents, target_groups)
+                functions.color_sync(Z, agents, previous_agents, color, m)
             if o == math.ceil((dimensions[t-1] / 2)) - 1:
                 print("this is where the fun begins")
                 previous_agents = agents.copy()
                 move([t, 0], t, -1, agents, dimensions, agents_snapshot)
                 spare_agents = spare_agents_follow(spare_agents, target_agents, previous_agents)
+                functions.color_sync(Z, agents, previous_agents, color, m)
+                previous_agents = agents.copy()
+                agents = brick_agent_replacement(Z, agent_which, agent_when, agents, spare_agents, target_agents, target_groups)
                 functions.color_sync(Z, agents, previous_agents, color, m)
                 print("funny business over")
 
@@ -742,7 +751,7 @@ def brick_agent_replacement(Z, agent_which, agent_when, agents, spare_agents, ta
 
         chain = nx.shortest_path(Z, agents[agent_which], agents[target_agents[designated_spare]])
         chain.append(spare_agents[designated_spare])
-        agents[agent_which] = (-1, -1)
+        agents[agent_which] = (-1, -1, -1)
         print("agents is " + str(agents))
         print("chain is " + str(chain))
         print("type of chain is " + str(type(chain)))

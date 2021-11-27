@@ -353,7 +353,7 @@ def create_grid_3d(dimensions, isperioidic, m):
         print("agentstart is " + str(agents))
         print("spareagentstart is " + str(spare_agents))
         print("target_agents are " + str(target_agents))
-        itercube(s, dims, m, agents, Z, color, agents_snapshot, spare_agents, target_agents, agent_which, agent_when)
+        agents = itercube(s, dims, m, agents, Z, color, agents_snapshot, spare_agents, target_agents, agent_which, agent_when)
 
     if m <= 2:
         brick(3, b, dims, agents, Z, color, m, agents_snapshot)
@@ -548,7 +548,7 @@ def itercube(s, dimensions, m, agents, Z, color, agents_snapshot, spare_agents, 
         for i in range(dimensions[s - 1]):
             previous_agents = agents.copy()
             #print("y is " + str(y_global))
-            itercube(s-1, dimensions, m, agents, Z, color, agents_snapshot, spare_agents, target_agents, agent_which, agent_when)
+            agents = itercube(s-1, dimensions, m, agents, Z, color, agents_snapshot, spare_agents, target_agents, agent_which, agent_when)
             print("moving 1 in the " + str(s) + "th dimension")
             move([1, 1], s, 1, agents, dimensions, agents_snapshot)
             move([1, 0], s, 1, agents, dimensions, agents_snapshot)
@@ -559,6 +559,7 @@ def itercube(s, dimensions, m, agents, Z, color, agents_snapshot, spare_agents, 
             previous_agents = agents.copy()
             agents = cube_agent_replacement(agent_which, agent_when, agents, spare_agents)
             functions.color_sync(Z, agents, previous_agents, color, m)
+    return agents
 
 def brick(t, b, dimensions, agents, Z, color, m, agents_snapshot):
     global y_global

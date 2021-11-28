@@ -328,7 +328,8 @@ def tree(lr, m, p):
             terminated_agents.pop(0)  # delete the handled broken down agent
             if len(terminated_agents) != 0:
                 for i in range(len(terminated_agents)):
-                    terminated_agents[i] = terminated_agents[i] - 1 #adjust the termination list id too
+                    if terminated_agents[i] > 0:
+                        terminated_agents[i] = terminated_agents[i] - 1 #adjust the termination list id too
                 functions.color_sync(T_original, agents, previous_agents, color, m)
             print("terma5 " + str(terminated_agents))
             print("agentswhenb4 adjust " + str(agents_when))
@@ -456,7 +457,8 @@ def tree(lr, m, p):
                     terminated_agents.pop(0)  # delete the handled broken down agent
                     if len(terminated_agents) != 0:
                         for i in range(len(terminated_agents)):
-                            terminated_agents[i] = terminated_agents[i] - 1  # adjust the termination list id too
+                            if terminated_agents[i] > 0:
+                                terminated_agents[i] = terminated_agents[i] - 1  # adjust the termination list id too
                         functions.color_sync(T_original, agents, previous_agents, color, m)
                     print("terma5 " + str(terminated_agents))
                     print("agentswhenb4 adjust " + str(agents_when))

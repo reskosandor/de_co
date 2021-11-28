@@ -248,7 +248,7 @@ def tree(lr, m, p):
 
 
 
-    def decontaminate(T, v, m, T_original, agents_if, agents_when):
+    def decontaminate(T, v, m, T_original, agents_when):
         global previous_node
         global number_of_agents
         global starting_node
@@ -335,9 +335,10 @@ def tree(lr, m, p):
             #adjust the agents_when too:
             agents_when_new = agents_when.copy()
             for i in agents_when.keys():
-                corrected_ids = functions.sorted_dict(corrected_ids)
-                agents_when_new[i-1] = agents_when[i]
-                del agents_when_new[i]
+                if i != 0:
+                    corrected_ids = functions.sorted_dict(corrected_ids)
+                    agents_when_new[i-1] = agents_when[i]
+                    del agents_when_new[i]
             agents_when = agents_when_new.copy()
             previous_agents = agents.copy()
             agents_0 = agents.copy()
@@ -382,7 +383,7 @@ def tree(lr, m, p):
                 previous_node = v
                 print("agents 3 is " + str(agents))
                 #####################################halftime
-                decontaminate(subtree(T, neighbor, v), neighbor, m, T_original, agents_if, agents_when)
+                agents_when = decontaminate(subtree(T, neighbor, v), neighbor, m, T_original, agents_when)
                 #####################################halftime
                 print("agents 4 is " + str(agents))
                 previous_agents = agents.copy()
@@ -462,9 +463,10 @@ def tree(lr, m, p):
                     # adjust the agents_when too:
                     agents_when_new = agents_when.copy()
                     for i in agents_when.keys():
-                        corrected_ids = functions.sorted_dict(corrected_ids)
-                        agents_when_new[i - 1] = agents_when[i]
-                        del agents_when_new[i]
+                        if i != 0:
+                            corrected_ids = functions.sorted_dict(corrected_ids)
+                            agents_when_new[i - 1] = agents_when[i]
+                            del agents_when_new[i]
                     agents_when = agents_when_new.copy()
                     previous_agents = agents.copy()
                     agents_0 = agents.copy()
@@ -482,7 +484,7 @@ def tree(lr, m, p):
 
         else:
             print("we have reached a leaf")
-
+        return agents_when
     #print(mu(3, T, m))
     #decontaminate(T, 3, m, T_original)
 
@@ -531,7 +533,7 @@ def tree(lr, m, p):
                 agents_when[i] = randrange(1, 2 * T_original.size())
         print("agents_when is " + str(agents_when))
 
-        decontaminate(T, starting_node, m, T_original, agents_if, agents_when)
+        agents_when = decontaminate(T, starting_node, m, T_original, agents_when)
     #calculating the starting_node (where the longest shortest paths for other nodes is the minima for the same value for all other nodes
     # and the nr_of agents needed
     ###

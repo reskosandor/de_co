@@ -109,9 +109,11 @@ with open('sim.csv', 'w', encoding='UTF8', newline='') as f:
     lr = [1, 2, 3, 4, 5, 6, 7, 8, 9]
     print(tree_chain.tree(lr, 1, 0.3))
     '''
-    '''#print(mesh_2d_1_error.create_grid_2d(10, 10, False, 2))
-    dimensions = [4, 4, 4]
-    print(tomesh_3d_1_error.create_grid_3d(dimensions, True, 2))'''
-
+    '''#print(mesh_2d_1_error.create_grid_2d(10, 10, False, 2))'''
+    dimensions = [6, 6, 6]
+    print(mesh_2d.create_grid_2d(6, 6, False, 1))
+    '''
     lr = [1, 2, 3, 4, 5, 6, 7, 8, 9]
-    print(tree_chain.tree(lr, 1, 0.3, 10))
+    print(tree_chain.tree(lr, 1, 0.3, 10))'''
+    '''dimensions = [6, 6, 6]
+    print(tomesh_2d.create_grid_2d(6, 6, False, 1))'''

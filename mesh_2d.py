@@ -136,8 +136,9 @@ def create_grid_2d(dim1, dim2, isperioidic, m):
                         list_of_agents_on_v.append(key)
                 print(list_of_agents_on_v)
                 print(v)
-                agents[j+1] = edges_of_v_in_P[i][1]
-                move_counter = move_counter + 1
+                if agents[j+1] != edges_of_v_in_P[i][1]:
+                    agents[j+1] = edges_of_v_in_P[i][1]
+                    move_counter = move_counter + 1
 
 
             functions.color_sync(Z, agents, previous_agents, color, m)

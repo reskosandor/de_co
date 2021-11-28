@@ -5704,14 +5704,13 @@ corrid after del: {0: -1, 1: -1, 2: 5, 4: 6}
 b4crit{0: -1, 1: -1, 2: 5, 4: 6}
 aftercrit{0: -1, 1: -1, 2: 5, 3: 6}
 termb4 [3, 0, 1]
-terma5 [0, 0]
+terma5 [0, 1]
 agentswhenb4 adjust {0: 14, 1: 10}
-agents after breakdown handle is {0: -1, 1: -1, 2: 5, 3: 6} terminated_agents iiiis [0, 0]
-agentswhenafter chaindown is {0: 10}
+agents after breakdown handle is {0: -1, 1: -1, 2: 5, 3: 6} terminated_agents iiiis [0, 1]
+agentswhenafter chaindown is {0: 14, 1: 10}
 while loop started
-soooo i is 1 the whole of terminated agents are [0, 0] and the terminated agent[0] is 0 agents is {0: -1, 1: -1, 2: 5, 3: 6} agents_0 is {0: -1, 1: -1, 2: 5, 3: 6}
-soooo i is 2 the whole of terminated agents are [0, 0] and the terminated agent[0] is 0 agents is {0: -1, 1: -1, 2: 5, 3: 6} agents_0 is {0: -1, 1: -1, 2: 5, 3: 6}
-soooo i is 3 the whole of terminated agents are [0, 0] and the terminated agent[0] is 0 agents is {0: -1, 1: -1, 2: 6, 3: 6} agents_0 is {0: -1, 1: -1, 2: 5, 3: 6}
+soooo i is 2 the whole of terminated agents are [0, 1] and the terminated agent[0] is 0 agents is {0: -1, 1: -1, 2: 5, 3: 6} agents_0 is {0: -1, 1: -1, 2: 5, 3: 6}
+soooo i is 3 the whole of terminated agents are [0, 1] and the terminated agent[0] is 0 agents is {0: -1, 1: -1, 2: 6, 3: 6} agents_0 is {0: -1, 1: -1, 2: 5, 3: 6}
 type of agents is <class 'dict'>
 type of corrected_ids is <class 'dict'>
 corrid b4 del: {0: -1, 1: -1, 2: 6, 3: 5}
@@ -5723,11 +5722,11 @@ b4crit{0: -1, 2: 6, 3: 5}
 aftercrit{0: -1, 1: 6, 3: 5}
 b4crit{0: -1, 1: 6, 3: 5}
 aftercrit{0: -1, 1: 6, 2: 5}
-termb4 [0, 0]
+termb4 [0, 1]
 terma5 [0]
-agentswhenb4 adjust {}
+agentswhenb4 adjust {1: 10}
 agents after breakdown handle is {0: -1, 1: 6, 2: 5} terminated_agents iiiis [0]
-agentswhenafter chaindown is {}
+agentswhenafter chaindown is {0: 10}
 while loop started
 soooo i is 1 the whole of terminated agents are [0] and the terminated agent[0] is 0 agents is {0: -1, 1: 6, 2: 5} agents_0 is {0: -1, 1: 6, 2: 5}
 soooo i is 2 the whole of terminated agents are [0] and the terminated agent[0] is 0 agents is {0: -1, 1: 7, 2: 5} agents_0 is {0: -1, 1: 6, 2: 5}
@@ -5741,3 +5740,458 @@ aftercrit{0: 7, 2: 6}
 b4crit{0: 7, 2: 6}
 aftercrit{0: 7, 1: 6}
 termb4 [0]
+terma5 []
+agentswhenb4 adjust {}
+agents after breakdown handle is {0: 7, 1: 6} terminated_agents iiiis []
+agentswhenafter chaindown is {}
+agents 1 is {0: 7, 1: 6}
+len(list(T.nodes)) is 4
+v_neighbours is [8]
+v is....
+8
+T consists of nodes:
+[7, 8, 9, 10]
+v degree is...
+2
+v is....
+7
+T consists of nodes:
+[7]
+v degree is...
+0
+neighbors are ordered by alpha, now evaluation by degree commencing
+0
+branch 1
+returning one
+v is....
+9
+T consists of nodes:
+[9, 10]
+v degree is...
+1
+v is....
+10
+T consists of nodes:
+[10]
+v degree is...
+0
+neighbors are ordered by alpha, now evaluation by degree commencing
+0
+branch 1
+returning one
+neighbors are ordered by alpha, now evaluation by degree commencing
+branch 2
+returning 1
+neighbors are ordered by alpha, now evaluation by degree commencing
+branch 4
+returning 2
+state of a before the for loop is {8: 2}
+current state of a is {8: 2}
+the max key is 8
+len of ordered_v_neighbors is 1and its contents are [8]
+agents 2 is {0: 7, 1: 6}
+ordered_v_neighbours is [8]
+agents 3 is {0: 7, 1: 6}
+decont v is 8
+decont T is [8, 9, 10]
+movecounterb4 10
+i is 1 and agents is {0: 8, 1: 6} and agents_0 is {0: 7, 1: 6}
+movecounterafter 12
+moving the chain to 8
+agents are {0: 8, 1: 7}
+color is {0: 'grey', 1: 'grey', 2: 'grey', 3: 'grey', 4: 'grey', 5: 'black', 6: 'white', 7: 'black', 8: 'black', 9: 'grey', 10: 'grey'}
+previous node is 7
+agents 1 is {0: 8, 1: 7}
+len(list(T.nodes)) is 3
+v_neighbours is [9]
+v is....
+9
+T consists of nodes:
+[8, 9, 10]
+v degree is...
+2
+v is....
+8
+T consists of nodes:
+[8]
+v degree is...
+0
+neighbors are ordered by alpha, now evaluation by degree commencing
+0
+branch 1
+returning one
+v is....
+10
+T consists of nodes:
+[10]
+v degree is...
+0
+neighbors are ordered by alpha, now evaluation by degree commencing
+0
+branch 1
+returning one
+neighbors are ordered by alpha, now evaluation by degree commencing
+branch 4
+returning 2
+state of a before the for loop is {9: 2}
+current state of a is {9: 2}
+the max key is 9
+len of ordered_v_neighbors is 1and its contents are [9]
+agents 2 is {0: 8, 1: 7}
+ordered_v_neighbours is [9]
+agents 3 is {0: 8, 1: 7}
+decont v is 9
+decont T is [9, 10]
+movecounterb4 12
+i is 1 and agents is {0: 9, 1: 7} and agents_0 is {0: 8, 1: 7}
+movecounterafter 14
+moving the chain to 9
+agents are {0: 9, 1: 8}
+color is {0: 'grey', 1: 'grey', 2: 'grey', 3: 'grey', 4: 'grey', 5: 'black', 6: 'white', 7: 'white', 8: 'black', 9: 'black', 10: 'grey'}
+previous node is 8
+agents 1 is {0: 9, 1: 8}
+len(list(T.nodes)) is 2
+v_neighbours is [10]
+v is....
+10
+T consists of nodes:
+[9, 10]
+v degree is...
+1
+v is....
+9
+T consists of nodes:
+[9]
+v degree is...
+0
+neighbors are ordered by alpha, now evaluation by degree commencing
+0
+branch 1
+returning one
+neighbors are ordered by alpha, now evaluation by degree commencing
+branch 2
+returning 1
+state of a before the for loop is {10: 1}
+current state of a is {10: 1}
+the max key is 10
+len of ordered_v_neighbors is 1and its contents are [10]
+agents 2 is {0: 9, 1: 8}
+ordered_v_neighbours is [10]
+agents 3 is {0: 9, 1: 8}
+decont v is 10
+decont T is [10]
+movecounterb4 14
+i is 1 and agents is {0: 10, 1: 8} and agents_0 is {0: 9, 1: 8}
+movecounterafter 16
+moving the chain to 10
+agents are {0: 10, 1: 9}
+color is {0: 'grey', 1: 'grey', 2: 'grey', 3: 'grey', 4: 'grey', 5: 'black', 6: 'white', 7: 'white', 8: 'white', 9: 'black', 10: 'black'}
+previous node is 9
+agents 1 is {0: 10, 1: 9}
+len(list(T.nodes)) is 1
+we have reached a leaf
+agents 4 is {0: 10, 1: 9}
+before moving back, the current value of neighbor is 10
+agents0 is {0: 10, 1: 9}
+we were in a leaf, now we're moving back up the chain from10 to 9
+agents 5 is {0: 9, 1: 8}
+agents are {0: 9, 1: 8}
+color is {0: 'grey', 1: 'grey', 2: 'grey', 3: 'grey', 4: 'grey', 5: 'black', 6: 'white', 7: 'white', 8: 'black', 9: 'black', 10: 'white'}
+previous node is 9
+agents 4 is {0: 9, 1: 8}
+before moving back, the current value of neighbor is 9
+agents0 is {0: 9, 1: 8}
+we were in a leaf, now we're moving back up the chain from9 to 8
+agents 5 is {0: 8, 1: 7}
+agents are {0: 8, 1: 7}
+color is {0: 'grey', 1: 'grey', 2: 'grey', 3: 'grey', 4: 'grey', 5: 'black', 6: 'white', 7: 'black', 8: 'black', 9: 'white', 10: 'white'}
+previous node is 9
+agents 4 is {0: 8, 1: 7}
+before moving back, the current value of neighbor is 8
+agents0 is {0: 8, 1: 7}
+we were in a leaf, now we're moving back up the chain from8 to 7
+agents 5 is {0: 7, 1: 6}
+agents are {0: 7, 1: 6}
+color is {0: 'grey', 1: 'grey', 2: 'grey', 3: 'grey', 4: 'grey', 5: 'black', 6: 'black', 7: 'black', 8: 'white', 9: 'white', 10: 'white'}
+previous node is 9
+agents 4 is {0: 7, 1: 6}
+before moving back, the current value of neighbor is 7
+agents0 is {0: 7, 1: 6}
+we were in a leaf, now we're moving back up the chain from7 to 6
+agents 5 is {0: 6, 1: 5}
+agents are {0: 6, 1: 5}
+color is {0: 'grey', 1: 'grey', 2: 'grey', 3: 'grey', 4: 'grey', 5: 'black', 6: 'black', 7: 'white', 8: 'white', 9: 'white', 10: 'white'}
+previous node is 9
+agents 4 is {0: 6, 1: 5}
+before moving back, the current value of neighbor is 6
+we were in a leaf, now we're moving back up the chain from6 to 5
+agents 5 is {0: 5, 1: 5}
+agents are {0: 5, 1: 5}
+color is {0: 'grey', 1: 'grey', 2: 'grey', 3: 'grey', 4: 'grey', 5: 'black', 6: 'white', 7: 'white', 8: 'white', 9: 'white', 10: 'white'}
+previous node is 9
+ordered_v_neighbours is [4, 6]
+agents 3 is {0: 5, 1: 5}
+decont v is 4
+decont T is [0, 1, 2, 3, 4]
+movecounterb4 25
+i is 1 and agents is {0: 4, 1: 5} and agents_0 is {0: 5, 1: 5}
+movecounterafter 26
+moving the chain to 4
+agents are {0: 4, 1: 5}
+color is {0: 'grey', 1: 'grey', 2: 'grey', 3: 'grey', 4: 'black', 5: 'black', 6: 'white', 7: 'white', 8: 'white', 9: 'white', 10: 'white'}
+previous node is 5
+agents 1 is {0: 4, 1: 5}
+len(list(T.nodes)) is 5
+v_neighbours is [3]
+v is....
+3
+T consists of nodes:
+[0, 1, 2, 3, 4]
+v degree is...
+2
+v is....
+2
+T consists of nodes:
+[0, 1, 2]
+v degree is...
+1
+v is....
+1
+T consists of nodes:
+[0, 1]
+v degree is...
+1
+v is....
+0
+T consists of nodes:
+[0]
+v degree is...
+0
+neighbors are ordered by alpha, now evaluation by degree commencing
+0
+branch 1
+returning one
+neighbors are ordered by alpha, now evaluation by degree commencing
+branch 2
+returning 1
+neighbors are ordered by alpha, now evaluation by degree commencing
+branch 2
+returning 1
+v is....
+4
+T consists of nodes:
+[4]
+v degree is...
+0
+neighbors are ordered by alpha, now evaluation by degree commencing
+0
+branch 1
+returning one
+neighbors are ordered by alpha, now evaluation by degree commencing
+branch 4
+returning 2
+state of a before the for loop is {3: 2}
+current state of a is {3: 2}
+the max key is 3
+len of ordered_v_neighbors is 1and its contents are [3]
+agents 2 is {0: 4, 1: 5}
+ordered_v_neighbours is [3]
+agents 3 is {0: 4, 1: 5}
+decont v is 3
+decont T is [0, 1, 2, 3]
+movecounterb4 26
+i is 1 and agents is {0: 3, 1: 5} and agents_0 is {0: 4, 1: 5}
+movecounterafter 28
+moving the chain to 3
+agents are {0: 3, 1: 4}
+color is {0: 'grey', 1: 'grey', 2: 'grey', 3: 'black', 4: 'black', 5: 'white', 6: 'white', 7: 'white', 8: 'white', 9: 'white', 10: 'white'}
+previous node is 4
+agents 1 is {0: 3, 1: 4}
+len(list(T.nodes)) is 4
+v_neighbours is [2]
+v is....
+2
+T consists of nodes:
+[0, 1, 2, 3]
+v degree is...
+2
+v is....
+1
+T consists of nodes:
+[0, 1]
+v degree is...
+1
+v is....
+0
+T consists of nodes:
+[0]
+v degree is...
+0
+neighbors are ordered by alpha, now evaluation by degree commencing
+0
+branch 1
+returning one
+neighbors are ordered by alpha, now evaluation by degree commencing
+branch 2
+returning 1
+v is....
+3
+T consists of nodes:
+[3]
+v degree is...
+0
+neighbors are ordered by alpha, now evaluation by degree commencing
+0
+branch 1
+returning one
+neighbors are ordered by alpha, now evaluation by degree commencing
+branch 4
+returning 2
+state of a before the for loop is {2: 2}
+current state of a is {2: 2}
+the max key is 2
+len of ordered_v_neighbors is 1and its contents are [2]
+agents 2 is {0: 3, 1: 4}
+ordered_v_neighbours is [2]
+agents 3 is {0: 3, 1: 4}
+decont v is 2
+decont T is [0, 1, 2]
+movecounterb4 28
+i is 1 and agents is {0: 2, 1: 4} and agents_0 is {0: 3, 1: 4}
+movecounterafter 30
+moving the chain to 2
+agents are {0: 2, 1: 3}
+color is {0: 'grey', 1: 'grey', 2: 'black', 3: 'black', 4: 'white', 5: 'white', 6: 'white', 7: 'white', 8: 'white', 9: 'white', 10: 'white'}
+previous node is 3
+agents 1 is {0: 2, 1: 3}
+len(list(T.nodes)) is 3
+v_neighbours is [1]
+v is....
+1
+T consists of nodes:
+[0, 1, 2]
+v degree is...
+2
+v is....
+0
+T consists of nodes:
+[0]
+v degree is...
+0
+neighbors are ordered by alpha, now evaluation by degree commencing
+0
+branch 1
+returning one
+v is....
+2
+T consists of nodes:
+[2]
+v degree is...
+0
+neighbors are ordered by alpha, now evaluation by degree commencing
+0
+branch 1
+returning one
+neighbors are ordered by alpha, now evaluation by degree commencing
+branch 4
+returning 2
+state of a before the for loop is {1: 2}
+current state of a is {1: 2}
+the max key is 1
+len of ordered_v_neighbors is 1and its contents are [1]
+agents 2 is {0: 2, 1: 3}
+ordered_v_neighbours is [1]
+agents 3 is {0: 2, 1: 3}
+decont v is 1
+decont T is [0, 1]
+movecounterb4 30
+i is 1 and agents is {0: 1, 1: 3} and agents_0 is {0: 2, 1: 3}
+movecounterafter 32
+moving the chain to 1
+agents are {0: 1, 1: 2}
+color is {0: 'grey', 1: 'black', 2: 'black', 3: 'white', 4: 'white', 5: 'white', 6: 'white', 7: 'white', 8: 'white', 9: 'white', 10: 'white'}
+previous node is 2
+agents 1 is {0: 1, 1: 2}
+len(list(T.nodes)) is 2
+v_neighbours is [0]
+v is....
+0
+T consists of nodes:
+[0, 1]
+v degree is...
+1
+v is....
+1
+T consists of nodes:
+[1]
+v degree is...
+0
+neighbors are ordered by alpha, now evaluation by degree commencing
+0
+branch 1
+returning one
+neighbors are ordered by alpha, now evaluation by degree commencing
+branch 2
+returning 1
+state of a before the for loop is {0: 1}
+current state of a is {0: 1}
+the max key is 0
+len of ordered_v_neighbors is 1and its contents are [0]
+agents 2 is {0: 1, 1: 2}
+ordered_v_neighbours is [0]
+agents 3 is {0: 1, 1: 2}
+decont v is 0
+decont T is [0]
+movecounterb4 32
+i is 1 and agents is {0: 0, 1: 2} and agents_0 is {0: 1, 1: 2}
+movecounterafter 34
+moving the chain to 0
+agents are {0: 0, 1: 1}
+color is {0: 'black', 1: 'black', 2: 'white', 3: 'white', 4: 'white', 5: 'white', 6: 'white', 7: 'white', 8: 'white', 9: 'white', 10: 'white'}
+previous node is 1
+agents 1 is {0: 0, 1: 1}
+len(list(T.nodes)) is 1
+we have reached a leaf
+agents 4 is {0: 0, 1: 1}
+before moving back, the current value of neighbor is 0
+agents0 is {0: 0, 1: 1}
+we were in a leaf, now we're moving back up the chain from0 to 1
+agents 5 is {0: 1, 1: 2}
+agents are {0: 1, 1: 2}
+color is {0: 'white', 1: 'black', 2: 'black', 3: 'white', 4: 'white', 5: 'white', 6: 'white', 7: 'white', 8: 'white', 9: 'white', 10: 'white'}
+previous node is 1
+agents 4 is {0: 1, 1: 2}
+before moving back, the current value of neighbor is 1
+agents0 is {0: 1, 1: 2}
+we were in a leaf, now we're moving back up the chain from1 to 2
+agents 5 is {0: 2, 1: 3}
+agents are {0: 2, 1: 3}
+color is {0: 'white', 1: 'white', 2: 'black', 3: 'black', 4: 'white', 5: 'white', 6: 'white', 7: 'white', 8: 'white', 9: 'white', 10: 'white'}
+previous node is 1
+agents 4 is {0: 2, 1: 3}
+before moving back, the current value of neighbor is 2
+agents0 is {0: 2, 1: 3}
+we were in a leaf, now we're moving back up the chain from2 to 3
+agents 5 is {0: 3, 1: 4}
+agents are {0: 3, 1: 4}
+color is {0: 'white', 1: 'white', 2: 'white', 3: 'black', 4: 'black', 5: 'white', 6: 'white', 7: 'white', 8: 'white', 9: 'white', 10: 'white'}
+previous node is 1
+agents 4 is {0: 3, 1: 4}
+before moving back, the current value of neighbor is 3
+agents0 is {0: 3, 1: 4}
+we were in a leaf, now we're moving back up the chain from3 to 4
+agents 5 is {0: 4, 1: 5}
+agents are {0: 4, 1: 5}
+color is {0: 'white', 1: 'white', 2: 'white', 3: 'white', 4: 'black', 5: 'black', 6: 'white', 7: 'white', 8: 'white', 9: 'white', 10: 'white'}
+previous node is 1
+agents 4 is {0: 4, 1: 5}
+before moving back, the current value of neighbor is 4
+we were in a leaf, now we're moving back up the chain from4 to 5
+agents 5 is {0: 5, 1: 5}
+agents are {0: 5, 1: 5}
+color is {0: 'white', 1: 'white', 2: 'white', 3: 'white', 4: 'white', 5: 'black', 6: 'white', 7: 'white', 8: 'white', 9: 'white', 10: 'white'}
+previous node is 1
+1
+no grey nodes remain
+move counted is 43
+(6, 43, 0.060013771057128906)

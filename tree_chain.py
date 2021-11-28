@@ -533,6 +533,7 @@ def tree(lr, m, p):
         for i in range(nr_of_agents):
             if agents_if[i] < p:
                 agents_when[i] = randrange(1, 2 * T_original.size())
+        print("agents_when at the start is " + str(agents_when))
 
 
         agents_when = decontaminate(T, starting_node, m, T_original, agents_when)

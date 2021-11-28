@@ -297,7 +297,7 @@ def tree(lr, m, p):
                     print("soooo i is " + str(i) + " the whole of terminated agents are " + str(terminated_agents) + " and the terminated agent[0] is " + str(terminated_agents[0]) +  " agents is " + str(agents) + " agents_0 is " + str(agents_0))
                     if agents_0[i-1] != -1:
                         agents[i] = agents_0[i-1]
-                    else:
+                    elif agents_0[i] != -1:
                         path_to_v = nx.shortest_path(T_original, agents[i], v)
                         agents[i] = path_to_v[1]
                     if agents[i] != agents_0[i]:
@@ -427,7 +427,7 @@ def tree(lr, m, p):
                                 terminated_agents[0]) + " agents is " + str(agents) + " agents_0 is " + str(agents_0))
                             if agents_0[i - 1] != -1:
                                 agents[i] = agents_0[i - 1]
-                            else:
+                            elif agents_0[i] != -1:
                                 path_to_v = nx.shortest_path(T_original, agents[i], v)
                                 agents[i] = path_to_v[1]
                             if agents[i] != agents_0[i]:
@@ -526,13 +526,17 @@ def tree(lr, m, p):
         agents_if = {}
         agents_when = {}
 
-        for i in range(nr_of_agents):
+        '''for i in range(nr_of_agents):
             agents_if[i] = uniform(0, 1)
         print("agents_if is " + str(agents_if))
 
         for i in range(nr_of_agents):
             if agents_if[i] < p:
-                agents_when[i] = randrange(1, 2 * T_original.size())
+                agents_when[i] = randrange(1, 2 * T_original.size())'''
+        agents_when[0] = 1
+        agents_when[1] = 14
+        agents_when[2] = 10
+        agents_when[4] = 2
         print("agents_when is " + str(agents_when))
 
         agents_when = decontaminate(T, starting_node, m, T_original, agents_when)

@@ -10,7 +10,7 @@ starting_node = -1
 nr_of_agents = -1
 move_counter = 0
 agents = {}
-def tree(lr, m, p):
+def tree(lr, m, p, nr_a = -1):
     start_time = time.time()
     global number_of_agents
     global previous_node
@@ -556,6 +556,8 @@ def tree(lr, m, p):
     #
     print(T)
     starting_node, nr_of_agents = homebase_node(T)
+    if nr_a != -1:
+        nr_of_agents = nr_a
     print("starting node is " + str(starting_node) + "and the nr_of_agents are " + str(nr_of_agents))
 
 

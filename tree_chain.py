@@ -293,9 +293,12 @@ def tree(lr, m, p):
             terminated_agents.sort()
             previous_agents = agents.copy()
             #moving all agents in the chain above the furthest down breakdown by one
+            root_counter = 0
             for i in agents:
-                if i > terminated_agents[0] and i not in terminated_agents:
+                if i > terminated_agents[0] and i not in terminated_agents and root_counter < 1:
                     print("soooo i is " + str(i) + " the whole of terminated agents are " + str(terminated_agents) + " and the terminated agent[0] is " + str(terminated_agents[0]) +  " agents is " + str(agents) + " agents_0 is " + str(agents_0))
+                    if agents[i] == starting_node:
+                        root_counter = root_counter + 1
                     if agents_0[i-1] != -1:
                         agents[i] = agents_0[i-1]
                     elif agents_0[i] != -1:
@@ -354,6 +357,7 @@ def tree(lr, m, p):
             functions.color_sync(T_original, agents, previous_agents, color, m)
             print("agents after breakdown handle is " + str(agents) + " terminated_agents iiiis " + str(terminated_agents))
             print("agentswhenafter chaindown is " + str(agents_when))
+
 
 
 
@@ -421,11 +425,14 @@ def tree(lr, m, p):
                     print("while loop started")
                     previous_agents = agents.copy()
                     # moving all agents in the chain above the furthest down breakdown by one
+                    root_counter = 0
                     for i in agents:
-                        if i > terminated_agents[0] and i not in terminated_agents:
+                        if i > terminated_agents[0] and i not in terminated_agents and root_counter < 1:
                             print("soooo i is " + str(i) + " the whole of terminated agents are " + str(
                                 terminated_agents) + " and the terminated agent[0] is " + str(
                                 terminated_agents[0]) + " agents is " + str(agents) + " agents_0 is " + str(agents_0))
+                            if agents[i] == starting_node:
+                                root_counter = root_counter + 1
                             if agents_0[i - 1] != -1:
                                 agents[i] = agents_0[i - 1]
                             elif agents_0[i] != -1:
@@ -527,17 +534,17 @@ def tree(lr, m, p):
         agents_if = {}
         agents_when = {}
 
-        '''for i in range(nr_of_agents):
-                    agents_if[i] = uniform(0, 1)
-                print("agents_if is " + str(agents_if))
+        for i in range(nr_of_agents):
+            agents_if[i] = uniform(0, 1)
+            print("agents_if is " + str(agents_if))
 
-                for i in range(nr_of_agents):
-                    if agents_if[i] < p:
-                        agents_when[i] = randrange(1, 2 * T_original.size())'''
-        agents_when[0] = 1
+        for i in range(nr_of_agents):
+            if agents_if[i] < p:
+                agents_when[i] = randrange(1, 2 * T_original.size())
+        '''agents_when[0] = 1
         agents_when[1] = 14
         agents_when[2] = 10
-        agents_when[4] = 2
+        agents_when[4] = 2'''
         print("agents_when at the start is " + str(agents_when))
 
 

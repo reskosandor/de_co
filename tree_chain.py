@@ -290,6 +290,7 @@ def tree(lr, m, p):
         # until we have handled all breakdowns
         while len(terminated_agents) > 0:
             print("while loop started")
+            terminated_agents.sort()
             previous_agents = agents.copy()
             #moving all agents in the chain above the furthest down breakdown by one
             for i in agents:
@@ -526,13 +527,17 @@ def tree(lr, m, p):
         agents_if = {}
         agents_when = {}
 
-        for i in range(nr_of_agents):
-            agents_if[i] = uniform(0, 1)
-        print("agents_if is " + str(agents_if))
+        '''for i in range(nr_of_agents):
+                    agents_if[i] = uniform(0, 1)
+                print("agents_if is " + str(agents_if))
 
-        for i in range(nr_of_agents):
-            if agents_if[i] < p:
-                agents_when[i] = randrange(1, 2 * T_original.size())
+                for i in range(nr_of_agents):
+                    if agents_if[i] < p:
+                        agents_when[i] = randrange(1, 2 * T_original.size())'''
+        agents_when[0] = 1
+        agents_when[1] = 14
+        agents_when[2] = 10
+        agents_when[4] = 2
         print("agents_when at the start is " + str(agents_when))
 
 

@@ -2,7 +2,9 @@ import networkx as nx
 import matplotlib.pyplot as plt
 from collections import OrderedDict
 import functions
-
+import sys
+import tree_chain
+'''
 #perfectly balanced r-ary tree with h height
 A = nx.balanced_tree(3, 3)
 lr = nx.to_prufer_sequence(A)
@@ -39,4 +41,16 @@ tryme = {'a': 1, 'b': 2, 'c': 3}
 
 answer = functions.key_by_value(2, tryme)
 print(answer)
+
+'''
+'''
+a = 2
+
+def bc(a):
+    if a == 1:
+        sys.exit()
+    return a
+
+b = bc(a)
+print(b)'''
 

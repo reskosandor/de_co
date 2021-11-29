@@ -106,7 +106,7 @@ with open('sim.csv', 'w', encoding='UTF8', newline='') as f:
             writer.writerow(example_data)
             A = C = nx.full_rary_tree(3, i)
             lr = nx.to_prufer_sequence(A)
-            writer.writerow(tree_chain.tree(lr, m + 1, 0.3))
+            writer.writerow(tree_chain.tree(lr, m + 1, 0.9))
 
     '''
     print("start simming")

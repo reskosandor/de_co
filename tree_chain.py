@@ -205,46 +205,17 @@ def tree(lr, m, p, nr_a = -1):
             agents[len(agents_0) - 1] = p_last[1]
             move_counter = move_counter + 1
 
-
         for i in agents:
             if i < len(agents) - 1:
                 agents[i] = agents_0[i+1]
                 if agents[i] != agents_0[i]:
                     move_counter = move_counter + 1
 
-
-
-
-    def agent_replacement(agents, agents_when):
-        global move_counter
-        agents_0 = agents.copy()
-        terminated_agents = []
-        for i in agents_when:
-            if agents_when[i] > move_counter:
-                terminated_agents.append(i)
-
-        for j in terminated_agents:
-            for i in agents:
-                if i > terminated_agents[j]:
-                    agents[i] = agents_0[i-1]
-                    if agents[i] != agents_0[i]:
-                        move_counter = move_counter + 1
-
-        corrected_ids = agents.copy()
-        del corrected_ids[faulty_agent]
-        for i in corrected_ids:
-            if i >= faulty_agent:
-                corrected_ids[i] = agents[i+1]
-                del corrected_ids[i+1]
-        agents = corrected_ids.copy()
-
-
-
-
-
-
-
-
+    def check_chain_gap(agents):
+        print("checking chain gap")
+        for i in agents:
+            if i > 0 and agents[i-1] == -1 and agents[i] == -1:
+                print("there is at least a two agent gap in the chain, decontamination failed")
 
 
 
@@ -289,6 +260,7 @@ def tree(lr, m, p, nr_a = -1):
         functions.color_sync(T_original, agents, previous_agents, color, m)
         # until we have handled all breakdowns
         while len(terminated_agents) > 0:
+            check_chain_gap(agents)
             print("while loop started")
             terminated_agents.sort()
             previous_agents = agents.copy()
@@ -423,6 +395,7 @@ def tree(lr, m, p, nr_a = -1):
                 functions.color_sync(T_original, agents, previous_agents, color, m)
                 # until we have handled all breakdowns
                 while len(terminated_agents) > 0:
+                    check_chain_gap(agents)
                     print("while loop started")
                     previous_agents = agents.copy()
                     terminated_agents.sort()
@@ -494,6 +467,7 @@ def tree(lr, m, p, nr_a = -1):
                     print("agents after breakdown handle is " + str(agents) + " terminated_agents iiiis " + str(
                         terminated_agents))
                     print("agentswhenafter chaindown is " + str(agents_when))
+                    print("color is " + str(color))
 
         else:
             print("we have reached a leaf")
@@ -537,7 +511,7 @@ def tree(lr, m, p, nr_a = -1):
         agents_if = {}
         agents_when = {}
 
-        '''for i in range(nr_of_agents):
+        for i in range(nr_of_agents):
             agents_if[i] = uniform(0, 1)
             print("agents_if is " + str(agents_if))
 
@@ -545,15 +519,11 @@ def tree(lr, m, p, nr_a = -1):
 
         for i in range(nr_of_agents):
             if agents_if[i] < p:
-                agents_when[i] = randrange(1, 2 * T_original.size())'''
-        agents_when[0] = 1
-        agents_when[2] = 14
+                agents_when[i] = randrange(1, 2 * T_original.size())
+        '''agents_when[0] = 1
+        agents_when[2] = 14'''
 
 
-        for key in  agents_when:
-            if key - 1 in agents_when.keys():
-                print("two neighbouring agents are faulty, exit")
-                sys.exit()
 
         print("agents_when at the start is " + str(agents_when))
 
@@ -565,9 +535,11 @@ def tree(lr, m, p, nr_a = -1):
     ##
     #
     print(T)
-    starting_node, nr_of_agents = homebase_node(T)
+    starting_node, min_nr_of_agents = homebase_node(T)
     if nr_a != -1:
-        nr_of_agents = nr_a
+        nr_of_agents = nr_a * 2
+    else:
+        nr_of_agents = min_nr_of_agents
     print("starting node is " + str(starting_node) + "and the nr_of_agents are " + str(nr_of_agents))
 
 

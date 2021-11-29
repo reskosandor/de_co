@@ -300,6 +300,9 @@ def tree(lr, m, p, nr_a = -1):
 
 
             agents = corrected_ids.copy() # ids and positions are correct
+            if len(agents) < min_nr_of_agents:
+                print("too few agents remaining, cannot sustain a long enough chain")
+                sys.exit()
             print("termb4 " + str(terminated_agents))
             del agents_when[terminated_agents[0]] #delete the handled broken down from agents when
             terminated_agents.pop(0)  # delete the handled broken down agent
@@ -436,6 +439,9 @@ def tree(lr, m, p, nr_a = -1):
                             # corrected_ids = functions.sort_dict(corrected_ids)
 
                     agents = corrected_ids.copy()  # ids and positions are correct
+                    if len(agents) < min_nr_of_agents:
+                        print("to few agents remaining, cannot sustain a long enough chain")
+                        sys.exit()
                     print("termb4 " + str(terminated_agents))
                     del agents_when[terminated_agents[0]]  # delete the handled broken down from agents when
                     terminated_agents.pop(0)  # delete the handled broken down agent
@@ -537,9 +543,9 @@ def tree(lr, m, p, nr_a = -1):
     print(T)
     starting_node, min_nr_of_agents = homebase_node(T)
     if nr_a != -1:
-        nr_of_agents = nr_a * 2
+        nr_of_agents = nr_a
     else:
-        nr_of_agents = min_nr_of_agents
+        nr_of_agents = min_nr_of_agents * 2
     print("starting node is " + str(starting_node) + "and the nr_of_agents are " + str(nr_of_agents))
 
 

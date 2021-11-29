@@ -303,7 +303,8 @@ def tree(lr, m, p, nr_a = -1):
                         agents[i] = agents_0[i-1]
                     elif agents_0[i] != -1:
                         path_to_v = nx.shortest_path(T_original, agents[i], v)
-                        agents[i] = path_to_v[1]
+                        if agents[i] != path_to_v[0]:
+                            agents[i] = path_to_v[1]
                     if agents[i] != agents_0[i]:
                         move_counter = move_counter + 1
             #now we eliminate the replaced agent and change the id-s
@@ -438,7 +439,8 @@ def tree(lr, m, p, nr_a = -1):
                                 agents[i] = agents_0[i - 1]
                             elif agents_0[i] != -1:
                                 path_to_v = nx.shortest_path(T_original, agents[i], v)
-                                agents[i] = path_to_v[1]
+                                if agents[i] != path_to_v[0]:
+                                    agents[i] = path_to_v[1]
                             if agents[i] != agents_0[i]:
                                 move_counter = move_counter + 1
                     # now we eliminate the replaced agent and change the id-s

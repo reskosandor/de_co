@@ -535,17 +535,24 @@ def tree(lr, m, p, nr_a = -1):
         agents_if = {}
         agents_when = {}
 
-        for i in range(nr_of_agents):
+        '''for i in range(nr_of_agents):
             agents_if[i] = uniform(0, 1)
             print("agents_if is " + str(agents_if))
 
+
+
         for i in range(nr_of_agents):
             if agents_if[i] < p:
-                agents_when[i] = randrange(1, 2 * T_original.size())
-        '''agents_when[0] = 1
-        agents_when[1] = 14
-        agents_when[2] = 10
-        agents_when[4] = 2'''
+                agents_when[i] = randrange(1, 2 * T_original.size())'''
+        agents_when[0] = 1
+        agents_when[2] = 14
+
+
+        for key in  agents_when:
+            if key - 1 in agents_when.keys():
+                print("two neighbouring agents are faulty, exit")
+                sys.exit()
+
         print("agents_when at the start is " + str(agents_when))
 
 

@@ -38,46 +38,46 @@ with open('sim.csv', 'w', encoding='UTF8', newline='') as f:
     #write multiple rows
     #writer.writerows(example_data)
     '''writer.writerow('mesh2d m1')
-    for i in range(20):
+    for i in range(10):
         writer.writerow(mesh_2d.create_grid_2d(i+1, i+1, False, 1))
     writer.writerow('mesh2d m2')
-    for i in range(20):
+    for i in range(10):
         writer.writerow(mesh_2d.create_grid_2d(i+1, i+1, False, 2))
     writer.writerow("mesh3d m1")
-    for i in range(20):
+    for i in range(10):
         dimensions = [i+1, i+1, i+1]
         writer.writerow(mesh_3d.create_grid_3d(dimensions, False, 1))
     writer.writerow("mesh3d m2")
-    for i in range(20):
+    for i in range(10):
         dimensions = [i + 1, i + 1, i + 1]
         writer.writerow(mesh_3d.create_grid_3d(dimensions, False, 2))
     writer.writerow("mesh3d m3")
-    for i in range(20):
+    for i in range(10):
         dimensions = [i + 1, i + 1, i + 1]
         writer.writerow(mesh_3d.create_grid_3d(dimensions, False, 3))
     writer.writerow('tomesh2d m1')
-    for i in range(20):
+    for i in range(10):
         writer.writerow(tomesh_2d.create_grid_2d(i+1, i+1, True, 1))
     writer.writerow('tomesh2d m2')
-    for i in range(20):
+    for i in range(10):
         writer.writerow(tomesh_2d.create_grid_2d(i+1, i+1, True, 2))
     writer.writerow('tomesh3d m1')
-    for i in range(20):
+    for i in range(10):
         dimensions = [i+1, i+1, i+1]
         print("when writing to csv, i is " + str(i+1), flush=True)
         writer.writerow(tomesh_3d.create_grid_3d(dimensions, True, 1))
     writer.writerow('tomesh3d m2')
-    for i in range(20):
+    for i in range(10):
         dimensions = [i+1, i+1, i+1]
         print("when writing to csv, i is " + str(i+1), flush=True)
         writer.writerow(tomesh_3d.create_grid_3d(dimensions, True, 2))
     writer.writerow('tomesh3d m3')
-    for i in range(20):
+    for i in range(10):
         dimensions = [i+1, i+1, i+1]
         print("when writing to csv, i is " + str(i+1), flush=True)
         writer.writerow(tomesh_3d.create_grid_3d(dimensions, True, 3))
     writer.writerow('tomesh3d m4')
-    for i in range(20):
+    for i in range(10):
         dimensions = [i+1, i+1, i+1]
         print("when writing to csv, i is " + str(i+1), flush=True)
         writer.writerow(tomesh_3d.create_grid_3d(dimensions, True, 4))'''
@@ -87,8 +87,8 @@ with open('sim.csv', 'w', encoding='UTF8', newline='') as f:
     lr = nx.to_prufer_sequence(A)
     writer.writerow(tree.tree(lr, 1))'''
 
-    '''
-    print("asd")
+
+    '''print("asd")
     for r in range(5):
         for h in range(5):
             for m in range(r):
@@ -98,8 +98,16 @@ with open('sim.csv', 'w', encoding='UTF8', newline='') as f:
 
                 A = nx.balanced_tree(r+1, h+1)
                 lr = nx.to_prufer_sequence(A)
-                writer.writerow(tree.tree(lr, m+1))
-    '''
+                writer.writerow(tree.tree(lr, m+1))'''
+
+    for m in range(3):
+        for i in range(4, 22):
+            example_data = [3, i, m + 1]
+            writer.writerow(example_data)
+            A = C = nx.full_rary_tree(3, i)
+            lr = nx.to_prufer_sequence(A)
+            writer.writerow(tree_chain.tree(lr, m + 1, 0.3))
+
     '''
     print("start simming")
     example_data = [3, 3, 3]
@@ -110,8 +118,8 @@ with open('sim.csv', 'w', encoding='UTF8', newline='') as f:
     print(tree_chain.tree(lr, 1, 0.3))
     '''
     '''#print(mesh_2d_1_error.create_grid_2d(10, 10, False, 2))'''
-    dimensions = [6, 6, 6]
-    print(mesh_2d.create_grid_2d(6, 6, False, 1))
+    '''dimensions = [6, 6, 6]
+    print(mesh_2d.create_grid_2d(6, 6, False, 1))'''
     '''
     lr = [1, 2, 3, 4, 5, 6, 7, 8, 9]
     print(tree_chain.tree(lr, 1, 0.3, 10))'''

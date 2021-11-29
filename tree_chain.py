@@ -424,6 +424,7 @@ def tree(lr, m, p, nr_a = -1):
                 while len(terminated_agents) > 0:
                     print("while loop started")
                     previous_agents = agents.copy()
+                    terminated_agents.sort()
                     # moving all agents in the chain above the furthest down breakdown by one
                     root_counter = 0
                     for i in agents:

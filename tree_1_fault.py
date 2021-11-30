@@ -177,7 +177,7 @@ def tree(lr, m):
             if previous_node == -1:
                 backup_agents[i] = v
                 print("state of backup_agents became " + str(backup_agents))
-            elif backup_agents[i] != -1:
+            elif backup_agents[i] != -1 and error_happened == False:
                 backup_agents[i] = previous_agents[i]
                 move_counter = move_counter + 1
 
@@ -254,7 +254,7 @@ def tree(lr, m):
                 print("we were in a leaf, now we're moving back " + str(howmany) + " agents from" + str(neighbor) + " to " + str(v))
                 #moving the backup agents one step back on the shortest route to the root
                 for i in backup_agents:
-                    if backup_agents[i] != -1 and backup_agents[i] != original_root:
+                    if backup_agents[i] != -1 and backup_agents[i] != original_root and error_happened == False:
                         shortest_path_to_root = nx.shortest_path(T_original, backup_agents[i], original_root)
                         backup_agents[i] = shortest_path_to_root[1]
                         move_counter = move_counter + 1

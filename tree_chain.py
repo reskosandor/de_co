@@ -10,7 +10,7 @@ starting_node = -1
 nr_of_agents = -1
 move_counter = 0
 agents = {}
-def tree(lr, m, p):
+def tree(lr, m, p, nr_a = -1):
     start_time = time.time()
     global number_of_agents
     global previous_node
@@ -205,50 +205,21 @@ def tree(lr, m, p):
             agents[len(agents_0) - 1] = p_last[1]
             move_counter = move_counter + 1
 
-
         for i in agents:
             if i < len(agents) - 1:
                 agents[i] = agents_0[i+1]
                 if agents[i] != agents_0[i]:
                     move_counter = move_counter + 1
 
+    def check_chain_gap(agents):
+        print("checking chain gap")
+        for i in agents:
+            if i > 0 and agents[i-1] == -1 and agents[i] == -1:
+                print("there is at least a two agent gap in the chain, decontamination failed")
 
 
 
-    def agent_replacement(agents, agents_when):
-        global move_counter
-        agents_0 = agents.copy()
-        terminated_agents = []
-        for i in agents_when:
-            if agents_when[i] > move_counter:
-                terminated_agents.append(i)
-
-        for j in terminated_agents:
-            for i in agents:
-                if i > terminated_agents[j]:
-                    agents[i] = agents_0[i-1]
-                    if agents[i] != agents_0[i]:
-                        move_counter = move_counter + 1
-
-        corrected_ids = agents.copy()
-        del corrected_ids[faulty_agent]
-        for i in corrected_ids:
-            if i >= faulty_agent:
-                corrected_ids[i] = agents[i+1]
-                del corrected_ids[i+1]
-        agents = corrected_ids.copy()
-
-
-
-
-
-
-
-
-
-
-
-    def decontaminate(T, v, m, T_original, agents_if, agents_when):
+    def decontaminate(T, v, m, T_original, agents_when):
         global previous_node
         global number_of_agents
         global starting_node
@@ -289,17 +260,23 @@ def tree(lr, m, p):
         functions.color_sync(T_original, agents, previous_agents, color, m)
         # until we have handled all breakdowns
         while len(terminated_agents) > 0:
+            check_chain_gap(agents)
             print("while loop started")
+            terminated_agents.sort()
             previous_agents = agents.copy()
             #moving all agents in the chain above the furthest down breakdown by one
+            root_counter = 0
             for i in agents:
-                if i > terminated_agents[0] and i not in terminated_agents:
+                if i > terminated_agents[0] and i not in terminated_agents and root_counter < 1:
                     print("soooo i is " + str(i) + " the whole of terminated agents are " + str(terminated_agents) + " and the terminated agent[0] is " + str(terminated_agents[0]) +  " agents is " + str(agents) + " agents_0 is " + str(agents_0))
+                    if agents[i] == starting_node:
+                        root_counter = root_counter + 1
                     if agents_0[i-1] != -1:
                         agents[i] = agents_0[i-1]
-                    else:
+                    elif agents_0[i] != -1:
                         path_to_v = nx.shortest_path(T_original, agents[i], v)
-                        agents[i] = path_to_v[1]
+                        if agents[i] != path_to_v[0]:
+                            agents[i] = path_to_v[1]
                     if agents[i] != agents_0[i]:
                         move_counter = move_counter + 1
             #now we eliminate the replaced agent and change the id-s
@@ -323,21 +300,26 @@ def tree(lr, m, p):
 
 
             agents = corrected_ids.copy() # ids and positions are correct
+            if len(agents) < min_nr_of_agents:
+                print("too few agents remaining, cannot sustain a long enough chain")
+                sys.exit()
             print("termb4 " + str(terminated_agents))
             del agents_when[terminated_agents[0]] #delete the handled broken down from agents when
             terminated_agents.pop(0)  # delete the handled broken down agent
             if len(terminated_agents) != 0:
                 for i in range(len(terminated_agents)):
-                    terminated_agents[i] = terminated_agents[i] - 1 #adjust the termination list id too
+                    if terminated_agents[i] > 0 and terminated_agents[i] -1 not in terminated_agents:
+                        terminated_agents[i] = terminated_agents[i] - 1 #adjust the termination list id too
                 functions.color_sync(T_original, agents, previous_agents, color, m)
             print("terma5 " + str(terminated_agents))
             print("agentswhenb4 adjust " + str(agents_when))
             #adjust the agents_when too:
             agents_when_new = agents_when.copy()
             for i in agents_when.keys():
-                corrected_ids = functions.sorted_dict(corrected_ids)
-                agents_when_new[i-1] = agents_when[i]
-                del agents_when_new[i]
+                if i != 0 and i-1 not in agents_when_new.keys():
+                    corrected_ids = functions.sorted_dict(corrected_ids)
+                    agents_when_new[i-1] = agents_when[i]
+                    del agents_when_new[i]
             agents_when = agents_when_new.copy()
             previous_agents = agents.copy()
             agents_0 = agents.copy()
@@ -351,6 +333,7 @@ def tree(lr, m, p):
             functions.color_sync(T_original, agents, previous_agents, color, m)
             print("agents after breakdown handle is " + str(agents) + " terminated_agents iiiis " + str(terminated_agents))
             print("agentswhenafter chaindown is " + str(agents_when))
+
 
 
 
@@ -382,7 +365,7 @@ def tree(lr, m, p):
                 previous_node = v
                 print("agents 3 is " + str(agents))
                 #####################################halftime
-                decontaminate(subtree(T, neighbor, v), neighbor, m, T_original, agents_if, agents_when)
+                agents_when = decontaminate(subtree(T, neighbor, v), neighbor, m, T_original, agents_when)
                 #####################################halftime
                 print("agents 4 is " + str(agents))
                 previous_agents = agents.copy()
@@ -415,19 +398,25 @@ def tree(lr, m, p):
                 functions.color_sync(T_original, agents, previous_agents, color, m)
                 # until we have handled all breakdowns
                 while len(terminated_agents) > 0:
+                    check_chain_gap(agents)
                     print("while loop started")
                     previous_agents = agents.copy()
+                    terminated_agents.sort()
                     # moving all agents in the chain above the furthest down breakdown by one
+                    root_counter = 0
                     for i in agents:
-                        if i > terminated_agents[0] and i not in terminated_agents:
+                        if i > terminated_agents[0] and i not in terminated_agents and root_counter < 1:
                             print("soooo i is " + str(i) + " the whole of terminated agents are " + str(
                                 terminated_agents) + " and the terminated agent[0] is " + str(
                                 terminated_agents[0]) + " agents is " + str(agents) + " agents_0 is " + str(agents_0))
+                            if agents[i] == starting_node:
+                                root_counter = root_counter + 1
                             if agents_0[i - 1] != -1:
                                 agents[i] = agents_0[i - 1]
-                            else:
+                            elif agents_0[i] != -1:
                                 path_to_v = nx.shortest_path(T_original, agents[i], v)
-                                agents[i] = path_to_v[1]
+                                if agents[i] != path_to_v[0]:
+                                    agents[i] = path_to_v[1]
                             if agents[i] != agents_0[i]:
                                 move_counter = move_counter + 1
                     # now we eliminate the replaced agent and change the id-s
@@ -450,21 +439,26 @@ def tree(lr, m, p):
                             # corrected_ids = functions.sort_dict(corrected_ids)
 
                     agents = corrected_ids.copy()  # ids and positions are correct
+                    if len(agents) < min_nr_of_agents:
+                        print("to few agents remaining, cannot sustain a long enough chain")
+                        sys.exit()
                     print("termb4 " + str(terminated_agents))
                     del agents_when[terminated_agents[0]]  # delete the handled broken down from agents when
                     terminated_agents.pop(0)  # delete the handled broken down agent
                     if len(terminated_agents) != 0:
                         for i in range(len(terminated_agents)):
-                            terminated_agents[i] = terminated_agents[i] - 1  # adjust the termination list id too
+                            if terminated_agents[i] > 0 and terminated_agents[i] -1 not in terminated_agents:
+                                terminated_agents[i] = terminated_agents[i] - 1  # adjust the termination list id too
                         functions.color_sync(T_original, agents, previous_agents, color, m)
                     print("terma5 " + str(terminated_agents))
                     print("agentswhenb4 adjust " + str(agents_when))
                     # adjust the agents_when too:
                     agents_when_new = agents_when.copy()
                     for i in agents_when.keys():
-                        corrected_ids = functions.sorted_dict(corrected_ids)
-                        agents_when_new[i - 1] = agents_when[i]
-                        del agents_when_new[i]
+                        if i != 0 and i-1 not in agents_when_new.keys():
+                            corrected_ids = functions.sorted_dict(corrected_ids)
+                            agents_when_new[i - 1] = agents_when[i]
+                            del agents_when_new[i]
                     agents_when = agents_when_new.copy()
                     previous_agents = agents.copy()
                     agents_0 = agents.copy()
@@ -479,10 +473,11 @@ def tree(lr, m, p):
                     print("agents after breakdown handle is " + str(agents) + " terminated_agents iiiis " + str(
                         terminated_agents))
                     print("agentswhenafter chaindown is " + str(agents_when))
+                    print("color is " + str(color))
 
         else:
             print("we have reached a leaf")
-
+        return agents_when
     #print(mu(3, T, m))
     #decontaminate(T, 3, m, T_original)
 
@@ -524,21 +519,33 @@ def tree(lr, m, p):
 
         for i in range(nr_of_agents):
             agents_if[i] = uniform(0, 1)
-        print("agents_if is " + str(agents_if))
+            print("agents_if is " + str(agents_if))
+
+
 
         for i in range(nr_of_agents):
             if agents_if[i] < p:
                 agents_when[i] = randrange(1, 2 * T_original.size())
-        print("agents_when is " + str(agents_when))
+        '''agents_when[0] = 1
+        agents_when[2] = 14'''
 
-        decontaminate(T, starting_node, m, T_original, agents_if, agents_when)
+
+
+        print("agents_when at the start is " + str(agents_when))
+
+
+        agents_when = decontaminate(T, starting_node, m, T_original, agents_when)
     #calculating the starting_node (where the longest shortest paths for other nodes is the minima for the same value for all other nodes
     # and the nr_of agents needed
     ###
     ##
     #
     print(T)
-    starting_node, nr_of_agents = homebase_node(T)
+    starting_node, min_nr_of_agents = homebase_node(T)
+    if nr_a != -1:
+        nr_of_agents = nr_a
+    else:
+        nr_of_agents = min_nr_of_agents * 2
     print("starting node is " + str(starting_node) + "and the nr_of_agents are " + str(nr_of_agents))
 
 

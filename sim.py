@@ -100,13 +100,13 @@ with open('sim.csv', 'w', encoding='UTF8', newline='') as f:
                 lr = nx.to_prufer_sequence(A)
                 writer.writerow(tree.tree(lr, m+1))'''
 
-    for m in range(3):
+    '''for m in range(3):
         for i in range(4, 22):
             example_data = [3, i, m + 1]
             writer.writerow(example_data)
             A = C = nx.full_rary_tree(3, i)
             lr = nx.to_prufer_sequence(A)
-            writer.writerow(tree_chain.tree(lr, m + 1, 0.1))
+            writer.writerow(tree_chain.tree(lr, m + 1, 0.1))'''
 
     '''
     print("start simming")
@@ -125,3 +125,9 @@ with open('sim.csv', 'w', encoding='UTF8', newline='') as f:
     print(tree_chain.tree(lr, 1, 0.3, 10))'''
     '''dimensions = [6, 6, 6]
     print(tomesh_2d.create_grid_2d(6, 6, False, 1))'''
+
+    lr = [1, 2, 3, 4, 5, 6, 7, 8, 9]
+    print(tree_1_fault.tree(lr, 1))
+    '''dimensions = [6, 6, 6]
+    tomesh_3d_1_error.create_grid_3d(dimensions, True, 2)'''
+

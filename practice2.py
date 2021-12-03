@@ -82,8 +82,8 @@ def roots_of_equation(a, b, c):
 
     return (-b + sqrt_D) / (2 * a), (-b - sqrt_D) / (2 * a)
 
-h = 1
-p = 0.1
+h = 6
+p = 0.3
 
 
 a = h - h * p

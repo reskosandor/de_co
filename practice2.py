@@ -82,18 +82,18 @@ def roots_of_equation(a, b, c):
 
     return (-b + sqrt_D) / (2 * a), (-b - sqrt_D) / (2 * a)
 
-h = 10
-p = 0.9
-q = p
+h = 1
+p = 0.1
 
-a = 2 * h * q
-b =  - math.log(q ** q) * q
-c = math.log(q ** q) * q
+
+a = h - h * p
+b =  -2 * math.log(p ** p) * (1 - p)
+c = 2 * math.log(p ** p) * (1 - p)
 
 x1, x2 = roots_of_equation(a, b ,c)
 
-k1 = h / (q * (1 - x1))
-k2 = h / (q * (1 - x2))
+k1 = h / ((1 - x1) * (1 - p))
+k2 = h / ((1 - x2) * (1 - p))
 
 
 print(k1)

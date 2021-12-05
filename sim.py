@@ -150,7 +150,7 @@ with open('sim.csv', 'w', encoding='UTF8', newline='') as f:
     '''dimensions = [6, 6, 6]
     mesh_3d_1_error.create_grid_3d(dimensions, False, 1)'''
     '''mesh_2d_1_error.create_grid_2d(6, 6, False, 1)'''
-    tomesh_2d_1_error.create_grid_2d(8, 8, True, 1)
+    tomesh_2d_1_error.create_grid_2d(10, 10, True, 1)
     '''dimensions = [10, 10, 10]
     tomesh_3d_1_error.create_grid_3d(dimensions, True, 2)'''
 

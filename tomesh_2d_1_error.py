@@ -114,11 +114,11 @@ def create_grid_2d(dim1, dim2, isperioidic, m):
     spare_agents = {}
     target_agents = {}
     target_groups = {}
-    theoretical_nr_moves = theoretical_nr_of_moves(Z, m, dim1)
+    t_init_moves, theoretical_nr_moves = theoretical_nr_of_moves(Z, m, dim1, dim2)
     agent_which = random.randint(0, nr_of_agents - 1)
     print("theoretical_nr_moves is " + str(theoretical_nr_moves))
     print("agent_which is " + str(agent_which))
-    agent_when = random.randint(1, theoretical_nr_moves)
+    agent_when = random.randint(t_init_moves, theoretical_nr_moves)
     print("agent_when is " + str(agent_when))
     #print(color)
 
@@ -358,7 +358,7 @@ def create_grid_2d(dim1, dim2, isperioidic, m):
     move_counted = move_counter
     move_counter = 0
     end_time = time.time() - start_time
-    print("theo nr of moves is " + str(theoretical_nr_of_moves(Z, m, dim1)))
+    print("theo nr of moves is " + str(theoretical_nr_of_moves(Z, m, dim1, dim2)))
     return [nr_of_agents, after_init, move_counted, end_time]
 
 def move(A, x, y, agents, dimensions):
@@ -525,14 +525,15 @@ def brick(t, b, dimensions, agents, y, Z, color, m, spare_agents, target_agents,
                 agents = brick_agent_replacement(Z, agent_which, agent_when, agents, spare_agents, target_agents, target_groups)
                 functions.color_sync(Z, agents, previous_agents, color, m)
 
-def theoretical_nr_of_moves(Z, m, dim1):
+def theoretical_nr_of_moves(Z, m, dim1, dim2):
     t_moves = 0
     if m == 2:
-        #this is just Z.number_of_nodes()
-        t_moves = Z.number_of_nodes() + 2 ** (4 - m - 1) * (4 - m - 2)
+        i_moves = 2*2*2-1+1
+        t_moves = 2 * Z.number_of_nodes() + 4 * (4 -2 -3) + 1
     if m == 1:
-        t_moves = Z.number_of_nodes() + 2 ** (m - 1) * dim1 * (dim1 + 2 * m - 2 - 2)
-    return t_moves
+        i_moves = dim1 * dim1+ 2*2*(4-1)-2 +1
+        t_moves = Z.number_of_nodes() + dim2 + 1*(dim1+1)*(dim1 + 2 -2 -2) -2
+    return i_moves, t_moves
 
 def spare_agents_follow(spare_agents, target_agents, previous_agents):
     global move_counter

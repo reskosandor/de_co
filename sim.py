@@ -147,7 +147,7 @@ with open('sim.csv', 'w', encoding='UTF8', newline='') as f:
         dimensions = [10, 10, i+1]
         print("when writing to csv, i is " + str(i+1), flush=True)
         writer.writerow(tomesh_3d.create_grid_3d(dimensions, True, 1))'''
-    '''dimensions = [6, 6, 6]
-    mesh_3d_1_error.create_grid_3d(dimensions, False, 1)'''
-    mesh_2d_1_error.create_grid_2d(6, 6, False, 1)
+    dimensions = [6, 6, 6]
+    mesh_3d_1_error.create_grid_3d(dimensions, False, 1)
+    '''mesh_2d_1_error.create_grid_2d(6, 6, False, 1)'''
 

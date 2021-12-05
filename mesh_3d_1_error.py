@@ -113,7 +113,7 @@ def create_grid_3d(dimensions, isperioidic, m):
     functions.color_sync(Z, agents, previous_agents, color, m)
     #print(color)
     spare_agent = (0, 0, 0)
-    t_init_moves, theoretical_nr_moves = theoretical_nr_of_moves(Z, C, m, dim1, dim2)
+    t_init_moves, theoretical_nr_moves = theoretical_nr_of_moves(Z, C, m, dim1, dim2, dim3)
     print("theoretical_nr_moves is " + str(theoretical_nr_moves))
     print(t_init_moves)
     agent_which = random.randint(0, nr_of_agents - 1)
@@ -433,27 +433,27 @@ def create_grid_3d(dimensions, isperioidic, m):
     end_time = time.time() - start_time
     return [nr_of_agents, after_init, move_counted, end_time]
 
-def theoretical_nr_of_moves(Z, C, m, dim1, dim2):
+def theoretical_nr_of_moves(Z, C, m, dim1, dim2, dim3):
     c_moves = 0
     t_moves = 0
     if m == 3:
         i_moves = 1
         t_moves = 2 * Z.number_of_nodes() - 3
     if m == 2:
-        i_moves = 1 * dim1 * dim1 - dim1 + 1
+        i_moves = 0.5 * 1 * dim1 * dim1
         '''for (a, b, c) in list(C.nodes):
             c_moves = c_moves + a + b + c
         t_moves = c_moves + Z.number_of_nodes() - dim1'''
-        t_moves = i_moves + 2*(Z.number_of_nodes() - dim1)
+        t_moves = i_moves + Z.number_of_nodes() - dim1 + dim2 - 1
         print(c_moves)
         print(Z.number_of_nodes())
         print(dim1)
     if m == 1:
-        i_moves = 2 * dim2 * dim2 * dim2 - dim1*dim2 + 1
+        i_moves = 1* dim2 * dim2 * dim2
         '''for (a, b, c) in list(C.nodes):
             c_moves = c_moves + a + b + c
         t_moves = c_moves + Z.number_of_nodes() - dim1 * dim2'''
-        t_moves = i_moves + 2 * (Z.number_of_nodes() - dim1*dim2)
+        t_moves = i_moves + (Z.number_of_nodes() - dim1*dim2 + dim3 -1)
         print(c_moves)
         print(Z.number_of_nodes())
         print(dim1)

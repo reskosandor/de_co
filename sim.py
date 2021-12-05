@@ -148,3 +148,4 @@ with open('sim.csv', 'w', encoding='UTF8', newline='') as f:
         print("when writing to csv, i is " + str(i+1), flush=True)
         writer.writerow(tomesh_3d.create_grid_3d(dimensions, True, 1))'''
 
+    tomesh_2d_1_error.create_grid_2d(6, 6, False, 1)

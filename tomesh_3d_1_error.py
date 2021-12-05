@@ -143,11 +143,11 @@ def create_grid_3d(dimensions, isperioidic, m):
     spare_agents = {}
     target_agents = {}
     target_groups = {}
-    theoretical_nr_moves = theoretical_nr_of_moves(Z, m, dim1, dim2)
+    t_init_moves, theoretical_nr_moves = theoretical_nr_of_moves(Z, m, dim1, dim2, dim3)
     agent_which = random.randint(0, nr_of_agents - 1)
     print("theoretical_nr_moves is " + str(theoretical_nr_moves))
     print("agent_which is " + str(agent_which))
-    agent_when = random.randint(1, theoretical_nr_moves)
+    agent_when = random.randint(t_init_moves, theoretical_nr_moves)
     print("agent_when is " + str(agent_when))
 
     flipped_agents = {}
@@ -333,7 +333,7 @@ def create_grid_3d(dimensions, isperioidic, m):
     print(agents)
     #try snapshotting agents
     agents_snapshot = agents.copy()
-    after_init = move_counter
+
     # variable declaration
     t = 6 - m
     s = 3
@@ -353,6 +353,7 @@ def create_grid_3d(dimensions, isperioidic, m):
         print("agentstart is " + str(agents))
         print("spareagentstart is " + str(spare_agents))
         print("target_agents are " + str(target_agents))
+        after_init = move_counter
         agents = itercube(s, dims, m, agents, Z, color, agents_snapshot, spare_agents, target_agents, agent_which, agent_when)
 
     if m == 2:
@@ -372,7 +373,7 @@ def create_grid_3d(dimensions, isperioidic, m):
                 target_agents[3] = i
         print("target_agents are " + str(target_agents))
         target_groups = make_target_groups(agents, target_agents, m)
-
+        after_init = move_counter
         agents = brick(3, b, dims, agents, Z, color, m, agents_snapshot, spare_agents, target_agents, agent_which, agent_when, target_groups)
 
     if m == 1:
@@ -386,6 +387,7 @@ def create_grid_3d(dimensions, isperioidic, m):
                 target_agents[1] = i
         print("target_agents are " + str(target_agents))
         target_groups = make_target_groups(agents, target_agents, m)
+        after_init = move_counter
 
         agents = brick(3, b, dims, agents, Z, color, m, agents_snapshot, spare_agents, target_agents, agent_which, agent_when, target_groups)
 
@@ -403,6 +405,8 @@ def create_grid_3d(dimensions, isperioidic, m):
             exit()
     print("no grey nodes remain")
     print("after init is " + str(after_init))
+    print("tinit is "+ str(t_init_moves))
+    print("tmoves is " +str(theoretical_nr_moves))
 
     move_counted = move_counter
     print("move counted is " + str(move_counted))
@@ -640,17 +644,24 @@ def brick(t, b, dimensions, agents, Z, color, m, agents_snapshot, spare_agents, 
                 print("funny business over")
     return agents
 
-def theoretical_nr_of_moves(Z, m, dim1, dim2):
+def theoretical_nr_of_moves(Z, m, dim1, dim2, dim3):
     t_moves = 0
-    if m == 4 or m == 3:
-        t_moves = Z.number_of_nodes() + 2 ** (6 - m - 1) * (6 - m - 2)
+    i_moves = 0
+    if m == 4:
+        i_moves = 2*2*2-2*2 + 1
+        t_moves = 2*Z.number_of_nodes() + 4*(6-4-3)
+    if m == 3:
+        i_moves = 2*2*2*3-2*2*2+1
+        t_moves = 1000
 
     if m == 2:
+        i_moves = 0
         t_moves = Z.number_of_nodes() + 2 ** (m - 1) * dim1 * (dim1 + 2 * m - 3 - 2)
 
     if m == 1:
+        i_moves = 0
         t_moves = Z.number_of_nodes() + 2 ** (m - 1) * dim1 * dim2 * (dim1 + dim2 + 2 * m - 3 - 2)
-    return t_moves
+    return i_moves, t_moves
 
 def spare_agents_follow(spare_agents, target_agents, previous_agents):
     global move_counter

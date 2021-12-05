@@ -302,7 +302,7 @@ def create_grid_2d(dim1, dim2, isperioidic, m):
             print("something horrible happened")
             exit()
     print(agents)
-    after_init = move_counter
+
 
 
 
@@ -318,7 +318,7 @@ def create_grid_2d(dim1, dim2, isperioidic, m):
                 spare_agents[i] = path[j+1]
                 move_counter = move_counter + 1
                 print("spare agent " + str(i) + " moved to " + str(spare_agents[i]))
-
+        after_init = move_counter
         itercube(2, y_global, dims, m, agents, Z, color, spare_agents, target_agents, agent_which, agent_when)
 
     if m == 1:
@@ -332,6 +332,7 @@ def create_grid_2d(dim1, dim2, isperioidic, m):
                 target_agents[1] = i
         print("target_agents are " + str(target_agents))
         target_groups = make_target_groups(agents, target_agents)
+        after_init = move_counter
 
 
 
@@ -528,8 +529,8 @@ def brick(t, b, dimensions, agents, y, Z, color, m, spare_agents, target_agents,
 def theoretical_nr_of_moves(Z, m, dim1, dim2):
     t_moves = 0
     if m == 2:
-        i_moves = 2*2*2-1+1
-        t_moves = 2 * Z.number_of_nodes() + 4 * (4 -2 -3) + 1
+        i_moves = 2*2*2-2+1
+        t_moves = 2 * Z.number_of_nodes() + 4 * (4 -2 -3)
     if m == 1:
         i_moves = dim1 * dim1+ 2*2*(4-1)-2 +1
         t_moves = Z.number_of_nodes() + dim2 + 1*(dim1+1)*(dim1 + 2 -2 -2) -2

@@ -1,35 +1,36 @@
-[6, 6]
-Graph with 36 nodes and 72 edges
-[(0, 0), (0, 1), (0, 2), (0, 3), (0, 4), (0, 5), (1, 0), (1, 1), (1, 2), (1, 3), (1, 4), (1, 5), (2, 0), (2, 1), (2, 2), (2, 3), (2, 4), (2, 5), (3, 0), (3, 1), (3, 2), (3, 3), (3, 4), (3, 5), (4, 0), (4, 1), (4, 2), (4, 3), (4, 4), (4, 5), (5, 0), (5, 1), (5, 2), (5, 3), (5, 4), (5, 5)]
+move counter at starting position is 0
+dimensions are the following: [6, 6, 6]
+Graph with 216 nodes and 648 edges
+[(0, 0, 0), (0, 0, 1), (0, 0, 2), (0, 0, 3), (0, 0, 4), (0, 0, 5), (0, 1, 0), (0, 1, 1), (0, 1, 2), (0, 1, 3), (0, 1, 4), (0, 1, 5), (0, 2, 0), (0, 2, 1), (0, 2, 2), (0, 2, 3), (0, 2, 4), (0, 2, 5), (0, 3, 0), (0, 3, 1), (0, 3, 2), (0, 3, 3), (0, 3, 4), (0, 3, 5), (0, 4, 0), (0, 4, 1), (0, 4, 2), (0, 4, 3), (0, 4, 4), (0, 4, 5), (0, 5, 0), (0, 5, 1), (0, 5, 2), (0, 5, 3), (0, 5, 4), (0, 5, 5), (1, 0, 0), (1, 0, 1), (1, 0, 2), (1, 0, 3), (1, 0, 4), (1, 0, 5), (1, 1, 0), (1, 1, 1), (1, 1, 2), (1, 1, 3), (1, 1, 4), (1, 1, 5), (1, 2, 0), (1, 2, 1), (1, 2, 2), (1, 2, 3), (1, 2, 4), (1, 2, 5), (1, 3, 0), (1, 3, 1), (1, 3, 2), (1, 3, 3), (1, 3, 4), (1, 3, 5), (1, 4, 0), (1, 4, 1), (1, 4, 2), (1, 4, 3), (1, 4, 4), (1, 4, 5), (1, 5, 0), (1, 5, 1), (1, 5, 2), (1, 5, 3), (1, 5, 4), (1, 5, 5), (2, 0, 0), (2, 0, 1), (2, 0, 2), (2, 0, 3), (2, 0, 4), (2, 0, 5), (2, 1, 0), (2, 1, 1), (2, 1, 2), (2, 1, 3), (2, 1, 4), (2, 1, 5), (2, 2, 0), (2, 2, 1), (2, 2, 2), (2, 2, 3), (2, 2, 4), (2, 2, 5), (2, 3, 0), (2, 3, 1), (2, 3, 2), (2, 3, 3), (2, 3, 4), (2, 3, 5), (2, 4, 0), (2, 4, 1), (2, 4, 2), (2, 4, 3), (2, 4, 4), (2, 4, 5), (2, 5, 0), (2, 5, 1), (2, 5, 2), (2, 5, 3), (2, 5, 4), (2, 5, 5), (3, 0, 0), (3, 0, 1), (3, 0, 2), (3, 0, 3), (3, 0, 4), (3, 0, 5), (3, 1, 0), (3, 1, 1), (3, 1, 2), (3, 1, 3), (3, 1, 4), (3, 1, 5), (3, 2, 0), (3, 2, 1), (3, 2, 2), (3, 2, 3), (3, 2, 4), (3, 2, 5), (3, 3, 0), (3, 3, 1), (3, 3, 2), (3, 3, 3), (3, 3, 4), (3, 3, 5), (3, 4, 0), (3, 4, 1), (3, 4, 2), (3, 4, 3), (3, 4, 4), (3, 4, 5), (3, 5, 0), (3, 5, 1), (3, 5, 2), (3, 5, 3), (3, 5, 4), (3, 5, 5), (4, 0, 0), (4, 0, 1), (4, 0, 2), (4, 0, 3), (4, 0, 4), (4, 0, 5), (4, 1, 0), (4, 1, 1), (4, 1, 2), (4, 1, 3), (4, 1, 4), (4, 1, 5), (4, 2, 0), (4, 2, 1), (4, 2, 2), (4, 2, 3), (4, 2, 4), (4, 2, 5), (4, 3, 0), (4, 3, 1), (4, 3, 2), (4, 3, 3), (4, 3, 4), (4, 3, 5), (4, 4, 0), (4, 4, 1), (4, 4, 2), (4, 4, 3), (4, 4, 4), (4, 4, 5), (4, 5, 0), (4, 5, 1), (4, 5, 2), (4, 5, 3), (4, 5, 4), (4, 5, 5), (5, 0, 0), (5, 0, 1), (5, 0, 2), (5, 0, 3), (5, 0, 4), (5, 0, 5), (5, 1, 0), (5, 1, 1), (5, 1, 2), (5, 1, 3), (5, 1, 4), (5, 1, 5), (5, 2, 0), (5, 2, 1), (5, 2, 2), (5, 2, 3), (5, 2, 4), (5, 2, 5), (5, 3, 0), (5, 3, 1), (5, 3, 2), (5, 3, 3), (5, 3, 4), (5, 3, 5), (5, 4, 0), (5, 4, 1), (5, 4, 2), (5, 4, 3), (5, 4, 4), (5, 4, 5), (5, 5, 0), (5, 5, 1), (5, 5, 2), (5, 5, 3), (5, 5, 4), (5, 5, 5)]
 list of C nodes
-[(0, 0), (0, 1), (1, 0), (1, 1)]
-{(0, 0): 'grey', (0, 1): 'grey', (0, 2): 'grey', (0, 3): 'grey', (0, 4): 'grey', (0, 5): 'grey', (1, 0): 'grey', (1, 1): 'grey', (1, 2): 'grey', (1, 3): 'grey', (1, 4): 'grey', (1, 5): 'grey', (2, 0): 'grey', (2, 1): 'grey', (2, 2): 'grey', (2, 3): 'grey', (2, 4): 'grey', (2, 5): 'grey', (3, 0): 'grey', (3, 1): 'grey', (3, 2): 'grey', (3, 3): 'grey', (3, 4): 'grey', (3, 5): 'grey', (4, 0): 'grey', (4, 1): 'grey', (4, 2): 'grey', (4, 3): 'grey', (4, 4): 'grey', (4, 5): 'grey', (5, 0): 'grey', (5, 1): 'grey', (5, 2): 'grey', (5, 3): 'grey', (5, 4): 'grey', (5, 5): 'grey'}
-(x,y) is:
-(0, 0)
-[(0, 0)]
-(x,y) is:
-(0, 1)
-[(0, 0), (0, 1)]
-(x,y) is:
-(1, 0)
-[(0, 0), (1, 0)]
-(x,y) is:
-(1, 1)
-[(0, 0), (1, 0), (1, 1)]
+[(0, 0, 0), (0, 1, 0), (1, 0, 0), (1, 1, 0)]
+{(0, 0, 0): 'grey', (0, 0, 1): 'grey', (0, 0, 2): 'grey', (0, 0, 3): 'grey', (0, 0, 4): 'grey', (0, 0, 5): 'grey', (0, 1, 0): 'grey', (0, 1, 1): 'grey', (0, 1, 2): 'grey', (0, 1, 3): 'grey', (0, 1, 4): 'grey', (0, 1, 5): 'grey', (0, 2, 0): 'grey', (0, 2, 1): 'grey', (0, 2, 2): 'grey', (0, 2, 3): 'grey', (0, 2, 4): 'grey', (0, 2, 5): 'grey', (0, 3, 0): 'grey', (0, 3, 1): 'grey', (0, 3, 2): 'grey', (0, 3, 3): 'grey', (0, 3, 4): 'grey', (0, 3, 5): 'grey', (0, 4, 0): 'grey', (0, 4, 1): 'grey', (0, 4, 2): 'grey', (0, 4, 3): 'grey', (0, 4, 4): 'grey', (0, 4, 5): 'grey', (0, 5, 0): 'grey', (0, 5, 1): 'grey', (0, 5, 2): 'grey', (0, 5, 3): 'grey', (0, 5, 4): 'grey', (0, 5, 5): 'grey', (1, 0, 0): 'grey', (1, 0, 1): 'grey', (1, 0, 2): 'grey', (1, 0, 3): 'grey', (1, 0, 4): 'grey', (1, 0, 5): 'grey', (1, 1, 0): 'grey', (1, 1, 1): 'grey', (1, 1, 2): 'grey', (1, 1, 3): 'grey', (1, 1, 4): 'grey', (1, 1, 5): 'grey', (1, 2, 0): 'grey', (1, 2, 1): 'grey', (1, 2, 2): 'grey', (1, 2, 3): 'grey', (1, 2, 4): 'grey', (1, 2, 5): 'grey', (1, 3, 0): 'grey', (1, 3, 1): 'grey', (1, 3, 2): 'grey', (1, 3, 3): 'grey', (1, 3, 4): 'grey', (1, 3, 5): 'grey', (1, 4, 0): 'grey', (1, 4, 1): 'grey', (1, 4, 2): 'grey', (1, 4, 3): 'grey', (1, 4, 4): 'grey', (1, 4, 5): 'grey', (1, 5, 0): 'grey', (1, 5, 1): 'grey', (1, 5, 2): 'grey', (1, 5, 3): 'grey', (1, 5, 4): 'grey', (1, 5, 5): 'grey', (2, 0, 0): 'grey', (2, 0, 1): 'grey', (2, 0, 2): 'grey', (2, 0, 3): 'grey', (2, 0, 4): 'grey', (2, 0, 5): 'grey', (2, 1, 0): 'grey', (2, 1, 1): 'grey', (2, 1, 2): 'grey', (2, 1, 3): 'grey', (2, 1, 4): 'grey', (2, 1, 5): 'grey', (2, 2, 0): 'grey', (2, 2, 1): 'grey', (2, 2, 2): 'grey', (2, 2, 3): 'grey', (2, 2, 4): 'grey', (2, 2, 5): 'grey', (2, 3, 0): 'grey', (2, 3, 1): 'grey', (2, 3, 2): 'grey', (2, 3, 3): 'grey', (2, 3, 4): 'grey', (2, 3, 5): 'grey', (2, 4, 0): 'grey', (2, 4, 1): 'grey', (2, 4, 2): 'grey', (2, 4, 3): 'grey', (2, 4, 4): 'grey', (2, 4, 5): 'grey', (2, 5, 0): 'grey', (2, 5, 1): 'grey', (2, 5, 2): 'grey', (2, 5, 3): 'grey', (2, 5, 4): 'grey', (2, 5, 5): 'grey', (3, 0, 0): 'grey', (3, 0, 1): 'grey', (3, 0, 2): 'grey', (3, 0, 3): 'grey', (3, 0, 4): 'grey', (3, 0, 5): 'grey', (3, 1, 0): 'grey', (3, 1, 1): 'grey', (3, 1, 2): 'grey', (3, 1, 3): 'grey', (3, 1, 4): 'grey', (3, 1, 5): 'grey', (3, 2, 0): 'grey', (3, 2, 1): 'grey', (3, 2, 2): 'grey', (3, 2, 3): 'grey', (3, 2, 4): 'grey', (3, 2, 5): 'grey', (3, 3, 0): 'grey', (3, 3, 1): 'grey', (3, 3, 2): 'grey', (3, 3, 3): 'grey', (3, 3, 4): 'grey', (3, 3, 5): 'grey', (3, 4, 0): 'grey', (3, 4, 1): 'grey', (3, 4, 2): 'grey', (3, 4, 3): 'grey', (3, 4, 4): 'grey', (3, 4, 5): 'grey', (3, 5, 0): 'grey', (3, 5, 1): 'grey', (3, 5, 2): 'grey', (3, 5, 3): 'grey', (3, 5, 4): 'grey', (3, 5, 5): 'grey', (4, 0, 0): 'grey', (4, 0, 1): 'grey', (4, 0, 2): 'grey', (4, 0, 3): 'grey', (4, 0, 4): 'grey', (4, 0, 5): 'grey', (4, 1, 0): 'grey', (4, 1, 1): 'grey', (4, 1, 2): 'grey', (4, 1, 3): 'grey', (4, 1, 4): 'grey', (4, 1, 5): 'grey', (4, 2, 0): 'grey', (4, 2, 1): 'grey', (4, 2, 2): 'grey', (4, 2, 3): 'grey', (4, 2, 4): 'grey', (4, 2, 5): 'grey', (4, 3, 0): 'grey', (4, 3, 1): 'grey', (4, 3, 2): 'grey', (4, 3, 3): 'grey', (4, 3, 4): 'grey', (4, 3, 5): 'grey', (4, 4, 0): 'grey', (4, 4, 1): 'grey', (4, 4, 2): 'grey', (4, 4, 3): 'grey', (4, 4, 4): 'grey', (4, 4, 5): 'grey', (4, 5, 0): 'grey', (4, 5, 1): 'grey', (4, 5, 2): 'grey', (4, 5, 3): 'grey', (4, 5, 4): 'grey', (4, 5, 5): 'grey', (5, 0, 0): 'grey', (5, 0, 1): 'grey', (5, 0, 2): 'grey', (5, 0, 3): 'grey', (5, 0, 4): 'grey', (5, 0, 5): 'grey', (5, 1, 0): 'grey', (5, 1, 1): 'grey', (5, 1, 2): 'grey', (5, 1, 3): 'grey', (5, 1, 4): 'grey', (5, 1, 5): 'grey', (5, 2, 0): 'grey', (5, 2, 1): 'grey', (5, 2, 2): 'grey', (5, 2, 3): 'grey', (5, 2, 4): 'grey', (5, 2, 5): 'grey', (5, 3, 0): 'grey', (5, 3, 1): 'grey', (5, 3, 2): 'grey', (5, 3, 3): 'grey', (5, 3, 4): 'grey', (5, 3, 5): 'grey', (5, 4, 0): 'grey', (5, 4, 1): 'grey', (5, 4, 2): 'grey', (5, 4, 3): 'grey', (5, 4, 4): 'grey', (5, 4, 5): 'grey', (5, 5, 0): 'grey', (5, 5, 1): 'grey', (5, 5, 2): 'grey', (5, 5, 3): 'grey', (5, 5, 4): 'grey', (5, 5, 5): 'grey'}
+(x,y, z) is:
+(0, 0, 0)
+[(0, 0, 0)]
+(x,y, z) is:
+(0, 1, 0)
+[(0, 0, 0), (0, 1, 0)]
+(x,y, z) is:
+(1, 0, 0)
+[(0, 0, 0), (1, 0, 0)]
+(x,y, z) is:
+(1, 1, 0)
+[(0, 0, 0), (1, 0, 0), (1, 1, 0)]
 P is :
-[[(0, 0)], [(0, 0), (0, 1)], [(0, 0), (1, 0)], [(0, 0), (1, 0), (1, 1)]]
-theoretical_nr_moves is 69
-agent_which is 2
-agent_when is 28
+[[(0, 0, 0)], [(0, 0, 0), (0, 1, 0)], [(0, 0, 0), (1, 0, 0)], [(0, 0, 0), (1, 0, 0), (1, 1, 0)]]
+theoretical_nr_moves is 429
+agent_which is 3
+agent_when is 428
 flipped_agents
-{(0, 0): [0, 1, 2, 3]}
+{(0, 0, 0): [0, 1, 2, 3]}
 v is:
-(0, 0)
+(0, 0, 0)
 truest
 [0, 1, 2, 3]
 4
 edges_of_v_in_P
-[[(0, 0), (0, 1)], [(0, 0), (1, 0)]]
+[[(0, 0, 0), (0, 1, 0)], [(0, 0, 0), (1, 0, 0)]]
 p is:
 [1, 2]
 i is:
@@ -37,32 +38,32 @@ i is:
 list of agents on v
 [0]
 v is
-(0, 0)
+(0, 0, 0)
 i is:
 1
 list of agents on v
 [1, 2]
 v is
-(0, 0)
-{0: (0, 1), 1: (1, 0), 2: (1, 0), 3: (0, 0)}
-{(0, 0): 'black', (0, 1): 'black', (0, 2): 'grey', (0, 3): 'grey', (0, 4): 'grey', (0, 5): 'grey', (1, 0): 'black', (1, 1): 'grey', (1, 2): 'grey', (1, 3): 'grey', (1, 4): 'grey', (1, 5): 'grey', (2, 0): 'grey', (2, 1): 'grey', (2, 2): 'grey', (2, 3): 'grey', (2, 4): 'grey', (2, 5): 'grey', (3, 0): 'grey', (3, 1): 'grey', (3, 2): 'grey', (3, 3): 'grey', (3, 4): 'grey', (3, 5): 'grey', (4, 0): 'grey', (4, 1): 'grey', (4, 2): 'grey', (4, 3): 'grey', (4, 4): 'grey', (4, 5): 'grey', (5, 0): 'grey', (5, 1): 'grey', (5, 2): 'grey', (5, 3): 'grey', (5, 4): 'grey', (5, 5): 'grey'}
+(0, 0, 0)
+{0: (0, 1, 0), 1: (1, 0, 0), 2: (1, 0, 0), 3: (0, 0, 0)}
+{(0, 0, 0): 'black', (0, 0, 1): 'grey', (0, 0, 2): 'grey', (0, 0, 3): 'grey', (0, 0, 4): 'grey', (0, 0, 5): 'grey', (0, 1, 0): 'black', (0, 1, 1): 'grey', (0, 1, 2): 'grey', (0, 1, 3): 'grey', (0, 1, 4): 'grey', (0, 1, 5): 'grey', (0, 2, 0): 'grey', (0, 2, 1): 'grey', (0, 2, 2): 'grey', (0, 2, 3): 'grey', (0, 2, 4): 'grey', (0, 2, 5): 'grey', (0, 3, 0): 'grey', (0, 3, 1): 'grey', (0, 3, 2): 'grey', (0, 3, 3): 'grey', (0, 3, 4): 'grey', (0, 3, 5): 'grey', (0, 4, 0): 'grey', (0, 4, 1): 'grey', (0, 4, 2): 'grey', (0, 4, 3): 'grey', (0, 4, 4): 'grey', (0, 4, 5): 'grey', (0, 5, 0): 'grey', (0, 5, 1): 'grey', (0, 5, 2): 'grey', (0, 5, 3): 'grey', (0, 5, 4): 'grey', (0, 5, 5): 'grey', (1, 0, 0): 'black', (1, 0, 1): 'grey', (1, 0, 2): 'grey', (1, 0, 3): 'grey', (1, 0, 4): 'grey', (1, 0, 5): 'grey', (1, 1, 0): 'grey', (1, 1, 1): 'grey', (1, 1, 2): 'grey', (1, 1, 3): 'grey', (1, 1, 4): 'grey', (1, 1, 5): 'grey', (1, 2, 0): 'grey', (1, 2, 1): 'grey', (1, 2, 2): 'grey', (1, 2, 3): 'grey', (1, 2, 4): 'grey', (1, 2, 5): 'grey', (1, 3, 0): 'grey', (1, 3, 1): 'grey', (1, 3, 2): 'grey', (1, 3, 3): 'grey', (1, 3, 4): 'grey', (1, 3, 5): 'grey', (1, 4, 0): 'grey', (1, 4, 1): 'grey', (1, 4, 2): 'grey', (1, 4, 3): 'grey', (1, 4, 4): 'grey', (1, 4, 5): 'grey', (1, 5, 0): 'grey', (1, 5, 1): 'grey', (1, 5, 2): 'grey', (1, 5, 3): 'grey', (1, 5, 4): 'grey', (1, 5, 5): 'grey', (2, 0, 0): 'grey', (2, 0, 1): 'grey', (2, 0, 2): 'grey', (2, 0, 3): 'grey', (2, 0, 4): 'grey', (2, 0, 5): 'grey', (2, 1, 0): 'grey', (2, 1, 1): 'grey', (2, 1, 2): 'grey', (2, 1, 3): 'grey', (2, 1, 4): 'grey', (2, 1, 5): 'grey', (2, 2, 0): 'grey', (2, 2, 1): 'grey', (2, 2, 2): 'grey', (2, 2, 3): 'grey', (2, 2, 4): 'grey', (2, 2, 5): 'grey', (2, 3, 0): 'grey', (2, 3, 1): 'grey', (2, 3, 2): 'grey', (2, 3, 3): 'grey', (2, 3, 4): 'grey', (2, 3, 5): 'grey', (2, 4, 0): 'grey', (2, 4, 1): 'grey', (2, 4, 2): 'grey', (2, 4, 3): 'grey', (2, 4, 4): 'grey', (2, 4, 5): 'grey', (2, 5, 0): 'grey', (2, 5, 1): 'grey', (2, 5, 2): 'grey', (2, 5, 3): 'grey', (2, 5, 4): 'grey', (2, 5, 5): 'grey', (3, 0, 0): 'grey', (3, 0, 1): 'grey', (3, 0, 2): 'grey', (3, 0, 3): 'grey', (3, 0, 4): 'grey', (3, 0, 5): 'grey', (3, 1, 0): 'grey', (3, 1, 1): 'grey', (3, 1, 2): 'grey', (3, 1, 3): 'grey', (3, 1, 4): 'grey', (3, 1, 5): 'grey', (3, 2, 0): 'grey', (3, 2, 1): 'grey', (3, 2, 2): 'grey', (3, 2, 3): 'grey', (3, 2, 4): 'grey', (3, 2, 5): 'grey', (3, 3, 0): 'grey', (3, 3, 1): 'grey', (3, 3, 2): 'grey', (3, 3, 3): 'grey', (3, 3, 4): 'grey', (3, 3, 5): 'grey', (3, 4, 0): 'grey', (3, 4, 1): 'grey', (3, 4, 2): 'grey', (3, 4, 3): 'grey', (3, 4, 4): 'grey', (3, 4, 5): 'grey', (3, 5, 0): 'grey', (3, 5, 1): 'grey', (3, 5, 2): 'grey', (3, 5, 3): 'grey', (3, 5, 4): 'grey', (3, 5, 5): 'grey', (4, 0, 0): 'grey', (4, 0, 1): 'grey', (4, 0, 2): 'grey', (4, 0, 3): 'grey', (4, 0, 4): 'grey', (4, 0, 5): 'grey', (4, 1, 0): 'grey', (4, 1, 1): 'grey', (4, 1, 2): 'grey', (4, 1, 3): 'grey', (4, 1, 4): 'grey', (4, 1, 5): 'grey', (4, 2, 0): 'grey', (4, 2, 1): 'grey', (4, 2, 2): 'grey', (4, 2, 3): 'grey', (4, 2, 4): 'grey', (4, 2, 5): 'grey', (4, 3, 0): 'grey', (4, 3, 1): 'grey', (4, 3, 2): 'grey', (4, 3, 3): 'grey', (4, 3, 4): 'grey', (4, 3, 5): 'grey', (4, 4, 0): 'grey', (4, 4, 1): 'grey', (4, 4, 2): 'grey', (4, 4, 3): 'grey', (4, 4, 4): 'grey', (4, 4, 5): 'grey', (4, 5, 0): 'grey', (4, 5, 1): 'grey', (4, 5, 2): 'grey', (4, 5, 3): 'grey', (4, 5, 4): 'grey', (4, 5, 5): 'grey', (5, 0, 0): 'grey', (5, 0, 1): 'grey', (5, 0, 2): 'grey', (5, 0, 3): 'grey', (5, 0, 4): 'grey', (5, 0, 5): 'grey', (5, 1, 0): 'grey', (5, 1, 1): 'grey', (5, 1, 2): 'grey', (5, 1, 3): 'grey', (5, 1, 4): 'grey', (5, 1, 5): 'grey', (5, 2, 0): 'grey', (5, 2, 1): 'grey', (5, 2, 2): 'grey', (5, 2, 3): 'grey', (5, 2, 4): 'grey', (5, 2, 5): 'grey', (5, 3, 0): 'grey', (5, 3, 1): 'grey', (5, 3, 2): 'grey', (5, 3, 3): 'grey', (5, 3, 4): 'grey', (5, 3, 5): 'grey', (5, 4, 0): 'grey', (5, 4, 1): 'grey', (5, 4, 2): 'grey', (5, 4, 3): 'grey', (5, 4, 4): 'grey', (5, 4, 5): 'grey', (5, 5, 0): 'grey', (5, 5, 1): 'grey', (5, 5, 2): 'grey', (5, 5, 3): 'grey', (5, 5, 4): 'grey', (5, 5, 5): 'grey'}
 iteration is over
 nr of iterations so far
 1
 values
-[(0, 1), (1, 0), (1, 0), (0, 0)]
+[(0, 1, 0), (1, 0, 0), (1, 0, 0), (0, 0, 0)]
 set(values)
-{(0, 1), (1, 0), (0, 0)}
-{0: (0, 1), 1: (1, 0), 2: (1, 0), 3: (0, 0)}
+{(1, 0, 0), (0, 0, 0), (0, 1, 0)}
+{0: (0, 1, 0), 1: (1, 0, 0), 2: (1, 0, 0), 3: (0, 0, 0)}
 flipped_agents
-{(0, 1): [0], (1, 0): [1, 2], (0, 0): [3]}
+{(0, 1, 0): [0], (1, 0, 0): [1, 2], (0, 0, 0): [3]}
 v is:
-(1, 0)
+(1, 0, 0)
 truest
 [1, 2]
 2
 edges_of_v_in_P
-[[(1, 0), (1, 1)]]
+[[(1, 0, 0), (1, 1, 0)]]
 p is:
 [1]
 i is:
@@ -70,114 +71,717 @@ i is:
 list of agents on v
 [1]
 v is
-(1, 0)
-{0: (0, 1), 1: (1, 1), 2: (1, 0), 3: (0, 0)}
-{(0, 0): 'black', (0, 1): 'black', (0, 2): 'grey', (0, 3): 'grey', (0, 4): 'grey', (0, 5): 'grey', (1, 0): 'black', (1, 1): 'black', (1, 2): 'grey', (1, 3): 'grey', (1, 4): 'grey', (1, 5): 'grey', (2, 0): 'grey', (2, 1): 'grey', (2, 2): 'grey', (2, 3): 'grey', (2, 4): 'grey', (2, 5): 'grey', (3, 0): 'grey', (3, 1): 'grey', (3, 2): 'grey', (3, 3): 'grey', (3, 4): 'grey', (3, 5): 'grey', (4, 0): 'grey', (4, 1): 'grey', (4, 2): 'grey', (4, 3): 'grey', (4, 4): 'grey', (4, 5): 'grey', (5, 0): 'grey', (5, 1): 'grey', (5, 2): 'grey', (5, 3): 'grey', (5, 4): 'grey', (5, 5): 'grey'}
+(1, 0, 0)
+{0: (0, 1, 0), 1: (1, 1, 0), 2: (1, 0, 0), 3: (0, 0, 0)}
+{(0, 0, 0): 'black', (0, 0, 1): 'grey', (0, 0, 2): 'grey', (0, 0, 3): 'grey', (0, 0, 4): 'grey', (0, 0, 5): 'grey', (0, 1, 0): 'black', (0, 1, 1): 'grey', (0, 1, 2): 'grey', (0, 1, 3): 'grey', (0, 1, 4): 'grey', (0, 1, 5): 'grey', (0, 2, 0): 'grey', (0, 2, 1): 'grey', (0, 2, 2): 'grey', (0, 2, 3): 'grey', (0, 2, 4): 'grey', (0, 2, 5): 'grey', (0, 3, 0): 'grey', (0, 3, 1): 'grey', (0, 3, 2): 'grey', (0, 3, 3): 'grey', (0, 3, 4): 'grey', (0, 3, 5): 'grey', (0, 4, 0): 'grey', (0, 4, 1): 'grey', (0, 4, 2): 'grey', (0, 4, 3): 'grey', (0, 4, 4): 'grey', (0, 4, 5): 'grey', (0, 5, 0): 'grey', (0, 5, 1): 'grey', (0, 5, 2): 'grey', (0, 5, 3): 'grey', (0, 5, 4): 'grey', (0, 5, 5): 'grey', (1, 0, 0): 'black', (1, 0, 1): 'grey', (1, 0, 2): 'grey', (1, 0, 3): 'grey', (1, 0, 4): 'grey', (1, 0, 5): 'grey', (1, 1, 0): 'black', (1, 1, 1): 'grey', (1, 1, 2): 'grey', (1, 1, 3): 'grey', (1, 1, 4): 'grey', (1, 1, 5): 'grey', (1, 2, 0): 'grey', (1, 2, 1): 'grey', (1, 2, 2): 'grey', (1, 2, 3): 'grey', (1, 2, 4): 'grey', (1, 2, 5): 'grey', (1, 3, 0): 'grey', (1, 3, 1): 'grey', (1, 3, 2): 'grey', (1, 3, 3): 'grey', (1, 3, 4): 'grey', (1, 3, 5): 'grey', (1, 4, 0): 'grey', (1, 4, 1): 'grey', (1, 4, 2): 'grey', (1, 4, 3): 'grey', (1, 4, 4): 'grey', (1, 4, 5): 'grey', (1, 5, 0): 'grey', (1, 5, 1): 'grey', (1, 5, 2): 'grey', (1, 5, 3): 'grey', (1, 5, 4): 'grey', (1, 5, 5): 'grey', (2, 0, 0): 'grey', (2, 0, 1): 'grey', (2, 0, 2): 'grey', (2, 0, 3): 'grey', (2, 0, 4): 'grey', (2, 0, 5): 'grey', (2, 1, 0): 'grey', (2, 1, 1): 'grey', (2, 1, 2): 'grey', (2, 1, 3): 'grey', (2, 1, 4): 'grey', (2, 1, 5): 'grey', (2, 2, 0): 'grey', (2, 2, 1): 'grey', (2, 2, 2): 'grey', (2, 2, 3): 'grey', (2, 2, 4): 'grey', (2, 2, 5): 'grey', (2, 3, 0): 'grey', (2, 3, 1): 'grey', (2, 3, 2): 'grey', (2, 3, 3): 'grey', (2, 3, 4): 'grey', (2, 3, 5): 'grey', (2, 4, 0): 'grey', (2, 4, 1): 'grey', (2, 4, 2): 'grey', (2, 4, 3): 'grey', (2, 4, 4): 'grey', (2, 4, 5): 'grey', (2, 5, 0): 'grey', (2, 5, 1): 'grey', (2, 5, 2): 'grey', (2, 5, 3): 'grey', (2, 5, 4): 'grey', (2, 5, 5): 'grey', (3, 0, 0): 'grey', (3, 0, 1): 'grey', (3, 0, 2): 'grey', (3, 0, 3): 'grey', (3, 0, 4): 'grey', (3, 0, 5): 'grey', (3, 1, 0): 'grey', (3, 1, 1): 'grey', (3, 1, 2): 'grey', (3, 1, 3): 'grey', (3, 1, 4): 'grey', (3, 1, 5): 'grey', (3, 2, 0): 'grey', (3, 2, 1): 'grey', (3, 2, 2): 'grey', (3, 2, 3): 'grey', (3, 2, 4): 'grey', (3, 2, 5): 'grey', (3, 3, 0): 'grey', (3, 3, 1): 'grey', (3, 3, 2): 'grey', (3, 3, 3): 'grey', (3, 3, 4): 'grey', (3, 3, 5): 'grey', (3, 4, 0): 'grey', (3, 4, 1): 'grey', (3, 4, 2): 'grey', (3, 4, 3): 'grey', (3, 4, 4): 'grey', (3, 4, 5): 'grey', (3, 5, 0): 'grey', (3, 5, 1): 'grey', (3, 5, 2): 'grey', (3, 5, 3): 'grey', (3, 5, 4): 'grey', (3, 5, 5): 'grey', (4, 0, 0): 'grey', (4, 0, 1): 'grey', (4, 0, 2): 'grey', (4, 0, 3): 'grey', (4, 0, 4): 'grey', (4, 0, 5): 'grey', (4, 1, 0): 'grey', (4, 1, 1): 'grey', (4, 1, 2): 'grey', (4, 1, 3): 'grey', (4, 1, 4): 'grey', (4, 1, 5): 'grey', (4, 2, 0): 'grey', (4, 2, 1): 'grey', (4, 2, 2): 'grey', (4, 2, 3): 'grey', (4, 2, 4): 'grey', (4, 2, 5): 'grey', (4, 3, 0): 'grey', (4, 3, 1): 'grey', (4, 3, 2): 'grey', (4, 3, 3): 'grey', (4, 3, 4): 'grey', (4, 3, 5): 'grey', (4, 4, 0): 'grey', (4, 4, 1): 'grey', (4, 4, 2): 'grey', (4, 4, 3): 'grey', (4, 4, 4): 'grey', (4, 4, 5): 'grey', (4, 5, 0): 'grey', (4, 5, 1): 'grey', (4, 5, 2): 'grey', (4, 5, 3): 'grey', (4, 5, 4): 'grey', (4, 5, 5): 'grey', (5, 0, 0): 'grey', (5, 0, 1): 'grey', (5, 0, 2): 'grey', (5, 0, 3): 'grey', (5, 0, 4): 'grey', (5, 0, 5): 'grey', (5, 1, 0): 'grey', (5, 1, 1): 'grey', (5, 1, 2): 'grey', (5, 1, 3): 'grey', (5, 1, 4): 'grey', (5, 1, 5): 'grey', (5, 2, 0): 'grey', (5, 2, 1): 'grey', (5, 2, 2): 'grey', (5, 2, 3): 'grey', (5, 2, 4): 'grey', (5, 2, 5): 'grey', (5, 3, 0): 'grey', (5, 3, 1): 'grey', (5, 3, 2): 'grey', (5, 3, 3): 'grey', (5, 3, 4): 'grey', (5, 3, 5): 'grey', (5, 4, 0): 'grey', (5, 4, 1): 'grey', (5, 4, 2): 'grey', (5, 4, 3): 'grey', (5, 4, 4): 'grey', (5, 4, 5): 'grey', (5, 5, 0): 'grey', (5, 5, 1): 'grey', (5, 5, 2): 'grey', (5, 5, 3): 'grey', (5, 5, 4): 'grey', (5, 5, 5): 'grey'}
 iteration is over
 nr of iterations so far
 2
 values
-[(0, 1), (1, 1), (1, 0), (0, 0)]
+[(0, 1, 0), (1, 1, 0), (1, 0, 0), (0, 0, 0)]
 set(values)
-{(0, 1), (1, 0), (1, 1), (0, 0)}
-{0: (0, 1), 1: (1, 1), 2: (1, 0), 3: (0, 0)}
-{0: (0, 1), 1: (1, 1), 2: (1, 0), 3: (0, 0)}
-the path from spare to agent is [(0, 0), (0, 1)]
-the path from spare to agent is [(0, 0), (0, 1), (1, 1)]
-spare agent 1 moved to (0, 1)
-the path from spare to agent is [(0, 0), (1, 0)]
-the path from spare to agent is [(0, 0)]
+{(1, 0, 0), (0, 0, 0), (1, 1, 0), (0, 1, 0)}
+{0: (0, 1, 0), 1: (1, 1, 0), 2: (1, 0, 0), 3: (0, 0, 0)}
+agents at the end of INITIAL SET
+{0: (0, 1, 0), 1: (1, 1, 0), 2: (1, 0, 0), 3: (0, 0, 0)}
+the path from spare to agent is [(0, 0, 0), (0, 1, 0)]
+the path from spare to agent is [(0, 0, 0), (0, 1, 0), (1, 1, 0)]
+spare agent 1 moved to (0, 1, 0)
+the path from spare to agent is [(0, 0, 0), (1, 0, 0)]
+the path from spare to agent is [(0, 0, 0)]
+agentstart is {0: (0, 1, 0), 1: (1, 1, 0), 2: (1, 0, 0), 3: (0, 0, 0)}
+spareagentstart is {0: (0, 0, 0), 1: (0, 1, 0), 2: (0, 0, 0), 3: (0, 0, 0)}
+target_agents are {0: 0, 1: 1, 2: 2, 3: 3}
+ITERCUBE else is commencing
+ITERCUBE s == 6-m commencing
+value of t is 2
 cube is starting
+agents are {0: (0, 1, 0), 1: (2, 1, 0), 2: (2, 0, 0), 3: (0, 0, 0)}
+move_counter is 7
 we just moved the agents on the vertices, where 1st coord is 1, its first coord is changed by 1
-shift became
-1
-agents are at {0: (0, 1), 1: (2, 1), 2: (2, 0), 3: (0, 0)}
-spare agents are in the position at {0: (0, 1), 1: (1, 1), 2: (1, 0), 3: (0, 0)}
-{0: (0, 1), 1: (2, 1), 2: (2, 0), 3: (0, 0)}
-we just moved the agents on the vertices, where 1st coord is 2, its first coord is changed by 1
-shift became
-2
-agents are at {0: (0, 1), 1: (3, 1), 2: (3, 0), 3: (0, 0)}
-spare agents are in the position at {0: (0, 1), 1: (2, 1), 2: (2, 0), 3: (0, 0)}
-{0: (0, 1), 1: (3, 1), 2: (3, 0), 3: (0, 0)}
-we just moved the agents on the vertices, where 1st coord is 3, its first coord is changed by 1
-shift became
-3
-agents are at {0: (0, 1), 1: (4, 1), 2: (4, 0), 3: (0, 0)}
-spare agents are in the position at {0: (0, 1), 1: (3, 1), 2: (3, 0), 3: (0, 0)}
-{0: (0, 1), 1: (4, 1), 2: (4, 0), 3: (0, 0)}
-we just moved the agents on the vertices, where 1st coord is 4, its first coord is changed by 1
-shift became
-4
-agents are at {0: (0, 1), 1: (5, 1), 2: (5, 0), 3: (0, 0)}
-spare agents are in the position at {0: (0, 1), 1: (4, 1), 2: (4, 0), 3: (0, 0)}
-{0: (0, 1), 1: (5, 1), 2: (5, 0), 3: (0, 0)}
-agents are at {0: (0, 2), 1: (5, 2), 2: (5, 5), 3: (0, 5)}
-spare agents are in the position at {0: (0, 1), 1: (5, 1), 2: (5, 0), 3: (0, 0)}
-agent_which is 2
-agent_when is 28
+agents are at {0: (0, 1, 0), 1: (2, 1, 0), 2: (2, 0, 0), 3: (0, 0, 0)}
+previous_agents are {0: (0, 1, 0), 1: (1, 1, 0), 2: (1, 0, 0), 3: (0, 0, 0)}
+spare agents are in the position at {0: (0, 1, 0), 1: (1, 1, 0), 2: (1, 0, 0), 3: (0, 0, 0)}
+{0: (0, 1, 0), 1: (2, 1, 0), 2: (2, 0, 0), 3: (0, 0, 0)}
+agents are {0: (0, 1, 0), 1: (3, 1, 0), 2: (3, 0, 0), 3: (0, 0, 0)}
+move_counter is 12
+we just moved the agents on the vertices, where 1st coord is 1, its first coord is changed by 1
+agents are at {0: (0, 1, 0), 1: (3, 1, 0), 2: (3, 0, 0), 3: (0, 0, 0)}
+previous_agents are {0: (0, 1, 0), 1: (2, 1, 0), 2: (2, 0, 0), 3: (0, 0, 0)}
+spare agents are in the position at {0: (0, 1, 0), 1: (2, 1, 0), 2: (2, 0, 0), 3: (0, 0, 0)}
+{0: (0, 1, 0), 1: (3, 1, 0), 2: (3, 0, 0), 3: (0, 0, 0)}
+agents are {0: (0, 1, 0), 1: (4, 1, 0), 2: (4, 0, 0), 3: (0, 0, 0)}
+move_counter is 16
+we just moved the agents on the vertices, where 1st coord is 1, its first coord is changed by 1
+agents are at {0: (0, 1, 0), 1: (4, 1, 0), 2: (4, 0, 0), 3: (0, 0, 0)}
+previous_agents are {0: (0, 1, 0), 1: (3, 1, 0), 2: (3, 0, 0), 3: (0, 0, 0)}
+spare agents are in the position at {0: (0, 1, 0), 1: (3, 1, 0), 2: (3, 0, 0), 3: (0, 0, 0)}
+{0: (0, 1, 0), 1: (4, 1, 0), 2: (4, 0, 0), 3: (0, 0, 0)}
+agents are {0: (0, 1, 0), 1: (5, 1, 0), 2: (5, 0, 0), 3: (0, 0, 0)}
+move_counter is 20
+we just moved the agents on the vertices, where 1st coord is 1, its first coord is changed by 1
+agents are at {0: (0, 1, 0), 1: (5, 1, 0), 2: (5, 0, 0), 3: (0, 0, 0)}
+previous_agents are {0: (0, 1, 0), 1: (4, 1, 0), 2: (4, 0, 0), 3: (0, 0, 0)}
+spare agents are in the position at {0: (0, 1, 0), 1: (4, 1, 0), 2: (4, 0, 0), 3: (0, 0, 0)}
+{0: (0, 1, 0), 1: (5, 1, 0), 2: (5, 0, 0), 3: (0, 0, 0)}
+value of y is -1
+agents are {0: (0, 1, 0), 1: (5, 1, 0), 2: (5, 5, 0), 3: (0, 5, 0)}
+move_counter is 24
+agents are {0: (0, 2, 0), 1: (5, 2, 0), 2: (5, 5, 0), 3: (0, 5, 0)}
+move_counter is 26
+agents are at {0: (0, 2, 0), 1: (5, 2, 0), 2: (5, 5, 0), 3: (0, 5, 0)}
+spare agents are in the position at {0: (0, 1, 0), 1: (5, 1, 0), 2: (5, 0, 0), 3: (0, 0, 0)}
+if happened (moving along second dimension)
+{0: (0, 2, 0), 1: (5, 2, 0), 2: (5, 5, 0), 3: (0, 5, 0)}
+we finshed
+agents are {0: (0, 2, 0), 1: (4, 2, 0), 2: (4, 5, 0), 3: (0, 5, 0)}
+move_counter is 30
+we just moved the agents on the vertices, where 1st coord is 1, its first coord is changed by -1
+agents are at {0: (0, 2, 0), 1: (4, 2, 0), 2: (4, 5, 0), 3: (0, 5, 0)}
+previous_agents are {0: (0, 2, 0), 1: (5, 2, 0), 2: (5, 5, 0), 3: (0, 5, 0)}
+spare agents are in the position at {0: (0, 2, 0), 1: (5, 2, 0), 2: (5, 5, 0), 3: (0, 5, 0)}
+{0: (0, 2, 0), 1: (4, 2, 0), 2: (4, 5, 0), 3: (0, 5, 0)}
+agents are {0: (0, 2, 0), 1: (3, 2, 0), 2: (3, 5, 0), 3: (0, 5, 0)}
+move_counter is 36
+we just moved the agents on the vertices, where 1st coord is 1, its first coord is changed by -1
+agents are at {0: (0, 2, 0), 1: (3, 2, 0), 2: (3, 5, 0), 3: (0, 5, 0)}
+previous_agents are {0: (0, 2, 0), 1: (4, 2, 0), 2: (4, 5, 0), 3: (0, 5, 0)}
+spare agents are in the position at {0: (0, 2, 0), 1: (4, 2, 0), 2: (4, 5, 0), 3: (0, 5, 0)}
+{0: (0, 2, 0), 1: (3, 2, 0), 2: (3, 5, 0), 3: (0, 5, 0)}
+agents are {0: (0, 2, 0), 1: (2, 2, 0), 2: (2, 5, 0), 3: (0, 5, 0)}
+move_counter is 40
+we just moved the agents on the vertices, where 1st coord is 1, its first coord is changed by -1
+agents are at {0: (0, 2, 0), 1: (2, 2, 0), 2: (2, 5, 0), 3: (0, 5, 0)}
+previous_agents are {0: (0, 2, 0), 1: (3, 2, 0), 2: (3, 5, 0), 3: (0, 5, 0)}
+spare agents are in the position at {0: (0, 2, 0), 1: (3, 2, 0), 2: (3, 5, 0), 3: (0, 5, 0)}
+{0: (0, 2, 0), 1: (2, 2, 0), 2: (2, 5, 0), 3: (0, 5, 0)}
+agents are {0: (0, 2, 0), 1: (1, 2, 0), 2: (1, 5, 0), 3: (0, 5, 0)}
+move_counter is 44
+we just moved the agents on the vertices, where 1st coord is 1, its first coord is changed by -1
+agents are at {0: (0, 2, 0), 1: (1, 2, 0), 2: (1, 5, 0), 3: (0, 5, 0)}
+previous_agents are {0: (0, 2, 0), 1: (2, 2, 0), 2: (2, 5, 0), 3: (0, 5, 0)}
+spare agents are in the position at {0: (0, 2, 0), 1: (2, 2, 0), 2: (2, 5, 0), 3: (0, 5, 0)}
+{0: (0, 2, 0), 1: (1, 2, 0), 2: (1, 5, 0), 3: (0, 5, 0)}
+value of y is 1
+agents are {0: (0, 2, 0), 1: (1, 2, 0), 2: (1, 4, 0), 3: (0, 4, 0)}
+move_counter is 48
+agents are {0: (0, 3, 0), 1: (1, 3, 0), 2: (1, 4, 0), 3: (0, 4, 0)}
+move_counter is 50
+agents are at {0: (0, 3, 0), 1: (1, 3, 0), 2: (1, 4, 0), 3: (0, 4, 0)}
+spare agents are in the position at {0: (0, 2, 0), 1: (1, 2, 0), 2: (1, 5, 0), 3: (0, 5, 0)}
+if happened (moving along second dimension)
+{0: (0, 3, 0), 1: (1, 3, 0), 2: (1, 4, 0), 3: (0, 4, 0)}
+we finshed
+agents are {0: (0, 3, 0), 1: (2, 3, 0), 2: (2, 4, 0), 3: (0, 4, 0)}
+move_counter is 54
+we just moved the agents on the vertices, where 1st coord is 1, its first coord is changed by 1
+agents are at {0: (0, 3, 0), 1: (2, 3, 0), 2: (2, 4, 0), 3: (0, 4, 0)}
+previous_agents are {0: (0, 3, 0), 1: (1, 3, 0), 2: (1, 4, 0), 3: (0, 4, 0)}
+spare agents are in the position at {0: (0, 3, 0), 1: (1, 3, 0), 2: (1, 4, 0), 3: (0, 4, 0)}
+{0: (0, 3, 0), 1: (2, 3, 0), 2: (2, 4, 0), 3: (0, 4, 0)}
+agents are {0: (0, 3, 0), 1: (3, 3, 0), 2: (3, 4, 0), 3: (0, 4, 0)}
+move_counter is 60
+we just moved the agents on the vertices, where 1st coord is 1, its first coord is changed by 1
+agents are at {0: (0, 3, 0), 1: (3, 3, 0), 2: (3, 4, 0), 3: (0, 4, 0)}
+previous_agents are {0: (0, 3, 0), 1: (2, 3, 0), 2: (2, 4, 0), 3: (0, 4, 0)}
+spare agents are in the position at {0: (0, 3, 0), 1: (2, 3, 0), 2: (2, 4, 0), 3: (0, 4, 0)}
+{0: (0, 3, 0), 1: (3, 3, 0), 2: (3, 4, 0), 3: (0, 4, 0)}
+agents are {0: (0, 3, 0), 1: (4, 3, 0), 2: (4, 4, 0), 3: (0, 4, 0)}
+move_counter is 64
+we just moved the agents on the vertices, where 1st coord is 1, its first coord is changed by 1
+agents are at {0: (0, 3, 0), 1: (4, 3, 0), 2: (4, 4, 0), 3: (0, 4, 0)}
+previous_agents are {0: (0, 3, 0), 1: (3, 3, 0), 2: (3, 4, 0), 3: (0, 4, 0)}
+spare agents are in the position at {0: (0, 3, 0), 1: (3, 3, 0), 2: (3, 4, 0), 3: (0, 4, 0)}
+{0: (0, 3, 0), 1: (4, 3, 0), 2: (4, 4, 0), 3: (0, 4, 0)}
+agents are {0: (0, 3, 0), 1: (5, 3, 0), 2: (5, 4, 0), 3: (0, 4, 0)}
+move_counter is 68
+we just moved the agents on the vertices, where 1st coord is 1, its first coord is changed by 1
+agents are at {0: (0, 3, 0), 1: (5, 3, 0), 2: (5, 4, 0), 3: (0, 4, 0)}
+previous_agents are {0: (0, 3, 0), 1: (4, 3, 0), 2: (4, 4, 0), 3: (0, 4, 0)}
+spare agents are in the position at {0: (0, 3, 0), 1: (4, 3, 0), 2: (4, 4, 0), 3: (0, 4, 0)}
+{0: (0, 3, 0), 1: (5, 3, 0), 2: (5, 4, 0), 3: (0, 4, 0)}
+value of y is -1
+we finshed
+moving 1 in the 3th dimension
+{0: (0, 3, 1), 1: (5, 3, 1), 2: (5, 4, 1), 3: (0, 4, 1)}
+agents are at {0: (0, 3, 1), 1: (5, 3, 1), 2: (5, 4, 1), 3: (0, 4, 1)}
+spare agents are in the position at {0: (0, 1, 0), 1: (1, 1, 0), 2: (1, 0, 0), 3: (0, 0, 0)}
+ITERCUBE s == 6-m commencing
+value of t is 2
+cube is starting
+agents are {0: (0, 3, 1), 1: (4, 3, 1), 2: (4, 4, 1), 3: (0, 4, 1)}
+move_counter is 80
+we just moved the agents on the vertices, where 1st coord is 1, its first coord is changed by -1
+agents are at {0: (0, 3, 1), 1: (4, 3, 1), 2: (4, 4, 1), 3: (0, 4, 1)}
+previous_agents are {0: (0, 3, 1), 1: (5, 3, 1), 2: (5, 4, 1), 3: (0, 4, 1)}
+spare agents are in the position at {0: (0, 3, 1), 1: (5, 3, 1), 2: (5, 4, 1), 3: (0, 4, 1)}
+{0: (0, 3, 1), 1: (4, 3, 1), 2: (4, 4, 1), 3: (0, 4, 1)}
+agents are {0: (0, 3, 1), 1: (3, 3, 1), 2: (3, 4, 1), 3: (0, 4, 1)}
+move_counter is 86
+we just moved the agents on the vertices, where 1st coord is 1, its first coord is changed by -1
+agents are at {0: (0, 3, 1), 1: (3, 3, 1), 2: (3, 4, 1), 3: (0, 4, 1)}
+previous_agents are {0: (0, 3, 1), 1: (4, 3, 1), 2: (4, 4, 1), 3: (0, 4, 1)}
+spare agents are in the position at {0: (0, 3, 1), 1: (4, 3, 1), 2: (4, 4, 1), 3: (0, 4, 1)}
+{0: (0, 3, 1), 1: (3, 3, 1), 2: (3, 4, 1), 3: (0, 4, 1)}
+agents are {0: (0, 3, 1), 1: (2, 3, 1), 2: (2, 4, 1), 3: (0, 4, 1)}
+move_counter is 90
+we just moved the agents on the vertices, where 1st coord is 1, its first coord is changed by -1
+agents are at {0: (0, 3, 1), 1: (2, 3, 1), 2: (2, 4, 1), 3: (0, 4, 1)}
+previous_agents are {0: (0, 3, 1), 1: (3, 3, 1), 2: (3, 4, 1), 3: (0, 4, 1)}
+spare agents are in the position at {0: (0, 3, 1), 1: (3, 3, 1), 2: (3, 4, 1), 3: (0, 4, 1)}
+{0: (0, 3, 1), 1: (2, 3, 1), 2: (2, 4, 1), 3: (0, 4, 1)}
+agents are {0: (0, 3, 1), 1: (1, 3, 1), 2: (1, 4, 1), 3: (0, 4, 1)}
+move_counter is 94
+we just moved the agents on the vertices, where 1st coord is 1, its first coord is changed by -1
+agents are at {0: (0, 3, 1), 1: (1, 3, 1), 2: (1, 4, 1), 3: (0, 4, 1)}
+previous_agents are {0: (0, 3, 1), 1: (2, 3, 1), 2: (2, 4, 1), 3: (0, 4, 1)}
+spare agents are in the position at {0: (0, 3, 1), 1: (2, 3, 1), 2: (2, 4, 1), 3: (0, 4, 1)}
+{0: (0, 3, 1), 1: (1, 3, 1), 2: (1, 4, 1), 3: (0, 4, 1)}
+value of y is 1
+agents are {0: (0, 3, 1), 1: (1, 3, 1), 2: (1, 5, 1), 3: (0, 5, 1)}
+move_counter is 98
+agents are {0: (0, 2, 1), 1: (1, 2, 1), 2: (1, 5, 1), 3: (0, 5, 1)}
+move_counter is 100
+agents are at {0: (0, 2, 1), 1: (1, 2, 1), 2: (1, 5, 1), 3: (0, 5, 1)}
+spare agents are in the position at {0: (0, 3, 1), 1: (1, 3, 1), 2: (1, 4, 1), 3: (0, 4, 1)}
+if happened (moving along second dimension)
+{0: (0, 2, 1), 1: (1, 2, 1), 2: (1, 5, 1), 3: (0, 5, 1)}
+we finshed
+agents are {0: (0, 2, 1), 1: (2, 2, 1), 2: (2, 5, 1), 3: (0, 5, 1)}
+move_counter is 104
+we just moved the agents on the vertices, where 1st coord is 1, its first coord is changed by 1
+agents are at {0: (0, 2, 1), 1: (2, 2, 1), 2: (2, 5, 1), 3: (0, 5, 1)}
+previous_agents are {0: (0, 2, 1), 1: (1, 2, 1), 2: (1, 5, 1), 3: (0, 5, 1)}
+spare agents are in the position at {0: (0, 2, 1), 1: (1, 2, 1), 2: (1, 5, 1), 3: (0, 5, 1)}
+{0: (0, 2, 1), 1: (2, 2, 1), 2: (2, 5, 1), 3: (0, 5, 1)}
+agents are {0: (0, 2, 1), 1: (3, 2, 1), 2: (3, 5, 1), 3: (0, 5, 1)}
+move_counter is 110
+we just moved the agents on the vertices, where 1st coord is 1, its first coord is changed by 1
+agents are at {0: (0, 2, 1), 1: (3, 2, 1), 2: (3, 5, 1), 3: (0, 5, 1)}
+previous_agents are {0: (0, 2, 1), 1: (2, 2, 1), 2: (2, 5, 1), 3: (0, 5, 1)}
+spare agents are in the position at {0: (0, 2, 1), 1: (2, 2, 1), 2: (2, 5, 1), 3: (0, 5, 1)}
+{0: (0, 2, 1), 1: (3, 2, 1), 2: (3, 5, 1), 3: (0, 5, 1)}
+agents are {0: (0, 2, 1), 1: (4, 2, 1), 2: (4, 5, 1), 3: (0, 5, 1)}
+move_counter is 114
+we just moved the agents on the vertices, where 1st coord is 1, its first coord is changed by 1
+agents are at {0: (0, 2, 1), 1: (4, 2, 1), 2: (4, 5, 1), 3: (0, 5, 1)}
+previous_agents are {0: (0, 2, 1), 1: (3, 2, 1), 2: (3, 5, 1), 3: (0, 5, 1)}
+spare agents are in the position at {0: (0, 2, 1), 1: (3, 2, 1), 2: (3, 5, 1), 3: (0, 5, 1)}
+{0: (0, 2, 1), 1: (4, 2, 1), 2: (4, 5, 1), 3: (0, 5, 1)}
+agents are {0: (0, 2, 1), 1: (5, 2, 1), 2: (5, 5, 1), 3: (0, 5, 1)}
+move_counter is 118
+we just moved the agents on the vertices, where 1st coord is 1, its first coord is changed by 1
+agents are at {0: (0, 2, 1), 1: (5, 2, 1), 2: (5, 5, 1), 3: (0, 5, 1)}
+previous_agents are {0: (0, 2, 1), 1: (4, 2, 1), 2: (4, 5, 1), 3: (0, 5, 1)}
+spare agents are in the position at {0: (0, 2, 1), 1: (4, 2, 1), 2: (4, 5, 1), 3: (0, 5, 1)}
+{0: (0, 2, 1), 1: (5, 2, 1), 2: (5, 5, 1), 3: (0, 5, 1)}
+value of y is -1
+agents are {0: (0, 2, 1), 1: (5, 2, 1), 2: (5, 0, 1), 3: (0, 0, 1)}
+move_counter is 122
+agents are {0: (0, 1, 1), 1: (5, 1, 1), 2: (5, 0, 1), 3: (0, 0, 1)}
+move_counter is 124
+agents are at {0: (0, 1, 1), 1: (5, 1, 1), 2: (5, 0, 1), 3: (0, 0, 1)}
+spare agents are in the position at {0: (0, 2, 1), 1: (5, 2, 1), 2: (5, 5, 1), 3: (0, 5, 1)}
+if happened (moving along second dimension)
+{0: (0, 1, 1), 1: (5, 1, 1), 2: (5, 0, 1), 3: (0, 0, 1)}
+we finshed
+agents are {0: (0, 1, 1), 1: (4, 1, 1), 2: (4, 0, 1), 3: (0, 0, 1)}
+move_counter is 128
+we just moved the agents on the vertices, where 1st coord is 1, its first coord is changed by -1
+agents are at {0: (0, 1, 1), 1: (4, 1, 1), 2: (4, 0, 1), 3: (0, 0, 1)}
+previous_agents are {0: (0, 1, 1), 1: (5, 1, 1), 2: (5, 0, 1), 3: (0, 0, 1)}
+spare agents are in the position at {0: (0, 1, 1), 1: (5, 1, 1), 2: (5, 0, 1), 3: (0, 0, 1)}
+{0: (0, 1, 1), 1: (4, 1, 1), 2: (4, 0, 1), 3: (0, 0, 1)}
+agents are {0: (0, 1, 1), 1: (3, 1, 1), 2: (3, 0, 1), 3: (0, 0, 1)}
+move_counter is 134
+we just moved the agents on the vertices, where 1st coord is 1, its first coord is changed by -1
+agents are at {0: (0, 1, 1), 1: (3, 1, 1), 2: (3, 0, 1), 3: (0, 0, 1)}
+previous_agents are {0: (0, 1, 1), 1: (4, 1, 1), 2: (4, 0, 1), 3: (0, 0, 1)}
+spare agents are in the position at {0: (0, 1, 1), 1: (4, 1, 1), 2: (4, 0, 1), 3: (0, 0, 1)}
+{0: (0, 1, 1), 1: (3, 1, 1), 2: (3, 0, 1), 3: (0, 0, 1)}
+agents are {0: (0, 1, 1), 1: (2, 1, 1), 2: (2, 0, 1), 3: (0, 0, 1)}
+move_counter is 138
+we just moved the agents on the vertices, where 1st coord is 1, its first coord is changed by -1
+agents are at {0: (0, 1, 1), 1: (2, 1, 1), 2: (2, 0, 1), 3: (0, 0, 1)}
+previous_agents are {0: (0, 1, 1), 1: (3, 1, 1), 2: (3, 0, 1), 3: (0, 0, 1)}
+spare agents are in the position at {0: (0, 1, 1), 1: (3, 1, 1), 2: (3, 0, 1), 3: (0, 0, 1)}
+{0: (0, 1, 1), 1: (2, 1, 1), 2: (2, 0, 1), 3: (0, 0, 1)}
+agents are {0: (0, 1, 1), 1: (1, 1, 1), 2: (1, 0, 1), 3: (0, 0, 1)}
+move_counter is 142
+we just moved the agents on the vertices, where 1st coord is 1, its first coord is changed by -1
+agents are at {0: (0, 1, 1), 1: (1, 1, 1), 2: (1, 0, 1), 3: (0, 0, 1)}
+previous_agents are {0: (0, 1, 1), 1: (2, 1, 1), 2: (2, 0, 1), 3: (0, 0, 1)}
+spare agents are in the position at {0: (0, 1, 1), 1: (2, 1, 1), 2: (2, 0, 1), 3: (0, 0, 1)}
+{0: (0, 1, 1), 1: (1, 1, 1), 2: (1, 0, 1), 3: (0, 0, 1)}
+value of y is 1
+we finshed
+moving 1 in the 3th dimension
+{0: (0, 1, 2), 1: (1, 1, 2), 2: (1, 0, 2), 3: (0, 0, 2)}
+agents are at {0: (0, 1, 2), 1: (1, 1, 2), 2: (1, 0, 2), 3: (0, 0, 2)}
+spare agents are in the position at {0: (0, 3, 1), 1: (5, 3, 1), 2: (5, 4, 1), 3: (0, 4, 1)}
+ITERCUBE s == 6-m commencing
+value of t is 2
+cube is starting
+agents are {0: (0, 1, 2), 1: (2, 1, 2), 2: (2, 0, 2), 3: (0, 0, 2)}
+move_counter is 154
+we just moved the agents on the vertices, where 1st coord is 1, its first coord is changed by 1
+agents are at {0: (0, 1, 2), 1: (2, 1, 2), 2: (2, 0, 2), 3: (0, 0, 2)}
+previous_agents are {0: (0, 1, 2), 1: (1, 1, 2), 2: (1, 0, 2), 3: (0, 0, 2)}
+spare agents are in the position at {0: (0, 1, 2), 1: (1, 1, 2), 2: (1, 0, 2), 3: (0, 0, 2)}
+{0: (0, 1, 2), 1: (2, 1, 2), 2: (2, 0, 2), 3: (0, 0, 2)}
+agents are {0: (0, 1, 2), 1: (3, 1, 2), 2: (3, 0, 2), 3: (0, 0, 2)}
+move_counter is 160
+we just moved the agents on the vertices, where 1st coord is 1, its first coord is changed by 1
+agents are at {0: (0, 1, 2), 1: (3, 1, 2), 2: (3, 0, 2), 3: (0, 0, 2)}
+previous_agents are {0: (0, 1, 2), 1: (2, 1, 2), 2: (2, 0, 2), 3: (0, 0, 2)}
+spare agents are in the position at {0: (0, 1, 2), 1: (2, 1, 2), 2: (2, 0, 2), 3: (0, 0, 2)}
+{0: (0, 1, 2), 1: (3, 1, 2), 2: (3, 0, 2), 3: (0, 0, 2)}
+agents are {0: (0, 1, 2), 1: (4, 1, 2), 2: (4, 0, 2), 3: (0, 0, 2)}
+move_counter is 164
+we just moved the agents on the vertices, where 1st coord is 1, its first coord is changed by 1
+agents are at {0: (0, 1, 2), 1: (4, 1, 2), 2: (4, 0, 2), 3: (0, 0, 2)}
+previous_agents are {0: (0, 1, 2), 1: (3, 1, 2), 2: (3, 0, 2), 3: (0, 0, 2)}
+spare agents are in the position at {0: (0, 1, 2), 1: (3, 1, 2), 2: (3, 0, 2), 3: (0, 0, 2)}
+{0: (0, 1, 2), 1: (4, 1, 2), 2: (4, 0, 2), 3: (0, 0, 2)}
+agents are {0: (0, 1, 2), 1: (5, 1, 2), 2: (5, 0, 2), 3: (0, 0, 2)}
+move_counter is 168
+we just moved the agents on the vertices, where 1st coord is 1, its first coord is changed by 1
+agents are at {0: (0, 1, 2), 1: (5, 1, 2), 2: (5, 0, 2), 3: (0, 0, 2)}
+previous_agents are {0: (0, 1, 2), 1: (4, 1, 2), 2: (4, 0, 2), 3: (0, 0, 2)}
+spare agents are in the position at {0: (0, 1, 2), 1: (4, 1, 2), 2: (4, 0, 2), 3: (0, 0, 2)}
+{0: (0, 1, 2), 1: (5, 1, 2), 2: (5, 0, 2), 3: (0, 0, 2)}
+value of y is -1
+agents are {0: (0, 1, 2), 1: (5, 1, 2), 2: (5, 5, 2), 3: (0, 5, 2)}
+move_counter is 172
+agents are {0: (0, 2, 2), 1: (5, 2, 2), 2: (5, 5, 2), 3: (0, 5, 2)}
+move_counter is 174
+agents are at {0: (0, 2, 2), 1: (5, 2, 2), 2: (5, 5, 2), 3: (0, 5, 2)}
+spare agents are in the position at {0: (0, 1, 2), 1: (5, 1, 2), 2: (5, 0, 2), 3: (0, 0, 2)}
+if happened (moving along second dimension)
+{0: (0, 2, 2), 1: (5, 2, 2), 2: (5, 5, 2), 3: (0, 5, 2)}
+we finshed
+agents are {0: (0, 2, 2), 1: (4, 2, 2), 2: (4, 5, 2), 3: (0, 5, 2)}
+move_counter is 178
+we just moved the agents on the vertices, where 1st coord is 1, its first coord is changed by -1
+agents are at {0: (0, 2, 2), 1: (4, 2, 2), 2: (4, 5, 2), 3: (0, 5, 2)}
+previous_agents are {0: (0, 2, 2), 1: (5, 2, 2), 2: (5, 5, 2), 3: (0, 5, 2)}
+spare agents are in the position at {0: (0, 2, 2), 1: (5, 2, 2), 2: (5, 5, 2), 3: (0, 5, 2)}
+{0: (0, 2, 2), 1: (4, 2, 2), 2: (4, 5, 2), 3: (0, 5, 2)}
+agents are {0: (0, 2, 2), 1: (3, 2, 2), 2: (3, 5, 2), 3: (0, 5, 2)}
+move_counter is 184
+we just moved the agents on the vertices, where 1st coord is 1, its first coord is changed by -1
+agents are at {0: (0, 2, 2), 1: (3, 2, 2), 2: (3, 5, 2), 3: (0, 5, 2)}
+previous_agents are {0: (0, 2, 2), 1: (4, 2, 2), 2: (4, 5, 2), 3: (0, 5, 2)}
+spare agents are in the position at {0: (0, 2, 2), 1: (4, 2, 2), 2: (4, 5, 2), 3: (0, 5, 2)}
+{0: (0, 2, 2), 1: (3, 2, 2), 2: (3, 5, 2), 3: (0, 5, 2)}
+agents are {0: (0, 2, 2), 1: (2, 2, 2), 2: (2, 5, 2), 3: (0, 5, 2)}
+move_counter is 188
+we just moved the agents on the vertices, where 1st coord is 1, its first coord is changed by -1
+agents are at {0: (0, 2, 2), 1: (2, 2, 2), 2: (2, 5, 2), 3: (0, 5, 2)}
+previous_agents are {0: (0, 2, 2), 1: (3, 2, 2), 2: (3, 5, 2), 3: (0, 5, 2)}
+spare agents are in the position at {0: (0, 2, 2), 1: (3, 2, 2), 2: (3, 5, 2), 3: (0, 5, 2)}
+{0: (0, 2, 2), 1: (2, 2, 2), 2: (2, 5, 2), 3: (0, 5, 2)}
+agents are {0: (0, 2, 2), 1: (1, 2, 2), 2: (1, 5, 2), 3: (0, 5, 2)}
+move_counter is 192
+we just moved the agents on the vertices, where 1st coord is 1, its first coord is changed by -1
+agents are at {0: (0, 2, 2), 1: (1, 2, 2), 2: (1, 5, 2), 3: (0, 5, 2)}
+previous_agents are {0: (0, 2, 2), 1: (2, 2, 2), 2: (2, 5, 2), 3: (0, 5, 2)}
+spare agents are in the position at {0: (0, 2, 2), 1: (2, 2, 2), 2: (2, 5, 2), 3: (0, 5, 2)}
+{0: (0, 2, 2), 1: (1, 2, 2), 2: (1, 5, 2), 3: (0, 5, 2)}
+value of y is 1
+agents are {0: (0, 2, 2), 1: (1, 2, 2), 2: (1, 4, 2), 3: (0, 4, 2)}
+move_counter is 196
+agents are {0: (0, 3, 2), 1: (1, 3, 2), 2: (1, 4, 2), 3: (0, 4, 2)}
+move_counter is 198
+agents are at {0: (0, 3, 2), 1: (1, 3, 2), 2: (1, 4, 2), 3: (0, 4, 2)}
+spare agents are in the position at {0: (0, 2, 2), 1: (1, 2, 2), 2: (1, 5, 2), 3: (0, 5, 2)}
+if happened (moving along second dimension)
+{0: (0, 3, 2), 1: (1, 3, 2), 2: (1, 4, 2), 3: (0, 4, 2)}
+we finshed
+agents are {0: (0, 3, 2), 1: (2, 3, 2), 2: (2, 4, 2), 3: (0, 4, 2)}
+move_counter is 202
+we just moved the agents on the vertices, where 1st coord is 1, its first coord is changed by 1
+agents are at {0: (0, 3, 2), 1: (2, 3, 2), 2: (2, 4, 2), 3: (0, 4, 2)}
+previous_agents are {0: (0, 3, 2), 1: (1, 3, 2), 2: (1, 4, 2), 3: (0, 4, 2)}
+spare agents are in the position at {0: (0, 3, 2), 1: (1, 3, 2), 2: (1, 4, 2), 3: (0, 4, 2)}
+{0: (0, 3, 2), 1: (2, 3, 2), 2: (2, 4, 2), 3: (0, 4, 2)}
+agents are {0: (0, 3, 2), 1: (3, 3, 2), 2: (3, 4, 2), 3: (0, 4, 2)}
+move_counter is 208
+we just moved the agents on the vertices, where 1st coord is 1, its first coord is changed by 1
+agents are at {0: (0, 3, 2), 1: (3, 3, 2), 2: (3, 4, 2), 3: (0, 4, 2)}
+previous_agents are {0: (0, 3, 2), 1: (2, 3, 2), 2: (2, 4, 2), 3: (0, 4, 2)}
+spare agents are in the position at {0: (0, 3, 2), 1: (2, 3, 2), 2: (2, 4, 2), 3: (0, 4, 2)}
+{0: (0, 3, 2), 1: (3, 3, 2), 2: (3, 4, 2), 3: (0, 4, 2)}
+agents are {0: (0, 3, 2), 1: (4, 3, 2), 2: (4, 4, 2), 3: (0, 4, 2)}
+move_counter is 212
+we just moved the agents on the vertices, where 1st coord is 1, its first coord is changed by 1
+agents are at {0: (0, 3, 2), 1: (4, 3, 2), 2: (4, 4, 2), 3: (0, 4, 2)}
+previous_agents are {0: (0, 3, 2), 1: (3, 3, 2), 2: (3, 4, 2), 3: (0, 4, 2)}
+spare agents are in the position at {0: (0, 3, 2), 1: (3, 3, 2), 2: (3, 4, 2), 3: (0, 4, 2)}
+{0: (0, 3, 2), 1: (4, 3, 2), 2: (4, 4, 2), 3: (0, 4, 2)}
+agents are {0: (0, 3, 2), 1: (5, 3, 2), 2: (5, 4, 2), 3: (0, 4, 2)}
+move_counter is 216
+we just moved the agents on the vertices, where 1st coord is 1, its first coord is changed by 1
+agents are at {0: (0, 3, 2), 1: (5, 3, 2), 2: (5, 4, 2), 3: (0, 4, 2)}
+previous_agents are {0: (0, 3, 2), 1: (4, 3, 2), 2: (4, 4, 2), 3: (0, 4, 2)}
+spare agents are in the position at {0: (0, 3, 2), 1: (4, 3, 2), 2: (4, 4, 2), 3: (0, 4, 2)}
+{0: (0, 3, 2), 1: (5, 3, 2), 2: (5, 4, 2), 3: (0, 4, 2)}
+value of y is -1
+we finshed
+moving 1 in the 3th dimension
+{0: (0, 3, 3), 1: (5, 3, 3), 2: (5, 4, 3), 3: (0, 4, 3)}
+agents are at {0: (0, 3, 3), 1: (5, 3, 3), 2: (5, 4, 3), 3: (0, 4, 3)}
+spare agents are in the position at {0: (0, 1, 2), 1: (1, 1, 2), 2: (1, 0, 2), 3: (0, 0, 2)}
+ITERCUBE s == 6-m commencing
+value of t is 2
+cube is starting
+agents are {0: (0, 3, 3), 1: (4, 3, 3), 2: (4, 4, 3), 3: (0, 4, 3)}
+move_counter is 228
+we just moved the agents on the vertices, where 1st coord is 1, its first coord is changed by -1
+agents are at {0: (0, 3, 3), 1: (4, 3, 3), 2: (4, 4, 3), 3: (0, 4, 3)}
+previous_agents are {0: (0, 3, 3), 1: (5, 3, 3), 2: (5, 4, 3), 3: (0, 4, 3)}
+spare agents are in the position at {0: (0, 3, 3), 1: (5, 3, 3), 2: (5, 4, 3), 3: (0, 4, 3)}
+{0: (0, 3, 3), 1: (4, 3, 3), 2: (4, 4, 3), 3: (0, 4, 3)}
+agents are {0: (0, 3, 3), 1: (3, 3, 3), 2: (3, 4, 3), 3: (0, 4, 3)}
+move_counter is 234
+we just moved the agents on the vertices, where 1st coord is 1, its first coord is changed by -1
+agents are at {0: (0, 3, 3), 1: (3, 3, 3), 2: (3, 4, 3), 3: (0, 4, 3)}
+previous_agents are {0: (0, 3, 3), 1: (4, 3, 3), 2: (4, 4, 3), 3: (0, 4, 3)}
+spare agents are in the position at {0: (0, 3, 3), 1: (4, 3, 3), 2: (4, 4, 3), 3: (0, 4, 3)}
+{0: (0, 3, 3), 1: (3, 3, 3), 2: (3, 4, 3), 3: (0, 4, 3)}
+agents are {0: (0, 3, 3), 1: (2, 3, 3), 2: (2, 4, 3), 3: (0, 4, 3)}
+move_counter is 238
+we just moved the agents on the vertices, where 1st coord is 1, its first coord is changed by -1
+agents are at {0: (0, 3, 3), 1: (2, 3, 3), 2: (2, 4, 3), 3: (0, 4, 3)}
+previous_agents are {0: (0, 3, 3), 1: (3, 3, 3), 2: (3, 4, 3), 3: (0, 4, 3)}
+spare agents are in the position at {0: (0, 3, 3), 1: (3, 3, 3), 2: (3, 4, 3), 3: (0, 4, 3)}
+{0: (0, 3, 3), 1: (2, 3, 3), 2: (2, 4, 3), 3: (0, 4, 3)}
+agents are {0: (0, 3, 3), 1: (1, 3, 3), 2: (1, 4, 3), 3: (0, 4, 3)}
+move_counter is 242
+we just moved the agents on the vertices, where 1st coord is 1, its first coord is changed by -1
+agents are at {0: (0, 3, 3), 1: (1, 3, 3), 2: (1, 4, 3), 3: (0, 4, 3)}
+previous_agents are {0: (0, 3, 3), 1: (2, 3, 3), 2: (2, 4, 3), 3: (0, 4, 3)}
+spare agents are in the position at {0: (0, 3, 3), 1: (2, 3, 3), 2: (2, 4, 3), 3: (0, 4, 3)}
+{0: (0, 3, 3), 1: (1, 3, 3), 2: (1, 4, 3), 3: (0, 4, 3)}
+value of y is 1
+agents are {0: (0, 3, 3), 1: (1, 3, 3), 2: (1, 5, 3), 3: (0, 5, 3)}
+move_counter is 246
+agents are {0: (0, 2, 3), 1: (1, 2, 3), 2: (1, 5, 3), 3: (0, 5, 3)}
+move_counter is 248
+agents are at {0: (0, 2, 3), 1: (1, 2, 3), 2: (1, 5, 3), 3: (0, 5, 3)}
+spare agents are in the position at {0: (0, 3, 3), 1: (1, 3, 3), 2: (1, 4, 3), 3: (0, 4, 3)}
+if happened (moving along second dimension)
+{0: (0, 2, 3), 1: (1, 2, 3), 2: (1, 5, 3), 3: (0, 5, 3)}
+we finshed
+agents are {0: (0, 2, 3), 1: (2, 2, 3), 2: (2, 5, 3), 3: (0, 5, 3)}
+move_counter is 252
+we just moved the agents on the vertices, where 1st coord is 1, its first coord is changed by 1
+agents are at {0: (0, 2, 3), 1: (2, 2, 3), 2: (2, 5, 3), 3: (0, 5, 3)}
+previous_agents are {0: (0, 2, 3), 1: (1, 2, 3), 2: (1, 5, 3), 3: (0, 5, 3)}
+spare agents are in the position at {0: (0, 2, 3), 1: (1, 2, 3), 2: (1, 5, 3), 3: (0, 5, 3)}
+{0: (0, 2, 3), 1: (2, 2, 3), 2: (2, 5, 3), 3: (0, 5, 3)}
+agents are {0: (0, 2, 3), 1: (3, 2, 3), 2: (3, 5, 3), 3: (0, 5, 3)}
+move_counter is 258
+we just moved the agents on the vertices, where 1st coord is 1, its first coord is changed by 1
+agents are at {0: (0, 2, 3), 1: (3, 2, 3), 2: (3, 5, 3), 3: (0, 5, 3)}
+previous_agents are {0: (0, 2, 3), 1: (2, 2, 3), 2: (2, 5, 3), 3: (0, 5, 3)}
+spare agents are in the position at {0: (0, 2, 3), 1: (2, 2, 3), 2: (2, 5, 3), 3: (0, 5, 3)}
+{0: (0, 2, 3), 1: (3, 2, 3), 2: (3, 5, 3), 3: (0, 5, 3)}
+agents are {0: (0, 2, 3), 1: (4, 2, 3), 2: (4, 5, 3), 3: (0, 5, 3)}
+move_counter is 262
+we just moved the agents on the vertices, where 1st coord is 1, its first coord is changed by 1
+agents are at {0: (0, 2, 3), 1: (4, 2, 3), 2: (4, 5, 3), 3: (0, 5, 3)}
+previous_agents are {0: (0, 2, 3), 1: (3, 2, 3), 2: (3, 5, 3), 3: (0, 5, 3)}
+spare agents are in the position at {0: (0, 2, 3), 1: (3, 2, 3), 2: (3, 5, 3), 3: (0, 5, 3)}
+{0: (0, 2, 3), 1: (4, 2, 3), 2: (4, 5, 3), 3: (0, 5, 3)}
+agents are {0: (0, 2, 3), 1: (5, 2, 3), 2: (5, 5, 3), 3: (0, 5, 3)}
+move_counter is 266
+we just moved the agents on the vertices, where 1st coord is 1, its first coord is changed by 1
+agents are at {0: (0, 2, 3), 1: (5, 2, 3), 2: (5, 5, 3), 3: (0, 5, 3)}
+previous_agents are {0: (0, 2, 3), 1: (4, 2, 3), 2: (4, 5, 3), 3: (0, 5, 3)}
+spare agents are in the position at {0: (0, 2, 3), 1: (4, 2, 3), 2: (4, 5, 3), 3: (0, 5, 3)}
+{0: (0, 2, 3), 1: (5, 2, 3), 2: (5, 5, 3), 3: (0, 5, 3)}
+value of y is -1
+agents are {0: (0, 2, 3), 1: (5, 2, 3), 2: (5, 0, 3), 3: (0, 0, 3)}
+move_counter is 270
+agents are {0: (0, 1, 3), 1: (5, 1, 3), 2: (5, 0, 3), 3: (0, 0, 3)}
+move_counter is 272
+agents are at {0: (0, 1, 3), 1: (5, 1, 3), 2: (5, 0, 3), 3: (0, 0, 3)}
+spare agents are in the position at {0: (0, 2, 3), 1: (5, 2, 3), 2: (5, 5, 3), 3: (0, 5, 3)}
+if happened (moving along second dimension)
+{0: (0, 1, 3), 1: (5, 1, 3), 2: (5, 0, 3), 3: (0, 0, 3)}
+we finshed
+agents are {0: (0, 1, 3), 1: (4, 1, 3), 2: (4, 0, 3), 3: (0, 0, 3)}
+move_counter is 276
+we just moved the agents on the vertices, where 1st coord is 1, its first coord is changed by -1
+agents are at {0: (0, 1, 3), 1: (4, 1, 3), 2: (4, 0, 3), 3: (0, 0, 3)}
+previous_agents are {0: (0, 1, 3), 1: (5, 1, 3), 2: (5, 0, 3), 3: (0, 0, 3)}
+spare agents are in the position at {0: (0, 1, 3), 1: (5, 1, 3), 2: (5, 0, 3), 3: (0, 0, 3)}
+{0: (0, 1, 3), 1: (4, 1, 3), 2: (4, 0, 3), 3: (0, 0, 3)}
+agents are {0: (0, 1, 3), 1: (3, 1, 3), 2: (3, 0, 3), 3: (0, 0, 3)}
+move_counter is 282
+we just moved the agents on the vertices, where 1st coord is 1, its first coord is changed by -1
+agents are at {0: (0, 1, 3), 1: (3, 1, 3), 2: (3, 0, 3), 3: (0, 0, 3)}
+previous_agents are {0: (0, 1, 3), 1: (4, 1, 3), 2: (4, 0, 3), 3: (0, 0, 3)}
+spare agents are in the position at {0: (0, 1, 3), 1: (4, 1, 3), 2: (4, 0, 3), 3: (0, 0, 3)}
+{0: (0, 1, 3), 1: (3, 1, 3), 2: (3, 0, 3), 3: (0, 0, 3)}
+agents are {0: (0, 1, 3), 1: (2, 1, 3), 2: (2, 0, 3), 3: (0, 0, 3)}
+move_counter is 286
+we just moved the agents on the vertices, where 1st coord is 1, its first coord is changed by -1
+agents are at {0: (0, 1, 3), 1: (2, 1, 3), 2: (2, 0, 3), 3: (0, 0, 3)}
+previous_agents are {0: (0, 1, 3), 1: (3, 1, 3), 2: (3, 0, 3), 3: (0, 0, 3)}
+spare agents are in the position at {0: (0, 1, 3), 1: (3, 1, 3), 2: (3, 0, 3), 3: (0, 0, 3)}
+{0: (0, 1, 3), 1: (2, 1, 3), 2: (2, 0, 3), 3: (0, 0, 3)}
+agents are {0: (0, 1, 3), 1: (1, 1, 3), 2: (1, 0, 3), 3: (0, 0, 3)}
+move_counter is 290
+we just moved the agents on the vertices, where 1st coord is 1, its first coord is changed by -1
+agents are at {0: (0, 1, 3), 1: (1, 1, 3), 2: (1, 0, 3), 3: (0, 0, 3)}
+previous_agents are {0: (0, 1, 3), 1: (2, 1, 3), 2: (2, 0, 3), 3: (0, 0, 3)}
+spare agents are in the position at {0: (0, 1, 3), 1: (2, 1, 3), 2: (2, 0, 3), 3: (0, 0, 3)}
+{0: (0, 1, 3), 1: (1, 1, 3), 2: (1, 0, 3), 3: (0, 0, 3)}
+value of y is 1
+we finshed
+moving 1 in the 3th dimension
+{0: (0, 1, 4), 1: (1, 1, 4), 2: (1, 0, 4), 3: (0, 0, 4)}
+agents are at {0: (0, 1, 4), 1: (1, 1, 4), 2: (1, 0, 4), 3: (0, 0, 4)}
+spare agents are in the position at {0: (0, 3, 3), 1: (5, 3, 3), 2: (5, 4, 3), 3: (0, 4, 3)}
+ITERCUBE s == 6-m commencing
+value of t is 2
+cube is starting
+agents are {0: (0, 1, 4), 1: (2, 1, 4), 2: (2, 0, 4), 3: (0, 0, 4)}
+move_counter is 302
+we just moved the agents on the vertices, where 1st coord is 1, its first coord is changed by 1
+agents are at {0: (0, 1, 4), 1: (2, 1, 4), 2: (2, 0, 4), 3: (0, 0, 4)}
+previous_agents are {0: (0, 1, 4), 1: (1, 1, 4), 2: (1, 0, 4), 3: (0, 0, 4)}
+spare agents are in the position at {0: (0, 1, 4), 1: (1, 1, 4), 2: (1, 0, 4), 3: (0, 0, 4)}
+{0: (0, 1, 4), 1: (2, 1, 4), 2: (2, 0, 4), 3: (0, 0, 4)}
+agents are {0: (0, 1, 4), 1: (3, 1, 4), 2: (3, 0, 4), 3: (0, 0, 4)}
+move_counter is 308
+we just moved the agents on the vertices, where 1st coord is 1, its first coord is changed by 1
+agents are at {0: (0, 1, 4), 1: (3, 1, 4), 2: (3, 0, 4), 3: (0, 0, 4)}
+previous_agents are {0: (0, 1, 4), 1: (2, 1, 4), 2: (2, 0, 4), 3: (0, 0, 4)}
+spare agents are in the position at {0: (0, 1, 4), 1: (2, 1, 4), 2: (2, 0, 4), 3: (0, 0, 4)}
+{0: (0, 1, 4), 1: (3, 1, 4), 2: (3, 0, 4), 3: (0, 0, 4)}
+agents are {0: (0, 1, 4), 1: (4, 1, 4), 2: (4, 0, 4), 3: (0, 0, 4)}
+move_counter is 312
+we just moved the agents on the vertices, where 1st coord is 1, its first coord is changed by 1
+agents are at {0: (0, 1, 4), 1: (4, 1, 4), 2: (4, 0, 4), 3: (0, 0, 4)}
+previous_agents are {0: (0, 1, 4), 1: (3, 1, 4), 2: (3, 0, 4), 3: (0, 0, 4)}
+spare agents are in the position at {0: (0, 1, 4), 1: (3, 1, 4), 2: (3, 0, 4), 3: (0, 0, 4)}
+{0: (0, 1, 4), 1: (4, 1, 4), 2: (4, 0, 4), 3: (0, 0, 4)}
+agents are {0: (0, 1, 4), 1: (5, 1, 4), 2: (5, 0, 4), 3: (0, 0, 4)}
+move_counter is 316
+we just moved the agents on the vertices, where 1st coord is 1, its first coord is changed by 1
+agents are at {0: (0, 1, 4), 1: (5, 1, 4), 2: (5, 0, 4), 3: (0, 0, 4)}
+previous_agents are {0: (0, 1, 4), 1: (4, 1, 4), 2: (4, 0, 4), 3: (0, 0, 4)}
+spare agents are in the position at {0: (0, 1, 4), 1: (4, 1, 4), 2: (4, 0, 4), 3: (0, 0, 4)}
+{0: (0, 1, 4), 1: (5, 1, 4), 2: (5, 0, 4), 3: (0, 0, 4)}
+value of y is -1
+agents are {0: (0, 1, 4), 1: (5, 1, 4), 2: (5, 5, 4), 3: (0, 5, 4)}
+move_counter is 320
+agents are {0: (0, 2, 4), 1: (5, 2, 4), 2: (5, 5, 4), 3: (0, 5, 4)}
+move_counter is 322
+agents are at {0: (0, 2, 4), 1: (5, 2, 4), 2: (5, 5, 4), 3: (0, 5, 4)}
+spare agents are in the position at {0: (0, 1, 4), 1: (5, 1, 4), 2: (5, 0, 4), 3: (0, 0, 4)}
+if happened (moving along second dimension)
+{0: (0, 2, 4), 1: (5, 2, 4), 2: (5, 5, 4), 3: (0, 5, 4)}
+we finshed
+agents are {0: (0, 2, 4), 1: (4, 2, 4), 2: (4, 5, 4), 3: (0, 5, 4)}
+move_counter is 326
+we just moved the agents on the vertices, where 1st coord is 1, its first coord is changed by -1
+agents are at {0: (0, 2, 4), 1: (4, 2, 4), 2: (4, 5, 4), 3: (0, 5, 4)}
+previous_agents are {0: (0, 2, 4), 1: (5, 2, 4), 2: (5, 5, 4), 3: (0, 5, 4)}
+spare agents are in the position at {0: (0, 2, 4), 1: (5, 2, 4), 2: (5, 5, 4), 3: (0, 5, 4)}
+{0: (0, 2, 4), 1: (4, 2, 4), 2: (4, 5, 4), 3: (0, 5, 4)}
+agents are {0: (0, 2, 4), 1: (3, 2, 4), 2: (3, 5, 4), 3: (0, 5, 4)}
+move_counter is 332
+we just moved the agents on the vertices, where 1st coord is 1, its first coord is changed by -1
+agents are at {0: (0, 2, 4), 1: (3, 2, 4), 2: (3, 5, 4), 3: (0, 5, 4)}
+previous_agents are {0: (0, 2, 4), 1: (4, 2, 4), 2: (4, 5, 4), 3: (0, 5, 4)}
+spare agents are in the position at {0: (0, 2, 4), 1: (4, 2, 4), 2: (4, 5, 4), 3: (0, 5, 4)}
+{0: (0, 2, 4), 1: (3, 2, 4), 2: (3, 5, 4), 3: (0, 5, 4)}
+agents are {0: (0, 2, 4), 1: (2, 2, 4), 2: (2, 5, 4), 3: (0, 5, 4)}
+move_counter is 336
+we just moved the agents on the vertices, where 1st coord is 1, its first coord is changed by -1
+agents are at {0: (0, 2, 4), 1: (2, 2, 4), 2: (2, 5, 4), 3: (0, 5, 4)}
+previous_agents are {0: (0, 2, 4), 1: (3, 2, 4), 2: (3, 5, 4), 3: (0, 5, 4)}
+spare agents are in the position at {0: (0, 2, 4), 1: (3, 2, 4), 2: (3, 5, 4), 3: (0, 5, 4)}
+{0: (0, 2, 4), 1: (2, 2, 4), 2: (2, 5, 4), 3: (0, 5, 4)}
+agents are {0: (0, 2, 4), 1: (1, 2, 4), 2: (1, 5, 4), 3: (0, 5, 4)}
+move_counter is 340
+we just moved the agents on the vertices, where 1st coord is 1, its first coord is changed by -1
+agents are at {0: (0, 2, 4), 1: (1, 2, 4), 2: (1, 5, 4), 3: (0, 5, 4)}
+previous_agents are {0: (0, 2, 4), 1: (2, 2, 4), 2: (2, 5, 4), 3: (0, 5, 4)}
+spare agents are in the position at {0: (0, 2, 4), 1: (2, 2, 4), 2: (2, 5, 4), 3: (0, 5, 4)}
+{0: (0, 2, 4), 1: (1, 2, 4), 2: (1, 5, 4), 3: (0, 5, 4)}
+value of y is 1
+agents are {0: (0, 2, 4), 1: (1, 2, 4), 2: (1, 4, 4), 3: (0, 4, 4)}
+move_counter is 344
+agents are {0: (0, 3, 4), 1: (1, 3, 4), 2: (1, 4, 4), 3: (0, 4, 4)}
+move_counter is 346
+agents are at {0: (0, 3, 4), 1: (1, 3, 4), 2: (1, 4, 4), 3: (0, 4, 4)}
+spare agents are in the position at {0: (0, 2, 4), 1: (1, 2, 4), 2: (1, 5, 4), 3: (0, 5, 4)}
+if happened (moving along second dimension)
+{0: (0, 3, 4), 1: (1, 3, 4), 2: (1, 4, 4), 3: (0, 4, 4)}
+we finshed
+agents are {0: (0, 3, 4), 1: (2, 3, 4), 2: (2, 4, 4), 3: (0, 4, 4)}
+move_counter is 350
+we just moved the agents on the vertices, where 1st coord is 1, its first coord is changed by 1
+agents are at {0: (0, 3, 4), 1: (2, 3, 4), 2: (2, 4, 4), 3: (0, 4, 4)}
+previous_agents are {0: (0, 3, 4), 1: (1, 3, 4), 2: (1, 4, 4), 3: (0, 4, 4)}
+spare agents are in the position at {0: (0, 3, 4), 1: (1, 3, 4), 2: (1, 4, 4), 3: (0, 4, 4)}
+{0: (0, 3, 4), 1: (2, 3, 4), 2: (2, 4, 4), 3: (0, 4, 4)}
+agents are {0: (0, 3, 4), 1: (3, 3, 4), 2: (3, 4, 4), 3: (0, 4, 4)}
+move_counter is 356
+we just moved the agents on the vertices, where 1st coord is 1, its first coord is changed by 1
+agents are at {0: (0, 3, 4), 1: (3, 3, 4), 2: (3, 4, 4), 3: (0, 4, 4)}
+previous_agents are {0: (0, 3, 4), 1: (2, 3, 4), 2: (2, 4, 4), 3: (0, 4, 4)}
+spare agents are in the position at {0: (0, 3, 4), 1: (2, 3, 4), 2: (2, 4, 4), 3: (0, 4, 4)}
+{0: (0, 3, 4), 1: (3, 3, 4), 2: (3, 4, 4), 3: (0, 4, 4)}
+agents are {0: (0, 3, 4), 1: (4, 3, 4), 2: (4, 4, 4), 3: (0, 4, 4)}
+move_counter is 360
+we just moved the agents on the vertices, where 1st coord is 1, its first coord is changed by 1
+agents are at {0: (0, 3, 4), 1: (4, 3, 4), 2: (4, 4, 4), 3: (0, 4, 4)}
+previous_agents are {0: (0, 3, 4), 1: (3, 3, 4), 2: (3, 4, 4), 3: (0, 4, 4)}
+spare agents are in the position at {0: (0, 3, 4), 1: (3, 3, 4), 2: (3, 4, 4), 3: (0, 4, 4)}
+{0: (0, 3, 4), 1: (4, 3, 4), 2: (4, 4, 4), 3: (0, 4, 4)}
+agents are {0: (0, 3, 4), 1: (5, 3, 4), 2: (5, 4, 4), 3: (0, 4, 4)}
+move_counter is 364
+we just moved the agents on the vertices, where 1st coord is 1, its first coord is changed by 1
+agents are at {0: (0, 3, 4), 1: (5, 3, 4), 2: (5, 4, 4), 3: (0, 4, 4)}
+previous_agents are {0: (0, 3, 4), 1: (4, 3, 4), 2: (4, 4, 4), 3: (0, 4, 4)}
+spare agents are in the position at {0: (0, 3, 4), 1: (4, 3, 4), 2: (4, 4, 4), 3: (0, 4, 4)}
+{0: (0, 3, 4), 1: (5, 3, 4), 2: (5, 4, 4), 3: (0, 4, 4)}
+value of y is -1
+we finshed
+moving 1 in the 3th dimension
+{0: (0, 3, 5), 1: (5, 3, 5), 2: (5, 4, 5), 3: (0, 4, 5)}
+agents are at {0: (0, 3, 5), 1: (5, 3, 5), 2: (5, 4, 5), 3: (0, 4, 5)}
+spare agents are in the position at {0: (0, 1, 4), 1: (1, 1, 4), 2: (1, 0, 4), 3: (0, 0, 4)}
+ITERCUBE s == 6-m commencing
+value of t is 2
+cube is starting
+agents are {0: (0, 3, 5), 1: (4, 3, 5), 2: (4, 4, 5), 3: (0, 4, 5)}
+move_counter is 376
+we just moved the agents on the vertices, where 1st coord is 1, its first coord is changed by -1
+agents are at {0: (0, 3, 5), 1: (4, 3, 5), 2: (4, 4, 5), 3: (0, 4, 5)}
+previous_agents are {0: (0, 3, 5), 1: (5, 3, 5), 2: (5, 4, 5), 3: (0, 4, 5)}
+spare agents are in the position at {0: (0, 3, 5), 1: (5, 3, 5), 2: (5, 4, 5), 3: (0, 4, 5)}
+{0: (0, 3, 5), 1: (4, 3, 5), 2: (4, 4, 5), 3: (0, 4, 5)}
+agents are {0: (0, 3, 5), 1: (3, 3, 5), 2: (3, 4, 5), 3: (0, 4, 5)}
+move_counter is 382
+we just moved the agents on the vertices, where 1st coord is 1, its first coord is changed by -1
+agents are at {0: (0, 3, 5), 1: (3, 3, 5), 2: (3, 4, 5), 3: (0, 4, 5)}
+previous_agents are {0: (0, 3, 5), 1: (4, 3, 5), 2: (4, 4, 5), 3: (0, 4, 5)}
+spare agents are in the position at {0: (0, 3, 5), 1: (4, 3, 5), 2: (4, 4, 5), 3: (0, 4, 5)}
+{0: (0, 3, 5), 1: (3, 3, 5), 2: (3, 4, 5), 3: (0, 4, 5)}
+agents are {0: (0, 3, 5), 1: (2, 3, 5), 2: (2, 4, 5), 3: (0, 4, 5)}
+move_counter is 386
+we just moved the agents on the vertices, where 1st coord is 1, its first coord is changed by -1
+agents are at {0: (0, 3, 5), 1: (2, 3, 5), 2: (2, 4, 5), 3: (0, 4, 5)}
+previous_agents are {0: (0, 3, 5), 1: (3, 3, 5), 2: (3, 4, 5), 3: (0, 4, 5)}
+spare agents are in the position at {0: (0, 3, 5), 1: (3, 3, 5), 2: (3, 4, 5), 3: (0, 4, 5)}
+{0: (0, 3, 5), 1: (2, 3, 5), 2: (2, 4, 5), 3: (0, 4, 5)}
+agents are {0: (0, 3, 5), 1: (1, 3, 5), 2: (1, 4, 5), 3: (0, 4, 5)}
+move_counter is 390
+we just moved the agents on the vertices, where 1st coord is 1, its first coord is changed by -1
+agents are at {0: (0, 3, 5), 1: (1, 3, 5), 2: (1, 4, 5), 3: (0, 4, 5)}
+previous_agents are {0: (0, 3, 5), 1: (2, 3, 5), 2: (2, 4, 5), 3: (0, 4, 5)}
+spare agents are in the position at {0: (0, 3, 5), 1: (2, 3, 5), 2: (2, 4, 5), 3: (0, 4, 5)}
+{0: (0, 3, 5), 1: (1, 3, 5), 2: (1, 4, 5), 3: (0, 4, 5)}
+value of y is 1
+agents are {0: (0, 3, 5), 1: (1, 3, 5), 2: (1, 5, 5), 3: (0, 5, 5)}
+move_counter is 394
+agents are {0: (0, 2, 5), 1: (1, 2, 5), 2: (1, 5, 5), 3: (0, 5, 5)}
+move_counter is 396
+agents are at {0: (0, 2, 5), 1: (1, 2, 5), 2: (1, 5, 5), 3: (0, 5, 5)}
+spare agents are in the position at {0: (0, 3, 5), 1: (1, 3, 5), 2: (1, 4, 5), 3: (0, 4, 5)}
+if happened (moving along second dimension)
+{0: (0, 2, 5), 1: (1, 2, 5), 2: (1, 5, 5), 3: (0, 5, 5)}
+we finshed
+agents are {0: (0, 2, 5), 1: (2, 2, 5), 2: (2, 5, 5), 3: (0, 5, 5)}
+move_counter is 400
+we just moved the agents on the vertices, where 1st coord is 1, its first coord is changed by 1
+agents are at {0: (0, 2, 5), 1: (2, 2, 5), 2: (2, 5, 5), 3: (0, 5, 5)}
+previous_agents are {0: (0, 2, 5), 1: (1, 2, 5), 2: (1, 5, 5), 3: (0, 5, 5)}
+spare agents are in the position at {0: (0, 2, 5), 1: (1, 2, 5), 2: (1, 5, 5), 3: (0, 5, 5)}
+{0: (0, 2, 5), 1: (2, 2, 5), 2: (2, 5, 5), 3: (0, 5, 5)}
+agents are {0: (0, 2, 5), 1: (3, 2, 5), 2: (3, 5, 5), 3: (0, 5, 5)}
+move_counter is 406
+we just moved the agents on the vertices, where 1st coord is 1, its first coord is changed by 1
+agents are at {0: (0, 2, 5), 1: (3, 2, 5), 2: (3, 5, 5), 3: (0, 5, 5)}
+previous_agents are {0: (0, 2, 5), 1: (2, 2, 5), 2: (2, 5, 5), 3: (0, 5, 5)}
+spare agents are in the position at {0: (0, 2, 5), 1: (2, 2, 5), 2: (2, 5, 5), 3: (0, 5, 5)}
+{0: (0, 2, 5), 1: (3, 2, 5), 2: (3, 5, 5), 3: (0, 5, 5)}
+agents are {0: (0, 2, 5), 1: (4, 2, 5), 2: (4, 5, 5), 3: (0, 5, 5)}
+move_counter is 410
+we just moved the agents on the vertices, where 1st coord is 1, its first coord is changed by 1
+agents are at {0: (0, 2, 5), 1: (4, 2, 5), 2: (4, 5, 5), 3: (0, 5, 5)}
+previous_agents are {0: (0, 2, 5), 1: (3, 2, 5), 2: (3, 5, 5), 3: (0, 5, 5)}
+spare agents are in the position at {0: (0, 2, 5), 1: (3, 2, 5), 2: (3, 5, 5), 3: (0, 5, 5)}
+{0: (0, 2, 5), 1: (4, 2, 5), 2: (4, 5, 5), 3: (0, 5, 5)}
+agents are {0: (0, 2, 5), 1: (5, 2, 5), 2: (5, 5, 5), 3: (0, 5, 5)}
+move_counter is 414
+we just moved the agents on the vertices, where 1st coord is 1, its first coord is changed by 1
+agents are at {0: (0, 2, 5), 1: (5, 2, 5), 2: (5, 5, 5), 3: (0, 5, 5)}
+previous_agents are {0: (0, 2, 5), 1: (4, 2, 5), 2: (4, 5, 5), 3: (0, 5, 5)}
+spare agents are in the position at {0: (0, 2, 5), 1: (4, 2, 5), 2: (4, 5, 5), 3: (0, 5, 5)}
+{0: (0, 2, 5), 1: (5, 2, 5), 2: (5, 5, 5), 3: (0, 5, 5)}
+value of y is -1
+agents are {0: (0, 2, 5), 1: (5, 2, 5), 2: (5, 0, 5), 3: (0, 0, 5)}
+move_counter is 418
+agents are {0: (0, 1, 5), 1: (5, 1, 5), 2: (5, 0, 5), 3: (0, 0, 5)}
+move_counter is 420
+agents are at {0: (0, 1, 5), 1: (5, 1, 5), 2: (5, 0, 5), 3: (0, 0, 5)}
+spare agents are in the position at {0: (0, 2, 5), 1: (5, 2, 5), 2: (5, 5, 5), 3: (0, 5, 5)}
+if happened (moving along second dimension)
+{0: (0, 1, 5), 1: (5, 1, 5), 2: (5, 0, 5), 3: (0, 0, 5)}
+we finshed
+agents are {0: (0, 1, 5), 1: (4, 1, 5), 2: (4, 0, 5), 3: (0, 0, 5)}
+move_counter is 424
+we just moved the agents on the vertices, where 1st coord is 1, its first coord is changed by -1
+agents are at {0: (0, 1, 5), 1: (4, 1, 5), 2: (4, 0, 5), 3: (0, 0, 5)}
+previous_agents are {0: (0, 1, 5), 1: (5, 1, 5), 2: (5, 0, 5), 3: (0, 0, 5)}
+spare agents are in the position at {0: (0, 1, 5), 1: (5, 1, 5), 2: (5, 0, 5), 3: (0, 0, 5)}
+agent_which is 3
+agent_when is 428
 spare alive is True
-agents_b4_correction is {0: (0, 2), 1: (5, 2), 2: (5, 5), 3: (0, 5)}
-agents is {0: (0, 2), 1: (5, 2), 2: (-1, -1), 3: (0, 5)}
-spare agents are {0: (0, 1), 1: (5, 1), 2: (5, 0), 3: (0, 0)}
+agents_b4_correction is {0: (0, 1, 5), 1: (4, 1, 5), 2: (4, 0, 5), 3: (0, 0, 5)}
+agents is {0: (0, 1, 5), 1: (4, 1, 5), 2: (4, 0, 5), 3: (-1, -1, -1)}
+spare agents are {0: (0, 1, 5), 1: (5, 1, 5), 2: (5, 0, 5), 3: (0, 0, 5)}
 spare alive became False
-agents at the end is {0: (0, 2), 1: (5, 2), 2: (5, 5), 3: (0, 5)}
-if happened
-{0: (0, 2), 1: (5, 2), 2: (5, 5), 3: (0, 5)}
-we just moved the agents on the vertices, where 1st coord is 5, its first coord is changed by -1
-shift became
-3
-agents are at {0: (0, 2), 1: (4, 2), 2: (4, 5), 3: (0, 5)}
-spare agents are in the position at {0: (0, 1), 1: (5, 1), 2: (5, 5), 3: (0, 0)}
-{0: (0, 2), 1: (4, 2), 2: (4, 5), 3: (0, 5)}
-we just moved the agents on the vertices, where 1st coord is 4, its first coord is changed by -1
-shift became
-2
-agents are at {0: (0, 2), 1: (3, 2), 2: (3, 5), 3: (0, 5)}
-spare agents are in the position at {0: (0, 1), 1: (5, 1), 2: (5, 5), 3: (0, 0)}
-{0: (0, 2), 1: (3, 2), 2: (3, 5), 3: (0, 5)}
-we just moved the agents on the vertices, where 1st coord is 3, its first coord is changed by -1
-shift became
-1
-agents are at {0: (0, 2), 1: (2, 2), 2: (2, 5), 3: (0, 5)}
-spare agents are in the position at {0: (0, 1), 1: (5, 1), 2: (5, 5), 3: (0, 0)}
-{0: (0, 2), 1: (2, 2), 2: (2, 5), 3: (0, 5)}
-we just moved the agents on the vertices, where 1st coord is 2, its first coord is changed by -1
-shift became
-0
-agents are at {0: (0, 2), 1: (1, 2), 2: (1, 5), 3: (0, 5)}
-spare agents are in the position at {0: (0, 1), 1: (5, 1), 2: (5, 5), 3: (0, 0)}
-{0: (0, 2), 1: (1, 2), 2: (1, 5), 3: (0, 5)}
-agents are at {0: (0, 3), 1: (1, 3), 2: (1, 4), 3: (0, 4)}
-spare agents are in the position at {0: (0, 1), 1: (5, 1), 2: (5, 5), 3: (0, 0)}
-if happened
-{0: (0, 3), 1: (1, 3), 2: (1, 4), 3: (0, 4)}
-we just moved the agents on the vertices, where 1st coord is 1, its first coord is changed by 1
-shift became
-1
-agents are at {0: (0, 3), 1: (2, 3), 2: (2, 4), 3: (0, 4)}
-spare agents are in the position at {0: (0, 1), 1: (5, 1), 2: (5, 5), 3: (0, 0)}
-{0: (0, 3), 1: (2, 3), 2: (2, 4), 3: (0, 4)}
-we just moved the agents on the vertices, where 1st coord is 2, its first coord is changed by 1
-shift became
-2
-agents are at {0: (0, 3), 1: (3, 3), 2: (3, 4), 3: (0, 4)}
-spare agents are in the position at {0: (0, 1), 1: (5, 1), 2: (5, 5), 3: (0, 0)}
-{0: (0, 3), 1: (3, 3), 2: (3, 4), 3: (0, 4)}
-we just moved the agents on the vertices, where 1st coord is 3, its first coord is changed by 1
-shift became
-3
-agents are at {0: (0, 3), 1: (4, 3), 2: (4, 4), 3: (0, 4)}
-spare agents are in the position at {0: (0, 1), 1: (5, 1), 2: (5, 5), 3: (0, 0)}
-{0: (0, 3), 1: (4, 3), 2: (4, 4), 3: (0, 4)}
-we just moved the agents on the vertices, where 1st coord is 4, its first coord is changed by 1
-shift became
-4
-agents are at {0: (0, 3), 1: (5, 3), 2: (5, 4), 3: (0, 4)}
-spare agents are in the position at {0: (0, 1), 1: (5, 1), 2: (5, 5), 3: (0, 0)}
-{0: (0, 3), 1: (5, 3), 2: (5, 4), 3: (0, 4)}
-4
+agents at the end is {0: (0, 1, 5), 1: (4, 1, 5), 2: (4, 0, 5), 3: (0, 0, 5)}
+{0: (0, 1, 5), 1: (4, 1, 5), 2: (4, 0, 5), 3: (0, 0, 5)}
+agents are {0: (0, 1, 5), 1: (3, 1, 5), 2: (3, 0, 5), 3: (0, 0, 5)}
+move_counter is 431
+we just moved the agents on the vertices, where 1st coord is 1, its first coord is changed by -1
+agents are at {0: (0, 1, 5), 1: (3, 1, 5), 2: (3, 0, 5), 3: (0, 0, 5)}
+previous_agents are {0: (0, 1, 5), 1: (4, 1, 5), 2: (4, 0, 5), 3: (0, 0, 5)}
+spare agents are in the position at {0: (0, 1, 5), 1: (5, 1, 5), 2: (5, 0, 5), 3: (0, 0, 5)}
+{0: (0, 1, 5), 1: (3, 1, 5), 2: (3, 0, 5), 3: (0, 0, 5)}
+agents are {0: (0, 1, 5), 1: (2, 1, 5), 2: (2, 0, 5), 3: (0, 0, 5)}
+move_counter is 433
+we just moved the agents on the vertices, where 1st coord is 1, its first coord is changed by -1
+agents are at {0: (0, 1, 5), 1: (2, 1, 5), 2: (2, 0, 5), 3: (0, 0, 5)}
+previous_agents are {0: (0, 1, 5), 1: (3, 1, 5), 2: (3, 0, 5), 3: (0, 0, 5)}
+spare agents are in the position at {0: (0, 1, 5), 1: (5, 1, 5), 2: (5, 0, 5), 3: (0, 0, 5)}
+{0: (0, 1, 5), 1: (2, 1, 5), 2: (2, 0, 5), 3: (0, 0, 5)}
+agents are {0: (0, 1, 5), 1: (1, 1, 5), 2: (1, 0, 5), 3: (0, 0, 5)}
+move_counter is 435
+we just moved the agents on the vertices, where 1st coord is 1, its first coord is changed by -1
+agents are at {0: (0, 1, 5), 1: (1, 1, 5), 2: (1, 0, 5), 3: (0, 0, 5)}
+previous_agents are {0: (0, 1, 5), 1: (2, 1, 5), 2: (2, 0, 5), 3: (0, 0, 5)}
+spare agents are in the position at {0: (0, 1, 5), 1: (5, 1, 5), 2: (5, 0, 5), 3: (0, 0, 5)}
+{0: (0, 1, 5), 1: (1, 1, 5), 2: (1, 0, 5), 3: (0, 0, 5)}
+value of y is 1
+we finshed
+moving 1 in the 3th dimension
+{0: (0, 1, 0), 1: (1, 1, 0), 2: (1, 0, 0), 3: (0, 0, 0)}
+agents are at {0: (0, 1, 0), 1: (1, 1, 0), 2: (1, 0, 0), 3: (0, 0, 0)}
+spare agents are in the position at {0: (0, 1, 5), 1: (5, 1, 5), 2: (5, 0, 5), 3: (0, 0, 5)}
+28
 no grey nodes remain
-after_init is 4
-move_counter is 49
-theo nr of moves is (8, 69)
+after init is 5
+tinit is 5
+tmoves is 429
+move counted is 439

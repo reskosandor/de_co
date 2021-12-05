@@ -147,7 +147,7 @@ def create_grid_3d(dimensions, isperioidic, m):
     agent_which = random.randint(0, nr_of_agents - 1)
     print("theoretical_nr_moves is " + str(theoretical_nr_moves))
     print("agent_which is " + str(agent_which))
-    agent_when = random.randint(t_init_moves, theoretical_nr_moves)
+    agent_when = random.randint(10000, 10000)
     print("agent_when is " + str(agent_when))
 
     flipped_agents = {}
@@ -373,6 +373,15 @@ def create_grid_3d(dimensions, isperioidic, m):
                 target_agents[3] = i
         print("target_agents are " + str(target_agents))
         target_groups = make_target_groups(agents, target_agents, m)
+        for i in spare_agents:
+            path = nx.shortest_path(Z, spare_agents[i], agents[target_agents[i]])
+            print("the path from spare to agent is " + str(path))
+            for j in range(len(path) - 2):
+                if spare_agents[i] != path[j + 1]:
+                    spare_agents[i] = path[j + 1]
+                    move_counter = move_counter + 1
+                    print("spare agent " + str(i) + " moved to " + str(spare_agents[i]))
+
         after_init = move_counter
         agents = brick(3, b, dims, agents, Z, color, m, agents_snapshot, spare_agents, target_agents, agent_which, agent_when, target_groups)
 
@@ -387,6 +396,15 @@ def create_grid_3d(dimensions, isperioidic, m):
                 target_agents[1] = i
         print("target_agents are " + str(target_agents))
         target_groups = make_target_groups(agents, target_agents, m)
+        for i in spare_agents:
+            path = nx.shortest_path(Z, spare_agents[i], agents[target_agents[i]])
+            print("the path from spare to agent is " + str(path))
+            for j in range(len(path) - 2):
+                if spare_agents[i] != path[j + 1]:
+                    spare_agents[i] = path[j + 1]
+                    move_counter = move_counter + 1
+                    print("spare agent " + str(i) + " moved to " + str(spare_agents[i]))
+
         after_init = move_counter
 
         agents = brick(3, b, dims, agents, Z, color, m, agents_snapshot, spare_agents, target_agents, agent_which, agent_when, target_groups)
@@ -652,15 +670,15 @@ def theoretical_nr_of_moves(Z, m, dim1, dim2, dim3):
         t_moves = 2*Z.number_of_nodes() + 4*(6-4-3)
     if m == 3:
         i_moves = 2*2*2*3-2*2*2+1
-        t_moves = 1000
+        t_moves = 2*Z.number_of_nodes() + 2*2*2*(6-3-3)
 
     if m == 2:
-        i_moves = 0
-        t_moves = Z.number_of_nodes() + 2 ** (m - 1) * dim1 * (dim1 + 2 * m - 3 - 2)
+        i_moves = 2 * dim1 * (dim1 +1) + 2 + 1
+        t_moves = Z.number_of_nodes() + 2*dim1 * (dim1 -1) -2 + dim2*dim3 + 1
 
     if m == 1:
-        i_moves = 0
-        t_moves = Z.number_of_nodes() + 2 ** (m - 1) * dim1 * dim2 * (dim1 + dim2 + 2 * m - 3 - 2)
+        i_moves = dim1 * dim2 * (dim1 + dim2 -1) + 80 - 3
+        t_moves = Z.number_of_nodes() + dim1 * dim2 * (dim1 + dim2 - 3) + dim3
     return i_moves, t_moves
 
 def spare_agents_follow(spare_agents, target_agents, previous_agents):

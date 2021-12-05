@@ -538,7 +538,7 @@ def brick(t, b, dimensions, agents, y, Z, color, m, spare_agents, target_agents,
 def theoretical_nr_of_moves(Z, m, dim1, dim2):
     t_moves = 0
     if m == 2:
-        i_moves = 2*2*2-2+1
+        i_moves = 2*2*2-2*2+1
         t_moves = 2 * Z.number_of_nodes() + 4 * (4 -2 -3)
     if m == 1:
         i_moves = 1 * dim1*(dim1+2-2) + 1*2-2+1

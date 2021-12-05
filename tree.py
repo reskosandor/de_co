@@ -262,6 +262,7 @@ def tree(lr, m):
             exit()
     print("no grey nodes remain")
     move_counted = move_counter
+    print("number of agents is " +str(number_of_agents))
     print("move counted is " + str(move_counted))
     move_counter = 0
     end_time = time.time() - start_time

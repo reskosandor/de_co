@@ -150,7 +150,20 @@ with open('sim.csv', 'w', encoding='UTF8', newline='') as f:
     '''dimensions = [6, 6, 6]
     mesh_3d_1_error.create_grid_3d(dimensions, False, 1)'''
     '''mesh_2d_1_error.create_grid_2d(6, 6, False, 1)'''
-    tomesh_2d_1_error.create_grid_2d(10, 10, True, 1)
+    '''tomesh_2d_1_error.create_grid_2d(10, 10, True, 1)'''
     '''dimensions = [10, 10, 10]
     tomesh_3d_1_error.create_grid_3d(dimensions, True, 2)'''
+
+    '''A = nx.balanced_tree(3, 3)
+    lr = nx.to_prufer_sequence(A)
+    tree.tree(lr, 4)'''
+
+    '''A = C = nx.full_rary_tree(4, 30)
+    lr = nx.to_prufer_sequence(A)
+    tree.tree(lr, 1)
+    for i in range(len(lr)):
+        lr[i] = lr[i] + 1
+    print("lr is " + str(lr))'''
+    lr = [1, 1, 1, 1]
+    tree.tree(lr, 1)
 

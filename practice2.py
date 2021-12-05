@@ -56,7 +56,7 @@ b = bc(a)
 print(b)'''
 
 
-def roots_of_equation(a, b, c):
+'''def roots_of_equation(a, b, c):
     # Finding the value of Discriminant
     D = b * b - 4 * a * c
     # other way, D = b**2 - 4*a*c
@@ -97,6 +97,33 @@ k2 = h / ((1 - x2) * (1 - p))
 
 
 print(k1)
-print(k2)
+print(k2)'''
+
+'''G = nx.Graph()
+G.add_edge(0, 1)
+G.add_edge(0, 2)
+G.add_edge(0, 3)
+G.add_edge(1, 4)
+G.add_edge(1, 5)
+G.add_edge(1, 6)
+G.add_edge(4, 7)
+G.add_edge(4, 8)
+G.add_edge(4, 9)'''
+
+# agents increase by one, but move counter stays the same, because one agent needs to stay at the root
+'''G= nx.Graph()
+G.add_edge(0, 1)
+G.add_edge(0, 2)
+G.add_edge(0, 3)
+G.add_edge(0, 4)
+G.add_edge(0, 5)'''
+
+
+
+lr = nx.to_prufer_sequence(G)
+print(lr)
+for i in range(len(lr)):
+    lr[i] = lr[i] + 1
+print(lr)
 
 

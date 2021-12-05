@@ -628,7 +628,7 @@ def brick(t, b, dimensions, agents, Z, color, m, agents_snapshot, spare_agents, 
                 previous_agents = agents.copy()
                 agents = brick_agent_replacement(Z, agent_which, agent_when, agents, spare_agents, target_agents, target_groups)
                 functions.color_sync(Z, agents, previous_agents, color, m)
-            if o == math.ceil((dimensions[t-1] / 2)) - 1:
+            if o == math.ceil((dimensions[t-1] / 2)) - 1 and (dimensions[t-1]) % 2 == 1:
                 print("this is where the fun begins")
                 previous_agents = agents.copy()
                 move([t, 0], t, -1, agents, dimensions, agents_snapshot)

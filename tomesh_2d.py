@@ -46,15 +46,6 @@ def create_grid_2d(dim1, dim2, isperioidic, m):
             if y > 1 or x > 1:
                 C.remove_node((x, y))
 
-    if (m == 3):
-        for i in list(C.nodes):
-            (x, y) = i
-            if y > 0 or x > 1:
-                C.remove_node((x, y))
-
-    if (m > 3):
-        C = nx.Graph()
-        C.add_node((0, 0))
 
 
     print("list of C nodes")

@@ -513,8 +513,9 @@ def brick(t, b, dimensions, agents, Z, color, m, agents_snapshot):
                 move([t, 0], t, -1, agents, dimensions, agents_snapshot)
                 move([t, 1], t, +1, agents, dimensions, agents_snapshot)
                 functions.color_sync(Z, agents, previous_agents, color, m)
-            if o == math.ceil((dimensions[t-1] / 2)) - 1:
+            if o == math.ceil((dimensions[t-1] / 2)) - 1 and (dimensions[t-1]) % 2 == 1:
                 print("this is where the fun begins")
+                print("the ceiling is the " + str(math.ceil((dimensions[t-1] / 2)) - 1))
                 previous_agents = agents.copy()
                 move([t, 0], t, -1, agents, dimensions, agents_snapshot)
                 functions.color_sync(Z, agents, previous_agents, color, m)

@@ -116,14 +116,41 @@ G.add_edge(0, 1)
 G.add_edge(0, 2)
 G.add_edge(0, 3)
 G.add_edge(0, 4)
-G.add_edge(0, 5)'''
+G.add_edge(0, 5)
+G.add_edge(1, 6)
+G.add_edge(1, 7)
+G.add_edge(1, 8)
+G.add_edge(1, 9)'''
 
+'''G= nx.Graph()
+G.add_edge(0,1)
+G.add_edge(0,2)
+G.add_edge(0,3)
+G.add_edge(0,4)
+G.add_edge(0,5)
+G.add_edge(0,6)
+G.add_edge(1,7)
+G.add_edge(1,8)
+G.add_edge(1,9)
+G.add_edge(1,10)
+G.add_edge(1,11)
+G.add_edge(7,12)
+G.add_edge(7,13)
+G.add_edge(7,14)
+G.add_edge(7,15)
+G.add_edge(12,16)
+G.add_edge(12,17)
+G.add_edge(12,18)
+G.add_edge(16,19)
+G.add_edge(16,20)'''
 
+G = nx.full_rary_tree(3, 40)
 
 lr = nx.to_prufer_sequence(G)
 print(lr)
-for i in range(len(lr)):
-    lr[i] = lr[i] + 1
-print(lr)
+lr_1 = [x+1 for x in lr]
+print(lr_1)
+
+
 
 

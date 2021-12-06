@@ -164,6 +164,6 @@ with open('sim.csv', 'w', encoding='UTF8', newline='') as f:
     for i in range(len(lr)):
         lr[i] = lr[i] + 1
     print("lr is " + str(lr))'''
-    lr = [1, 1, 1, 1]
+    lr = [5, 5, 5, 2, 6, 6, 6, 2, 7, 7, 7, 2, 1, 8, 8, 8, 3, 9, 9, 9, 3, 10, 10, 10, 3, 1, 4, 11, 11, 11, 4, 12, 12, 12, 4, 13, 13, 13]
     tree.tree(lr, 1)
 

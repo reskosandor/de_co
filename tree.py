@@ -74,15 +74,15 @@ def tree(lr, m):
         return condition
 
     def alpha(v, T, m):
-        print("v is....")
-        print(v, flush=True)
+        #print("v is....")
+        #print(v, flush=True)
         #print(type(v), flush=True)
         #print(T, flush=True)
         #print(type(T))
-        print("T consists of nodes:")
-        print(list(T))
-        print("v degree is...")
-        print(T.degree[v])
+        #print("T consists of nodes:")
+        #print(list(T))
+        #print("v degree is...")
+        #print(T.degree[v])
 
         #print(type(T.degree[v]))
         #print(T.degree[v], flush=True)
@@ -93,27 +93,27 @@ def tree(lr, m):
             for node in neigh_list:
                 alpha_of_neighbors[node] = alpha(node, subtree(T, node, v), m)
             max_key = max(alpha_of_neighbors, key=alpha_of_neighbors.get)
-        print("neighbors are ordered by alpha, now evaluation by degree commencing")
+        #print("neighbors are ordered by alpha, now evaluation by degree commencing")
         if T.degree[v] == 0:
         #if degree(T, v) == 0:
-            print(T.degree[v], flush=True)
+            '''print(T.degree[v], flush=True)
             print("branch 1")
-            print("returning one")
+            print("returning one")'''
             return 1
         elif 0 < T.degree[v] <= m:
-            print("branch 2")
+            #print("branch 2")
             value = alpha_of_neighbors[max_key]
-            print("returning " + str(value), flush=True)
+            #print("returning " + str(value), flush=True)
             return value
         elif T.degree[v] > m and branch3(max_key, alpha_of_neighbors):
-            print("branch 3")
+            #print("branch 3")
             value = alpha_of_neighbors[max_key]
-            print("returning " + str(value), flush=True)
+            #print("returning " + str(value), flush=True)
             return value
         elif T.degree[v] > m and branch4(max_key, alpha_of_neighbors):
-            print("branch 4")
+            #print("branch 4")
             value = alpha_of_neighbors[max_key] + 1
-            print("returning " + str(value), flush=True)
+            #print("returning " + str(value), flush=True)
             return value
 
 

@@ -222,6 +222,8 @@ def create_grid_2d(dim1, dim2, isperioidic, m):
     print("after_init is " + str(after_init))
     print("move_counter is " + str(move_counter))
     print("spare agent is" + str(spare_agent))
+    print(t_init_moves)
+    print(theoretical_nr_moves)
 
 
     move_counted = move_counter
@@ -234,14 +236,14 @@ def theoretical_nr_of_moves(Z, C, m, dim1, dim2):
     c_moves = 0
     t_moves = 0
     if m == 2:
-        i_moves = 1
+        i_moves = 0
         t_moves = 2 * Z.number_of_nodes() - 3
     if m == 1:
         i_moves = 0.5 * 1 * dim1 * dim1
         '''for (a, b) in list(C.nodes):
             c_moves = c_moves + a + b
         t_moves = c_moves + Z.number_of_nodes() - dim1'''
-        t_moves = i_moves + Z.number_of_nodes() - dim1 + dim2 -1
+        t_moves = i_moves + Z.number_of_nodes() - dim1 + dim2 -2
         print(c_moves)
         print(Z.number_of_nodes())
         print(dim1)

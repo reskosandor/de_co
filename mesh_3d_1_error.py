@@ -340,7 +340,7 @@ def create_grid_3d(dimensions, isperioidic, m):
             agents[0] = canonical_path[i + 1]
             move_counter = move_counter + 1
             #print(agents[0])
-            spare_agent = spare_agent_follow(spare_agent, 0, previous_agents)
+            spare_agent = spare_agent_follow(spare_agent, nr_of_agents-1, previous_agents)
             functions.color_sync(Z, agents, previous_agents, color, m)
             previous_agents = agents.copy()
             agents = agent_replacement(Z, agent_which, agent_when, agents, spare_agent)
@@ -368,7 +368,7 @@ def create_grid_3d(dimensions, isperioidic, m):
                         agents[k] = (x, y - 1, z)
                         move_counter = move_counter + 1
                 print(agents)
-                spare_agent = spare_agent_follow(spare_agent, 0, previous_agents)
+                spare_agent = spare_agent_follow(spare_agent, nr_of_agents-1, previous_agents)
                 functions.color_sync(Z, agents, previous_agents, color, m)
                 previous_agents = agents.copy()
                 agents = agent_replacement(Z, agent_which, agent_when, agents, spare_agent)
@@ -384,7 +384,7 @@ def create_grid_3d(dimensions, isperioidic, m):
                     agents[k] = (x, y, z + 1)
                     move_counter = move_counter + 1
                 print(agents)
-                spare_agent = spare_agent_follow(spare_agent, 0, previous_agents)
+                spare_agent = spare_agent_follow(spare_agent, nr_of_agents-1, previous_agents)
                 functions.color_sync(Z, agents, previous_agents, color, m)
                 previous_agents = agents.copy()
                 agents = agent_replacement(Z, agent_which, agent_when, agents, spare_agent)
@@ -403,7 +403,7 @@ def create_grid_3d(dimensions, isperioidic, m):
                 agents[j] = (x, y, z+1)
                 move_counter = move_counter + 1
             #print(agents)
-            spare_agent = spare_agent_follow(spare_agent, 0, previous_agents)
+            spare_agent = spare_agent_follow(spare_agent, nr_of_agents-1, previous_agents)
             functions.color_sync(Z, agents, previous_agents, color, m)
             previous_agents = agents.copy()
             agents = agent_replacement(Z, agent_which, agent_when, agents, spare_agent)
@@ -428,6 +428,8 @@ def create_grid_3d(dimensions, isperioidic, m):
     print("no grey nodes remain")
     print("after_init is " + str(after_init))
     print("move_counter is " + str(move_counter))
+    print(t_init_moves)
+    print(theoretical_nr_moves)
     move_counted = move_counter
     move_counter = 0
     end_time = time.time() - start_time
@@ -437,23 +439,23 @@ def theoretical_nr_of_moves(Z, C, m, dim1, dim2, dim3):
     c_moves = 0
     t_moves = 0
     if m == 3:
-        i_moves = 1
+        i_moves = 0
         t_moves = 2 * Z.number_of_nodes() - 3
     if m == 2:
         i_moves = 0.5 * 1 * dim1 * dim1
         '''for (a, b, c) in list(C.nodes):
             c_moves = c_moves + a + b + c
         t_moves = c_moves + Z.number_of_nodes() - dim1'''
-        t_moves = i_moves + Z.number_of_nodes() - dim1 + dim2 - 1
+        t_moves = i_moves + Z.number_of_nodes() + dim2 * dim3 - dim1 - 2
         print(c_moves)
         print(Z.number_of_nodes())
         print(dim1)
     if m == 1:
-        i_moves = 1* dim2 * dim2 * dim2
+        i_moves = 1 * dim2 * dim2 * dim2
         '''for (a, b, c) in list(C.nodes):
             c_moves = c_moves + a + b + c
         t_moves = c_moves + Z.number_of_nodes() - dim1 * dim2'''
-        t_moves = i_moves + (Z.number_of_nodes() - dim1*dim2 + dim3 -1)
+        t_moves = i_moves + (Z.number_of_nodes() - dim1*dim2 + dim3 -2)
         print(c_moves)
         print(Z.number_of_nodes())
         print(dim1)

@@ -171,5 +171,5 @@ with open('sim.csv', 'w', encoding='UTF8', newline='') as f:
     tomesh_3d_1_error.create_grid_3d(dimensions, True, 4)'''
 
     '''tomesh_2d_1_error.create_grid_2d(10, 10, True, 2)'''
-    dimensions = [8, 8, 8]
+    dimensions = [3, 3, 3]
     tomesh_3d.create_grid_3d(dimensions, True, 3)

@@ -383,10 +383,12 @@ def move(A, x, y, agents, dimensions):
                 if x == 1:
                     agents[key] = ((a+y) % dimensions[0], b)
                     move_counter = move_counter + 1
+                    print("welp")
                 # if we want to modify the 2nd index
                 if x == 2:
                     agents[key] = (a, (b+y) % dimensions[1])
                     move_counter = move_counter + 1
+                    print("welp")
         # if second vertex
         if A[0] == 2:
             #if the 2nd coord is right
@@ -395,10 +397,12 @@ def move(A, x, y, agents, dimensions):
                 if x == 1:
                     agents[key] = ((a+y) % dimensions[0], b)
                     move_counter = move_counter + 1
+                    print("welp")
                 # if we want to modify the 2nd index
                 if x == 2:
                     agents[key] = (a, (b+y) % dimensions[1])
                     move_counter = move_counter + 1
+                    print("welp")
 
 def cube(t,y, dimensions, agents, Z, color, m, spare_agents, target_agents, agent_which, agent_when):
     global move_counter
@@ -414,7 +418,7 @@ def cube(t,y, dimensions, agents, Z, color, m, spare_agents, target_agents, agen
                 print("shift became")
                 print(shift)
                 print("agents are at " + str(agents))
-                spare_agents = spare_agents_follow(spare_agents, target_agents, previous_agents)
+                spare_agents = spare_agents_follow(agents, spare_agents, target_agents, previous_agents)
                 functions.color_sync(Z, agents, previous_agents, color, m)
                 previous_agents = agents.copy()
                 agents = cube_agent_replacement(agent_which, agent_when, agents, spare_agents)
@@ -426,7 +430,7 @@ def cube(t,y, dimensions, agents, Z, color, m, spare_agents, target_agents, agen
                 move([2, (0 - o) % dimensions[1]], 2, -1, agents, dimensions)
                 move([2, (1 + o) % dimensions[1]], 2, 1, agents, dimensions)
                 print("agents are at " + str(agents))
-                spare_agents = spare_agents_follow(spare_agents, target_agents, previous_agents)
+                spare_agents = spare_agents_follow(agents, spare_agents, target_agents, previous_agents)
                 functions.color_sync(Z, agents, previous_agents, color, m)
                 previous_agents = agents.copy()
                 agents = cube_agent_replacement(agent_which, agent_when, agents, spare_agents)
@@ -440,7 +444,7 @@ def cube(t,y, dimensions, agents, Z, color, m, spare_agents, target_agents, agen
                 previous_agents = agents.copy()
                 move([2, (2 + o) % dimensions[1]], 2, -1, agents, dimensions)
                 print("agents are at " + str(agents))
-                spare_agents = spare_agents_follow(spare_agents, target_agents, previous_agents)
+                spare_agents = spare_agents_follow(agents, spare_agents, target_agents, previous_agents)
                 functions.color_sync(Z, agents, previous_agents, color, m)
                 previous_agents = agents.copy()
                 agents = cube_agent_replacement(agent_which, agent_when, agents, spare_agents)
@@ -467,7 +471,7 @@ def cube(t,y, dimensions, agents, Z, color, m, spare_agents, target_agents, agen
                         agents[last_agent] = ((shift + k * y + 2) % dimensions[0], (1 + o) % dimensions[1])
                         move_counter = move_counter + 1
                     print("agents are at " + str(agents))
-                    spare_agents = spare_agents_follow(spare_agents, target_agents, previous_agents)
+                    spare_agents = spare_agents_follow(agents, spare_agents, target_agents, previous_agents)
                     functions.color_sync(Z, agents, previous_agents, color, m)
                     previous_agents = agents.copy()
                     agents = cube_agent_replacement(agent_which, agent_when, agents, spare_agents)
@@ -482,7 +486,7 @@ def cube(t,y, dimensions, agents, Z, color, m, spare_agents, target_agents, agen
                 print(agents)
                 move([t, 1], t, 1, agents, dimensions)
                 print("agents are at " + str(agents))
-                spare_agents = spare_agents_follow(spare_agents, target_agents, previous_agents)
+                spare_agents = spare_agents_follow(agents, spare_agents, target_agents, previous_agents)
                 functions.color_sync(Z, agents, previous_agents, color, m)
                 previous_agents = agents.copy()
                 agents = cube_agent_replacement(agent_which, agent_when, agents, spare_agents)
@@ -499,7 +503,7 @@ def itercube(s,y, dimensions, m, agents, Z, color, spare_agents, target_agents, 
             move([1, 1], s, 1, agents)
             move([1, 2], s, 1, agents)
             print("agents are at " + str(agents))
-            spare_agents = spare_agents_follow(spare_agents, target_agents, previous_agents)
+            spare_agents = spare_agents_follow(agents, spare_agents, target_agents, previous_agents)
             functions.color_sync(Z, agents, previous_agents, color, m)
             previous_agents = agents.copy()
             agents = cube_agent_replacement(agent_which, agent_when, agents, spare_agents)
@@ -516,7 +520,7 @@ def brick(t, b, dimensions, agents, y, Z, color, m, spare_agents, target_agents,
             shift = shift + y
             print("moved")
             print(agents)
-            spare_agents = spare_agents_follow(spare_agents, target_agents, previous_agents)
+            spare_agents = spare_agents_follow(agents, spare_agents, target_agents, previous_agents)
             functions.color_sync(Z, agents, previous_agents, color, m)
             previous_agents = agents.copy()
             agents = brick_agent_replacement(Z, agent_which, agent_when, agents, spare_agents, target_agents, target_groups)
@@ -529,7 +533,7 @@ def brick(t, b, dimensions, agents, y, Z, color, m, spare_agents, target_agents,
                 previous_agents = agents.copy()
                 move([t, 0], t, -1, agents, dimensions)
                 move([t, 1], t, -1, agents, dimensions)
-                spare_agents = spare_agents_follow(spare_agents, target_agents, previous_agents)
+                spare_agents = spare_agents_follow(agents, spare_agents, target_agents, previous_agents)
                 functions.color_sync(Z, agents, previous_agents, color, m)
                 previous_agents = agents.copy()
                 agents = brick_agent_replacement(Z, agent_which, agent_when, agents, spare_agents, target_agents, target_groups)
@@ -539,19 +543,20 @@ def theoretical_nr_of_moves(Z, m, dim1, dim2):
     t_moves = 0
     if m == 2:
         i_moves = 2*2*2-2*2+1
-        t_moves = 2 * Z.number_of_nodes() + 4 * (4 -2 -3)
+        t_moves = 2 * Z.number_of_nodes() - 4
     if m == 1:
         i_moves = dim1*dim1
         t_moves = Z.number_of_nodes() + dim1*(dim1-4) + dim2
     return i_moves, t_moves
 
-def spare_agents_follow(spare_agents, target_agents, previous_agents):
+def spare_agents_follow(agents, spare_agents, target_agents, previous_agents):
     global move_counter
     global spare_alive
     for i in spare_agents:
-        if spare_agents[i] != previous_agents[target_agents[i]] and spare_alive == True:
+        if spare_agents[i] != previous_agents[target_agents[i]] and agents[target_agents[i]] != previous_agents[target_agents[i]] and spare_alive == True:
             spare_agents[i] = previous_agents[target_agents[i]]
             move_counter = move_counter + 1
+            print("ribbit")
     print("spare agents are in the position at " + str(spare_agents))
     return spare_agents
 

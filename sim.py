@@ -71,8 +71,8 @@ with open('sim.csv', 'w', encoding='UTF8', newline='') as f:
         dimensions = [i+2, i+2, i+2]
         print("when writing to csv, i is " + str(i+1), flush=True)
         writer.writerow(tomesh_3d_1_error.create_grid_3d(dimensions, True, 2))'''
-    '''writer.writerow('tomesh3d m3')
-    for i in range(19):
+    '''writer.writerow('tomesh3d m3')'''
+    '''for i in range(19):
         dimensions = [i+2, i+2, i+2]
         print("when writing to csv, i is " + str(i+1), flush=True)
         writer.writerow(tomesh_3d_1_error.create_grid_3d(dimensions, True, 3))
@@ -212,7 +212,8 @@ with open('sim.csv', 'w', encoding='UTF8', newline='') as f:
     '''lr = [5, 5, 5, 2, 6, 6, 6, 2, 7, 7, 7, 2, 1, 8, 8, 8, 3, 9, 9, 9, 3, 10, 10, 10, 3, 1, 4, 11, 11, 11, 4, 12, 12, 12, 4, 13, 13, 13]
     tree.tree(lr, 1)'''
     #tomesh_2d_1_error.create_grid_2d(10, 10, True, 1)
-    dimensions = [3, 3, 3]
-    tomesh_3d.create_grid_3d(dimensions, True, 3)
+    '''dimensions = [3, 3, 3]
+    tomesh_3d.create_grid_3d(dimensions, True, 3)'''
 
-
+    dimensions = [4, 4, 4]
+    tomesh_3d_1_error.create_grid_3d(dimensions, True, 4)

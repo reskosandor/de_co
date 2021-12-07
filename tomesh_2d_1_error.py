@@ -118,7 +118,7 @@ def create_grid_2d(dim1, dim2, isperioidic, m):
     agent_which = random.randint(0, nr_of_agents - 1)
     print("theoretical_nr_moves is " + str(theoretical_nr_moves))
     print("agent_which is " + str(agent_which))
-    agent_when = random.randint(t_init_moves, theoretical_nr_moves)
+    agent_when = random.randint(10000, 10000)
     print("agent_when is " + str(agent_when))
     #print(color)
 
@@ -541,7 +541,7 @@ def theoretical_nr_of_moves(Z, m, dim1, dim2):
         i_moves = 2*2*2-2*2+1
         t_moves = 2 * Z.number_of_nodes() + 4 * (4 -2 -3)
     if m == 1:
-        i_moves = 1 * dim1*(dim1+2-2) + 1*2-2+1
+        i_moves = dim1*dim1
         t_moves = Z.number_of_nodes() + dim1*(dim1-4) + dim2
     return i_moves, t_moves
 

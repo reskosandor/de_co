@@ -166,6 +166,8 @@ with open('sim.csv', 'w', encoding='UTF8', newline='') as f:
     print("lr is " + str(lr))'''
     '''lr = [5, 5, 5, 2, 6, 6, 6, 2, 7, 7, 7, 2, 1, 8, 8, 8, 3, 9, 9, 9, 3, 10, 10, 10, 3, 1, 4, 11, 11, 11, 4, 12, 12, 12, 4, 13, 13, 13]
     tree.tree(lr, 1)'''
-    dimensions = [6, 6, 6]
-    mesh_3d_1_error.create_grid_3d(dimensions, False, 3)
+    #tomesh_2d_1_error.create_grid_2d(8, 8, True, 1)
+    '''dimensions = [6, 6, 6]
+    tomesh_3d_1_error.create_grid_3d(dimensions, True, 4)'''
 
+    tomesh_2d_1_error.create_grid_2d(6, 6, True, 2)

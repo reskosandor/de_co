@@ -673,11 +673,11 @@ def theoretical_nr_of_moves(Z, m, dim1, dim2, dim3):
         t_moves = 2*Z.number_of_nodes() + 2*2*2*(6-3-3)
 
     if m == 2:
-        i_moves = 2 * dim1 * (dim1 +1) + 2 + 1
+        i_moves = 2 * dim1 * (dim1 +1) + 1
         t_moves = Z.number_of_nodes() + 2*dim1 * (dim1 -1) -2 + dim2*dim3 + 1
 
     if m == 1:
-        i_moves = dim1 * dim2 * (dim1 + dim2 -1) + 80 - 3
+        i_moves = dim1 * dim2 * (dim1 + dim2 -1)
         t_moves = Z.number_of_nodes() + dim1 * dim2 * (dim1 + dim2 - 3) + dim3
     return i_moves, t_moves
 

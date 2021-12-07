@@ -56,4 +56,9 @@ def key_by_value(what, dict):
         if value == what:
             return key
 
-
+def color_check(color):
+    clean = True
+    for key in color:
+        if color[key] == "grey":
+            clean = False
+    return clean

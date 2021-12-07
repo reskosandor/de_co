@@ -118,7 +118,7 @@ def create_grid_2d(dim1, dim2, isperioidic, m):
     agent_which = random.randint(0, nr_of_agents - 1)
     print("theoretical_nr_moves is " + str(theoretical_nr_moves))
     print("agent_which is " + str(agent_which))
-    agent_when = random.randint(10000, 10000)
+    agent_when = random.randint(1000000, 1000000)
     print("agent_when is " + str(agent_when))
     #print(color)
 
@@ -546,7 +546,7 @@ def theoretical_nr_of_moves(Z, m, dim1, dim2):
         t_moves = 2 * Z.number_of_nodes() - 4
     if m == 1:
         i_moves = dim1*dim1
-        t_moves = Z.number_of_nodes() + dim1*(dim1-4) + dim2
+        t_moves = Z.number_of_nodes() + dim2 -2 + dim1 * (dim1 -2) + 1 -1 # +1 -1 is from initial set
     return i_moves, t_moves
 
 def spare_agents_follow(agents, spare_agents, target_agents, previous_agents):

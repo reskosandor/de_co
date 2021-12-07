@@ -76,7 +76,7 @@ def create_grid_2d(dim1, dim2, isperioidic, m):
     print(t_init_moves)
     agent_which = random.randint(0, nr_of_agents - 1)
     print("agent_which is " + str(agent_which))
-    agent_when = random.randint(t_init_moves, theoretical_nr_moves)
+    agent_when = random.randint(1000000, 1000000)
     print("agent_when is " + str(agent_when))
 
 

@@ -480,11 +480,14 @@ def itercube(s, dimensions, m, agents, Z, color, agents_snapshot):
             previous_agents = agents.copy()
             #print("y is " + str(y_global))
             itercube(s-1, dimensions, m, agents, Z, color, agents_snapshot)
-            print("moving 1 in the " + str(s) + "th dimension")
-            move([1, 1], s, 1, agents, dimensions, agents_snapshot)
-            move([1, 0], s, 1, agents, dimensions, agents_snapshot)
-            print(agents)
             functions.color_sync(Z, agents, previous_agents, color, m)
+            print("moving 1 in the " + str(s) + "th dimension")
+            if functions.color_check(color) == False:
+                previous_agents = agents.copy()
+                move([1, 1], s, 1, agents, dimensions, agents_snapshot)
+                move([1, 0], s, 1, agents, dimensions, agents_snapshot)
+                print(agents)
+                functions.color_sync(Z, agents, previous_agents, color, m)
 
 def brick(t, b, dimensions, agents, Z, color, m, agents_snapshot):
     global y_global

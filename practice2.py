@@ -122,7 +122,7 @@ G.add_edge(1, 7)
 G.add_edge(1, 8)
 G.add_edge(1, 9)'''
 
-'''G= nx.Graph()
+G= nx.Graph()
 G.add_edge(0,1)
 G.add_edge(0,2)
 G.add_edge(0,3)
@@ -142,9 +142,9 @@ G.add_edge(12,16)
 G.add_edge(12,17)
 G.add_edge(12,18)
 G.add_edge(16,19)
-G.add_edge(16,20)'''
+G.add_edge(16,20)
 
-G = nx.full_rary_tree(3, 40)
+#G = nx.full_rary_tree(3, 40)
 
 lr = nx.to_prufer_sequence(G)
 print(lr)

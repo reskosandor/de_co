@@ -214,6 +214,5 @@ with open('sim.csv', 'w', encoding='UTF8', newline='') as f:
     #tomesh_2d_1_error.create_grid_2d(10, 10, True, 1)
     '''dimensions = [3, 3, 3]
     tomesh_3d.create_grid_3d(dimensions, True, 3)'''
-
-    dimensions = [4, 4, 4]
-    tomesh_3d_1_error.create_grid_3d(dimensions, True, 4)
+    dimensions = [3, 3, 3]
+    mesh_3d_1_error.create_grid_3d(dimensions, False, 1)

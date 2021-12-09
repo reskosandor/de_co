@@ -1,186 +1,4842 @@
-move counter at starting position is 0
-dimensions are the following: [3, 3, 3]
-Graph with 27 nodes and 81 edges
-[(0, 0, 0), (0, 0, 1), (0, 0, 2), (0, 1, 0), (0, 1, 1), (0, 1, 2), (0, 2, 0), (0, 2, 1), (0, 2, 2), (1, 0, 0), (1, 0, 1), (1, 0, 2), (1, 1, 0), (1, 1, 1), (1, 1, 2), (1, 2, 0), (1, 2, 1), (1, 2, 2), (2, 0, 0), (2, 0, 1), (2, 0, 2), (2, 1, 0), (2, 1, 1), (2, 1, 2), (2, 2, 0), (2, 2, 1), (2, 2, 2)]
-list of C nodes
-[(0, 0, 0), (0, 0, 1), (0, 1, 0), (0, 1, 1), (1, 0, 0), (1, 0, 1), (1, 1, 0), (1, 1, 1)]
-{(0, 0, 0): 'grey', (0, 0, 1): 'grey', (0, 0, 2): 'grey', (0, 1, 0): 'grey', (0, 1, 1): 'grey', (0, 1, 2): 'grey', (0, 2, 0): 'grey', (0, 2, 1): 'grey', (0, 2, 2): 'grey', (1, 0, 0): 'grey', (1, 0, 1): 'grey', (1, 0, 2): 'grey', (1, 1, 0): 'grey', (1, 1, 1): 'grey', (1, 1, 2): 'grey', (1, 2, 0): 'grey', (1, 2, 1): 'grey', (1, 2, 2): 'grey', (2, 0, 0): 'grey', (2, 0, 1): 'grey', (2, 0, 2): 'grey', (2, 1, 0): 'grey', (2, 1, 1): 'grey', (2, 1, 2): 'grey', (2, 2, 0): 'grey', (2, 2, 1): 'grey', (2, 2, 2): 'grey'}
-(x,y, z) is:
-(0, 0, 0)
-[(0, 0, 0)]
-(x,y, z) is:
-(0, 0, 1)
-[(0, 0, 0), (0, 0, 1)]
-(x,y, z) is:
-(0, 1, 0)
-[(0, 0, 0), (0, 1, 0)]
-(x,y, z) is:
-(0, 1, 1)
-[(0, 0, 0), (0, 1, 0), (0, 1, 1)]
-(x,y, z) is:
-(1, 0, 0)
-[(0, 0, 0), (1, 0, 0)]
-(x,y, z) is:
-(1, 0, 1)
-[(0, 0, 0), (1, 0, 0), (1, 0, 1)]
-(x,y, z) is:
-(1, 1, 0)
-[(0, 0, 0), (1, 0, 0), (1, 1, 0)]
-(x,y, z) is:
-(1, 1, 1)
-[(0, 0, 0), (1, 0, 0), (1, 1, 0), (1, 1, 1)]
-P is :
-[[(0, 0, 0)], [(0, 0, 0), (0, 0, 1)], [(0, 0, 0), (0, 1, 0)], [(0, 0, 0), (0, 1, 0), (0, 1, 1)], [(0, 0, 0), (1, 0, 0)], [(0, 0, 0), (1, 0, 0), (1, 0, 1)], [(0, 0, 0), (1, 0, 0), (1, 1, 0)], [(0, 0, 0), (1, 0, 0), (1, 1, 0), (1, 1, 1)]]
-flipped_agents
-{(0, 0, 0): [0, 1, 2, 3, 4, 5, 6, 7]}
-v is:
-(0, 0, 0)
-truest
-[0, 1, 2, 3, 4, 5, 6, 7]
+asd
+Graph with 10 nodes and 9 edges
+2
+2
+[0, 1, 2, 3, 4, 5, 6, 7, 8, 9]
+[(0, 8), (0, 1), (1, 2), (2, 3), (3, 4), (4, 5), (5, 6), (6, 7), (7, 9)]
+[0, 1, 2, 3, 4, 5, 6, 7, 8, 9]
+{0: 'grey', 1: 'grey', 2: 'grey', 3: 'grey', 4: 'grey', 5: 'grey', 6: 'grey', 7: 'grey', 8: 'grey', 9: 'grey'}
+v is....
+0
+T consists of nodes:
+[0, 1, 2, 3, 4, 5, 6, 7, 8, 9]
+v degree is...
+2
+v is....
 8
-edges_of_v_in_P
-[[(0, 0, 0), (0, 0, 1)], [(0, 0, 0), (0, 1, 0)], [(0, 0, 0), (1, 0, 0)]]
-p is:
-[1, 2, 4]
-i is:
+T consists of nodes:
+[8]
+v degree is...
 0
-list of agents on v
-[0]
-v is
-(0, 0, 0)
-i is:
-1
-list of agents on v
-[1, 2]
-v is
-(0, 0, 0)
-i is:
-2
-list of agents on v
-[3, 4, 5, 6]
-v is
-(0, 0, 0)
-{0: (0, 0, 1), 1: (0, 1, 0), 2: (0, 1, 0), 3: (1, 0, 0), 4: (1, 0, 0), 5: (1, 0, 0), 6: (1, 0, 0), 7: (0, 0, 0)}
-{(0, 0, 0): 'black', (0, 0, 1): 'black', (0, 0, 2): 'grey', (0, 1, 0): 'black', (0, 1, 1): 'grey', (0, 1, 2): 'grey', (0, 2, 0): 'grey', (0, 2, 1): 'grey', (0, 2, 2): 'grey', (1, 0, 0): 'black', (1, 0, 1): 'grey', (1, 0, 2): 'grey', (1, 1, 0): 'grey', (1, 1, 1): 'grey', (1, 1, 2): 'grey', (1, 2, 0): 'grey', (1, 2, 1): 'grey', (1, 2, 2): 'grey', (2, 0, 0): 'grey', (2, 0, 1): 'grey', (2, 0, 2): 'grey', (2, 1, 0): 'grey', (2, 1, 1): 'grey', (2, 1, 2): 'grey', (2, 2, 0): 'grey', (2, 2, 1): 'grey', (2, 2, 2): 'grey'}
-iteration is over
-nr of iterations so far
-1
-values
-[(0, 0, 1), (0, 1, 0), (0, 1, 0), (1, 0, 0), (1, 0, 0), (1, 0, 0), (1, 0, 0), (0, 0, 0)]
-set(values)
-{(1, 0, 0), (0, 0, 0), (0, 0, 1), (0, 1, 0)}
-{0: (0, 0, 1), 1: (0, 1, 0), 2: (0, 1, 0), 3: (1, 0, 0), 4: (1, 0, 0), 5: (1, 0, 0), 6: (1, 0, 0), 7: (0, 0, 0)}
-flipped_agents
-{(0, 0, 1): [0], (0, 1, 0): [1, 2], (1, 0, 0): [3, 4, 5, 6], (0, 0, 0): [7]}
-v is:
-(1, 0, 0)
-truest
-[3, 4, 5, 6]
-4
-edges_of_v_in_P
-[[(1, 0, 0), (1, 0, 1)], [(1, 0, 0), (1, 1, 0)]]
-p is:
-[1, 2]
-i is:
+neighbors are ordered by alpha, now evaluation by degree commencing
 0
-list of agents on v
-[3]
-v is
-(1, 0, 0)
-i is:
+branch 1
+returning one
+v is....
 1
-list of agents on v
-[4, 5]
-v is
-(1, 0, 0)
-{0: (0, 0, 1), 1: (0, 1, 0), 2: (0, 1, 0), 3: (1, 0, 1), 4: (1, 1, 0), 5: (1, 1, 0), 6: (1, 0, 0), 7: (0, 0, 0)}
-{(0, 0, 0): 'black', (0, 0, 1): 'black', (0, 0, 2): 'grey', (0, 1, 0): 'black', (0, 1, 1): 'grey', (0, 1, 2): 'grey', (0, 2, 0): 'grey', (0, 2, 1): 'grey', (0, 2, 2): 'grey', (1, 0, 0): 'black', (1, 0, 1): 'black', (1, 0, 2): 'grey', (1, 1, 0): 'black', (1, 1, 1): 'grey', (1, 1, 2): 'grey', (1, 2, 0): 'grey', (1, 2, 1): 'grey', (1, 2, 2): 'grey', (2, 0, 0): 'grey', (2, 0, 1): 'grey', (2, 0, 2): 'grey', (2, 1, 0): 'grey', (2, 1, 1): 'grey', (2, 1, 2): 'grey', (2, 2, 0): 'grey', (2, 2, 1): 'grey', (2, 2, 2): 'grey'}
-iteration is over
-nr of iterations so far
+T consists of nodes:
+[1, 2, 3, 4, 5, 6, 7, 9]
+v degree is...
+1
+v is....
 2
-values
-[(0, 0, 1), (0, 1, 0), (0, 1, 0), (1, 0, 1), (1, 1, 0), (1, 1, 0), (1, 0, 0), (0, 0, 0)]
-set(values)
-{(1, 0, 1), (1, 1, 0), (0, 1, 0), (0, 0, 0), (1, 0, 0), (0, 0, 1)}
-{0: (0, 0, 1), 1: (0, 1, 0), 2: (0, 1, 0), 3: (1, 0, 1), 4: (1, 1, 0), 5: (1, 1, 0), 6: (1, 0, 0), 7: (0, 0, 0)}
-flipped_agents
-{(0, 0, 1): [0], (0, 1, 0): [1, 2], (1, 0, 1): [3], (1, 1, 0): [4, 5], (1, 0, 0): [6], (0, 0, 0): [7]}
-v is:
-(0, 1, 0)
-truest
-[1, 2]
-2
-edges_of_v_in_P
-[[(0, 1, 0), (0, 1, 1)]]
-p is:
-[1]
-i is:
-0
-list of agents on v
-[1]
-v is
-(0, 1, 0)
-{0: (0, 0, 1), 1: (0, 1, 1), 2: (0, 1, 0), 3: (1, 0, 1), 4: (1, 1, 0), 5: (1, 1, 0), 6: (1, 0, 0), 7: (0, 0, 0)}
-{(0, 0, 0): 'black', (0, 0, 1): 'black', (0, 0, 2): 'grey', (0, 1, 0): 'black', (0, 1, 1): 'black', (0, 1, 2): 'grey', (0, 2, 0): 'grey', (0, 2, 1): 'grey', (0, 2, 2): 'grey', (1, 0, 0): 'black', (1, 0, 1): 'black', (1, 0, 2): 'grey', (1, 1, 0): 'black', (1, 1, 1): 'grey', (1, 1, 2): 'grey', (1, 2, 0): 'grey', (1, 2, 1): 'grey', (1, 2, 2): 'grey', (2, 0, 0): 'grey', (2, 0, 1): 'grey', (2, 0, 2): 'grey', (2, 1, 0): 'grey', (2, 1, 1): 'grey', (2, 1, 2): 'grey', (2, 2, 0): 'grey', (2, 2, 1): 'grey', (2, 2, 2): 'grey'}
-iteration is over
-nr of iterations so far
+T consists of nodes:
+[2, 3, 4, 5, 6, 7, 9]
+v degree is...
+1
+v is....
 3
-values
-[(0, 0, 1), (0, 1, 1), (0, 1, 0), (1, 0, 1), (1, 1, 0), (1, 1, 0), (1, 0, 0), (0, 0, 0)]
-set(values)
-{(1, 0, 1), (1, 1, 0), (0, 1, 0), (0, 0, 0), (1, 0, 0), (0, 0, 1), (0, 1, 1)}
-{0: (0, 0, 1), 1: (0, 1, 1), 2: (0, 1, 0), 3: (1, 0, 1), 4: (1, 1, 0), 5: (1, 1, 0), 6: (1, 0, 0), 7: (0, 0, 0)}
-flipped_agents
-{(0, 0, 1): [0], (0, 1, 1): [1], (0, 1, 0): [2], (1, 0, 1): [3], (1, 1, 0): [4, 5], (1, 0, 0): [6], (0, 0, 0): [7]}
-v is:
-(1, 1, 0)
-truest
-[4, 5]
-2
-edges_of_v_in_P
-[[(1, 1, 0), (1, 1, 1)]]
-p is:
-[1]
-i is:
-0
-list of agents on v
-[4]
-v is
-(1, 1, 0)
-{0: (0, 0, 1), 1: (0, 1, 1), 2: (0, 1, 0), 3: (1, 0, 1), 4: (1, 1, 1), 5: (1, 1, 0), 6: (1, 0, 0), 7: (0, 0, 0)}
-{(0, 0, 0): 'black', (0, 0, 1): 'black', (0, 0, 2): 'grey', (0, 1, 0): 'black', (0, 1, 1): 'black', (0, 1, 2): 'grey', (0, 2, 0): 'grey', (0, 2, 1): 'grey', (0, 2, 2): 'grey', (1, 0, 0): 'black', (1, 0, 1): 'black', (1, 0, 2): 'grey', (1, 1, 0): 'black', (1, 1, 1): 'black', (1, 1, 2): 'grey', (1, 2, 0): 'grey', (1, 2, 1): 'grey', (1, 2, 2): 'grey', (2, 0, 0): 'grey', (2, 0, 1): 'grey', (2, 0, 2): 'grey', (2, 1, 0): 'grey', (2, 1, 1): 'grey', (2, 1, 2): 'grey', (2, 2, 0): 'grey', (2, 2, 1): 'grey', (2, 2, 2): 'grey'}
-iteration is over
-nr of iterations so far
+T consists of nodes:
+[3, 4, 5, 6, 7, 9]
+v degree is...
+1
+v is....
 4
-values
-[(0, 0, 1), (0, 1, 1), (0, 1, 0), (1, 0, 1), (1, 1, 1), (1, 1, 0), (1, 0, 0), (0, 0, 0)]
-set(values)
-{(1, 0, 1), (1, 1, 0), (0, 1, 0), (0, 0, 0), (1, 0, 0), (0, 0, 1), (1, 1, 1), (0, 1, 1)}
-{0: (0, 0, 1), 1: (0, 1, 1), 2: (0, 1, 0), 3: (1, 0, 1), 4: (1, 1, 1), 5: (1, 1, 0), 6: (1, 0, 0), 7: (0, 0, 0)}
-agents at the end of INITIAL SET
-{0: (0, 0, 1), 1: (0, 1, 1), 2: (0, 1, 0), 3: (1, 0, 1), 4: (1, 1, 1), 5: (1, 1, 0), 6: (1, 0, 0), 7: (0, 0, 0)}
-ITERCUBE s == 6-m commencing
-calling CUBE recursively for t-1
-cube is starting
-we just moved the agents on the vertices, where 1st coord is 1, its first coord is changed by 1
-{0: (0, 0, 1), 1: (0, 1, 1), 2: (0, 1, 0), 3: (2, 0, 1), 4: (2, 1, 1), 5: (2, 1, 0), 6: (2, 0, 0), 7: (0, 0, 0)}
-value of y is -1
-this is where the fun begins
-agents are {0: (0, 2, 1), 1: (0, 1, 1), 2: (0, 1, 0), 3: (2, 2, 1), 4: (2, 1, 1), 5: (2, 1, 0), 6: (2, 2, 0), 7: (0, 2, 0)}
-we just moved the agents on the vertices, where 1st coord is 1, its first coord is changed by -1
-{0: (0, 2, 1), 1: (0, 1, 1), 2: (0, 1, 0), 3: (1, 2, 1), 4: (1, 1, 1), 5: (1, 1, 0), 6: (1, 2, 0), 7: (0, 2, 0)}
-we finished with the odd stuff
-we finshed
-calling CUBE recursively for t-1
-cube is starting
-we just moved the agents on the vertices, where 1st coord is 1, its first coord is changed by 1
-{0: (0, 2, 1), 1: (0, 1, 1), 2: (0, 1, 0), 3: (2, 2, 1), 4: (2, 1, 1), 5: (2, 1, 0), 6: (2, 2, 0), 7: (0, 2, 0)}
-value of y is -1
-this is where the fun begins
-agents are {0: (0, 0, 1), 1: (0, 1, 1), 2: (0, 1, 0), 3: (2, 0, 1), 4: (2, 1, 1), 5: (2, 1, 0), 6: (2, 0, 0), 7: (0, 0, 0)}
-we just moved the agents on the vertices, where 1st coord is 1, its first coord is changed by -1
-{0: (0, 0, 1), 1: (0, 1, 1), 2: (0, 1, 0), 3: (1, 0, 1), 4: (1, 1, 1), 5: (1, 1, 0), 6: (1, 0, 0), 7: (0, 0, 0)}
-we finished with the odd stuff
-we finshed
+T consists of nodes:
+[4, 5, 6, 7, 9]
+v degree is...
+1
+v is....
+5
+T consists of nodes:
+[5, 6, 7, 9]
+v degree is...
+1
+v is....
+6
+T consists of nodes:
+[6, 7, 9]
+v degree is...
+1
+v is....
+7
+T consists of nodes:
+[7, 9]
+v degree is...
+1
+v is....
+9
+T consists of nodes:
+[9]
+v degree is...
+0
+neighbors are ordered by alpha, now evaluation by degree commencing
+0
+branch 1
+returning one
+neighbors are ordered by alpha, now evaluation by degree commencing
+branch 2
+returning 1
+neighbors are ordered by alpha, now evaluation by degree commencing
+branch 2
+returning 1
+neighbors are ordered by alpha, now evaluation by degree commencing
+branch 2
+returning 1
+neighbors are ordered by alpha, now evaluation by degree commencing
+branch 2
+returning 1
+neighbors are ordered by alpha, now evaluation by degree commencing
+branch 2
+returning 1
+neighbors are ordered by alpha, now evaluation by degree commencing
+branch 2
+returning 1
+neighbors are ordered by alpha, now evaluation by degree commencing
+branch 2
+returning 1
+neighbors are ordered by alpha, now evaluation by degree commencing
+branch 4
+returning 2
+appended alpha value for node 0 is: 2
+v is....
+1
+T consists of nodes:
+[0, 1, 2, 3, 4, 5, 6, 7, 8, 9]
+v degree is...
+2
+v is....
+0
+T consists of nodes:
+[0, 8]
+v degree is...
+1
+v is....
 8
-some nodes are grey, algorithm failed
+T consists of nodes:
+[8]
+v degree is...
+0
+neighbors are ordered by alpha, now evaluation by degree commencing
+0
+branch 1
+returning one
+neighbors are ordered by alpha, now evaluation by degree commencing
+branch 2
+returning 1
+v is....
+2
+T consists of nodes:
+[2, 3, 4, 5, 6, 7, 9]
+v degree is...
+1
+v is....
+3
+T consists of nodes:
+[3, 4, 5, 6, 7, 9]
+v degree is...
+1
+v is....
+4
+T consists of nodes:
+[4, 5, 6, 7, 9]
+v degree is...
+1
+v is....
+5
+T consists of nodes:
+[5, 6, 7, 9]
+v degree is...
+1
+v is....
+6
+T consists of nodes:
+[6, 7, 9]
+v degree is...
+1
+v is....
+7
+T consists of nodes:
+[7, 9]
+v degree is...
+1
+v is....
+9
+T consists of nodes:
+[9]
+v degree is...
+0
+neighbors are ordered by alpha, now evaluation by degree commencing
+0
+branch 1
+returning one
+neighbors are ordered by alpha, now evaluation by degree commencing
+branch 2
+returning 1
+neighbors are ordered by alpha, now evaluation by degree commencing
+branch 2
+returning 1
+neighbors are ordered by alpha, now evaluation by degree commencing
+branch 2
+returning 1
+neighbors are ordered by alpha, now evaluation by degree commencing
+branch 2
+returning 1
+neighbors are ordered by alpha, now evaluation by degree commencing
+branch 2
+returning 1
+neighbors are ordered by alpha, now evaluation by degree commencing
+branch 2
+returning 1
+neighbors are ordered by alpha, now evaluation by degree commencing
+branch 4
+returning 2
+appended alpha value for node 1 is: 2
+v is....
+2
+T consists of nodes:
+[0, 1, 2, 3, 4, 5, 6, 7, 8, 9]
+v degree is...
+2
+v is....
+1
+T consists of nodes:
+[0, 1, 8]
+v degree is...
+1
+v is....
+0
+T consists of nodes:
+[0, 8]
+v degree is...
+1
+v is....
+8
+T consists of nodes:
+[8]
+v degree is...
+0
+neighbors are ordered by alpha, now evaluation by degree commencing
+0
+branch 1
+returning one
+neighbors are ordered by alpha, now evaluation by degree commencing
+branch 2
+returning 1
+neighbors are ordered by alpha, now evaluation by degree commencing
+branch 2
+returning 1
+v is....
+3
+T consists of nodes:
+[3, 4, 5, 6, 7, 9]
+v degree is...
+1
+v is....
+4
+T consists of nodes:
+[4, 5, 6, 7, 9]
+v degree is...
+1
+v is....
+5
+T consists of nodes:
+[5, 6, 7, 9]
+v degree is...
+1
+v is....
+6
+T consists of nodes:
+[6, 7, 9]
+v degree is...
+1
+v is....
+7
+T consists of nodes:
+[7, 9]
+v degree is...
+1
+v is....
+9
+T consists of nodes:
+[9]
+v degree is...
+0
+neighbors are ordered by alpha, now evaluation by degree commencing
+0
+branch 1
+returning one
+neighbors are ordered by alpha, now evaluation by degree commencing
+branch 2
+returning 1
+neighbors are ordered by alpha, now evaluation by degree commencing
+branch 2
+returning 1
+neighbors are ordered by alpha, now evaluation by degree commencing
+branch 2
+returning 1
+neighbors are ordered by alpha, now evaluation by degree commencing
+branch 2
+returning 1
+neighbors are ordered by alpha, now evaluation by degree commencing
+branch 2
+returning 1
+neighbors are ordered by alpha, now evaluation by degree commencing
+branch 4
+returning 2
+appended alpha value for node 2 is: 2
+v is....
+3
+T consists of nodes:
+[0, 1, 2, 3, 4, 5, 6, 7, 8, 9]
+v degree is...
+2
+v is....
+2
+T consists of nodes:
+[0, 1, 2, 8]
+v degree is...
+1
+v is....
+1
+T consists of nodes:
+[0, 1, 8]
+v degree is...
+1
+v is....
+0
+T consists of nodes:
+[0, 8]
+v degree is...
+1
+v is....
+8
+T consists of nodes:
+[8]
+v degree is...
+0
+neighbors are ordered by alpha, now evaluation by degree commencing
+0
+branch 1
+returning one
+neighbors are ordered by alpha, now evaluation by degree commencing
+branch 2
+returning 1
+neighbors are ordered by alpha, now evaluation by degree commencing
+branch 2
+returning 1
+neighbors are ordered by alpha, now evaluation by degree commencing
+branch 2
+returning 1
+v is....
+4
+T consists of nodes:
+[4, 5, 6, 7, 9]
+v degree is...
+1
+v is....
+5
+T consists of nodes:
+[5, 6, 7, 9]
+v degree is...
+1
+v is....
+6
+T consists of nodes:
+[6, 7, 9]
+v degree is...
+1
+v is....
+7
+T consists of nodes:
+[7, 9]
+v degree is...
+1
+v is....
+9
+T consists of nodes:
+[9]
+v degree is...
+0
+neighbors are ordered by alpha, now evaluation by degree commencing
+0
+branch 1
+returning one
+neighbors are ordered by alpha, now evaluation by degree commencing
+branch 2
+returning 1
+neighbors are ordered by alpha, now evaluation by degree commencing
+branch 2
+returning 1
+neighbors are ordered by alpha, now evaluation by degree commencing
+branch 2
+returning 1
+neighbors are ordered by alpha, now evaluation by degree commencing
+branch 2
+returning 1
+neighbors are ordered by alpha, now evaluation by degree commencing
+branch 4
+returning 2
+appended alpha value for node 3 is: 2
+v is....
+4
+T consists of nodes:
+[0, 1, 2, 3, 4, 5, 6, 7, 8, 9]
+v degree is...
+2
+v is....
+3
+T consists of nodes:
+[0, 1, 2, 3, 8]
+v degree is...
+1
+v is....
+2
+T consists of nodes:
+[0, 1, 2, 8]
+v degree is...
+1
+v is....
+1
+T consists of nodes:
+[0, 1, 8]
+v degree is...
+1
+v is....
+0
+T consists of nodes:
+[0, 8]
+v degree is...
+1
+v is....
+8
+T consists of nodes:
+[8]
+v degree is...
+0
+neighbors are ordered by alpha, now evaluation by degree commencing
+0
+branch 1
+returning one
+neighbors are ordered by alpha, now evaluation by degree commencing
+branch 2
+returning 1
+neighbors are ordered by alpha, now evaluation by degree commencing
+branch 2
+returning 1
+neighbors are ordered by alpha, now evaluation by degree commencing
+branch 2
+returning 1
+neighbors are ordered by alpha, now evaluation by degree commencing
+branch 2
+returning 1
+v is....
+5
+T consists of nodes:
+[5, 6, 7, 9]
+v degree is...
+1
+v is....
+6
+T consists of nodes:
+[6, 7, 9]
+v degree is...
+1
+v is....
+7
+T consists of nodes:
+[7, 9]
+v degree is...
+1
+v is....
+9
+T consists of nodes:
+[9]
+v degree is...
+0
+neighbors are ordered by alpha, now evaluation by degree commencing
+0
+branch 1
+returning one
+neighbors are ordered by alpha, now evaluation by degree commencing
+branch 2
+returning 1
+neighbors are ordered by alpha, now evaluation by degree commencing
+branch 2
+returning 1
+neighbors are ordered by alpha, now evaluation by degree commencing
+branch 2
+returning 1
+neighbors are ordered by alpha, now evaluation by degree commencing
+branch 4
+returning 2
+appended alpha value for node 4 is: 2
+v is....
+5
+T consists of nodes:
+[0, 1, 2, 3, 4, 5, 6, 7, 8, 9]
+v degree is...
+2
+v is....
+4
+T consists of nodes:
+[0, 1, 2, 3, 4, 8]
+v degree is...
+1
+v is....
+3
+T consists of nodes:
+[0, 1, 2, 3, 8]
+v degree is...
+1
+v is....
+2
+T consists of nodes:
+[0, 1, 2, 8]
+v degree is...
+1
+v is....
+1
+T consists of nodes:
+[0, 1, 8]
+v degree is...
+1
+v is....
+0
+T consists of nodes:
+[0, 8]
+v degree is...
+1
+v is....
+8
+T consists of nodes:
+[8]
+v degree is...
+0
+neighbors are ordered by alpha, now evaluation by degree commencing
+0
+branch 1
+returning one
+neighbors are ordered by alpha, now evaluation by degree commencing
+branch 2
+returning 1
+neighbors are ordered by alpha, now evaluation by degree commencing
+branch 2
+returning 1
+neighbors are ordered by alpha, now evaluation by degree commencing
+branch 2
+returning 1
+neighbors are ordered by alpha, now evaluation by degree commencing
+branch 2
+returning 1
+neighbors are ordered by alpha, now evaluation by degree commencing
+branch 2
+returning 1
+v is....
+6
+T consists of nodes:
+[6, 7, 9]
+v degree is...
+1
+v is....
+7
+T consists of nodes:
+[7, 9]
+v degree is...
+1
+v is....
+9
+T consists of nodes:
+[9]
+v degree is...
+0
+neighbors are ordered by alpha, now evaluation by degree commencing
+0
+branch 1
+returning one
+neighbors are ordered by alpha, now evaluation by degree commencing
+branch 2
+returning 1
+neighbors are ordered by alpha, now evaluation by degree commencing
+branch 2
+returning 1
+neighbors are ordered by alpha, now evaluation by degree commencing
+branch 4
+returning 2
+appended alpha value for node 5 is: 2
+v is....
+6
+T consists of nodes:
+[0, 1, 2, 3, 4, 5, 6, 7, 8, 9]
+v degree is...
+2
+v is....
+5
+T consists of nodes:
+[0, 1, 2, 3, 4, 5, 8]
+v degree is...
+1
+v is....
+4
+T consists of nodes:
+[0, 1, 2, 3, 4, 8]
+v degree is...
+1
+v is....
+3
+T consists of nodes:
+[0, 1, 2, 3, 8]
+v degree is...
+1
+v is....
+2
+T consists of nodes:
+[0, 1, 2, 8]
+v degree is...
+1
+v is....
+1
+T consists of nodes:
+[0, 1, 8]
+v degree is...
+1
+v is....
+0
+T consists of nodes:
+[0, 8]
+v degree is...
+1
+v is....
+8
+T consists of nodes:
+[8]
+v degree is...
+0
+neighbors are ordered by alpha, now evaluation by degree commencing
+0
+branch 1
+returning one
+neighbors are ordered by alpha, now evaluation by degree commencing
+branch 2
+returning 1
+neighbors are ordered by alpha, now evaluation by degree commencing
+branch 2
+returning 1
+neighbors are ordered by alpha, now evaluation by degree commencing
+branch 2
+returning 1
+neighbors are ordered by alpha, now evaluation by degree commencing
+branch 2
+returning 1
+neighbors are ordered by alpha, now evaluation by degree commencing
+branch 2
+returning 1
+neighbors are ordered by alpha, now evaluation by degree commencing
+branch 2
+returning 1
+v is....
+7
+T consists of nodes:
+[7, 9]
+v degree is...
+1
+v is....
+9
+T consists of nodes:
+[9]
+v degree is...
+0
+neighbors are ordered by alpha, now evaluation by degree commencing
+0
+branch 1
+returning one
+neighbors are ordered by alpha, now evaluation by degree commencing
+branch 2
+returning 1
+neighbors are ordered by alpha, now evaluation by degree commencing
+branch 4
+returning 2
+appended alpha value for node 6 is: 2
+v is....
+7
+T consists of nodes:
+[0, 1, 2, 3, 4, 5, 6, 7, 8, 9]
+v degree is...
+2
+v is....
+6
+T consists of nodes:
+[0, 1, 2, 3, 4, 5, 6, 8]
+v degree is...
+1
+v is....
+5
+T consists of nodes:
+[0, 1, 2, 3, 4, 5, 8]
+v degree is...
+1
+v is....
+4
+T consists of nodes:
+[0, 1, 2, 3, 4, 8]
+v degree is...
+1
+v is....
+3
+T consists of nodes:
+[0, 1, 2, 3, 8]
+v degree is...
+1
+v is....
+2
+T consists of nodes:
+[0, 1, 2, 8]
+v degree is...
+1
+v is....
+1
+T consists of nodes:
+[0, 1, 8]
+v degree is...
+1
+v is....
+0
+T consists of nodes:
+[0, 8]
+v degree is...
+1
+v is....
+8
+T consists of nodes:
+[8]
+v degree is...
+0
+neighbors are ordered by alpha, now evaluation by degree commencing
+0
+branch 1
+returning one
+neighbors are ordered by alpha, now evaluation by degree commencing
+branch 2
+returning 1
+neighbors are ordered by alpha, now evaluation by degree commencing
+branch 2
+returning 1
+neighbors are ordered by alpha, now evaluation by degree commencing
+branch 2
+returning 1
+neighbors are ordered by alpha, now evaluation by degree commencing
+branch 2
+returning 1
+neighbors are ordered by alpha, now evaluation by degree commencing
+branch 2
+returning 1
+neighbors are ordered by alpha, now evaluation by degree commencing
+branch 2
+returning 1
+neighbors are ordered by alpha, now evaluation by degree commencing
+branch 2
+returning 1
+v is....
+9
+T consists of nodes:
+[9]
+v degree is...
+0
+neighbors are ordered by alpha, now evaluation by degree commencing
+0
+branch 1
+returning one
+neighbors are ordered by alpha, now evaluation by degree commencing
+branch 4
+returning 2
+appended alpha value for node 7 is: 2
+v is....
+8
+T consists of nodes:
+[0, 1, 2, 3, 4, 5, 6, 7, 8, 9]
+v degree is...
+1
+v is....
+0
+T consists of nodes:
+[0, 1, 2, 3, 4, 5, 6, 7, 9]
+v degree is...
+1
+v is....
+1
+T consists of nodes:
+[1, 2, 3, 4, 5, 6, 7, 9]
+v degree is...
+1
+v is....
+2
+T consists of nodes:
+[2, 3, 4, 5, 6, 7, 9]
+v degree is...
+1
+v is....
+3
+T consists of nodes:
+[3, 4, 5, 6, 7, 9]
+v degree is...
+1
+v is....
+4
+T consists of nodes:
+[4, 5, 6, 7, 9]
+v degree is...
+1
+v is....
+5
+T consists of nodes:
+[5, 6, 7, 9]
+v degree is...
+1
+v is....
+6
+T consists of nodes:
+[6, 7, 9]
+v degree is...
+1
+v is....
+7
+T consists of nodes:
+[7, 9]
+v degree is...
+1
+v is....
+9
+T consists of nodes:
+[9]
+v degree is...
+0
+neighbors are ordered by alpha, now evaluation by degree commencing
+0
+branch 1
+returning one
+neighbors are ordered by alpha, now evaluation by degree commencing
+branch 2
+returning 1
+neighbors are ordered by alpha, now evaluation by degree commencing
+branch 2
+returning 1
+neighbors are ordered by alpha, now evaluation by degree commencing
+branch 2
+returning 1
+neighbors are ordered by alpha, now evaluation by degree commencing
+branch 2
+returning 1
+neighbors are ordered by alpha, now evaluation by degree commencing
+branch 2
+returning 1
+neighbors are ordered by alpha, now evaluation by degree commencing
+branch 2
+returning 1
+neighbors are ordered by alpha, now evaluation by degree commencing
+branch 2
+returning 1
+neighbors are ordered by alpha, now evaluation by degree commencing
+branch 2
+returning 1
+neighbors are ordered by alpha, now evaluation by degree commencing
+branch 2
+returning 1
+appended alpha value for node 8 is: 1
+v is....
+9
+T consists of nodes:
+[0, 1, 2, 3, 4, 5, 6, 7, 8, 9]
+v degree is...
+1
+v is....
+7
+T consists of nodes:
+[0, 1, 2, 3, 4, 5, 6, 7, 8]
+v degree is...
+1
+v is....
+6
+T consists of nodes:
+[0, 1, 2, 3, 4, 5, 6, 8]
+v degree is...
+1
+v is....
+5
+T consists of nodes:
+[0, 1, 2, 3, 4, 5, 8]
+v degree is...
+1
+v is....
+4
+T consists of nodes:
+[0, 1, 2, 3, 4, 8]
+v degree is...
+1
+v is....
+3
+T consists of nodes:
+[0, 1, 2, 3, 8]
+v degree is...
+1
+v is....
+2
+T consists of nodes:
+[0, 1, 2, 8]
+v degree is...
+1
+v is....
+1
+T consists of nodes:
+[0, 1, 8]
+v degree is...
+1
+v is....
+0
+T consists of nodes:
+[0, 8]
+v degree is...
+1
+v is....
+8
+T consists of nodes:
+[8]
+v degree is...
+0
+neighbors are ordered by alpha, now evaluation by degree commencing
+0
+branch 1
+returning one
+neighbors are ordered by alpha, now evaluation by degree commencing
+branch 2
+returning 1
+neighbors are ordered by alpha, now evaluation by degree commencing
+branch 2
+returning 1
+neighbors are ordered by alpha, now evaluation by degree commencing
+branch 2
+returning 1
+neighbors are ordered by alpha, now evaluation by degree commencing
+branch 2
+returning 1
+neighbors are ordered by alpha, now evaluation by degree commencing
+branch 2
+returning 1
+neighbors are ordered by alpha, now evaluation by degree commencing
+branch 2
+returning 1
+neighbors are ordered by alpha, now evaluation by degree commencing
+branch 2
+returning 1
+neighbors are ordered by alpha, now evaluation by degree commencing
+branch 2
+returning 1
+neighbors are ordered by alpha, now evaluation by degree commencing
+branch 2
+returning 1
+appended alpha value for node 9 is: 1
+a_try is {0: 2, 1: 2, 2: 2, 3: 2, 4: 2, 5: 2, 6: 2, 7: 2, 8: 1, 9: 1}
+neigh list is of 0 is [8, 1]
+neigh list is of 8 is []
+v is....
+8
+T consists of nodes:
+[8]
+v degree is...
+0
+neighbors are ordered by alpha, now evaluation by degree commencing
+0
+branch 1
+returning one
+neigh list is of 1 is [2]
+neigh list is of 2 is [3]
+neigh list is of 3 is [4]
+neigh list is of 4 is [5]
+neigh list is of 5 is [6]
+neigh list is of 6 is [7]
+neigh list is of 7 is [9]
+neigh list is of 9 is []
+v is....
+9
+T consists of nodes:
+[9]
+v degree is...
+0
+neighbors are ordered by alpha, now evaluation by degree commencing
+0
+branch 1
+returning one
+v is....
+7
+T consists of nodes:
+[7, 9]
+v degree is...
+1
+v is....
+9
+T consists of nodes:
+[9]
+v degree is...
+0
+neighbors are ordered by alpha, now evaluation by degree commencing
+0
+branch 1
+returning one
+neighbors are ordered by alpha, now evaluation by degree commencing
+branch 2
+returning 1
+v is....
+6
+T consists of nodes:
+[6, 7, 9]
+v degree is...
+1
+v is....
+7
+T consists of nodes:
+[7, 9]
+v degree is...
+1
+v is....
+9
+T consists of nodes:
+[9]
+v degree is...
+0
+neighbors are ordered by alpha, now evaluation by degree commencing
+0
+branch 1
+returning one
+neighbors are ordered by alpha, now evaluation by degree commencing
+branch 2
+returning 1
+neighbors are ordered by alpha, now evaluation by degree commencing
+branch 2
+returning 1
+v is....
+5
+T consists of nodes:
+[5, 6, 7, 9]
+v degree is...
+1
+v is....
+6
+T consists of nodes:
+[6, 7, 9]
+v degree is...
+1
+v is....
+7
+T consists of nodes:
+[7, 9]
+v degree is...
+1
+v is....
+9
+T consists of nodes:
+[9]
+v degree is...
+0
+neighbors are ordered by alpha, now evaluation by degree commencing
+0
+branch 1
+returning one
+neighbors are ordered by alpha, now evaluation by degree commencing
+branch 2
+returning 1
+neighbors are ordered by alpha, now evaluation by degree commencing
+branch 2
+returning 1
+neighbors are ordered by alpha, now evaluation by degree commencing
+branch 2
+returning 1
+v is....
+4
+T consists of nodes:
+[4, 5, 6, 7, 9]
+v degree is...
+1
+v is....
+5
+T consists of nodes:
+[5, 6, 7, 9]
+v degree is...
+1
+v is....
+6
+T consists of nodes:
+[6, 7, 9]
+v degree is...
+1
+v is....
+7
+T consists of nodes:
+[7, 9]
+v degree is...
+1
+v is....
+9
+T consists of nodes:
+[9]
+v degree is...
+0
+neighbors are ordered by alpha, now evaluation by degree commencing
+0
+branch 1
+returning one
+neighbors are ordered by alpha, now evaluation by degree commencing
+branch 2
+returning 1
+neighbors are ordered by alpha, now evaluation by degree commencing
+branch 2
+returning 1
+neighbors are ordered by alpha, now evaluation by degree commencing
+branch 2
+returning 1
+neighbors are ordered by alpha, now evaluation by degree commencing
+branch 2
+returning 1
+v is....
+3
+T consists of nodes:
+[3, 4, 5, 6, 7, 9]
+v degree is...
+1
+v is....
+4
+T consists of nodes:
+[4, 5, 6, 7, 9]
+v degree is...
+1
+v is....
+5
+T consists of nodes:
+[5, 6, 7, 9]
+v degree is...
+1
+v is....
+6
+T consists of nodes:
+[6, 7, 9]
+v degree is...
+1
+v is....
+7
+T consists of nodes:
+[7, 9]
+v degree is...
+1
+v is....
+9
+T consists of nodes:
+[9]
+v degree is...
+0
+neighbors are ordered by alpha, now evaluation by degree commencing
+0
+branch 1
+returning one
+neighbors are ordered by alpha, now evaluation by degree commencing
+branch 2
+returning 1
+neighbors are ordered by alpha, now evaluation by degree commencing
+branch 2
+returning 1
+neighbors are ordered by alpha, now evaluation by degree commencing
+branch 2
+returning 1
+neighbors are ordered by alpha, now evaluation by degree commencing
+branch 2
+returning 1
+neighbors are ordered by alpha, now evaluation by degree commencing
+branch 2
+returning 1
+v is....
+2
+T consists of nodes:
+[2, 3, 4, 5, 6, 7, 9]
+v degree is...
+1
+v is....
+3
+T consists of nodes:
+[3, 4, 5, 6, 7, 9]
+v degree is...
+1
+v is....
+4
+T consists of nodes:
+[4, 5, 6, 7, 9]
+v degree is...
+1
+v is....
+5
+T consists of nodes:
+[5, 6, 7, 9]
+v degree is...
+1
+v is....
+6
+T consists of nodes:
+[6, 7, 9]
+v degree is...
+1
+v is....
+7
+T consists of nodes:
+[7, 9]
+v degree is...
+1
+v is....
+9
+T consists of nodes:
+[9]
+v degree is...
+0
+neighbors are ordered by alpha, now evaluation by degree commencing
+0
+branch 1
+returning one
+neighbors are ordered by alpha, now evaluation by degree commencing
+branch 2
+returning 1
+neighbors are ordered by alpha, now evaluation by degree commencing
+branch 2
+returning 1
+neighbors are ordered by alpha, now evaluation by degree commencing
+branch 2
+returning 1
+neighbors are ordered by alpha, now evaluation by degree commencing
+branch 2
+returning 1
+neighbors are ordered by alpha, now evaluation by degree commencing
+branch 2
+returning 1
+neighbors are ordered by alpha, now evaluation by degree commencing
+branch 2
+returning 1
+v is....
+1
+T consists of nodes:
+[1, 2, 3, 4, 5, 6, 7, 9]
+v degree is...
+1
+v is....
+2
+T consists of nodes:
+[2, 3, 4, 5, 6, 7, 9]
+v degree is...
+1
+v is....
+3
+T consists of nodes:
+[3, 4, 5, 6, 7, 9]
+v degree is...
+1
+v is....
+4
+T consists of nodes:
+[4, 5, 6, 7, 9]
+v degree is...
+1
+v is....
+5
+T consists of nodes:
+[5, 6, 7, 9]
+v degree is...
+1
+v is....
+6
+T consists of nodes:
+[6, 7, 9]
+v degree is...
+1
+v is....
+7
+T consists of nodes:
+[7, 9]
+v degree is...
+1
+v is....
+9
+T consists of nodes:
+[9]
+v degree is...
+0
+neighbors are ordered by alpha, now evaluation by degree commencing
+0
+branch 1
+returning one
+neighbors are ordered by alpha, now evaluation by degree commencing
+branch 2
+returning 1
+neighbors are ordered by alpha, now evaluation by degree commencing
+branch 2
+returning 1
+neighbors are ordered by alpha, now evaluation by degree commencing
+branch 2
+returning 1
+neighbors are ordered by alpha, now evaluation by degree commencing
+branch 2
+returning 1
+neighbors are ordered by alpha, now evaluation by degree commencing
+branch 2
+returning 1
+neighbors are ordered by alpha, now evaluation by degree commencing
+branch 2
+returning 1
+neighbors are ordered by alpha, now evaluation by degree commencing
+branch 2
+returning 1
+appended mu value for node 0 is: 18
+neigh list is of 1 is [0, 2]
+neigh list is of 0 is [8]
+neigh list is of 8 is []
+v is....
+8
+T consists of nodes:
+[8]
+v degree is...
+0
+neighbors are ordered by alpha, now evaluation by degree commencing
+0
+branch 1
+returning one
+v is....
+0
+T consists of nodes:
+[0, 8]
+v degree is...
+1
+v is....
+8
+T consists of nodes:
+[8]
+v degree is...
+0
+neighbors are ordered by alpha, now evaluation by degree commencing
+0
+branch 1
+returning one
+neighbors are ordered by alpha, now evaluation by degree commencing
+branch 2
+returning 1
+neigh list is of 2 is [3]
+neigh list is of 3 is [4]
+neigh list is of 4 is [5]
+neigh list is of 5 is [6]
+neigh list is of 6 is [7]
+neigh list is of 7 is [9]
+neigh list is of 9 is []
+v is....
+9
+T consists of nodes:
+[9]
+v degree is...
+0
+neighbors are ordered by alpha, now evaluation by degree commencing
+0
+branch 1
+returning one
+v is....
+7
+T consists of nodes:
+[7, 9]
+v degree is...
+1
+v is....
+9
+T consists of nodes:
+[9]
+v degree is...
+0
+neighbors are ordered by alpha, now evaluation by degree commencing
+0
+branch 1
+returning one
+neighbors are ordered by alpha, now evaluation by degree commencing
+branch 2
+returning 1
+v is....
+6
+T consists of nodes:
+[6, 7, 9]
+v degree is...
+1
+v is....
+7
+T consists of nodes:
+[7, 9]
+v degree is...
+1
+v is....
+9
+T consists of nodes:
+[9]
+v degree is...
+0
+neighbors are ordered by alpha, now evaluation by degree commencing
+0
+branch 1
+returning one
+neighbors are ordered by alpha, now evaluation by degree commencing
+branch 2
+returning 1
+neighbors are ordered by alpha, now evaluation by degree commencing
+branch 2
+returning 1
+v is....
+5
+T consists of nodes:
+[5, 6, 7, 9]
+v degree is...
+1
+v is....
+6
+T consists of nodes:
+[6, 7, 9]
+v degree is...
+1
+v is....
+7
+T consists of nodes:
+[7, 9]
+v degree is...
+1
+v is....
+9
+T consists of nodes:
+[9]
+v degree is...
+0
+neighbors are ordered by alpha, now evaluation by degree commencing
+0
+branch 1
+returning one
+neighbors are ordered by alpha, now evaluation by degree commencing
+branch 2
+returning 1
+neighbors are ordered by alpha, now evaluation by degree commencing
+branch 2
+returning 1
+neighbors are ordered by alpha, now evaluation by degree commencing
+branch 2
+returning 1
+v is....
+4
+T consists of nodes:
+[4, 5, 6, 7, 9]
+v degree is...
+1
+v is....
+5
+T consists of nodes:
+[5, 6, 7, 9]
+v degree is...
+1
+v is....
+6
+T consists of nodes:
+[6, 7, 9]
+v degree is...
+1
+v is....
+7
+T consists of nodes:
+[7, 9]
+v degree is...
+1
+v is....
+9
+T consists of nodes:
+[9]
+v degree is...
+0
+neighbors are ordered by alpha, now evaluation by degree commencing
+0
+branch 1
+returning one
+neighbors are ordered by alpha, now evaluation by degree commencing
+branch 2
+returning 1
+neighbors are ordered by alpha, now evaluation by degree commencing
+branch 2
+returning 1
+neighbors are ordered by alpha, now evaluation by degree commencing
+branch 2
+returning 1
+neighbors are ordered by alpha, now evaluation by degree commencing
+branch 2
+returning 1
+v is....
+3
+T consists of nodes:
+[3, 4, 5, 6, 7, 9]
+v degree is...
+1
+v is....
+4
+T consists of nodes:
+[4, 5, 6, 7, 9]
+v degree is...
+1
+v is....
+5
+T consists of nodes:
+[5, 6, 7, 9]
+v degree is...
+1
+v is....
+6
+T consists of nodes:
+[6, 7, 9]
+v degree is...
+1
+v is....
+7
+T consists of nodes:
+[7, 9]
+v degree is...
+1
+v is....
+9
+T consists of nodes:
+[9]
+v degree is...
+0
+neighbors are ordered by alpha, now evaluation by degree commencing
+0
+branch 1
+returning one
+neighbors are ordered by alpha, now evaluation by degree commencing
+branch 2
+returning 1
+neighbors are ordered by alpha, now evaluation by degree commencing
+branch 2
+returning 1
+neighbors are ordered by alpha, now evaluation by degree commencing
+branch 2
+returning 1
+neighbors are ordered by alpha, now evaluation by degree commencing
+branch 2
+returning 1
+neighbors are ordered by alpha, now evaluation by degree commencing
+branch 2
+returning 1
+v is....
+2
+T consists of nodes:
+[2, 3, 4, 5, 6, 7, 9]
+v degree is...
+1
+v is....
+3
+T consists of nodes:
+[3, 4, 5, 6, 7, 9]
+v degree is...
+1
+v is....
+4
+T consists of nodes:
+[4, 5, 6, 7, 9]
+v degree is...
+1
+v is....
+5
+T consists of nodes:
+[5, 6, 7, 9]
+v degree is...
+1
+v is....
+6
+T consists of nodes:
+[6, 7, 9]
+v degree is...
+1
+v is....
+7
+T consists of nodes:
+[7, 9]
+v degree is...
+1
+v is....
+9
+T consists of nodes:
+[9]
+v degree is...
+0
+neighbors are ordered by alpha, now evaluation by degree commencing
+0
+branch 1
+returning one
+neighbors are ordered by alpha, now evaluation by degree commencing
+branch 2
+returning 1
+neighbors are ordered by alpha, now evaluation by degree commencing
+branch 2
+returning 1
+neighbors are ordered by alpha, now evaluation by degree commencing
+branch 2
+returning 1
+neighbors are ordered by alpha, now evaluation by degree commencing
+branch 2
+returning 1
+neighbors are ordered by alpha, now evaluation by degree commencing
+branch 2
+returning 1
+neighbors are ordered by alpha, now evaluation by degree commencing
+branch 2
+returning 1
+appended mu value for node 1 is: 18
+neigh list is of 2 is [1, 3]
+neigh list is of 1 is [0]
+neigh list is of 0 is [8]
+neigh list is of 8 is []
+v is....
+8
+T consists of nodes:
+[8]
+v degree is...
+0
+neighbors are ordered by alpha, now evaluation by degree commencing
+0
+branch 1
+returning one
+v is....
+0
+T consists of nodes:
+[0, 8]
+v degree is...
+1
+v is....
+8
+T consists of nodes:
+[8]
+v degree is...
+0
+neighbors are ordered by alpha, now evaluation by degree commencing
+0
+branch 1
+returning one
+neighbors are ordered by alpha, now evaluation by degree commencing
+branch 2
+returning 1
+v is....
+1
+T consists of nodes:
+[0, 1, 8]
+v degree is...
+1
+v is....
+0
+T consists of nodes:
+[0, 8]
+v degree is...
+1
+v is....
+8
+T consists of nodes:
+[8]
+v degree is...
+0
+neighbors are ordered by alpha, now evaluation by degree commencing
+0
+branch 1
+returning one
+neighbors are ordered by alpha, now evaluation by degree commencing
+branch 2
+returning 1
+neighbors are ordered by alpha, now evaluation by degree commencing
+branch 2
+returning 1
+neigh list is of 3 is [4]
+neigh list is of 4 is [5]
+neigh list is of 5 is [6]
+neigh list is of 6 is [7]
+neigh list is of 7 is [9]
+neigh list is of 9 is []
+v is....
+9
+T consists of nodes:
+[9]
+v degree is...
+0
+neighbors are ordered by alpha, now evaluation by degree commencing
+0
+branch 1
+returning one
+v is....
+7
+T consists of nodes:
+[7, 9]
+v degree is...
+1
+v is....
+9
+T consists of nodes:
+[9]
+v degree is...
+0
+neighbors are ordered by alpha, now evaluation by degree commencing
+0
+branch 1
+returning one
+neighbors are ordered by alpha, now evaluation by degree commencing
+branch 2
+returning 1
+v is....
+6
+T consists of nodes:
+[6, 7, 9]
+v degree is...
+1
+v is....
+7
+T consists of nodes:
+[7, 9]
+v degree is...
+1
+v is....
+9
+T consists of nodes:
+[9]
+v degree is...
+0
+neighbors are ordered by alpha, now evaluation by degree commencing
+0
+branch 1
+returning one
+neighbors are ordered by alpha, now evaluation by degree commencing
+branch 2
+returning 1
+neighbors are ordered by alpha, now evaluation by degree commencing
+branch 2
+returning 1
+v is....
+5
+T consists of nodes:
+[5, 6, 7, 9]
+v degree is...
+1
+v is....
+6
+T consists of nodes:
+[6, 7, 9]
+v degree is...
+1
+v is....
+7
+T consists of nodes:
+[7, 9]
+v degree is...
+1
+v is....
+9
+T consists of nodes:
+[9]
+v degree is...
+0
+neighbors are ordered by alpha, now evaluation by degree commencing
+0
+branch 1
+returning one
+neighbors are ordered by alpha, now evaluation by degree commencing
+branch 2
+returning 1
+neighbors are ordered by alpha, now evaluation by degree commencing
+branch 2
+returning 1
+neighbors are ordered by alpha, now evaluation by degree commencing
+branch 2
+returning 1
+v is....
+4
+T consists of nodes:
+[4, 5, 6, 7, 9]
+v degree is...
+1
+v is....
+5
+T consists of nodes:
+[5, 6, 7, 9]
+v degree is...
+1
+v is....
+6
+T consists of nodes:
+[6, 7, 9]
+v degree is...
+1
+v is....
+7
+T consists of nodes:
+[7, 9]
+v degree is...
+1
+v is....
+9
+T consists of nodes:
+[9]
+v degree is...
+0
+neighbors are ordered by alpha, now evaluation by degree commencing
+0
+branch 1
+returning one
+neighbors are ordered by alpha, now evaluation by degree commencing
+branch 2
+returning 1
+neighbors are ordered by alpha, now evaluation by degree commencing
+branch 2
+returning 1
+neighbors are ordered by alpha, now evaluation by degree commencing
+branch 2
+returning 1
+neighbors are ordered by alpha, now evaluation by degree commencing
+branch 2
+returning 1
+v is....
+3
+T consists of nodes:
+[3, 4, 5, 6, 7, 9]
+v degree is...
+1
+v is....
+4
+T consists of nodes:
+[4, 5, 6, 7, 9]
+v degree is...
+1
+v is....
+5
+T consists of nodes:
+[5, 6, 7, 9]
+v degree is...
+1
+v is....
+6
+T consists of nodes:
+[6, 7, 9]
+v degree is...
+1
+v is....
+7
+T consists of nodes:
+[7, 9]
+v degree is...
+1
+v is....
+9
+T consists of nodes:
+[9]
+v degree is...
+0
+neighbors are ordered by alpha, now evaluation by degree commencing
+0
+branch 1
+returning one
+neighbors are ordered by alpha, now evaluation by degree commencing
+branch 2
+returning 1
+neighbors are ordered by alpha, now evaluation by degree commencing
+branch 2
+returning 1
+neighbors are ordered by alpha, now evaluation by degree commencing
+branch 2
+returning 1
+neighbors are ordered by alpha, now evaluation by degree commencing
+branch 2
+returning 1
+neighbors are ordered by alpha, now evaluation by degree commencing
+branch 2
+returning 1
+appended mu value for node 2 is: 18
+neigh list is of 3 is [2, 4]
+neigh list is of 2 is [1]
+neigh list is of 1 is [0]
+neigh list is of 0 is [8]
+neigh list is of 8 is []
+v is....
+8
+T consists of nodes:
+[8]
+v degree is...
+0
+neighbors are ordered by alpha, now evaluation by degree commencing
+0
+branch 1
+returning one
+v is....
+0
+T consists of nodes:
+[0, 8]
+v degree is...
+1
+v is....
+8
+T consists of nodes:
+[8]
+v degree is...
+0
+neighbors are ordered by alpha, now evaluation by degree commencing
+0
+branch 1
+returning one
+neighbors are ordered by alpha, now evaluation by degree commencing
+branch 2
+returning 1
+v is....
+1
+T consists of nodes:
+[0, 1, 8]
+v degree is...
+1
+v is....
+0
+T consists of nodes:
+[0, 8]
+v degree is...
+1
+v is....
+8
+T consists of nodes:
+[8]
+v degree is...
+0
+neighbors are ordered by alpha, now evaluation by degree commencing
+0
+branch 1
+returning one
+neighbors are ordered by alpha, now evaluation by degree commencing
+branch 2
+returning 1
+neighbors are ordered by alpha, now evaluation by degree commencing
+branch 2
+returning 1
+v is....
+2
+T consists of nodes:
+[0, 1, 2, 8]
+v degree is...
+1
+v is....
+1
+T consists of nodes:
+[0, 1, 8]
+v degree is...
+1
+v is....
+0
+T consists of nodes:
+[0, 8]
+v degree is...
+1
+v is....
+8
+T consists of nodes:
+[8]
+v degree is...
+0
+neighbors are ordered by alpha, now evaluation by degree commencing
+0
+branch 1
+returning one
+neighbors are ordered by alpha, now evaluation by degree commencing
+branch 2
+returning 1
+neighbors are ordered by alpha, now evaluation by degree commencing
+branch 2
+returning 1
+neighbors are ordered by alpha, now evaluation by degree commencing
+branch 2
+returning 1
+neigh list is of 4 is [5]
+neigh list is of 5 is [6]
+neigh list is of 6 is [7]
+neigh list is of 7 is [9]
+neigh list is of 9 is []
+v is....
+9
+T consists of nodes:
+[9]
+v degree is...
+0
+neighbors are ordered by alpha, now evaluation by degree commencing
+0
+branch 1
+returning one
+v is....
+7
+T consists of nodes:
+[7, 9]
+v degree is...
+1
+v is....
+9
+T consists of nodes:
+[9]
+v degree is...
+0
+neighbors are ordered by alpha, now evaluation by degree commencing
+0
+branch 1
+returning one
+neighbors are ordered by alpha, now evaluation by degree commencing
+branch 2
+returning 1
+v is....
+6
+T consists of nodes:
+[6, 7, 9]
+v degree is...
+1
+v is....
+7
+T consists of nodes:
+[7, 9]
+v degree is...
+1
+v is....
+9
+T consists of nodes:
+[9]
+v degree is...
+0
+neighbors are ordered by alpha, now evaluation by degree commencing
+0
+branch 1
+returning one
+neighbors are ordered by alpha, now evaluation by degree commencing
+branch 2
+returning 1
+neighbors are ordered by alpha, now evaluation by degree commencing
+branch 2
+returning 1
+v is....
+5
+T consists of nodes:
+[5, 6, 7, 9]
+v degree is...
+1
+v is....
+6
+T consists of nodes:
+[6, 7, 9]
+v degree is...
+1
+v is....
+7
+T consists of nodes:
+[7, 9]
+v degree is...
+1
+v is....
+9
+T consists of nodes:
+[9]
+v degree is...
+0
+neighbors are ordered by alpha, now evaluation by degree commencing
+0
+branch 1
+returning one
+neighbors are ordered by alpha, now evaluation by degree commencing
+branch 2
+returning 1
+neighbors are ordered by alpha, now evaluation by degree commencing
+branch 2
+returning 1
+neighbors are ordered by alpha, now evaluation by degree commencing
+branch 2
+returning 1
+v is....
+4
+T consists of nodes:
+[4, 5, 6, 7, 9]
+v degree is...
+1
+v is....
+5
+T consists of nodes:
+[5, 6, 7, 9]
+v degree is...
+1
+v is....
+6
+T consists of nodes:
+[6, 7, 9]
+v degree is...
+1
+v is....
+7
+T consists of nodes:
+[7, 9]
+v degree is...
+1
+v is....
+9
+T consists of nodes:
+[9]
+v degree is...
+0
+neighbors are ordered by alpha, now evaluation by degree commencing
+0
+branch 1
+returning one
+neighbors are ordered by alpha, now evaluation by degree commencing
+branch 2
+returning 1
+neighbors are ordered by alpha, now evaluation by degree commencing
+branch 2
+returning 1
+neighbors are ordered by alpha, now evaluation by degree commencing
+branch 2
+returning 1
+neighbors are ordered by alpha, now evaluation by degree commencing
+branch 2
+returning 1
+appended mu value for node 3 is: 18
+neigh list is of 4 is [3, 5]
+neigh list is of 3 is [2]
+neigh list is of 2 is [1]
+neigh list is of 1 is [0]
+neigh list is of 0 is [8]
+neigh list is of 8 is []
+v is....
+8
+T consists of nodes:
+[8]
+v degree is...
+0
+neighbors are ordered by alpha, now evaluation by degree commencing
+0
+branch 1
+returning one
+v is....
+0
+T consists of nodes:
+[0, 8]
+v degree is...
+1
+v is....
+8
+T consists of nodes:
+[8]
+v degree is...
+0
+neighbors are ordered by alpha, now evaluation by degree commencing
+0
+branch 1
+returning one
+neighbors are ordered by alpha, now evaluation by degree commencing
+branch 2
+returning 1
+v is....
+1
+T consists of nodes:
+[0, 1, 8]
+v degree is...
+1
+v is....
+0
+T consists of nodes:
+[0, 8]
+v degree is...
+1
+v is....
+8
+T consists of nodes:
+[8]
+v degree is...
+0
+neighbors are ordered by alpha, now evaluation by degree commencing
+0
+branch 1
+returning one
+neighbors are ordered by alpha, now evaluation by degree commencing
+branch 2
+returning 1
+neighbors are ordered by alpha, now evaluation by degree commencing
+branch 2
+returning 1
+v is....
+2
+T consists of nodes:
+[0, 1, 2, 8]
+v degree is...
+1
+v is....
+1
+T consists of nodes:
+[0, 1, 8]
+v degree is...
+1
+v is....
+0
+T consists of nodes:
+[0, 8]
+v degree is...
+1
+v is....
+8
+T consists of nodes:
+[8]
+v degree is...
+0
+neighbors are ordered by alpha, now evaluation by degree commencing
+0
+branch 1
+returning one
+neighbors are ordered by alpha, now evaluation by degree commencing
+branch 2
+returning 1
+neighbors are ordered by alpha, now evaluation by degree commencing
+branch 2
+returning 1
+neighbors are ordered by alpha, now evaluation by degree commencing
+branch 2
+returning 1
+v is....
+3
+T consists of nodes:
+[0, 1, 2, 3, 8]
+v degree is...
+1
+v is....
+2
+T consists of nodes:
+[0, 1, 2, 8]
+v degree is...
+1
+v is....
+1
+T consists of nodes:
+[0, 1, 8]
+v degree is...
+1
+v is....
+0
+T consists of nodes:
+[0, 8]
+v degree is...
+1
+v is....
+8
+T consists of nodes:
+[8]
+v degree is...
+0
+neighbors are ordered by alpha, now evaluation by degree commencing
+0
+branch 1
+returning one
+neighbors are ordered by alpha, now evaluation by degree commencing
+branch 2
+returning 1
+neighbors are ordered by alpha, now evaluation by degree commencing
+branch 2
+returning 1
+neighbors are ordered by alpha, now evaluation by degree commencing
+branch 2
+returning 1
+neighbors are ordered by alpha, now evaluation by degree commencing
+branch 2
+returning 1
+neigh list is of 5 is [6]
+neigh list is of 6 is [7]
+neigh list is of 7 is [9]
+neigh list is of 9 is []
+v is....
+9
+T consists of nodes:
+[9]
+v degree is...
+0
+neighbors are ordered by alpha, now evaluation by degree commencing
+0
+branch 1
+returning one
+v is....
+7
+T consists of nodes:
+[7, 9]
+v degree is...
+1
+v is....
+9
+T consists of nodes:
+[9]
+v degree is...
+0
+neighbors are ordered by alpha, now evaluation by degree commencing
+0
+branch 1
+returning one
+neighbors are ordered by alpha, now evaluation by degree commencing
+branch 2
+returning 1
+v is....
+6
+T consists of nodes:
+[6, 7, 9]
+v degree is...
+1
+v is....
+7
+T consists of nodes:
+[7, 9]
+v degree is...
+1
+v is....
+9
+T consists of nodes:
+[9]
+v degree is...
+0
+neighbors are ordered by alpha, now evaluation by degree commencing
+0
+branch 1
+returning one
+neighbors are ordered by alpha, now evaluation by degree commencing
+branch 2
+returning 1
+neighbors are ordered by alpha, now evaluation by degree commencing
+branch 2
+returning 1
+v is....
+5
+T consists of nodes:
+[5, 6, 7, 9]
+v degree is...
+1
+v is....
+6
+T consists of nodes:
+[6, 7, 9]
+v degree is...
+1
+v is....
+7
+T consists of nodes:
+[7, 9]
+v degree is...
+1
+v is....
+9
+T consists of nodes:
+[9]
+v degree is...
+0
+neighbors are ordered by alpha, now evaluation by degree commencing
+0
+branch 1
+returning one
+neighbors are ordered by alpha, now evaluation by degree commencing
+branch 2
+returning 1
+neighbors are ordered by alpha, now evaluation by degree commencing
+branch 2
+returning 1
+neighbors are ordered by alpha, now evaluation by degree commencing
+branch 2
+returning 1
+appended mu value for node 4 is: 18
+neigh list is of 5 is [4, 6]
+neigh list is of 4 is [3]
+neigh list is of 3 is [2]
+neigh list is of 2 is [1]
+neigh list is of 1 is [0]
+neigh list is of 0 is [8]
+neigh list is of 8 is []
+v is....
+8
+T consists of nodes:
+[8]
+v degree is...
+0
+neighbors are ordered by alpha, now evaluation by degree commencing
+0
+branch 1
+returning one
+v is....
+0
+T consists of nodes:
+[0, 8]
+v degree is...
+1
+v is....
+8
+T consists of nodes:
+[8]
+v degree is...
+0
+neighbors are ordered by alpha, now evaluation by degree commencing
+0
+branch 1
+returning one
+neighbors are ordered by alpha, now evaluation by degree commencing
+branch 2
+returning 1
+v is....
+1
+T consists of nodes:
+[0, 1, 8]
+v degree is...
+1
+v is....
+0
+T consists of nodes:
+[0, 8]
+v degree is...
+1
+v is....
+8
+T consists of nodes:
+[8]
+v degree is...
+0
+neighbors are ordered by alpha, now evaluation by degree commencing
+0
+branch 1
+returning one
+neighbors are ordered by alpha, now evaluation by degree commencing
+branch 2
+returning 1
+neighbors are ordered by alpha, now evaluation by degree commencing
+branch 2
+returning 1
+v is....
+2
+T consists of nodes:
+[0, 1, 2, 8]
+v degree is...
+1
+v is....
+1
+T consists of nodes:
+[0, 1, 8]
+v degree is...
+1
+v is....
+0
+T consists of nodes:
+[0, 8]
+v degree is...
+1
+v is....
+8
+T consists of nodes:
+[8]
+v degree is...
+0
+neighbors are ordered by alpha, now evaluation by degree commencing
+0
+branch 1
+returning one
+neighbors are ordered by alpha, now evaluation by degree commencing
+branch 2
+returning 1
+neighbors are ordered by alpha, now evaluation by degree commencing
+branch 2
+returning 1
+neighbors are ordered by alpha, now evaluation by degree commencing
+branch 2
+returning 1
+v is....
+3
+T consists of nodes:
+[0, 1, 2, 3, 8]
+v degree is...
+1
+v is....
+2
+T consists of nodes:
+[0, 1, 2, 8]
+v degree is...
+1
+v is....
+1
+T consists of nodes:
+[0, 1, 8]
+v degree is...
+1
+v is....
+0
+T consists of nodes:
+[0, 8]
+v degree is...
+1
+v is....
+8
+T consists of nodes:
+[8]
+v degree is...
+0
+neighbors are ordered by alpha, now evaluation by degree commencing
+0
+branch 1
+returning one
+neighbors are ordered by alpha, now evaluation by degree commencing
+branch 2
+returning 1
+neighbors are ordered by alpha, now evaluation by degree commencing
+branch 2
+returning 1
+neighbors are ordered by alpha, now evaluation by degree commencing
+branch 2
+returning 1
+neighbors are ordered by alpha, now evaluation by degree commencing
+branch 2
+returning 1
+v is....
+4
+T consists of nodes:
+[0, 1, 2, 3, 4, 8]
+v degree is...
+1
+v is....
+3
+T consists of nodes:
+[0, 1, 2, 3, 8]
+v degree is...
+1
+v is....
+2
+T consists of nodes:
+[0, 1, 2, 8]
+v degree is...
+1
+v is....
+1
+T consists of nodes:
+[0, 1, 8]
+v degree is...
+1
+v is....
+0
+T consists of nodes:
+[0, 8]
+v degree is...
+1
+v is....
+8
+T consists of nodes:
+[8]
+v degree is...
+0
+neighbors are ordered by alpha, now evaluation by degree commencing
+0
+branch 1
+returning one
+neighbors are ordered by alpha, now evaluation by degree commencing
+branch 2
+returning 1
+neighbors are ordered by alpha, now evaluation by degree commencing
+branch 2
+returning 1
+neighbors are ordered by alpha, now evaluation by degree commencing
+branch 2
+returning 1
+neighbors are ordered by alpha, now evaluation by degree commencing
+branch 2
+returning 1
+neighbors are ordered by alpha, now evaluation by degree commencing
+branch 2
+returning 1
+neigh list is of 6 is [7]
+neigh list is of 7 is [9]
+neigh list is of 9 is []
+v is....
+9
+T consists of nodes:
+[9]
+v degree is...
+0
+neighbors are ordered by alpha, now evaluation by degree commencing
+0
+branch 1
+returning one
+v is....
+7
+T consists of nodes:
+[7, 9]
+v degree is...
+1
+v is....
+9
+T consists of nodes:
+[9]
+v degree is...
+0
+neighbors are ordered by alpha, now evaluation by degree commencing
+0
+branch 1
+returning one
+neighbors are ordered by alpha, now evaluation by degree commencing
+branch 2
+returning 1
+v is....
+6
+T consists of nodes:
+[6, 7, 9]
+v degree is...
+1
+v is....
+7
+T consists of nodes:
+[7, 9]
+v degree is...
+1
+v is....
+9
+T consists of nodes:
+[9]
+v degree is...
+0
+neighbors are ordered by alpha, now evaluation by degree commencing
+0
+branch 1
+returning one
+neighbors are ordered by alpha, now evaluation by degree commencing
+branch 2
+returning 1
+neighbors are ordered by alpha, now evaluation by degree commencing
+branch 2
+returning 1
+appended mu value for node 5 is: 18
+neigh list is of 6 is [5, 7]
+neigh list is of 5 is [4]
+neigh list is of 4 is [3]
+neigh list is of 3 is [2]
+neigh list is of 2 is [1]
+neigh list is of 1 is [0]
+neigh list is of 0 is [8]
+neigh list is of 8 is []
+v is....
+8
+T consists of nodes:
+[8]
+v degree is...
+0
+neighbors are ordered by alpha, now evaluation by degree commencing
+0
+branch 1
+returning one
+v is....
+0
+T consists of nodes:
+[0, 8]
+v degree is...
+1
+v is....
+8
+T consists of nodes:
+[8]
+v degree is...
+0
+neighbors are ordered by alpha, now evaluation by degree commencing
+0
+branch 1
+returning one
+neighbors are ordered by alpha, now evaluation by degree commencing
+branch 2
+returning 1
+v is....
+1
+T consists of nodes:
+[0, 1, 8]
+v degree is...
+1
+v is....
+0
+T consists of nodes:
+[0, 8]
+v degree is...
+1
+v is....
+8
+T consists of nodes:
+[8]
+v degree is...
+0
+neighbors are ordered by alpha, now evaluation by degree commencing
+0
+branch 1
+returning one
+neighbors are ordered by alpha, now evaluation by degree commencing
+branch 2
+returning 1
+neighbors are ordered by alpha, now evaluation by degree commencing
+branch 2
+returning 1
+v is....
+2
+T consists of nodes:
+[0, 1, 2, 8]
+v degree is...
+1
+v is....
+1
+T consists of nodes:
+[0, 1, 8]
+v degree is...
+1
+v is....
+0
+T consists of nodes:
+[0, 8]
+v degree is...
+1
+v is....
+8
+T consists of nodes:
+[8]
+v degree is...
+0
+neighbors are ordered by alpha, now evaluation by degree commencing
+0
+branch 1
+returning one
+neighbors are ordered by alpha, now evaluation by degree commencing
+branch 2
+returning 1
+neighbors are ordered by alpha, now evaluation by degree commencing
+branch 2
+returning 1
+neighbors are ordered by alpha, now evaluation by degree commencing
+branch 2
+returning 1
+v is....
+3
+T consists of nodes:
+[0, 1, 2, 3, 8]
+v degree is...
+1
+v is....
+2
+T consists of nodes:
+[0, 1, 2, 8]
+v degree is...
+1
+v is....
+1
+T consists of nodes:
+[0, 1, 8]
+v degree is...
+1
+v is....
+0
+T consists of nodes:
+[0, 8]
+v degree is...
+1
+v is....
+8
+T consists of nodes:
+[8]
+v degree is...
+0
+neighbors are ordered by alpha, now evaluation by degree commencing
+0
+branch 1
+returning one
+neighbors are ordered by alpha, now evaluation by degree commencing
+branch 2
+returning 1
+neighbors are ordered by alpha, now evaluation by degree commencing
+branch 2
+returning 1
+neighbors are ordered by alpha, now evaluation by degree commencing
+branch 2
+returning 1
+neighbors are ordered by alpha, now evaluation by degree commencing
+branch 2
+returning 1
+v is....
+4
+T consists of nodes:
+[0, 1, 2, 3, 4, 8]
+v degree is...
+1
+v is....
+3
+T consists of nodes:
+[0, 1, 2, 3, 8]
+v degree is...
+1
+v is....
+2
+T consists of nodes:
+[0, 1, 2, 8]
+v degree is...
+1
+v is....
+1
+T consists of nodes:
+[0, 1, 8]
+v degree is...
+1
+v is....
+0
+T consists of nodes:
+[0, 8]
+v degree is...
+1
+v is....
+8
+T consists of nodes:
+[8]
+v degree is...
+0
+neighbors are ordered by alpha, now evaluation by degree commencing
+0
+branch 1
+returning one
+neighbors are ordered by alpha, now evaluation by degree commencing
+branch 2
+returning 1
+neighbors are ordered by alpha, now evaluation by degree commencing
+branch 2
+returning 1
+neighbors are ordered by alpha, now evaluation by degree commencing
+branch 2
+returning 1
+neighbors are ordered by alpha, now evaluation by degree commencing
+branch 2
+returning 1
+neighbors are ordered by alpha, now evaluation by degree commencing
+branch 2
+returning 1
+v is....
+5
+T consists of nodes:
+[0, 1, 2, 3, 4, 5, 8]
+v degree is...
+1
+v is....
+4
+T consists of nodes:
+[0, 1, 2, 3, 4, 8]
+v degree is...
+1
+v is....
+3
+T consists of nodes:
+[0, 1, 2, 3, 8]
+v degree is...
+1
+v is....
+2
+T consists of nodes:
+[0, 1, 2, 8]
+v degree is...
+1
+v is....
+1
+T consists of nodes:
+[0, 1, 8]
+v degree is...
+1
+v is....
+0
+T consists of nodes:
+[0, 8]
+v degree is...
+1
+v is....
+8
+T consists of nodes:
+[8]
+v degree is...
+0
+neighbors are ordered by alpha, now evaluation by degree commencing
+0
+branch 1
+returning one
+neighbors are ordered by alpha, now evaluation by degree commencing
+branch 2
+returning 1
+neighbors are ordered by alpha, now evaluation by degree commencing
+branch 2
+returning 1
+neighbors are ordered by alpha, now evaluation by degree commencing
+branch 2
+returning 1
+neighbors are ordered by alpha, now evaluation by degree commencing
+branch 2
+returning 1
+neighbors are ordered by alpha, now evaluation by degree commencing
+branch 2
+returning 1
+neighbors are ordered by alpha, now evaluation by degree commencing
+branch 2
+returning 1
+neigh list is of 7 is [9]
+neigh list is of 9 is []
+v is....
+9
+T consists of nodes:
+[9]
+v degree is...
+0
+neighbors are ordered by alpha, now evaluation by degree commencing
+0
+branch 1
+returning one
+v is....
+7
+T consists of nodes:
+[7, 9]
+v degree is...
+1
+v is....
+9
+T consists of nodes:
+[9]
+v degree is...
+0
+neighbors are ordered by alpha, now evaluation by degree commencing
+0
+branch 1
+returning one
+neighbors are ordered by alpha, now evaluation by degree commencing
+branch 2
+returning 1
+appended mu value for node 6 is: 18
+neigh list is of 7 is [6, 9]
+neigh list is of 6 is [5]
+neigh list is of 5 is [4]
+neigh list is of 4 is [3]
+neigh list is of 3 is [2]
+neigh list is of 2 is [1]
+neigh list is of 1 is [0]
+neigh list is of 0 is [8]
+neigh list is of 8 is []
+v is....
+8
+T consists of nodes:
+[8]
+v degree is...
+0
+neighbors are ordered by alpha, now evaluation by degree commencing
+0
+branch 1
+returning one
+v is....
+0
+T consists of nodes:
+[0, 8]
+v degree is...
+1
+v is....
+8
+T consists of nodes:
+[8]
+v degree is...
+0
+neighbors are ordered by alpha, now evaluation by degree commencing
+0
+branch 1
+returning one
+neighbors are ordered by alpha, now evaluation by degree commencing
+branch 2
+returning 1
+v is....
+1
+T consists of nodes:
+[0, 1, 8]
+v degree is...
+1
+v is....
+0
+T consists of nodes:
+[0, 8]
+v degree is...
+1
+v is....
+8
+T consists of nodes:
+[8]
+v degree is...
+0
+neighbors are ordered by alpha, now evaluation by degree commencing
+0
+branch 1
+returning one
+neighbors are ordered by alpha, now evaluation by degree commencing
+branch 2
+returning 1
+neighbors are ordered by alpha, now evaluation by degree commencing
+branch 2
+returning 1
+v is....
+2
+T consists of nodes:
+[0, 1, 2, 8]
+v degree is...
+1
+v is....
+1
+T consists of nodes:
+[0, 1, 8]
+v degree is...
+1
+v is....
+0
+T consists of nodes:
+[0, 8]
+v degree is...
+1
+v is....
+8
+T consists of nodes:
+[8]
+v degree is...
+0
+neighbors are ordered by alpha, now evaluation by degree commencing
+0
+branch 1
+returning one
+neighbors are ordered by alpha, now evaluation by degree commencing
+branch 2
+returning 1
+neighbors are ordered by alpha, now evaluation by degree commencing
+branch 2
+returning 1
+neighbors are ordered by alpha, now evaluation by degree commencing
+branch 2
+returning 1
+v is....
+3
+T consists of nodes:
+[0, 1, 2, 3, 8]
+v degree is...
+1
+v is....
+2
+T consists of nodes:
+[0, 1, 2, 8]
+v degree is...
+1
+v is....
+1
+T consists of nodes:
+[0, 1, 8]
+v degree is...
+1
+v is....
+0
+T consists of nodes:
+[0, 8]
+v degree is...
+1
+v is....
+8
+T consists of nodes:
+[8]
+v degree is...
+0
+neighbors are ordered by alpha, now evaluation by degree commencing
+0
+branch 1
+returning one
+neighbors are ordered by alpha, now evaluation by degree commencing
+branch 2
+returning 1
+neighbors are ordered by alpha, now evaluation by degree commencing
+branch 2
+returning 1
+neighbors are ordered by alpha, now evaluation by degree commencing
+branch 2
+returning 1
+neighbors are ordered by alpha, now evaluation by degree commencing
+branch 2
+returning 1
+v is....
+4
+T consists of nodes:
+[0, 1, 2, 3, 4, 8]
+v degree is...
+1
+v is....
+3
+T consists of nodes:
+[0, 1, 2, 3, 8]
+v degree is...
+1
+v is....
+2
+T consists of nodes:
+[0, 1, 2, 8]
+v degree is...
+1
+v is....
+1
+T consists of nodes:
+[0, 1, 8]
+v degree is...
+1
+v is....
+0
+T consists of nodes:
+[0, 8]
+v degree is...
+1
+v is....
+8
+T consists of nodes:
+[8]
+v degree is...
+0
+neighbors are ordered by alpha, now evaluation by degree commencing
+0
+branch 1
+returning one
+neighbors are ordered by alpha, now evaluation by degree commencing
+branch 2
+returning 1
+neighbors are ordered by alpha, now evaluation by degree commencing
+branch 2
+returning 1
+neighbors are ordered by alpha, now evaluation by degree commencing
+branch 2
+returning 1
+neighbors are ordered by alpha, now evaluation by degree commencing
+branch 2
+returning 1
+neighbors are ordered by alpha, now evaluation by degree commencing
+branch 2
+returning 1
+v is....
+5
+T consists of nodes:
+[0, 1, 2, 3, 4, 5, 8]
+v degree is...
+1
+v is....
+4
+T consists of nodes:
+[0, 1, 2, 3, 4, 8]
+v degree is...
+1
+v is....
+3
+T consists of nodes:
+[0, 1, 2, 3, 8]
+v degree is...
+1
+v is....
+2
+T consists of nodes:
+[0, 1, 2, 8]
+v degree is...
+1
+v is....
+1
+T consists of nodes:
+[0, 1, 8]
+v degree is...
+1
+v is....
+0
+T consists of nodes:
+[0, 8]
+v degree is...
+1
+v is....
+8
+T consists of nodes:
+[8]
+v degree is...
+0
+neighbors are ordered by alpha, now evaluation by degree commencing
+0
+branch 1
+returning one
+neighbors are ordered by alpha, now evaluation by degree commencing
+branch 2
+returning 1
+neighbors are ordered by alpha, now evaluation by degree commencing
+branch 2
+returning 1
+neighbors are ordered by alpha, now evaluation by degree commencing
+branch 2
+returning 1
+neighbors are ordered by alpha, now evaluation by degree commencing
+branch 2
+returning 1
+neighbors are ordered by alpha, now evaluation by degree commencing
+branch 2
+returning 1
+neighbors are ordered by alpha, now evaluation by degree commencing
+branch 2
+returning 1
+v is....
+6
+T consists of nodes:
+[0, 1, 2, 3, 4, 5, 6, 8]
+v degree is...
+1
+v is....
+5
+T consists of nodes:
+[0, 1, 2, 3, 4, 5, 8]
+v degree is...
+1
+v is....
+4
+T consists of nodes:
+[0, 1, 2, 3, 4, 8]
+v degree is...
+1
+v is....
+3
+T consists of nodes:
+[0, 1, 2, 3, 8]
+v degree is...
+1
+v is....
+2
+T consists of nodes:
+[0, 1, 2, 8]
+v degree is...
+1
+v is....
+1
+T consists of nodes:
+[0, 1, 8]
+v degree is...
+1
+v is....
+0
+T consists of nodes:
+[0, 8]
+v degree is...
+1
+v is....
+8
+T consists of nodes:
+[8]
+v degree is...
+0
+neighbors are ordered by alpha, now evaluation by degree commencing
+0
+branch 1
+returning one
+neighbors are ordered by alpha, now evaluation by degree commencing
+branch 2
+returning 1
+neighbors are ordered by alpha, now evaluation by degree commencing
+branch 2
+returning 1
+neighbors are ordered by alpha, now evaluation by degree commencing
+branch 2
+returning 1
+neighbors are ordered by alpha, now evaluation by degree commencing
+branch 2
+returning 1
+neighbors are ordered by alpha, now evaluation by degree commencing
+branch 2
+returning 1
+neighbors are ordered by alpha, now evaluation by degree commencing
+branch 2
+returning 1
+neighbors are ordered by alpha, now evaluation by degree commencing
+branch 2
+returning 1
+neigh list is of 9 is []
+v is....
+9
+T consists of nodes:
+[9]
+v degree is...
+0
+neighbors are ordered by alpha, now evaluation by degree commencing
+0
+branch 1
+returning one
+appended mu value for node 7 is: 18
+neigh list is of 8 is [0]
+neigh list is of 0 is [1]
+neigh list is of 1 is [2]
+neigh list is of 2 is [3]
+neigh list is of 3 is [4]
+neigh list is of 4 is [5]
+neigh list is of 5 is [6]
+neigh list is of 6 is [7]
+neigh list is of 7 is [9]
+neigh list is of 9 is []
+v is....
+9
+T consists of nodes:
+[9]
+v degree is...
+0
+neighbors are ordered by alpha, now evaluation by degree commencing
+0
+branch 1
+returning one
+v is....
+7
+T consists of nodes:
+[7, 9]
+v degree is...
+1
+v is....
+9
+T consists of nodes:
+[9]
+v degree is...
+0
+neighbors are ordered by alpha, now evaluation by degree commencing
+0
+branch 1
+returning one
+neighbors are ordered by alpha, now evaluation by degree commencing
+branch 2
+returning 1
+v is....
+6
+T consists of nodes:
+[6, 7, 9]
+v degree is...
+1
+v is....
+7
+T consists of nodes:
+[7, 9]
+v degree is...
+1
+v is....
+9
+T consists of nodes:
+[9]
+v degree is...
+0
+neighbors are ordered by alpha, now evaluation by degree commencing
+0
+branch 1
+returning one
+neighbors are ordered by alpha, now evaluation by degree commencing
+branch 2
+returning 1
+neighbors are ordered by alpha, now evaluation by degree commencing
+branch 2
+returning 1
+v is....
+5
+T consists of nodes:
+[5, 6, 7, 9]
+v degree is...
+1
+v is....
+6
+T consists of nodes:
+[6, 7, 9]
+v degree is...
+1
+v is....
+7
+T consists of nodes:
+[7, 9]
+v degree is...
+1
+v is....
+9
+T consists of nodes:
+[9]
+v degree is...
+0
+neighbors are ordered by alpha, now evaluation by degree commencing
+0
+branch 1
+returning one
+neighbors are ordered by alpha, now evaluation by degree commencing
+branch 2
+returning 1
+neighbors are ordered by alpha, now evaluation by degree commencing
+branch 2
+returning 1
+neighbors are ordered by alpha, now evaluation by degree commencing
+branch 2
+returning 1
+v is....
+4
+T consists of nodes:
+[4, 5, 6, 7, 9]
+v degree is...
+1
+v is....
+5
+T consists of nodes:
+[5, 6, 7, 9]
+v degree is...
+1
+v is....
+6
+T consists of nodes:
+[6, 7, 9]
+v degree is...
+1
+v is....
+7
+T consists of nodes:
+[7, 9]
+v degree is...
+1
+v is....
+9
+T consists of nodes:
+[9]
+v degree is...
+0
+neighbors are ordered by alpha, now evaluation by degree commencing
+0
+branch 1
+returning one
+neighbors are ordered by alpha, now evaluation by degree commencing
+branch 2
+returning 1
+neighbors are ordered by alpha, now evaluation by degree commencing
+branch 2
+returning 1
+neighbors are ordered by alpha, now evaluation by degree commencing
+branch 2
+returning 1
+neighbors are ordered by alpha, now evaluation by degree commencing
+branch 2
+returning 1
+v is....
+3
+T consists of nodes:
+[3, 4, 5, 6, 7, 9]
+v degree is...
+1
+v is....
+4
+T consists of nodes:
+[4, 5, 6, 7, 9]
+v degree is...
+1
+v is....
+5
+T consists of nodes:
+[5, 6, 7, 9]
+v degree is...
+1
+v is....
+6
+T consists of nodes:
+[6, 7, 9]
+v degree is...
+1
+v is....
+7
+T consists of nodes:
+[7, 9]
+v degree is...
+1
+v is....
+9
+T consists of nodes:
+[9]
+v degree is...
+0
+neighbors are ordered by alpha, now evaluation by degree commencing
+0
+branch 1
+returning one
+neighbors are ordered by alpha, now evaluation by degree commencing
+branch 2
+returning 1
+neighbors are ordered by alpha, now evaluation by degree commencing
+branch 2
+returning 1
+neighbors are ordered by alpha, now evaluation by degree commencing
+branch 2
+returning 1
+neighbors are ordered by alpha, now evaluation by degree commencing
+branch 2
+returning 1
+neighbors are ordered by alpha, now evaluation by degree commencing
+branch 2
+returning 1
+v is....
+2
+T consists of nodes:
+[2, 3, 4, 5, 6, 7, 9]
+v degree is...
+1
+v is....
+3
+T consists of nodes:
+[3, 4, 5, 6, 7, 9]
+v degree is...
+1
+v is....
+4
+T consists of nodes:
+[4, 5, 6, 7, 9]
+v degree is...
+1
+v is....
+5
+T consists of nodes:
+[5, 6, 7, 9]
+v degree is...
+1
+v is....
+6
+T consists of nodes:
+[6, 7, 9]
+v degree is...
+1
+v is....
+7
+T consists of nodes:
+[7, 9]
+v degree is...
+1
+v is....
+9
+T consists of nodes:
+[9]
+v degree is...
+0
+neighbors are ordered by alpha, now evaluation by degree commencing
+0
+branch 1
+returning one
+neighbors are ordered by alpha, now evaluation by degree commencing
+branch 2
+returning 1
+neighbors are ordered by alpha, now evaluation by degree commencing
+branch 2
+returning 1
+neighbors are ordered by alpha, now evaluation by degree commencing
+branch 2
+returning 1
+neighbors are ordered by alpha, now evaluation by degree commencing
+branch 2
+returning 1
+neighbors are ordered by alpha, now evaluation by degree commencing
+branch 2
+returning 1
+neighbors are ordered by alpha, now evaluation by degree commencing
+branch 2
+returning 1
+v is....
+1
+T consists of nodes:
+[1, 2, 3, 4, 5, 6, 7, 9]
+v degree is...
+1
+v is....
+2
+T consists of nodes:
+[2, 3, 4, 5, 6, 7, 9]
+v degree is...
+1
+v is....
+3
+T consists of nodes:
+[3, 4, 5, 6, 7, 9]
+v degree is...
+1
+v is....
+4
+T consists of nodes:
+[4, 5, 6, 7, 9]
+v degree is...
+1
+v is....
+5
+T consists of nodes:
+[5, 6, 7, 9]
+v degree is...
+1
+v is....
+6
+T consists of nodes:
+[6, 7, 9]
+v degree is...
+1
+v is....
+7
+T consists of nodes:
+[7, 9]
+v degree is...
+1
+v is....
+9
+T consists of nodes:
+[9]
+v degree is...
+0
+neighbors are ordered by alpha, now evaluation by degree commencing
+0
+branch 1
+returning one
+neighbors are ordered by alpha, now evaluation by degree commencing
+branch 2
+returning 1
+neighbors are ordered by alpha, now evaluation by degree commencing
+branch 2
+returning 1
+neighbors are ordered by alpha, now evaluation by degree commencing
+branch 2
+returning 1
+neighbors are ordered by alpha, now evaluation by degree commencing
+branch 2
+returning 1
+neighbors are ordered by alpha, now evaluation by degree commencing
+branch 2
+returning 1
+neighbors are ordered by alpha, now evaluation by degree commencing
+branch 2
+returning 1
+neighbors are ordered by alpha, now evaluation by degree commencing
+branch 2
+returning 1
+v is....
+0
+T consists of nodes:
+[0, 1, 2, 3, 4, 5, 6, 7, 9]
+v degree is...
+1
+v is....
+1
+T consists of nodes:
+[1, 2, 3, 4, 5, 6, 7, 9]
+v degree is...
+1
+v is....
+2
+T consists of nodes:
+[2, 3, 4, 5, 6, 7, 9]
+v degree is...
+1
+v is....
+3
+T consists of nodes:
+[3, 4, 5, 6, 7, 9]
+v degree is...
+1
+v is....
+4
+T consists of nodes:
+[4, 5, 6, 7, 9]
+v degree is...
+1
+v is....
+5
+T consists of nodes:
+[5, 6, 7, 9]
+v degree is...
+1
+v is....
+6
+T consists of nodes:
+[6, 7, 9]
+v degree is...
+1
+v is....
+7
+T consists of nodes:
+[7, 9]
+v degree is...
+1
+v is....
+9
+T consists of nodes:
+[9]
+v degree is...
+0
+neighbors are ordered by alpha, now evaluation by degree commencing
+0
+branch 1
+returning one
+neighbors are ordered by alpha, now evaluation by degree commencing
+branch 2
+returning 1
+neighbors are ordered by alpha, now evaluation by degree commencing
+branch 2
+returning 1
+neighbors are ordered by alpha, now evaluation by degree commencing
+branch 2
+returning 1
+neighbors are ordered by alpha, now evaluation by degree commencing
+branch 2
+returning 1
+neighbors are ordered by alpha, now evaluation by degree commencing
+branch 2
+returning 1
+neighbors are ordered by alpha, now evaluation by degree commencing
+branch 2
+returning 1
+neighbors are ordered by alpha, now evaluation by degree commencing
+branch 2
+returning 1
+neighbors are ordered by alpha, now evaluation by degree commencing
+branch 2
+returning 1
+appended mu value for node 8 is: 18
+neigh list is of 9 is [7]
+neigh list is of 7 is [6]
+neigh list is of 6 is [5]
+neigh list is of 5 is [4]
+neigh list is of 4 is [3]
+neigh list is of 3 is [2]
+neigh list is of 2 is [1]
+neigh list is of 1 is [0]
+neigh list is of 0 is [8]
+neigh list is of 8 is []
+v is....
+8
+T consists of nodes:
+[8]
+v degree is...
+0
+neighbors are ordered by alpha, now evaluation by degree commencing
+0
+branch 1
+returning one
+v is....
+0
+T consists of nodes:
+[0, 8]
+v degree is...
+1
+v is....
+8
+T consists of nodes:
+[8]
+v degree is...
+0
+neighbors are ordered by alpha, now evaluation by degree commencing
+0
+branch 1
+returning one
+neighbors are ordered by alpha, now evaluation by degree commencing
+branch 2
+returning 1
+v is....
+1
+T consists of nodes:
+[0, 1, 8]
+v degree is...
+1
+v is....
+0
+T consists of nodes:
+[0, 8]
+v degree is...
+1
+v is....
+8
+T consists of nodes:
+[8]
+v degree is...
+0
+neighbors are ordered by alpha, now evaluation by degree commencing
+0
+branch 1
+returning one
+neighbors are ordered by alpha, now evaluation by degree commencing
+branch 2
+returning 1
+neighbors are ordered by alpha, now evaluation by degree commencing
+branch 2
+returning 1
+v is....
+2
+T consists of nodes:
+[0, 1, 2, 8]
+v degree is...
+1
+v is....
+1
+T consists of nodes:
+[0, 1, 8]
+v degree is...
+1
+v is....
+0
+T consists of nodes:
+[0, 8]
+v degree is...
+1
+v is....
+8
+T consists of nodes:
+[8]
+v degree is...
+0
+neighbors are ordered by alpha, now evaluation by degree commencing
+0
+branch 1
+returning one
+neighbors are ordered by alpha, now evaluation by degree commencing
+branch 2
+returning 1
+neighbors are ordered by alpha, now evaluation by degree commencing
+branch 2
+returning 1
+neighbors are ordered by alpha, now evaluation by degree commencing
+branch 2
+returning 1
+v is....
+3
+T consists of nodes:
+[0, 1, 2, 3, 8]
+v degree is...
+1
+v is....
+2
+T consists of nodes:
+[0, 1, 2, 8]
+v degree is...
+1
+v is....
+1
+T consists of nodes:
+[0, 1, 8]
+v degree is...
+1
+v is....
+0
+T consists of nodes:
+[0, 8]
+v degree is...
+1
+v is....
+8
+T consists of nodes:
+[8]
+v degree is...
+0
+neighbors are ordered by alpha, now evaluation by degree commencing
+0
+branch 1
+returning one
+neighbors are ordered by alpha, now evaluation by degree commencing
+branch 2
+returning 1
+neighbors are ordered by alpha, now evaluation by degree commencing
+branch 2
+returning 1
+neighbors are ordered by alpha, now evaluation by degree commencing
+branch 2
+returning 1
+neighbors are ordered by alpha, now evaluation by degree commencing
+branch 2
+returning 1
+v is....
+4
+T consists of nodes:
+[0, 1, 2, 3, 4, 8]
+v degree is...
+1
+v is....
+3
+T consists of nodes:
+[0, 1, 2, 3, 8]
+v degree is...
+1
+v is....
+2
+T consists of nodes:
+[0, 1, 2, 8]
+v degree is...
+1
+v is....
+1
+T consists of nodes:
+[0, 1, 8]
+v degree is...
+1
+v is....
+0
+T consists of nodes:
+[0, 8]
+v degree is...
+1
+v is....
+8
+T consists of nodes:
+[8]
+v degree is...
+0
+neighbors are ordered by alpha, now evaluation by degree commencing
+0
+branch 1
+returning one
+neighbors are ordered by alpha, now evaluation by degree commencing
+branch 2
+returning 1
+neighbors are ordered by alpha, now evaluation by degree commencing
+branch 2
+returning 1
+neighbors are ordered by alpha, now evaluation by degree commencing
+branch 2
+returning 1
+neighbors are ordered by alpha, now evaluation by degree commencing
+branch 2
+returning 1
+neighbors are ordered by alpha, now evaluation by degree commencing
+branch 2
+returning 1
+v is....
+5
+T consists of nodes:
+[0, 1, 2, 3, 4, 5, 8]
+v degree is...
+1
+v is....
+4
+T consists of nodes:
+[0, 1, 2, 3, 4, 8]
+v degree is...
+1
+v is....
+3
+T consists of nodes:
+[0, 1, 2, 3, 8]
+v degree is...
+1
+v is....
+2
+T consists of nodes:
+[0, 1, 2, 8]
+v degree is...
+1
+v is....
+1
+T consists of nodes:
+[0, 1, 8]
+v degree is...
+1
+v is....
+0
+T consists of nodes:
+[0, 8]
+v degree is...
+1
+v is....
+8
+T consists of nodes:
+[8]
+v degree is...
+0
+neighbors are ordered by alpha, now evaluation by degree commencing
+0
+branch 1
+returning one
+neighbors are ordered by alpha, now evaluation by degree commencing
+branch 2
+returning 1
+neighbors are ordered by alpha, now evaluation by degree commencing
+branch 2
+returning 1
+neighbors are ordered by alpha, now evaluation by degree commencing
+branch 2
+returning 1
+neighbors are ordered by alpha, now evaluation by degree commencing
+branch 2
+returning 1
+neighbors are ordered by alpha, now evaluation by degree commencing
+branch 2
+returning 1
+neighbors are ordered by alpha, now evaluation by degree commencing
+branch 2
+returning 1
+v is....
+6
+T consists of nodes:
+[0, 1, 2, 3, 4, 5, 6, 8]
+v degree is...
+1
+v is....
+5
+T consists of nodes:
+[0, 1, 2, 3, 4, 5, 8]
+v degree is...
+1
+v is....
+4
+T consists of nodes:
+[0, 1, 2, 3, 4, 8]
+v degree is...
+1
+v is....
+3
+T consists of nodes:
+[0, 1, 2, 3, 8]
+v degree is...
+1
+v is....
+2
+T consists of nodes:
+[0, 1, 2, 8]
+v degree is...
+1
+v is....
+1
+T consists of nodes:
+[0, 1, 8]
+v degree is...
+1
+v is....
+0
+T consists of nodes:
+[0, 8]
+v degree is...
+1
+v is....
+8
+T consists of nodes:
+[8]
+v degree is...
+0
+neighbors are ordered by alpha, now evaluation by degree commencing
+0
+branch 1
+returning one
+neighbors are ordered by alpha, now evaluation by degree commencing
+branch 2
+returning 1
+neighbors are ordered by alpha, now evaluation by degree commencing
+branch 2
+returning 1
+neighbors are ordered by alpha, now evaluation by degree commencing
+branch 2
+returning 1
+neighbors are ordered by alpha, now evaluation by degree commencing
+branch 2
+returning 1
+neighbors are ordered by alpha, now evaluation by degree commencing
+branch 2
+returning 1
+neighbors are ordered by alpha, now evaluation by degree commencing
+branch 2
+returning 1
+neighbors are ordered by alpha, now evaluation by degree commencing
+branch 2
+returning 1
+v is....
+7
+T consists of nodes:
+[0, 1, 2, 3, 4, 5, 6, 7, 8]
+v degree is...
+1
+v is....
+6
+T consists of nodes:
+[0, 1, 2, 3, 4, 5, 6, 8]
+v degree is...
+1
+v is....
+5
+T consists of nodes:
+[0, 1, 2, 3, 4, 5, 8]
+v degree is...
+1
+v is....
+4
+T consists of nodes:
+[0, 1, 2, 3, 4, 8]
+v degree is...
+1
+v is....
+3
+T consists of nodes:
+[0, 1, 2, 3, 8]
+v degree is...
+1
+v is....
+2
+T consists of nodes:
+[0, 1, 2, 8]
+v degree is...
+1
+v is....
+1
+T consists of nodes:
+[0, 1, 8]
+v degree is...
+1
+v is....
+0
+T consists of nodes:
+[0, 8]
+v degree is...
+1
+v is....
+8
+T consists of nodes:
+[8]
+v degree is...
+0
+neighbors are ordered by alpha, now evaluation by degree commencing
+0
+branch 1
+returning one
+neighbors are ordered by alpha, now evaluation by degree commencing
+branch 2
+returning 1
+neighbors are ordered by alpha, now evaluation by degree commencing
+branch 2
+returning 1
+neighbors are ordered by alpha, now evaluation by degree commencing
+branch 2
+returning 1
+neighbors are ordered by alpha, now evaluation by degree commencing
+branch 2
+returning 1
+neighbors are ordered by alpha, now evaluation by degree commencing
+branch 2
+returning 1
+neighbors are ordered by alpha, now evaluation by degree commencing
+branch 2
+returning 1
+neighbors are ordered by alpha, now evaluation by degree commencing
+branch 2
+returning 1
+neighbors are ordered by alpha, now evaluation by degree commencing
+branch 2
+returning 1
+appended mu value for node 9 is: 18
+mu_try is {0: 18, 1: 18, 2: 18, 3: 18, 4: 18, 5: 18, 6: 18, 7: 18, 8: 18, 9: 18}
+a_try is {0: 2, 1: 2, 2: 2, 3: 2, 4: 2, 5: 2, 6: 2, 7: 2, 8: 1, 9: 1}
+min_a is [8, 9]
+minimum_mu value is: 18
+minimum_mu is [8, 9]
+Graph with 10 nodes and 9 edges
+this is T
+Graph with 10 nodes and 9 edges
+this is T
+Graph with 10 nodes and 9 edges
+this is T
+Graph with 10 nodes and 9 edges
+this is T
+Graph with 10 nodes and 9 edges
+this is T
+Graph with 10 nodes and 9 edges
+this is T
+Graph with 10 nodes and 9 edges
+this is T
+Graph with 10 nodes and 9 edges
+this is T
+Graph with 10 nodes and 9 edges
+this is T
+Graph with 10 nodes and 9 edges
+this is T
+Graph with 10 nodes and 9 edges
+minofmaxdist after
+quadratic roots of the quadratic equation
+0.0007327183548470192
+-0.0007332556247020332
+chernoff is 7
+min nr_of_agents is 6
+starting node is 3and the nr_of_agents are 7
+quadratic roots of the quadratic equation
+0.0007327183548470192
+-0.0007332556247020332
+agents_if is {0: 1.7890687942059338e-07}
+agents_if is {0: 1.7890687942059338e-07, 1: 1.8725953108229056e-07}
+agents_if is {0: 1.7890687942059338e-07, 1: 1.8725953108229056e-07, 2: 1.3364631756745693e-07}
+agents_if is {0: 1.7890687942059338e-07, 1: 1.8725953108229056e-07, 2: 1.3364631756745693e-07, 3: 1.2536623940288056e-07}
+agents_if is {0: 1.7890687942059338e-07, 1: 1.8725953108229056e-07, 2: 1.3364631756745693e-07, 3: 1.2536623940288056e-07, 4: 1.0932054400016442e-07}
+agents_if is {0: 1.7890687942059338e-07, 1: 1.8725953108229056e-07, 2: 1.3364631756745693e-07, 3: 1.2536623940288056e-07, 4: 1.0932054400016442e-07, 5: 1.2490530694342553e-07}
+agents_if is {0: 1.7890687942059338e-07, 1: 1.8725953108229056e-07, 2: 1.3364631756745693e-07, 3: 1.2536623940288056e-07, 4: 1.0932054400016442e-07, 5: 1.2490530694342553e-07, 6: 1.480728007185832e-07}
+agents_when at the start is {}
+decont v is 3
+decont T is [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]
+moving the chain to 3
+agents are {0: 3, 1: 3, 2: 3, 3: 3, 4: 3, 5: 3, 6: 3}
+color is {0: 'grey', 1: 'grey', 2: 'grey', 3: 'black', 4: 'grey', 5: 'grey', 6: 'grey', 7: 'grey', 8: 'grey', 9: 'grey'}
+previous node is -1
+agents 1 is {0: 3, 1: 3, 2: 3, 3: 3, 4: 3, 5: 3, 6: 3}
+len(list(T.nodes)) is 10
+v_neighbours is [2, 4]
+v is....
+2
+T consists of nodes:
+[0, 1, 2, 3, 4, 5, 6, 7, 8, 9]
+v degree is...
+2
+v is....
+1
+T consists of nodes:
+[0, 1, 8]
+v degree is...
+1
+v is....
+0
+T consists of nodes:
+[0, 8]
+v degree is...
+1
+v is....
+8
+T consists of nodes:
+[8]
+v degree is...
+0
+neighbors are ordered by alpha, now evaluation by degree commencing
+0
+branch 1
+returning one
+neighbors are ordered by alpha, now evaluation by degree commencing
+branch 2
+returning 1
+neighbors are ordered by alpha, now evaluation by degree commencing
+branch 2
+returning 1
+v is....
+3
+T consists of nodes:
+[3, 4, 5, 6, 7, 9]
+v degree is...
+1
+v is....
+4
+T consists of nodes:
+[4, 5, 6, 7, 9]
+v degree is...
+1
+v is....
+5
+T consists of nodes:
+[5, 6, 7, 9]
+v degree is...
+1
+v is....
+6
+T consists of nodes:
+[6, 7, 9]
+v degree is...
+1
+v is....
+7
+T consists of nodes:
+[7, 9]
+v degree is...
+1
+v is....
+9
+T consists of nodes:
+[9]
+v degree is...
+0
+neighbors are ordered by alpha, now evaluation by degree commencing
+0
+branch 1
+returning one
+neighbors are ordered by alpha, now evaluation by degree commencing
+branch 2
+returning 1
+neighbors are ordered by alpha, now evaluation by degree commencing
+branch 2
+returning 1
+neighbors are ordered by alpha, now evaluation by degree commencing
+branch 2
+returning 1
+neighbors are ordered by alpha, now evaluation by degree commencing
+branch 2
+returning 1
+neighbors are ordered by alpha, now evaluation by degree commencing
+branch 2
+returning 1
+neighbors are ordered by alpha, now evaluation by degree commencing
+branch 4
+returning 2
+v is....
+4
+T consists of nodes:
+[0, 1, 2, 3, 4, 5, 6, 7, 8, 9]
+v degree is...
+2
+v is....
+3
+T consists of nodes:
+[0, 1, 2, 3, 8]
+v degree is...
+1
+v is....
+2
+T consists of nodes:
+[0, 1, 2, 8]
+v degree is...
+1
+v is....
+1
+T consists of nodes:
+[0, 1, 8]
+v degree is...
+1
+v is....
+0
+T consists of nodes:
+[0, 8]
+v degree is...
+1
+v is....
+8
+T consists of nodes:
+[8]
+v degree is...
+0
+neighbors are ordered by alpha, now evaluation by degree commencing
+0
+branch 1
+returning one
+neighbors are ordered by alpha, now evaluation by degree commencing
+branch 2
+returning 1
+neighbors are ordered by alpha, now evaluation by degree commencing
+branch 2
+returning 1
+neighbors are ordered by alpha, now evaluation by degree commencing
+branch 2
+returning 1
+neighbors are ordered by alpha, now evaluation by degree commencing
+branch 2
+returning 1
+v is....
+5
+T consists of nodes:
+[5, 6, 7, 9]
+v degree is...
+1
+v is....
+6
+T consists of nodes:
+[6, 7, 9]
+v degree is...
+1
+v is....
+7
+T consists of nodes:
+[7, 9]
+v degree is...
+1
+v is....
+9
+T consists of nodes:
+[9]
+v degree is...
+0
+neighbors are ordered by alpha, now evaluation by degree commencing
+0
+branch 1
+returning one
+neighbors are ordered by alpha, now evaluation by degree commencing
+branch 2
+returning 1
+neighbors are ordered by alpha, now evaluation by degree commencing
+branch 2
+returning 1
+neighbors are ordered by alpha, now evaluation by degree commencing
+branch 2
+returning 1
+neighbors are ordered by alpha, now evaluation by degree commencing
+branch 4
+returning 2
+state of a before the for loop is {2: 2, 4: 2}
+current state of a is {2: 2, 4: 2}
+the max key is 2
+current state of a is {2: -1, 4: 2}
+the max key is 4
+len of ordered_v_neighbors is 2and its contents are [2, 4]
+agents 2 is {0: 3, 1: 3, 2: 3, 3: 3, 4: 3, 5: 3, 6: 3}
+ordered_v_neighbours is [2, 4]
+agents 3 is {0: 3, 1: 3, 2: 3, 3: 3, 4: 3, 5: 3, 6: 3}
+decont v is 4
+decont T is [4, 5, 6, 7, 9]
+movecounterb4 0
+i is 1 and agents is {0: 4, 1: 3, 2: 3, 3: 3, 4: 3, 5: 3, 6: 3} and agents_0 is {0: 3, 1: 3, 2: 3, 3: 3, 4: 3, 5: 3, 6: 3}
+i is 2 and agents is {0: 4, 1: 3, 2: 3, 3: 3, 4: 3, 5: 3, 6: 3} and agents_0 is {0: 3, 1: 3, 2: 3, 3: 3, 4: 3, 5: 3, 6: 3}
+i is 3 and agents is {0: 4, 1: 3, 2: 3, 3: 3, 4: 3, 5: 3, 6: 3} and agents_0 is {0: 3, 1: 3, 2: 3, 3: 3, 4: 3, 5: 3, 6: 3}
+i is 4 and agents is {0: 4, 1: 3, 2: 3, 3: 3, 4: 3, 5: 3, 6: 3} and agents_0 is {0: 3, 1: 3, 2: 3, 3: 3, 4: 3, 5: 3, 6: 3}
+i is 5 and agents is {0: 4, 1: 3, 2: 3, 3: 3, 4: 3, 5: 3, 6: 3} and agents_0 is {0: 3, 1: 3, 2: 3, 3: 3, 4: 3, 5: 3, 6: 3}
+i is 6 and agents is {0: 4, 1: 3, 2: 3, 3: 3, 4: 3, 5: 3, 6: 3} and agents_0 is {0: 3, 1: 3, 2: 3, 3: 3, 4: 3, 5: 3, 6: 3}
+movecounterafter 1
+moving the chain to 4
+agents are {0: 4, 1: 3, 2: 3, 3: 3, 4: 3, 5: 3, 6: 3}
+color is {0: 'grey', 1: 'grey', 2: 'grey', 3: 'black', 4: 'black', 5: 'grey', 6: 'grey', 7: 'grey', 8: 'grey', 9: 'grey'}
+previous node is 3
+agents 1 is {0: 4, 1: 3, 2: 3, 3: 3, 4: 3, 5: 3, 6: 3}
+len(list(T.nodes)) is 5
+v_neighbours is [5]
+v is....
+5
+T consists of nodes:
+[4, 5, 6, 7, 9]
+v degree is...
+2
+v is....
+4
+T consists of nodes:
+[4]
+v degree is...
+0
+neighbors are ordered by alpha, now evaluation by degree commencing
+0
+branch 1
+returning one
+v is....
+6
+T consists of nodes:
+[6, 7, 9]
+v degree is...
+1
+v is....
+7
+T consists of nodes:
+[7, 9]
+v degree is...
+1
+v is....
+9
+T consists of nodes:
+[9]
+v degree is...
+0
+neighbors are ordered by alpha, now evaluation by degree commencing
+0
+branch 1
+returning one
+neighbors are ordered by alpha, now evaluation by degree commencing
+branch 2
+returning 1
+neighbors are ordered by alpha, now evaluation by degree commencing
+branch 2
+returning 1
+neighbors are ordered by alpha, now evaluation by degree commencing
+branch 4
+returning 2
+state of a before the for loop is {5: 2}
+current state of a is {5: 2}
+the max key is 5
+len of ordered_v_neighbors is 1and its contents are [5]
+agents 2 is {0: 4, 1: 3, 2: 3, 3: 3, 4: 3, 5: 3, 6: 3}
+ordered_v_neighbours is [5]
+agents 3 is {0: 4, 1: 3, 2: 3, 3: 3, 4: 3, 5: 3, 6: 3}
+decont v is 5
+decont T is [5, 6, 7, 9]
+movecounterb4 1
+i is 1 and agents is {0: 5, 1: 3, 2: 3, 3: 3, 4: 3, 5: 3, 6: 3} and agents_0 is {0: 4, 1: 3, 2: 3, 3: 3, 4: 3, 5: 3, 6: 3}
+i is 2 and agents is {0: 5, 1: 4, 2: 3, 3: 3, 4: 3, 5: 3, 6: 3} and agents_0 is {0: 4, 1: 3, 2: 3, 3: 3, 4: 3, 5: 3, 6: 3}
+i is 3 and agents is {0: 5, 1: 4, 2: 3, 3: 3, 4: 3, 5: 3, 6: 3} and agents_0 is {0: 4, 1: 3, 2: 3, 3: 3, 4: 3, 5: 3, 6: 3}
+i is 4 and agents is {0: 5, 1: 4, 2: 3, 3: 3, 4: 3, 5: 3, 6: 3} and agents_0 is {0: 4, 1: 3, 2: 3, 3: 3, 4: 3, 5: 3, 6: 3}
+i is 5 and agents is {0: 5, 1: 4, 2: 3, 3: 3, 4: 3, 5: 3, 6: 3} and agents_0 is {0: 4, 1: 3, 2: 3, 3: 3, 4: 3, 5: 3, 6: 3}
+i is 6 and agents is {0: 5, 1: 4, 2: 3, 3: 3, 4: 3, 5: 3, 6: 3} and agents_0 is {0: 4, 1: 3, 2: 3, 3: 3, 4: 3, 5: 3, 6: 3}
+movecounterafter 3
+moving the chain to 5
+agents are {0: 5, 1: 4, 2: 3, 3: 3, 4: 3, 5: 3, 6: 3}
+color is {0: 'grey', 1: 'grey', 2: 'grey', 3: 'black', 4: 'black', 5: 'black', 6: 'grey', 7: 'grey', 8: 'grey', 9: 'grey'}
+previous node is 4
+agents 1 is {0: 5, 1: 4, 2: 3, 3: 3, 4: 3, 5: 3, 6: 3}
+len(list(T.nodes)) is 4
+v_neighbours is [6]
+v is....
+6
+T consists of nodes:
+[5, 6, 7, 9]
+v degree is...
+2
+v is....
+5
+T consists of nodes:
+[5]
+v degree is...
+0
+neighbors are ordered by alpha, now evaluation by degree commencing
+0
+branch 1
+returning one
+v is....
+7
+T consists of nodes:
+[7, 9]
+v degree is...
+1
+v is....
+9
+T consists of nodes:
+[9]
+v degree is...
+0
+neighbors are ordered by alpha, now evaluation by degree commencing
+0
+branch 1
+returning one
+neighbors are ordered by alpha, now evaluation by degree commencing
+branch 2
+returning 1
+neighbors are ordered by alpha, now evaluation by degree commencing
+branch 4
+returning 2
+state of a before the for loop is {6: 2}
+current state of a is {6: 2}
+the max key is 6
+len of ordered_v_neighbors is 1and its contents are [6]
+agents 2 is {0: 5, 1: 4, 2: 3, 3: 3, 4: 3, 5: 3, 6: 3}
+ordered_v_neighbours is [6]
+agents 3 is {0: 5, 1: 4, 2: 3, 3: 3, 4: 3, 5: 3, 6: 3}
+decont v is 6
+decont T is [6, 7, 9]
+movecounterb4 3
+i is 1 and agents is {0: 6, 1: 4, 2: 3, 3: 3, 4: 3, 5: 3, 6: 3} and agents_0 is {0: 5, 1: 4, 2: 3, 3: 3, 4: 3, 5: 3, 6: 3}
+i is 2 and agents is {0: 6, 1: 5, 2: 3, 3: 3, 4: 3, 5: 3, 6: 3} and agents_0 is {0: 5, 1: 4, 2: 3, 3: 3, 4: 3, 5: 3, 6: 3}
+i is 3 and agents is {0: 6, 1: 5, 2: 4, 3: 3, 4: 3, 5: 3, 6: 3} and agents_0 is {0: 5, 1: 4, 2: 3, 3: 3, 4: 3, 5: 3, 6: 3}
+i is 4 and agents is {0: 6, 1: 5, 2: 4, 3: 3, 4: 3, 5: 3, 6: 3} and agents_0 is {0: 5, 1: 4, 2: 3, 3: 3, 4: 3, 5: 3, 6: 3}
+i is 5 and agents is {0: 6, 1: 5, 2: 4, 3: 3, 4: 3, 5: 3, 6: 3} and agents_0 is {0: 5, 1: 4, 2: 3, 3: 3, 4: 3, 5: 3, 6: 3}
+i is 6 and agents is {0: 6, 1: 5, 2: 4, 3: 3, 4: 3, 5: 3, 6: 3} and agents_0 is {0: 5, 1: 4, 2: 3, 3: 3, 4: 3, 5: 3, 6: 3}
+movecounterafter 6
+moving the chain to 6
+agents are {0: 6, 1: 5, 2: 4, 3: 3, 4: 3, 5: 3, 6: 3}
+color is {0: 'grey', 1: 'grey', 2: 'grey', 3: 'black', 4: 'black', 5: 'black', 6: 'black', 7: 'grey', 8: 'grey', 9: 'grey'}
+previous node is 5
+agents 1 is {0: 6, 1: 5, 2: 4, 3: 3, 4: 3, 5: 3, 6: 3}
+len(list(T.nodes)) is 3
+v_neighbours is [7]
+v is....
+7
+T consists of nodes:
+[6, 7, 9]
+v degree is...
+2
+v is....
+6
+T consists of nodes:
+[6]
+v degree is...
+0
+neighbors are ordered by alpha, now evaluation by degree commencing
+0
+branch 1
+returning one
+v is....
+9
+T consists of nodes:
+[9]
+v degree is...
+0
+neighbors are ordered by alpha, now evaluation by degree commencing
+0
+branch 1
+returning one
+neighbors are ordered by alpha, now evaluation by degree commencing
+branch 4
+returning 2
+state of a before the for loop is {7: 2}
+current state of a is {7: 2}
+the max key is 7
+len of ordered_v_neighbors is 1and its contents are [7]
+agents 2 is {0: 6, 1: 5, 2: 4, 3: 3, 4: 3, 5: 3, 6: 3}
+ordered_v_neighbours is [7]
+agents 3 is {0: 6, 1: 5, 2: 4, 3: 3, 4: 3, 5: 3, 6: 3}
+decont v is 7
+decont T is [7, 9]
+movecounterb4 6
+i is 1 and agents is {0: 7, 1: 5, 2: 4, 3: 3, 4: 3, 5: 3, 6: 3} and agents_0 is {0: 6, 1: 5, 2: 4, 3: 3, 4: 3, 5: 3, 6: 3}
+i is 2 and agents is {0: 7, 1: 6, 2: 4, 3: 3, 4: 3, 5: 3, 6: 3} and agents_0 is {0: 6, 1: 5, 2: 4, 3: 3, 4: 3, 5: 3, 6: 3}
+i is 3 and agents is {0: 7, 1: 6, 2: 5, 3: 3, 4: 3, 5: 3, 6: 3} and agents_0 is {0: 6, 1: 5, 2: 4, 3: 3, 4: 3, 5: 3, 6: 3}
+i is 4 and agents is {0: 7, 1: 6, 2: 5, 3: 4, 4: 3, 5: 3, 6: 3} and agents_0 is {0: 6, 1: 5, 2: 4, 3: 3, 4: 3, 5: 3, 6: 3}
+i is 5 and agents is {0: 7, 1: 6, 2: 5, 3: 4, 4: 3, 5: 3, 6: 3} and agents_0 is {0: 6, 1: 5, 2: 4, 3: 3, 4: 3, 5: 3, 6: 3}
+i is 6 and agents is {0: 7, 1: 6, 2: 5, 3: 4, 4: 3, 5: 3, 6: 3} and agents_0 is {0: 6, 1: 5, 2: 4, 3: 3, 4: 3, 5: 3, 6: 3}
+movecounterafter 10
+moving the chain to 7
+agents are {0: 7, 1: 6, 2: 5, 3: 4, 4: 3, 5: 3, 6: 3}
+color is {0: 'grey', 1: 'grey', 2: 'grey', 3: 'black', 4: 'black', 5: 'black', 6: 'black', 7: 'black', 8: 'grey', 9: 'grey'}
+previous node is 6
+agents 1 is {0: 7, 1: 6, 2: 5, 3: 4, 4: 3, 5: 3, 6: 3}
+len(list(T.nodes)) is 2
+v_neighbours is [9]
+v is....
+9
+T consists of nodes:
+[7, 9]
+v degree is...
+1
+v is....
+7
+T consists of nodes:
+[7]
+v degree is...
+0
+neighbors are ordered by alpha, now evaluation by degree commencing
+0
+branch 1
+returning one
+neighbors are ordered by alpha, now evaluation by degree commencing
+branch 2
+returning 1
+state of a before the for loop is {9: 1}
+current state of a is {9: 1}
+the max key is 9
+len of ordered_v_neighbors is 1and its contents are [9]
+agents 2 is {0: 7, 1: 6, 2: 5, 3: 4, 4: 3, 5: 3, 6: 3}
+ordered_v_neighbours is [9]
+agents 3 is {0: 7, 1: 6, 2: 5, 3: 4, 4: 3, 5: 3, 6: 3}
+decont v is 9
+decont T is [9]
+movecounterb4 10
+i is 1 and agents is {0: 9, 1: 6, 2: 5, 3: 4, 4: 3, 5: 3, 6: 3} and agents_0 is {0: 7, 1: 6, 2: 5, 3: 4, 4: 3, 5: 3, 6: 3}
+i is 2 and agents is {0: 9, 1: 7, 2: 5, 3: 4, 4: 3, 5: 3, 6: 3} and agents_0 is {0: 7, 1: 6, 2: 5, 3: 4, 4: 3, 5: 3, 6: 3}
+i is 3 and agents is {0: 9, 1: 7, 2: 6, 3: 4, 4: 3, 5: 3, 6: 3} and agents_0 is {0: 7, 1: 6, 2: 5, 3: 4, 4: 3, 5: 3, 6: 3}
+i is 4 and agents is {0: 9, 1: 7, 2: 6, 3: 5, 4: 3, 5: 3, 6: 3} and agents_0 is {0: 7, 1: 6, 2: 5, 3: 4, 4: 3, 5: 3, 6: 3}
+i is 5 and agents is {0: 9, 1: 7, 2: 6, 3: 5, 4: 4, 5: 3, 6: 3} and agents_0 is {0: 7, 1: 6, 2: 5, 3: 4, 4: 3, 5: 3, 6: 3}
+i is 6 and agents is {0: 9, 1: 7, 2: 6, 3: 5, 4: 4, 5: 3, 6: 3} and agents_0 is {0: 7, 1: 6, 2: 5, 3: 4, 4: 3, 5: 3, 6: 3}
+movecounterafter 15
+moving the chain to 9
+agents are {0: 9, 1: 7, 2: 6, 3: 5, 4: 4, 5: 3, 6: 3}
+color is {0: 'grey', 1: 'grey', 2: 'grey', 3: 'black', 4: 'black', 5: 'black', 6: 'black', 7: 'black', 8: 'grey', 9: 'black'}
+previous node is 7
+agents 1 is {0: 9, 1: 7, 2: 6, 3: 5, 4: 4, 5: 3, 6: 3}
+len(list(T.nodes)) is 1
+we have reached a leaf
+agents 4 is {0: 9, 1: 7, 2: 6, 3: 5, 4: 4, 5: 3, 6: 3}
+before moving back, the current value of neighbor is 9
+we were in a leaf, now we're moving back up the chain from9 to 7
+agents 5 is {0: 7, 1: 6, 2: 5, 3: 4, 4: 3, 5: 3, 6: 3}
+agents are {0: 7, 1: 6, 2: 5, 3: 4, 4: 3, 5: 3, 6: 3}
+color is {0: 'grey', 1: 'grey', 2: 'grey', 3: 'black', 4: 'black', 5: 'black', 6: 'black', 7: 'black', 8: 'grey', 9: 'white'}
+previous node is 7
+agents 4 is {0: 7, 1: 6, 2: 5, 3: 4, 4: 3, 5: 3, 6: 3}
+before moving back, the current value of neighbor is 7
+we were in a leaf, now we're moving back up the chain from7 to 6
+agents 5 is {0: 6, 1: 5, 2: 4, 3: 3, 4: 3, 5: 3, 6: 3}
+agents are {0: 6, 1: 5, 2: 4, 3: 3, 4: 3, 5: 3, 6: 3}
+color is {0: 'grey', 1: 'grey', 2: 'grey', 3: 'black', 4: 'black', 5: 'black', 6: 'black', 7: 'white', 8: 'grey', 9: 'white'}
+previous node is 7
+agents 4 is {0: 6, 1: 5, 2: 4, 3: 3, 4: 3, 5: 3, 6: 3}
+before moving back, the current value of neighbor is 6
+we were in a leaf, now we're moving back up the chain from6 to 5
+agents 5 is {0: 5, 1: 4, 2: 3, 3: 3, 4: 3, 5: 3, 6: 3}
+agents are {0: 5, 1: 4, 2: 3, 3: 3, 4: 3, 5: 3, 6: 3}
+color is {0: 'grey', 1: 'grey', 2: 'grey', 3: 'black', 4: 'black', 5: 'black', 6: 'white', 7: 'white', 8: 'grey', 9: 'white'}
+previous node is 7
+agents 4 is {0: 5, 1: 4, 2: 3, 3: 3, 4: 3, 5: 3, 6: 3}
+before moving back, the current value of neighbor is 5
+we were in a leaf, now we're moving back up the chain from5 to 4
+agents 5 is {0: 4, 1: 3, 2: 3, 3: 3, 4: 3, 5: 3, 6: 3}
+agents are {0: 4, 1: 3, 2: 3, 3: 3, 4: 3, 5: 3, 6: 3}
+color is {0: 'grey', 1: 'grey', 2: 'grey', 3: 'black', 4: 'black', 5: 'white', 6: 'white', 7: 'white', 8: 'grey', 9: 'white'}
+previous node is 7
+agents 4 is {0: 4, 1: 3, 2: 3, 3: 3, 4: 3, 5: 3, 6: 3}
+before moving back, the current value of neighbor is 4
+we were in a leaf, now we're moving back up the chain from4 to 3
+agents 5 is {0: 3, 1: 3, 2: 3, 3: 3, 4: 3, 5: 3, 6: 3}
+agents are {0: 3, 1: 3, 2: 3, 3: 3, 4: 3, 5: 3, 6: 3}
+color is {0: 'grey', 1: 'grey', 2: 'grey', 3: 'black', 4: 'white', 5: 'white', 6: 'white', 7: 'white', 8: 'grey', 9: 'white'}
+previous node is 7
+ordered_v_neighbours is [2, 4]
+agents 3 is {0: 3, 1: 3, 2: 3, 3: 3, 4: 3, 5: 3, 6: 3}
+decont v is 2
+decont T is [0, 1, 2, 8]
+movecounterb4 30
+i is 1 and agents is {0: 2, 1: 3, 2: 3, 3: 3, 4: 3, 5: 3, 6: 3} and agents_0 is {0: 3, 1: 3, 2: 3, 3: 3, 4: 3, 5: 3, 6: 3}
+i is 2 and agents is {0: 2, 1: 3, 2: 3, 3: 3, 4: 3, 5: 3, 6: 3} and agents_0 is {0: 3, 1: 3, 2: 3, 3: 3, 4: 3, 5: 3, 6: 3}
+i is 3 and agents is {0: 2, 1: 3, 2: 3, 3: 3, 4: 3, 5: 3, 6: 3} and agents_0 is {0: 3, 1: 3, 2: 3, 3: 3, 4: 3, 5: 3, 6: 3}
+i is 4 and agents is {0: 2, 1: 3, 2: 3, 3: 3, 4: 3, 5: 3, 6: 3} and agents_0 is {0: 3, 1: 3, 2: 3, 3: 3, 4: 3, 5: 3, 6: 3}
+i is 5 and agents is {0: 2, 1: 3, 2: 3, 3: 3, 4: 3, 5: 3, 6: 3} and agents_0 is {0: 3, 1: 3, 2: 3, 3: 3, 4: 3, 5: 3, 6: 3}
+i is 6 and agents is {0: 2, 1: 3, 2: 3, 3: 3, 4: 3, 5: 3, 6: 3} and agents_0 is {0: 3, 1: 3, 2: 3, 3: 3, 4: 3, 5: 3, 6: 3}
+movecounterafter 31
+moving the chain to 2
+agents are {0: 2, 1: 3, 2: 3, 3: 3, 4: 3, 5: 3, 6: 3}
+color is {0: 'grey', 1: 'grey', 2: 'black', 3: 'black', 4: 'white', 5: 'white', 6: 'white', 7: 'white', 8: 'grey', 9: 'white'}
+previous node is 3
+agents 1 is {0: 2, 1: 3, 2: 3, 3: 3, 4: 3, 5: 3, 6: 3}
+len(list(T.nodes)) is 4
+v_neighbours is [1]
+v is....
+1
+T consists of nodes:
+[0, 1, 2, 8]
+v degree is...
+2
+v is....
+0
+T consists of nodes:
+[0, 8]
+v degree is...
+1
+v is....
+8
+T consists of nodes:
+[8]
+v degree is...
+0
+neighbors are ordered by alpha, now evaluation by degree commencing
+0
+branch 1
+returning one
+neighbors are ordered by alpha, now evaluation by degree commencing
+branch 2
+returning 1
+v is....
+2
+T consists of nodes:
+[2]
+v degree is...
+0
+neighbors are ordered by alpha, now evaluation by degree commencing
+0
+branch 1
+returning one
+neighbors are ordered by alpha, now evaluation by degree commencing
+branch 4
+returning 2
+state of a before the for loop is {1: 2}
+current state of a is {1: 2}
+the max key is 1
+len of ordered_v_neighbors is 1and its contents are [1]
+agents 2 is {0: 2, 1: 3, 2: 3, 3: 3, 4: 3, 5: 3, 6: 3}
+ordered_v_neighbours is [1]
+agents 3 is {0: 2, 1: 3, 2: 3, 3: 3, 4: 3, 5: 3, 6: 3}
+decont v is 1
+decont T is [0, 1, 8]
+movecounterb4 31
+i is 1 and agents is {0: 1, 1: 3, 2: 3, 3: 3, 4: 3, 5: 3, 6: 3} and agents_0 is {0: 2, 1: 3, 2: 3, 3: 3, 4: 3, 5: 3, 6: 3}
+i is 2 and agents is {0: 1, 1: 2, 2: 3, 3: 3, 4: 3, 5: 3, 6: 3} and agents_0 is {0: 2, 1: 3, 2: 3, 3: 3, 4: 3, 5: 3, 6: 3}
+i is 3 and agents is {0: 1, 1: 2, 2: 3, 3: 3, 4: 3, 5: 3, 6: 3} and agents_0 is {0: 2, 1: 3, 2: 3, 3: 3, 4: 3, 5: 3, 6: 3}
+i is 4 and agents is {0: 1, 1: 2, 2: 3, 3: 3, 4: 3, 5: 3, 6: 3} and agents_0 is {0: 2, 1: 3, 2: 3, 3: 3, 4: 3, 5: 3, 6: 3}
+i is 5 and agents is {0: 1, 1: 2, 2: 3, 3: 3, 4: 3, 5: 3, 6: 3} and agents_0 is {0: 2, 1: 3, 2: 3, 3: 3, 4: 3, 5: 3, 6: 3}
+i is 6 and agents is {0: 1, 1: 2, 2: 3, 3: 3, 4: 3, 5: 3, 6: 3} and agents_0 is {0: 2, 1: 3, 2: 3, 3: 3, 4: 3, 5: 3, 6: 3}
+movecounterafter 33
+moving the chain to 1
+agents are {0: 1, 1: 2, 2: 3, 3: 3, 4: 3, 5: 3, 6: 3}
+color is {0: 'grey', 1: 'black', 2: 'black', 3: 'black', 4: 'white', 5: 'white', 6: 'white', 7: 'white', 8: 'grey', 9: 'white'}
+previous node is 2
+agents 1 is {0: 1, 1: 2, 2: 3, 3: 3, 4: 3, 5: 3, 6: 3}
+len(list(T.nodes)) is 3
+v_neighbours is [0]
+v is....
+0
+T consists of nodes:
+[0, 1, 8]
+v degree is...
+2
+v is....
+8
+T consists of nodes:
+[8]
+v degree is...
+0
+neighbors are ordered by alpha, now evaluation by degree commencing
+0
+branch 1
+returning one
+v is....
+1
+T consists of nodes:
+[1]
+v degree is...
+0
+neighbors are ordered by alpha, now evaluation by degree commencing
+0
+branch 1
+returning one
+neighbors are ordered by alpha, now evaluation by degree commencing
+branch 4
+returning 2
+state of a before the for loop is {0: 2}
+current state of a is {0: 2}
+the max key is 0
+len of ordered_v_neighbors is 1and its contents are [0]
+agents 2 is {0: 1, 1: 2, 2: 3, 3: 3, 4: 3, 5: 3, 6: 3}
+ordered_v_neighbours is [0]
+agents 3 is {0: 1, 1: 2, 2: 3, 3: 3, 4: 3, 5: 3, 6: 3}
+decont v is 0
+decont T is [0, 8]
+movecounterb4 33
+i is 1 and agents is {0: 0, 1: 2, 2: 3, 3: 3, 4: 3, 5: 3, 6: 3} and agents_0 is {0: 1, 1: 2, 2: 3, 3: 3, 4: 3, 5: 3, 6: 3}
+i is 2 and agents is {0: 0, 1: 1, 2: 3, 3: 3, 4: 3, 5: 3, 6: 3} and agents_0 is {0: 1, 1: 2, 2: 3, 3: 3, 4: 3, 5: 3, 6: 3}
+i is 3 and agents is {0: 0, 1: 1, 2: 2, 3: 3, 4: 3, 5: 3, 6: 3} and agents_0 is {0: 1, 1: 2, 2: 3, 3: 3, 4: 3, 5: 3, 6: 3}
+i is 4 and agents is {0: 0, 1: 1, 2: 2, 3: 3, 4: 3, 5: 3, 6: 3} and agents_0 is {0: 1, 1: 2, 2: 3, 3: 3, 4: 3, 5: 3, 6: 3}
+i is 5 and agents is {0: 0, 1: 1, 2: 2, 3: 3, 4: 3, 5: 3, 6: 3} and agents_0 is {0: 1, 1: 2, 2: 3, 3: 3, 4: 3, 5: 3, 6: 3}
+i is 6 and agents is {0: 0, 1: 1, 2: 2, 3: 3, 4: 3, 5: 3, 6: 3} and agents_0 is {0: 1, 1: 2, 2: 3, 3: 3, 4: 3, 5: 3, 6: 3}
+movecounterafter 36
+moving the chain to 0
+agents are {0: 0, 1: 1, 2: 2, 3: 3, 4: 3, 5: 3, 6: 3}
+color is {0: 'black', 1: 'black', 2: 'black', 3: 'black', 4: 'white', 5: 'white', 6: 'white', 7: 'white', 8: 'grey', 9: 'white'}
+previous node is 1
+agents 1 is {0: 0, 1: 1, 2: 2, 3: 3, 4: 3, 5: 3, 6: 3}
+len(list(T.nodes)) is 2
+v_neighbours is [8]
+v is....
+8
+T consists of nodes:
+[0, 8]
+v degree is...
+1
+v is....
+0
+T consists of nodes:
+[0]
+v degree is...
+0
+neighbors are ordered by alpha, now evaluation by degree commencing
+0
+branch 1
+returning one
+neighbors are ordered by alpha, now evaluation by degree commencing
+branch 2
+returning 1
+state of a before the for loop is {8: 1}
+current state of a is {8: 1}
+the max key is 8
+len of ordered_v_neighbors is 1and its contents are [8]
+agents 2 is {0: 0, 1: 1, 2: 2, 3: 3, 4: 3, 5: 3, 6: 3}
+ordered_v_neighbours is [8]
+agents 3 is {0: 0, 1: 1, 2: 2, 3: 3, 4: 3, 5: 3, 6: 3}
+decont v is 8
+decont T is [8]
+movecounterb4 36
+i is 1 and agents is {0: 8, 1: 1, 2: 2, 3: 3, 4: 3, 5: 3, 6: 3} and agents_0 is {0: 0, 1: 1, 2: 2, 3: 3, 4: 3, 5: 3, 6: 3}
+i is 2 and agents is {0: 8, 1: 0, 2: 2, 3: 3, 4: 3, 5: 3, 6: 3} and agents_0 is {0: 0, 1: 1, 2: 2, 3: 3, 4: 3, 5: 3, 6: 3}
+i is 3 and agents is {0: 8, 1: 0, 2: 1, 3: 3, 4: 3, 5: 3, 6: 3} and agents_0 is {0: 0, 1: 1, 2: 2, 3: 3, 4: 3, 5: 3, 6: 3}
+i is 4 and agents is {0: 8, 1: 0, 2: 1, 3: 2, 4: 3, 5: 3, 6: 3} and agents_0 is {0: 0, 1: 1, 2: 2, 3: 3, 4: 3, 5: 3, 6: 3}
+i is 5 and agents is {0: 8, 1: 0, 2: 1, 3: 2, 4: 3, 5: 3, 6: 3} and agents_0 is {0: 0, 1: 1, 2: 2, 3: 3, 4: 3, 5: 3, 6: 3}
+i is 6 and agents is {0: 8, 1: 0, 2: 1, 3: 2, 4: 3, 5: 3, 6: 3} and agents_0 is {0: 0, 1: 1, 2: 2, 3: 3, 4: 3, 5: 3, 6: 3}
+movecounterafter 40
+moving the chain to 8
+agents are {0: 8, 1: 0, 2: 1, 3: 2, 4: 3, 5: 3, 6: 3}
+color is {0: 'black', 1: 'black', 2: 'black', 3: 'black', 4: 'white', 5: 'white', 6: 'white', 7: 'white', 8: 'black', 9: 'white'}
+previous node is 0
+agents 1 is {0: 8, 1: 0, 2: 1, 3: 2, 4: 3, 5: 3, 6: 3}
+len(list(T.nodes)) is 1
+we have reached a leaf
+agents 4 is {0: 8, 1: 0, 2: 1, 3: 2, 4: 3, 5: 3, 6: 3}
+before moving back, the current value of neighbor is 8
+we were in a leaf, now we're moving back up the chain from8 to 0
+agents 5 is {0: 0, 1: 1, 2: 2, 3: 3, 4: 3, 5: 3, 6: 3}
+agents are {0: 0, 1: 1, 2: 2, 3: 3, 4: 3, 5: 3, 6: 3}
+color is {0: 'black', 1: 'black', 2: 'black', 3: 'black', 4: 'white', 5: 'white', 6: 'white', 7: 'white', 8: 'white', 9: 'white'}
+previous node is 0
+agents 4 is {0: 0, 1: 1, 2: 2, 3: 3, 4: 3, 5: 3, 6: 3}
+before moving back, the current value of neighbor is 0
+we were in a leaf, now we're moving back up the chain from0 to 1
+agents 5 is {0: 1, 1: 2, 2: 3, 3: 3, 4: 3, 5: 3, 6: 3}
+agents are {0: 1, 1: 2, 2: 3, 3: 3, 4: 3, 5: 3, 6: 3}
+color is {0: 'white', 1: 'black', 2: 'black', 3: 'black', 4: 'white', 5: 'white', 6: 'white', 7: 'white', 8: 'white', 9: 'white'}
+previous node is 0
+agents 4 is {0: 1, 1: 2, 2: 3, 3: 3, 4: 3, 5: 3, 6: 3}
+before moving back, the current value of neighbor is 1
+we were in a leaf, now we're moving back up the chain from1 to 2
+agents 5 is {0: 2, 1: 3, 2: 3, 3: 3, 4: 3, 5: 3, 6: 3}
+agents are {0: 2, 1: 3, 2: 3, 3: 3, 4: 3, 5: 3, 6: 3}
+color is {0: 'white', 1: 'white', 2: 'black', 3: 'black', 4: 'white', 5: 'white', 6: 'white', 7: 'white', 8: 'white', 9: 'white'}
+previous node is 0
+agents 4 is {0: 2, 1: 3, 2: 3, 3: 3, 4: 3, 5: 3, 6: 3}
+before moving back, the current value of neighbor is 2
+we were in a leaf, now we're moving back up the chain from2 to 3
+agents 5 is {0: 3, 1: 3, 2: 3, 3: 3, 4: 3, 5: 3, 6: 3}
+agents are {0: 3, 1: 3, 2: 3, 3: 3, 4: 3, 5: 3, 6: 3}
+color is {0: 'white', 1: 'white', 2: 'white', 3: 'black', 4: 'white', 5: 'white', 6: 'white', 7: 'white', 8: 'white', 9: 'white'}
+previous node is 0
+1
+no grey nodes remain
+move counted is 50

@@ -550,7 +550,7 @@ def tree(lr, m, p, nr_a = -1):
         agents_when = {}
 
         for i in range(nr_of_agents):
-            agents_if[i] = uniform(0, 1)
+            agents_if[i] = uniform(0.0000001, 0.0000002)
             print("agents_if is " + str(agents_if))
 
 
@@ -580,6 +580,7 @@ def tree(lr, m, p, nr_a = -1):
         nr_of_agents = nr_a
     else:
         nr_of_agents = chernoff
+    print("min nr_of_agents is " + str(min_nr_of_agents))
     print("starting node is " + str(starting_node) + "and the nr_of_agents are " + str(nr_of_agents))
     chernoff = agents_nr_by_chernoff(min_nr_of_agents, p)
 

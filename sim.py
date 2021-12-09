@@ -214,5 +214,7 @@ with open('sim.csv', 'w', encoding='UTF8', newline='') as f:
     #tomesh_2d_1_error.create_grid_2d(10, 10, True, 1)
     '''dimensions = [3, 3, 3]
     tomesh_3d.create_grid_3d(dimensions, True, 3)'''
-    dimensions = [3, 3, 3]
-    mesh_3d_1_error.create_grid_3d(dimensions, False, 1)
+    lr = [0, 1, 2, 3, 4, 5, 6, 7]
+    #tree.tree(lr, 1)
+    #tree_1_fault.tree(lr, 1)
+    tree_chain.tree(lr, 1, 0.0000001)

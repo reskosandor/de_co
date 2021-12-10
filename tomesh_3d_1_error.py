@@ -11,7 +11,7 @@ w_global = 1
 move_counter = 0
 spare_alive = True
 
-def create_grid_3d(dimensions, isperioidic, m):
+def create_grid_3d(dimensions, m):
     start_time = time.time()
     global y_global
     global w_global
@@ -24,9 +24,9 @@ def create_grid_3d(dimensions, isperioidic, m):
 
     dims = [dimensions[2], dimensions[1], dimensions[0]]
     print("dimensions are the following: " + str(dims), flush=True)
-    dim1 = dims[0]
-    dim2 = dims[1]
-    dim3 = dims[2]
+    dim1 = dimensions[0]
+    dim2 = dimensions[1]
+    dim3 = dimensions[2]
 
 
     if dim2 < dim1 or dim3 < dim2 or dim3 < dim1:
@@ -41,7 +41,7 @@ def create_grid_3d(dimensions, isperioidic, m):
         print("algorithm is not needed, decontamination is trivial")
         exit()
 
-    Z = nx.grid_graph(dimensions, periodic=isperioidic)
+    Z = nx.grid_graph(dims, periodic=True)
 
     print(nx.info(Z))
     #nx.draw(Z)
@@ -354,7 +354,7 @@ def create_grid_3d(dimensions, isperioidic, m):
         print("spareagentstart is " + str(spare_agents))
         print("target_agents are " + str(target_agents))
         after_init = move_counter
-        agents = itercube(s, dims, m, agents, Z, color, agents_snapshot, spare_agents, target_agents, agent_which, agent_when)
+        agents = itercube(s, dimensions, m, agents, Z, color, agents_snapshot, spare_agents, target_agents, agent_which, agent_when)
 
     if m == 2:
         spare_agents[0] = (0, 0, 0)
@@ -383,7 +383,7 @@ def create_grid_3d(dimensions, isperioidic, m):
                     print("spare agent " + str(i) + " moved to " + str(spare_agents[i]))
 
         after_init = move_counter
-        agents = brick(3, b, dims, agents, Z, color, m, agents_snapshot, spare_agents, target_agents, agent_which, agent_when, target_groups)
+        agents = brick(3, b, dimensions, agents, Z, color, m, agents_snapshot, spare_agents, target_agents, agent_which, agent_when, target_groups)
 
     if m == 1:
         spare_agents[0] = (0, 0, 0)
@@ -407,7 +407,7 @@ def create_grid_3d(dimensions, isperioidic, m):
 
         after_init = move_counter
 
-        agents = brick(3, b, dims, agents, Z, color, m, agents_snapshot, spare_agents, target_agents, agent_which, agent_when, target_groups)
+        agents = brick(3, b, dimensions, agents, Z, color, m, agents_snapshot, spare_agents, target_agents, agent_which, agent_when, target_groups)
 
     nr_of_black_nodes = 0
     for key in color:

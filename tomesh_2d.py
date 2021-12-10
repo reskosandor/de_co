@@ -5,7 +5,7 @@ import functions
 import time
 
 move_counter = 0
-def create_grid_2d(dim1, dim2, isperioidic, m):
+def create_grid_2d(dim1, dim2, m):
     start_time = time.time()
     global move_counter
     move_counter = 0
@@ -25,7 +25,7 @@ def create_grid_2d(dim1, dim2, isperioidic, m):
         print("algorithm is not needed, decontamination is trivial")
         exit()
 
-    Z = nx.grid_2d_graph(dim1, dim2, periodic=isperioidic, create_using=None)
+    Z = nx.grid_2d_graph(dim1, dim2, periodic=True, create_using=None)
 
     print(nx.info(Z))
     #nx.draw(Z)

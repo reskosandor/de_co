@@ -1,5 +1,4 @@
 import networkx as nx
-import matplotlib.pyplot as plt
 import functions
 import time
 import random
@@ -7,7 +6,7 @@ from random import uniform, randrange
 
 move_counter = 0
 spare_alive = True
-def create_grid_2d(dim1, dim2, isperioidic, m):
+def create_grid_2d(dim1, dim2, m):
     start_time = time.time()
     global move_counter
     global spare_alive
@@ -23,7 +22,7 @@ def create_grid_2d(dim1, dim2, isperioidic, m):
     if m > 2:
         print("m must not be greater than the dimension of the mesh")
         exit()
-    Z = nx.grid_2d_graph(dim1, dim2, periodic=isperioidic, create_using=None)
+    Z = nx.grid_2d_graph(dim1, dim2, periodic=False, create_using=None)
     #print(nx.info(Z))
     #nx.draw(Z)
     #plt.show()

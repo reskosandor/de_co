@@ -7,7 +7,7 @@ import time
 y_global = 1
 w_global = 1
 move_counter = 0
-def create_grid_3d(dimensions, isperioidic, m):
+def create_grid_3d(dimensions, m):
     start_time = time.time()
     global y_global
     global w_global
@@ -19,9 +19,9 @@ def create_grid_3d(dimensions, isperioidic, m):
 
     dims = [dimensions[2], dimensions[1], dimensions[0]]
     print("dimensions are the following: " + str(dims), flush=True)
-    dim1 = dims[0]
-    dim2 = dims[1]
-    dim3 = dims[2]
+    dim1 = dimensions[0]
+    dim2 = dimensions[1]
+    dim3 = dimensions[2]
 
 
     if dim2 < dim1 or dim3 < dim2 or dim3 < dim1:
@@ -36,7 +36,7 @@ def create_grid_3d(dimensions, isperioidic, m):
         print("algorithm is not needed, decontamination is trivial")
         exit()
 
-    Z = nx.grid_graph(dimensions, periodic=isperioidic)
+    Z = nx.grid_graph(dims, periodic=True)
 
     print(nx.info(Z))
     #nx.draw(Z)
@@ -326,10 +326,10 @@ def create_grid_3d(dimensions, isperioidic, m):
     b = 3 - m
 
     if m >= 3:
-        itercube(s, dims, m, agents, Z, color, agents_snapshot)
+        itercube(s, dimensions, m, agents, Z, color, agents_snapshot)
 
     if m <= 2:
-        brick(3, b, dims, agents, Z, color, m, agents_snapshot)
+        brick(3, b, dimensions, agents, Z, color, m, agents_snapshot)
 
     nr_of_black_nodes = 0
     for key in color:

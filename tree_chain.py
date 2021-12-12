@@ -550,7 +550,7 @@ def tree(lr, m, p, nr_a = -1):
         agents_when = {}
 
         for i in range(nr_of_agents):
-            agents_if[i] = uniform(0.0000001, 0.0000002)
+            agents_if[i] = uniform(0.9999991, 0.9999992)
             print("agents_if is " + str(agents_if))
 
 
@@ -607,7 +607,7 @@ def tree(lr, m, p, nr_a = -1):
     print("no grey nodes remain")
     move_counted = move_counter
     print("move counted is " + str(move_counter))
-
+    print("tree chain done")
     end_time = time.time() - start_time
     return(number_of_agents, move_counted, end_time)
 

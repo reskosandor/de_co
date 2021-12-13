@@ -369,7 +369,8 @@ def create_grid_2d(dim1, dim2, m):
     move_counter = 0
     end_time = time.time() - start_time
     print("theo nr of moves is " + str(theoretical_nr_of_moves(Z, m, dim1, dim2)))
-    return [nr_of_agents, after_init, move_counted, end_time]
+    total_agents = nr_of_agents + len(spare_agents)
+    return [total_agents, after_init, move_counted, end_time]
 
 def move(A, x, y, agents, dimensions):
     global move_counter

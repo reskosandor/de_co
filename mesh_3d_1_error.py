@@ -434,7 +434,8 @@ def create_grid_3d(dimensions, m):
     move_counted = move_counter
     move_counter = 0
     end_time = time.time() - start_time
-    return [nr_of_agents, after_init, move_counted, end_time]
+    total_agents = nr_of_agents + 1
+    return [total_agents, after_init, move_counted, end_time]
 
 def theoretical_nr_of_moves(Z, C, m, dim1, dim2, dim3):
     c_moves = 0

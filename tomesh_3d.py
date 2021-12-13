@@ -7,7 +7,7 @@ import time
 y_global = 1
 w_global = 1
 move_counter = 0
-def create_grid_3d(dimensions, isperioidic, m):
+def create_grid_3d(dimensions, m):
     start_time = time.time()
     global y_global
     global w_global
@@ -19,9 +19,9 @@ def create_grid_3d(dimensions, isperioidic, m):
 
     dims = [dimensions[2], dimensions[1], dimensions[0]]
     print("dimensions are the following: " + str(dims), flush=True)
-    dim1 = dims[0]
-    dim2 = dims[1]
-    dim3 = dims[2]
+    dim1 = dimensions[0]
+    dim2 = dimensions[1]
+    dim3 = dimensions[2]
 
 
     if dim2 < dim1 or dim3 < dim2 or dim3 < dim1:
@@ -36,7 +36,7 @@ def create_grid_3d(dimensions, isperioidic, m):
         print("algorithm is not needed, decontamination is trivial")
         exit()
 
-    Z = nx.grid_graph(dimensions, periodic=isperioidic)
+    Z = nx.grid_graph(dims, periodic=True)
 
     print(nx.info(Z))
     #nx.draw(Z)
@@ -326,10 +326,10 @@ def create_grid_3d(dimensions, isperioidic, m):
     b = 3 - m
 
     if m >= 3:
-        itercube(s, dims, m, agents, Z, color, agents_snapshot)
+        itercube(s, dimensions, m, agents, Z, color, agents_snapshot)
 
     if m <= 2:
-        brick(3, b, dims, agents, Z, color, m, agents_snapshot)
+        brick(3, b, dimensions, agents, Z, color, m, agents_snapshot)
 
     nr_of_black_nodes = 0
     for key in color:
@@ -461,7 +461,8 @@ def cube(t, dimensions, agents, Z, color, m, agents_snapshot):
         for h in range(math.ceil(dimensions[(t-1)]/2)):
             print("calling CUBE recursively for t-1")
             cube(t-1, dimensions, agents, Z, color, m, agents_snapshot)
-            if h < dimensions[int((t-1)/2)] -1:
+            if h < int((dimensions[t-1])/2) -1 or dimensions[t-1] % 2 == 1 and h < int((dimensions[t-1])/2):
+                print("h is " + str(h))
                 previous_agents = agents.copy()
                 move([t, 0], t, -1, agents, dimensions, agents_snapshot)
                 print(agents)
@@ -479,11 +480,14 @@ def itercube(s, dimensions, m, agents, Z, color, agents_snapshot):
             previous_agents = agents.copy()
             #print("y is " + str(y_global))
             itercube(s-1, dimensions, m, agents, Z, color, agents_snapshot)
-            print("moving 1 in the " + str(s) + "th dimension")
-            move([1, 1], s, 1, agents, dimensions, agents_snapshot)
-            move([1, 0], s, 1, agents, dimensions, agents_snapshot)
-            print(agents)
             functions.color_sync(Z, agents, previous_agents, color, m)
+            print("moving 1 in the " + str(s) + "th dimension")
+            if functions.color_check(color) == False:
+                previous_agents = agents.copy()
+                move([1, 1], s, 1, agents, dimensions, agents_snapshot)
+                move([1, 0], s, 1, agents, dimensions, agents_snapshot)
+                print(agents)
+                functions.color_sync(Z, agents, previous_agents, color, m)
 
 def brick(t, b, dimensions, agents, Z, color, m, agents_snapshot):
     global y_global
@@ -513,8 +517,9 @@ def brick(t, b, dimensions, agents, Z, color, m, agents_snapshot):
                 move([t, 0], t, -1, agents, dimensions, agents_snapshot)
                 move([t, 1], t, +1, agents, dimensions, agents_snapshot)
                 functions.color_sync(Z, agents, previous_agents, color, m)
-            if o == math.ceil((dimensions[t-1] / 2)) - 1:
+            if o == math.ceil((dimensions[t-1] / 2)) - 1 and (dimensions[t-1]) % 2 == 1:
                 print("this is where the fun begins")
+                print("the ceiling is the " + str(math.ceil((dimensions[t-1] / 2)) - 1))
                 previous_agents = agents.copy()
                 move([t, 0], t, -1, agents, dimensions, agents_snapshot)
                 functions.color_sync(Z, agents, previous_agents, color, m)

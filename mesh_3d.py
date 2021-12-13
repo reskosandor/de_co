@@ -5,14 +5,15 @@ import time
 
 move_counter = 0
 
-def create_grid_3d(dimensions, isperioidic, m):
+def create_grid_3d(dimensions, m):
     start_time = time.time()
     global move_counter
     move_counter = 0
     #print(dimensions)
-    dim1 = dimensions[2]
+    dim1 = dimensions[0]
     dim2 = dimensions[1]
-    dim3 = dimensions[0]
+    dim3 = dimensions[2]
+    dims = [dimensions[2], dimensions[1], dimensions[0]]
     #print(dim1)
     #print(dim2)
     #print(dim3)
@@ -27,7 +28,7 @@ def create_grid_3d(dimensions, isperioidic, m):
     if m > 3:
         print("m must not be greater than the dimension of the mesh")
         exit()
-    Z = nx.grid_graph(dimensions, periodic=isperioidic)
+    Z = nx.grid_graph(dims, periodic=False)
     ##print(nx.info(Z))
     #nx.draw(Z)
     #plt.show()

@@ -56,7 +56,7 @@ b = bc(a)
 print(b)'''
 
 
-def roots_of_equation(a, b, c):
+'''def roots_of_equation(a, b, c):
     # Finding the value of Discriminant
     D = b * b - 4 * a * c
     # other way, D = b**2 - 4*a*c
@@ -82,21 +82,75 @@ def roots_of_equation(a, b, c):
 
     return (-b + sqrt_D) / (2 * a), (-b - sqrt_D) / (2 * a)
 
-h = 10
-p = 0.9
-q = p
+h = 6
+p = 0.3
 
-a = 2 * h * q
-b =  - math.log(q ** q) * q
-c = math.log(q ** q) * q
+
+a = h - h * p
+b =  -2 * math.log(p ** p) * (1 - p)
+c = 2 * math.log(p ** p) * (1 - p)
 
 x1, x2 = roots_of_equation(a, b ,c)
 
-k1 = h / (q * (1 - x1))
-k2 = h / (q * (1 - x2))
+k1 = h / ((1 - x1) * (1 - p))
+k2 = h / ((1 - x2) * (1 - p))
 
 
 print(k1)
-print(k2)
+print(k2)'''
+
+'''G = nx.Graph()
+G.add_edge(0, 1)
+G.add_edge(0, 2)
+G.add_edge(0, 3)
+G.add_edge(1, 4)
+G.add_edge(1, 5)
+G.add_edge(1, 6)
+G.add_edge(4, 7)
+G.add_edge(4, 8)
+G.add_edge(4, 9)'''
+
+# agents increase by one, but move counter stays the same, because one agent needs to stay at the root
+'''G= nx.Graph()
+G.add_edge(0, 1)
+G.add_edge(0, 2)
+G.add_edge(0, 3)
+G.add_edge(0, 4)
+G.add_edge(0, 5)
+G.add_edge(1, 6)
+G.add_edge(1, 7)
+G.add_edge(1, 8)
+G.add_edge(1, 9)'''
+
+'''G= nx.Graph()
+G.add_edge(0,1)
+G.add_edge(0,2)
+G.add_edge(0,3)
+G.add_edge(0,4)
+G.add_edge(0,5)
+G.add_edge(0,6)
+G.add_edge(1,7)
+G.add_edge(1,8)
+G.add_edge(1,9)
+G.add_edge(1,10)
+G.add_edge(1,11)
+G.add_edge(7,12)
+G.add_edge(7,13)
+G.add_edge(7,14)
+G.add_edge(7,15)
+G.add_edge(12,16)
+G.add_edge(12,17)
+G.add_edge(12,18)
+G.add_edge(16,19)
+G.add_edge(16,20)'''
+
+G = nx.full_rary_tree(4, 85)
+
+lr = nx.to_prufer_sequence(G)
+print(lr)
+lr_1 = [x+1 for x in lr]
+print(lr_1)
+
+
 
 

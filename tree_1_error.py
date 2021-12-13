@@ -177,13 +177,15 @@ def tree(lr, m):
             if previous_node == -1:
                 backup_agents[i] = v
                 print("state of backup_agents became " + str(backup_agents))
-            elif backup_agents[i] != -1 and error_happened == False:
+            elif backup_agents[i] != -1 and error_happened == False and backup_agents[i] != previous_agents[i]:
                 backup_agents[i] = previous_agents[i]
                 move_counter = move_counter + 1
 
         print("moving " + str(nr_of_agents) + " agents to " + str(v))
         functions.color_sync_with_error(T_original, agents, previous_agents, color, m, backup_agents, previous_backup_agents)
         print("agents are " + str(agents))
+        print("backup agents are " + str(backup_agents))
+        print("move counter is " + str(move_counter))
         print("color is " + str(color))
         print("previous node is " + str(previous_node))
 
@@ -254,7 +256,7 @@ def tree(lr, m):
                 print("we were in a leaf, now we're moving back " + str(howmany) + " agents from" + str(neighbor) + " to " + str(v))
                 #moving the backup agents one step back on the shortest route to the root
                 for i in backup_agents:
-                    if backup_agents[i] != -1 and backup_agents[i] != original_root and error_happened == False:
+                    if backup_agents[i] != -1 and backup_agents[i] != original_root and error_happened == False and backup_agents[i] != previous_agents[i]:
                         shortest_path_to_root = nx.shortest_path(T_original, backup_agents[i], original_root)
                         backup_agents[i] = shortest_path_to_root[1]
                         move_counter = move_counter + 1
@@ -263,6 +265,8 @@ def tree(lr, m):
 
                 functions.color_sync_with_error(T_original, agents, previous_agents, color, m, backup_agents, previous_backup_agents)
                 print("agents are " + str(agents))
+                print("backup agents are " + str(backup_agents))
+                print("move counter is " + str(move_counter))
                 print("color is " + str(color))
                 print("previous node is " + str(previous_node))
 
@@ -325,7 +329,7 @@ def tree(lr, m):
     def optimaltreedecontamination(T, m, T_original):
         starting_node = minimum_mu[0]
         number_of_moves = minval
-        error_point = random.randint(1, number_of_moves)
+        error_point = random.randint(1000, 1000)
         decontaminate(T, starting_node, m, T_original, number_of_moves, starting_node, error_point)
 
     optimaltreedecontamination(T, m, T_original)
@@ -349,7 +353,7 @@ def tree(lr, m):
     print("move counted is " + str(move_counted))
     move_counter = 0
     end_time = time.time() - start_time
-    return(number_of_agents, move_counted, end_time)
+    return(number_of_agents*2, move_counted, end_time)
 
 
 #lr = [1, 7, 5, 7, 7, 1]

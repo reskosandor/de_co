@@ -1,5 +1,4 @@
 import networkx as nx
-import matplotlib.pyplot as plt
 import functions
 import time
 import random
@@ -7,7 +6,7 @@ from random import uniform, randrange
 
 move_counter = 0
 spare_alive = True
-def create_grid_2d(dim1, dim2, isperioidic, m):
+def create_grid_2d(dim1, dim2, m):
     start_time = time.time()
     global move_counter
     global spare_alive
@@ -23,7 +22,7 @@ def create_grid_2d(dim1, dim2, isperioidic, m):
     if m > 2:
         print("m must not be greater than the dimension of the mesh")
         exit()
-    Z = nx.grid_2d_graph(dim1, dim2, periodic=isperioidic, create_using=None)
+    Z = nx.grid_2d_graph(dim1, dim2, periodic=False, create_using=None)
     #print(nx.info(Z))
     #nx.draw(Z)
     #plt.show()
@@ -71,11 +70,12 @@ def create_grid_2d(dim1, dim2, isperioidic, m):
     print(color)
 
     spare_agent = (0, 0)
-    theoretical_nr_moves = theoretical_nr_of_moves(Z, C, m, dim1)
+    t_init_moves, theoretical_nr_moves = theoretical_nr_of_moves(Z, C, m, dim1, dim2)
     print("theoretical_nr_moves is " + str(theoretical_nr_moves))
+    print(t_init_moves)
     agent_which = random.randint(0, nr_of_agents - 1)
     print("agent_which is " + str(agent_which))
-    agent_when = random.randint(1, theoretical_nr_moves)
+    agent_when = random.randint(1000000, 1000000)
     print("agent_when is " + str(agent_when))
 
 
@@ -221,27 +221,32 @@ def create_grid_2d(dim1, dim2, isperioidic, m):
     print("after_init is " + str(after_init))
     print("move_counter is " + str(move_counter))
     print("spare agent is" + str(spare_agent))
+    print(t_init_moves)
+    print(theoretical_nr_moves)
 
 
     move_counted = move_counter
     move_counter = 0
     end_time = time.time() - start_time
+    total_agents = nr_of_agents + 1
+    return [total_agents, after_init, move_counted, end_time]
 
-    return [nr_of_agents, after_init, move_counted, end_time]
-
-def theoretical_nr_of_moves(Z, C, m, dim1):
+def theoretical_nr_of_moves(Z, C, m, dim1, dim2):
     c_moves = 0
     t_moves = 0
     if m == 2:
-        t_moves = Z.number_of_nodes() - 1
+        i_moves = 0
+        t_moves = 2 * Z.number_of_nodes() - 3
     if m == 1:
-        for (a, b) in list(C.nodes):
+        i_moves = 0.5 * 1 * dim1 * dim1
+        '''for (a, b) in list(C.nodes):
             c_moves = c_moves + a + b
-        t_moves = c_moves + Z.number_of_nodes() - dim1
+        t_moves = c_moves + Z.number_of_nodes() - dim1'''
+        t_moves = i_moves + Z.number_of_nodes() - dim1 + dim2 -2
         print(c_moves)
         print(Z.number_of_nodes())
         print(dim1)
-    return t_moves
+    return i_moves, t_moves
 
 def spare_agent_follow(spare_agent, target_agent, previous_agents):
     global move_counter

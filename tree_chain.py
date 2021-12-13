@@ -4,6 +4,7 @@ import functions
 from random import uniform, randrange
 import time
 import sys
+import math
 
 previous_node = -1
 starting_node = -1
@@ -216,6 +217,37 @@ def tree(lr, m, p, nr_a = -1):
         for i in agents:
             if i > 0 and agents[i-1] == -1 and agents[i] == -1:
                 print("there is at least a two agent gap in the chain, decontamination failed")
+
+    def solve_quadratic(a, b, c):
+        D = b * b - 4 * a * c
+        sqrt_D = math.sqrt(abs(D))
+
+        if D >= 0:
+            print("quadratic roots of the quadratic equation")
+            print((-b + sqrt_D) / (2 * a))
+            print((-b - sqrt_D) / (2 * a))
+
+        else:
+            print("no real root")
+
+        return (-b + sqrt_D) / (2 * a), (-b - sqrt_D) / (2 * a)
+
+    def agents_nr_by_chernoff(h, p):
+        coeff_a = h - h * p
+        coeff_b = -2 * math.log(p ** p) * (1 - p)
+        coeff_c = 2 * math.log(p ** p) * (1 - p)
+
+        delta_1, delta_2 = solve_quadratic(coeff_a, coeff_b, coeff_c)
+
+        k_1 = -1.0
+        k_2 = -1.0
+        if 0 < delta_1 < 1:
+            k_1 = h / ((1-delta_1) * (1-p))
+        if 0 < delta_2 < 1:
+            k_2 = h / ((1-delta_2) * (1-p))
+
+        return max(math.ceil(k_1), math.ceil(k_2))
+
 
 
 
@@ -518,7 +550,7 @@ def tree(lr, m, p, nr_a = -1):
         agents_when = {}
 
         for i in range(nr_of_agents):
-            agents_if[i] = uniform(0, 1)
+            agents_if[i] = uniform(0.9999991, 0.9999992)
             print("agents_if is " + str(agents_if))
 
 
@@ -542,11 +574,15 @@ def tree(lr, m, p, nr_a = -1):
     #
     print(T)
     starting_node, min_nr_of_agents = homebase_node(T)
+    chernoff = agents_nr_by_chernoff(min_nr_of_agents, p)
+    print("chernoff is " + str(chernoff))
     if nr_a != -1:
         nr_of_agents = nr_a
     else:
-        nr_of_agents = min_nr_of_agents * 2
+        nr_of_agents = chernoff
+    print("min nr_of_agents is " + str(min_nr_of_agents))
     print("starting node is " + str(starting_node) + "and the nr_of_agents are " + str(nr_of_agents))
+    chernoff = agents_nr_by_chernoff(min_nr_of_agents, p)
 
 
     optimaltreedecontamination(T, m, T_original, p)
@@ -571,7 +607,7 @@ def tree(lr, m, p, nr_a = -1):
     print("no grey nodes remain")
     move_counted = move_counter
     print("move counted is " + str(move_counter))
-
+    print("tree chain done")
     end_time = time.time() - start_time
     return(number_of_agents, move_counted, end_time)
 

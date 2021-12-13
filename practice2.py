@@ -144,7 +144,7 @@ G.add_edge(12,18)
 G.add_edge(16,19)
 G.add_edge(16,20)'''
 
-G = nx.full_rary_tree(2, 63)
+G = nx.full_rary_tree(4, 85)
 
 lr = nx.to_prufer_sequence(G)
 print(lr)

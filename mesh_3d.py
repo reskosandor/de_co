@@ -156,7 +156,7 @@ def create_grid_3d(dimensions, m):
             sum_p = sum_p + p[i]
 
         # for i = 1 to r
-        previous_agents = agents.copy()
+
         for i in range(len(edges_of_v_in_P)):
             # move p_i agents to w_i
             true_list_of_agents_on_v = []
@@ -174,7 +174,7 @@ def create_grid_3d(dimensions, m):
 
 
             position_of_agents_on_v = []
-
+            previous_agents = agents.copy()
             # in this for loop, for each k, we only move one agent at a time, k in range(nr_of_agents_on_v total agents
             for k in range(nr_of_agents_on_v):
                 position_of_agents_on_v.append(edges_of_v_in_P[i][1])
@@ -183,8 +183,8 @@ def create_grid_3d(dimensions, m):
                         agents[key] = position_of_agents_on_v[k]
                         move_counter = move_counter + 1
             print("agents are " + str(agents))
+            functions.color_sync(Z, agents, previous_agents, color, m)
             print("color is " + str(color))
-        functions.color_sync(Z, agents, previous_agents, color, m)
 
         iterations = iterations + 1
 
@@ -299,11 +299,3 @@ def create_grid_3d(dimensions, m):
     move_counter = 0
     end_time = time.time() - start_time
     return [nr_of_agents, after_init, move_counted, end_time]
-# grid_graph takes a list of dimensions as its input
-# for some reason dimensions are in reverse order
-# so the first item of the list will be the nth dimension
-
-
-dimensions = [2, 2, 2]
-
-#create_grid_3d(dimensions, False, 1)

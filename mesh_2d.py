@@ -163,4 +163,3 @@ def create_grid_2d(dim1, dim2, m):
     return [nr_of_agents, after_init, move_counted, end_time]
 
 
-#create_grid_2d(2, 2, False, 2)

@@ -2,6 +2,7 @@ import networkx as nx
 import functions
 import time
 import random
+import math
 from random import uniform, randrange
 
 move_counter = 0
@@ -198,14 +199,9 @@ def theoretical_nr_of_moves(Z, C, m, dim1, dim2):
         t_moves = 2 * Z.number_of_nodes() - 3
     if m == 1:
         i_moves = 0.5 * 1 * dim1 * dim1
-        '''for (a, b) in list(C.nodes):
-            c_moves = c_moves + a + b
-        t_moves = c_moves + Z.number_of_nodes() - dim1'''
+
         t_moves = i_moves + Z.number_of_nodes() - dim1 + dim2 -2
-        print(c_moves)
-        print(Z.number_of_nodes())
-        print(dim1)
-    return i_moves, t_moves
+    return math.ceil(i_moves), math.ceil(t_moves)
 
 def spare_agent_follow(spare_agent, target_agent, previous_agents):
     global move_counter
@@ -270,20 +266,3 @@ def agent_replacement(Z, agent_which, agent_when, agents, spare_agent):
 def spare_print(spare_agent, spare_alive):
     if spare_alive == True:
         print("spare agent is " + str(spare_agent))
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-#create_grid_2d(2, 2, False, 2)

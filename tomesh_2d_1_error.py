@@ -15,7 +15,6 @@ def create_grid_2d(dim1, dim2, m):
     move_counter = 0
     dims = [dim1, dim2]
     y_global = 1
-    print(dims)
 
     if dim2 < dim1:
         print("dimensions must be in monotonic increasing sequence")
@@ -31,12 +30,8 @@ def create_grid_2d(dim1, dim2, m):
 
     Z = nx.grid_2d_graph(dim1, dim2, periodic=True, create_using=None)
 
-    print(nx.info(Z))
-    #nx.draw(Z)
-    #plt.show()
     # ---initial_set_(2, m)_begins)---
     # ---creating_C---
-    print(list(Z.nodes))
     C = Z.copy()
     if (m == 1):
         for i in list(C.nodes):
@@ -60,13 +55,7 @@ def create_grid_2d(dim1, dim2, m):
         C = nx.Graph()
         C.add_node((0, 0))
 
-
-    print("list of C nodes")
-    # print(nx.info(C))
-    # nx.draw(C)
-    # plt.show()
     #---computing shortest paths in C---
-    print(list(C.nodes))
     P = []
     agents = {}
     previous_agents = {}
@@ -74,20 +63,17 @@ def create_grid_2d(dim1, dim2, m):
     for nodes in Z:
         color[nodes] = "grey"
     functions.color_sync(Z, agents, previous_agents, color, m)
-    print(color)
+    print("color is " + str(color))
     #start with a set of |C| agents in v_(0,0)
     nr_of_agents = C.number_of_nodes()
-
+    print("Starting INITIAL-SET")
     # constructing P in a new way
     # v = (0, 0, 0) is in the bottom left corner
     # shortest path: move "up" as long as we need to, then move "right" as long as we need to
     for i in list(C.nodes):
-        #print(nx.shortest_path(C, source = (0, 0, 0), target = i))
-        #P.append(nx.shortest_path(C, source = (0, 0, 0), target = i))
+
         sublist = []
-        print("(x,y) is:")
         (x, y) = i
-        print((x, y))
 
         sublist.append((0, 0))
         k = 0
@@ -101,31 +87,22 @@ def create_grid_2d(dim1, dim2, m):
                 l = l + 1
                 sublist.append((x, l))
 
-        print(sublist)
         P.append(sublist)
-    print("P is :")
-    print(P)
 
     for i in range(nr_of_agents):
         agents[i] = (0, 0)
-    #print(agents)
+    print("agents are " + str(agents))
     functions.color_sync(Z, agents, previous_agents, color, m)
+    print("color is " + str(color))
 
     spare_agents = {}
     target_agents = {}
     target_groups = {}
     t_init_moves, theoretical_nr_moves = theoretical_nr_of_moves(Z, m, dim1, dim2)
     agent_which = random.randint(0, nr_of_agents - 1)
-    print("theoretical_nr_moves is " + str(theoretical_nr_moves))
-    print("agent_which is " + str(agent_which))
-    agent_when = random.randint(1000000, 1000000)
-    print("agent_when is " + str(agent_when))
-    #print(color)
+    agent_when = random.randint(t_init_moves, theoretical_nr_moves)
 
     flipped_agents = {}
-    #print(len(agents.keys()))
-    #print(len(flipped_agents.keys()))
-
     values = list(agents.values())
     iterations = 0
     # while exists v in C containing more than one agent
@@ -142,66 +119,33 @@ def create_grid_2d(dim1, dim2, m):
                 flipped_agents[value] = [key]
             else:
                 flipped_agents[value].append(key)
-        #print("agents")
-        #print(agents)
-        #print("flipped_agents")
-        #print(flipped_agents)
         v = (0, 0)
         biggest_v = -1
-        print("flipped_agents")
-        print(flipped_agents)
         for key in flipped_agents:
             value = flipped_agents[key]
             if len(value) > 1 and len(value) > biggest_v:
                 v = key
                 biggest_v = len(value)
 
-        print("v is:")
-        print(v)
         truest_list_of_agents_on_v = []
         for key in agents:
             if agents[key] == v:
                 truest_list_of_agents_on_v.append(key)
-        print("truest")
-        print(truest_list_of_agents_on_v)
-        print(len(truest_list_of_agents_on_v))
         # let (v,w_i),...,(v,w_r) be the edges from v included in a path in P
         edges_of_v_in_P = []
         for i in P:
-            #print("i is:")
-            #print(i)
-            #print("len(i) is: ")
-            #print(len(i))
             for j in i:
-                #print("j is:")
-                #print(j)
-                #print("len(j) is:")
-                #print(len(j))
                 if j == v and j != i[-1]:
-                    #print("(i.index(j) is")
-                    #print((i.index(j)))
-                    #print("i[i.index(j)] is")
-                    #print(i[i.index(j)])
                     if len(i) > 1:
                         edge = []
                         edge.append(v)
-                        #print("i indices")
-                        #print(i)
-                        #print(len(i))
-                        #print(i[i.index(j)])
                         edge.append(i[i.index(j)+1])
                         edges_of_v_in_P.append(edge)
-        #print("edges of v in P:")
-        #print(edges_of_v_in_P)
-        #print(len(edges_of_v_in_P))
-        #remove duplicate elements for edges_of_v_in_P
         no_duplicates = []
         for i in edges_of_v_in_P:
             if i not in no_duplicates:
                 no_duplicates.append(i)
-        print("edges_of_v_in_P")
         edges_of_v_in_P = no_duplicates
-        print(edges_of_v_in_P)
 
         #print(edges_of_v_in_P)
         # let p_i be the number of paths in P containing (v,w_i)
@@ -210,11 +154,8 @@ def create_grid_2d(dim1, dim2, m):
             counter = 0
             for j in range(len(P)):
                 if str(edges_of_v_in_P[i]).strip("[]") in str(P[j]):
-                    #print(str(edges_of_v_in_P[i]))
                     counter = counter + 1
             p.append(counter)
-        print("p is:")
-        print(p)
         #checking how many agents do we want to send overall
 
         for i in range(len(p)):
@@ -223,11 +164,6 @@ def create_grid_2d(dim1, dim2, m):
         # for i = 1 to r
         previous_agents = agents.copy()
         for i in range(len(edges_of_v_in_P)):
-            #print(agents)
-            print("i is:")
-            print(i)
-            #print("p[i] is")
-            #print(p[i])
             # move p_i agents to w_i
             true_list_of_agents_on_v = []
             for key in agents:
@@ -240,39 +176,18 @@ def create_grid_2d(dim1, dim2, m):
                 if agents[key] == v and len(list_of_agents_on_v) < p[i]:
                     list_of_agents_on_v.append(key)
             nr_of_agents_on_v = len(list_of_agents_on_v)
-            print("list of agents on v")
-            print(list_of_agents_on_v)
-            print("v is")
-            print(v)
 
 
             position_of_agents_on_v = []
 
             # in this for loop, for each k, we only move one agent at a time, k in range(nr_of_agents_on_v total agents
             for k in range(nr_of_agents_on_v):
-                #print("k is:")
-                #print(type(k))
-                #print(k)
-                #print("nr_of_agents_on_v")
-                #print(type(nr_of_agents_on_v))
-                #print(nr_of_agents_on_v)
-                #print("list_of_agents_on_v")
-                #print(type(list_of_agents_on_v))
-                #print(list_of_agents_on_v)
-                #print("edges of v in P")
-                #print(type(edges_of_v_in_P[i]))
-                #print(edges_of_v_in_P[i])
                 position_of_agents_on_v.append(edges_of_v_in_P[i][1])
-                #print("#print(list_of_agents_on_v[k+1])")
-                #print(list_of_agents_on_v[k])
-                #print("position_of_agents_on_v[k]")
-                #print("position_of_agents_on_v[k]")
                 for key in agents:
                     if list_of_agents_on_v[k] == key and len(true_list_of_agents_on_v) > 1:
                         agents[key] = position_of_agents_on_v[k]
                         move_counter = move_counter + 1
-                        #print("agents")
-                        #print(agents)
+
 
             #print("moved p_i agents to w_i, agents are right now at:")
             #print(agents)
@@ -681,4 +596,6 @@ def brick_agent_replacement(Z, agent_which, agent_when, agents, spare_agents, ta
     return agents
 
 
-#create_grid_2d(17, 17, True, 3)
+def spare_print(spare_agents, spare_alive):
+    if spare_alive == True:
+        print("spare agents are " + str(spare_agents))

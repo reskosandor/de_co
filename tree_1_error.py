@@ -355,13 +355,3 @@ def tree(lr, m):
     end_time = time.time() - start_time
     return(number_of_agents*2, move_counted, end_time)
 
-
-#lr = [1, 7, 5, 7, 7, 1]
-'''
-rtree = nx.random_tree(n=20, seed=0)
-A = nx.balanced_tree(3, 3)
-lr = nx.to_prufer_sequence(A)
-print("lr is " + str(lr))
-
-
-print(tree(lr, 1))'''

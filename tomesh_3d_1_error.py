@@ -841,3 +841,6 @@ def brick_agent_replacement(Z, agent_which, agent_when, agents, spare_agents, ta
         print("agents at the end is " + str(agents))
     return agents
 
+def spare_print(spare_agents, spare_alive):
+    if spare_alive == True:
+        print("spare agents are " + str(spare_agents))

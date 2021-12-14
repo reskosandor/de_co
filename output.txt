@@ -1,68 +1,74 @@
 color is {0: 'grey', 1: 'grey', 2: 'grey', 3: 'grey', 4: 'grey', 5: 'grey', 6: 'grey', 7: 'grey', 8: 'grey', 9: 'grey'}
 agents are entering the tree
 agents are {0: 0, 1: 0}
+spare agents are {0: 0, 1: 0}
 color is {0: 'black', 1: 'grey', 2: 'grey', 3: 'grey', 4: 'grey', 5: 'grey', 6: 'grey', 7: 'grey', 8: 'grey', 9: 'grey'}
 descending in the tree
 agents are {0: 1, 1: 1}
-color is {0: 'white', 1: 'black', 2: 'grey', 3: 'grey', 4: 'grey', 5: 'grey', 6: 'grey', 7: 'grey', 8: 'grey', 9: 'grey'}
+spare agents are {0: 0, 1: 0}
+color is {0: 'black', 1: 'black', 2: 'grey', 3: 'grey', 4: 'grey', 5: 'grey', 6: 'grey', 7: 'grey', 8: 'grey', 9: 'grey'}
 descending in the tree
 agents are {0: 9, 1: 1}
+spare agents are {0: 1, 1: 1}
 color is {0: 'white', 1: 'black', 2: 'grey', 3: 'grey', 4: 'grey', 5: 'grey', 6: 'grey', 7: 'grey', 8: 'grey', 9: 'black'}
 we have reached a leaf
-ascending in the tree
 agents are {0: 1, 1: 1}
-color is {0: 'white', 1: 'black', 2: 'grey', 3: 'grey', 4: 'grey', 5: 'grey', 6: 'grey', 7: 'grey', 8: 'grey', 9: 'white'}
+spare agents are {0: 0, 1: 1}
+color is {0: 'black', 1: 'black', 2: 'grey', 3: 'grey', 4: 'grey', 5: 'grey', 6: 'grey', 7: 'grey', 8: 'grey', 9: 'white'}
 descending in the tree
 agents are {0: 8, 1: 1}
+spare agents are {0: 1, 1: 1}
 color is {0: 'white', 1: 'black', 2: 'grey', 3: 'grey', 4: 'grey', 5: 'grey', 6: 'grey', 7: 'grey', 8: 'black', 9: 'white'}
 we have reached a leaf
-ascending in the tree
 agents are {0: 1, 1: 1}
-color is {0: 'white', 1: 'black', 2: 'grey', 3: 'grey', 4: 'grey', 5: 'grey', 6: 'grey', 7: 'grey', 8: 'white', 9: 'white'}
+spare agents are {0: 0, 1: 1}
+color is {0: 'black', 1: 'black', 2: 'grey', 3: 'grey', 4: 'grey', 5: 'grey', 6: 'grey', 7: 'grey', 8: 'white', 9: 'white'}
 descending in the tree
 agents are {0: 7, 1: 1}
+spare agents are {0: 1, 1: 1}
 color is {0: 'white', 1: 'black', 2: 'grey', 3: 'grey', 4: 'grey', 5: 'grey', 6: 'grey', 7: 'black', 8: 'white', 9: 'white'}
 we have reached a leaf
-ascending in the tree
 agents are {0: 1, 1: 1}
-color is {0: 'white', 1: 'black', 2: 'grey', 3: 'grey', 4: 'grey', 5: 'grey', 6: 'grey', 7: 'white', 8: 'white', 9: 'white'}
+spare agents are {0: 0, 1: 1}
+color is {0: 'black', 1: 'black', 2: 'grey', 3: 'grey', 4: 'grey', 5: 'grey', 6: 'grey', 7: 'white', 8: 'white', 9: 'white'}
+agent 1 broke down
+agents are {0: 1, 1: -1}
+spare agents are {0: 0, 1: 1}
+agents after correcting position: {0: 1, 1: -1}
+spare agents after correcting position: {0: 0, 1: 1}
+agents after correcting IDs: {0: 1, 1: 1}
+spare agents after correcting IDs: {0: 0, 1: -1}
 descending in the tree
 agents are {0: 6, 1: 1}
-color is {0: 'white', 1: 'black', 2: 'grey', 3: 'grey', 4: 'grey', 5: 'grey', 6: 'black', 7: 'white', 8: 'white', 9: 'white'}
+color is {0: 'black', 1: 'black', 2: 'grey', 3: 'grey', 4: 'grey', 5: 'grey', 6: 'black', 7: 'white', 8: 'white', 9: 'white'}
 we have reached a leaf
-ascending in the tree
 agents are {0: 1, 1: 1}
-color is {0: 'white', 1: 'black', 2: 'grey', 3: 'grey', 4: 'grey', 5: 'grey', 6: 'white', 7: 'white', 8: 'white', 9: 'white'}
-ascending in the tree
+color is {0: 'black', 1: 'black', 2: 'grey', 3: 'grey', 4: 'grey', 5: 'grey', 6: 'white', 7: 'white', 8: 'white', 9: 'white'}
 agents are {0: 0, 1: 0}
 color is {0: 'black', 1: 'white', 2: 'grey', 3: 'grey', 4: 'grey', 5: 'grey', 6: 'white', 7: 'white', 8: 'white', 9: 'white'}
 descending in the tree
 agents are {0: 5, 1: 0}
 color is {0: 'black', 1: 'white', 2: 'grey', 3: 'grey', 4: 'grey', 5: 'black', 6: 'white', 7: 'white', 8: 'white', 9: 'white'}
 we have reached a leaf
-ascending in the tree
 agents are {0: 0, 1: 0}
 color is {0: 'black', 1: 'white', 2: 'grey', 3: 'grey', 4: 'grey', 5: 'white', 6: 'white', 7: 'white', 8: 'white', 9: 'white'}
 descending in the tree
 agents are {0: 4, 1: 0}
 color is {0: 'black', 1: 'white', 2: 'grey', 3: 'grey', 4: 'black', 5: 'white', 6: 'white', 7: 'white', 8: 'white', 9: 'white'}
 we have reached a leaf
-ascending in the tree
 agents are {0: 0, 1: 0}
 color is {0: 'black', 1: 'white', 2: 'grey', 3: 'grey', 4: 'white', 5: 'white', 6: 'white', 7: 'white', 8: 'white', 9: 'white'}
 descending in the tree
 agents are {0: 3, 1: 0}
 color is {0: 'black', 1: 'white', 2: 'grey', 3: 'black', 4: 'white', 5: 'white', 6: 'white', 7: 'white', 8: 'white', 9: 'white'}
 we have reached a leaf
-ascending in the tree
 agents are {0: 0, 1: 0}
 color is {0: 'black', 1: 'white', 2: 'grey', 3: 'white', 4: 'white', 5: 'white', 6: 'white', 7: 'white', 8: 'white', 9: 'white'}
 descending in the tree
 agents are {0: 2, 1: 0}
 color is {0: 'black', 1: 'white', 2: 'black', 3: 'white', 4: 'white', 5: 'white', 6: 'white', 7: 'white', 8: 'white', 9: 'white'}
 we have reached a leaf
-ascending in the tree
 agents are {0: 0, 1: 0}
 color is {0: 'black', 1: 'white', 2: 'white', 3: 'white', 4: 'white', 5: 'white', 6: 'white', 7: 'white', 8: 'white', 9: 'white'}
 no grey nodes remain
-total moves: 20
+total moves: 28

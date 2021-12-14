@@ -301,13 +301,15 @@ def itercube(s,y, dimensions, m, agents, Z, color):
         print("s = 2d-m true, calling CUBE")
         cube(s, y, dimensions, agents, Z, color, m)
     else:
-        print("s = 2d-m true, calling ITERCUBE")
+        print("s = 2d-m false, recursively calling ITERCUBE")
         for i in range(dimensions[s - 1]):
             previous_agents = agents.copy()
             itercube(s-1, y, dimensions, m, agents)
             move([1, 1], s, 1, agents)
             move([1, 2], s, 1, agents)
             functions.color_sync(Z, agents, previous_agents, color, m)
+            print("agents are " + str(agents))
+            print("color is " + str(color))
 
 def brick(t, b, dimensions, agents, y, Z, color, m):
     print("Starting BRICK")

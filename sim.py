@@ -253,4 +253,4 @@ with open('sim.csv', 'w', encoding='UTF8', newline='') as f:
     #tree.tree(lr, 4)
     #tree_1_error.tree(lr, 1)
     dimensions = [3, 3, 3]
-    tomesh_2d.create_grid_2d(5, 5, 1)
+    tomesh_2d_1_error.create_grid_2d(5, 5, 1)

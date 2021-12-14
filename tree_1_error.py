@@ -208,6 +208,7 @@ def tree(lr, m):
 
 
                 functions.color_sync_with_error(T_original, agents, previous_agents, color, m, backup_agents, previous_backup_agents)
+                print("ascending in the tree")
                 print("agents are " + str(agents))
                 spare_print(backup_agents)
                 print("color is " + str(color))

@@ -11,7 +11,7 @@ starting_node = -1
 nr_of_agents = -1
 move_counter = 0
 agents = {}
-def tree(lr, m, p, nr_a = -1):
+def tree(lr, p, nr_a = -1):
     start_time = time.time()
     global number_of_agents
     global previous_node
@@ -20,6 +20,7 @@ def tree(lr, m, p, nr_a = -1):
     global move_counter
     global agents
     previous_node = -1
+    m = 1
     T = nx.algorithms.tree.coding.from_prufer_sequence(lr)
     T_degree = T.degree()
 
@@ -162,8 +163,10 @@ def tree(lr, m, p, nr_a = -1):
     def check_chain_gap(agents):
         for i in agents:
             if i > 0 and agents[i-1] == -1 and agents[i] == -1:
-                print("Failure 1.:there is at least a two agent gap in the chain, decontamination failed")
-                sys.exit()
+                if i-1 <= min_nr_of_agents - 2:
+                    print("Failure 1.:there is at least a two agent gap in the chain, decontamination failed")
+                    print("Failure because of agents" + str(i-1) + " and " + str(i))
+                    sys.exit()
 
     def solve_quadratic(a, b, c):
         D = b * b - 4 * a * c
@@ -257,7 +260,7 @@ def tree(lr, m, p, nr_a = -1):
 
 
             agents = corrected_ids.copy() # ids and positions are correct
-            print("agents after ID correction")
+            print("agents after ID correction are" + str(agents))
             if len(agents) < min_nr_of_agents:
                 print("Failure 2.: too few agents remaining, cannot sustain a long enough chain")
                 sys.exit()
@@ -363,7 +366,7 @@ def tree(lr, m, p, nr_a = -1):
                             corrected_ids = functions.sorted_dict(corrected_ids)
 
                     agents = corrected_ids.copy()  # ids and positions are correct
-                    print("agents after ID correction")
+                    print("agents after ID correction are " + str(agents))
                     if len(agents) < min_nr_of_agents:
                         print("Failure 2.: too few agents remaining, cannot sustain a long enough chain")
                         sys.exit()
@@ -429,7 +432,6 @@ def tree(lr, m, p, nr_a = -1):
 
         for i in range(nr_of_agents):
             agents_if[i] = uniform(0, 1)
-        print("agents_if is " + str(agents_if))
 
 
 
@@ -437,19 +439,19 @@ def tree(lr, m, p, nr_a = -1):
             if agents_if[i] < p:
                 agents_when[i] = randrange(1, max_move)
 
-        print("agent_when is " + str(agents_when))
         agents_when = decontaminate(T, starting_node, m, T_original, agents_when)
 
     starting_node, min_nr_of_agents = homebase_node(T)
     chernoff = agents_nr_by_chernoff(min_nr_of_agents, p)
+
     if nr_a != -1:
         nr_of_agents = nr_a
     else:
-        nr_of_agents = chernoff
+        nr_of_agents = min_nr_of_agents + 2 * math.ceil(float(min_nr_of_agents) * p)
     chernoff = agents_nr_by_chernoff(min_nr_of_agents, p)
 
     max_move = 0
-    for i in range(nr_of_agents):
+    for i in range(min_nr_of_agents):
         max_move = max_move + 2*T_original.size() - 2* (i+1)
     max_move = max_move + min_nr_of_agents * (nr_of_agents - min_nr_of_agents)
 

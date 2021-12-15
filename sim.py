@@ -16,9 +16,9 @@ with open('sim.csv', 'w', encoding='UTF8', newline='') as f:
     writer = csv.writer(f)
 
     #write multiple rows into sim.csv
-    writer.writerow('mesh2d_m1')
+    '''writer.writerow('mesh2d_m1')
     for i in range(19):
-        writer.writerow(mesh_2d.create_grid_2d(i+2, i+2, 2))
+        writer.writerow(mesh_2d.create_grid_2d(i+2, i+2, 2))'''
 
     #write a single row into sim.csv
     '''writer.writerow
@@ -61,4 +61,7 @@ with open('sim.csv', 'w', encoding='UTF8', newline='') as f:
     #tree.tree(lr, 1)
     #tree_1_error.tree(lr, 1)
     #tree_chain.tree(lr, 0.1)
+
+    #default example simulation
+    mesh_2d.create_grid_2d(4, 4, 2)
 
